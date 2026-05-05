@@ -129,6 +129,7 @@ window.onloadTurnstile = function(){
   turnstileWidgetId = window.turnstile.render('#turnstile-widget', {
     sitekey: TURNSTILE_KEY,
     size: 'invisible',
+    execution: 'execute',
     callback: t => { turnstileToken = t; },
     'error-callback': () => { turnstileToken = ''; },
     'expired-callback': () => { turnstileToken = ''; },
