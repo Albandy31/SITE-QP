@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnostic Loi 16 — Quatre Piliers</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstile&render=explicit" async defer></script>
+<style>
+:root{
+  --gold:#E8B800;--gold-lt:#F5CC00;
+  --blue:#2A4D9E;--blue-dk:#1A3270;
+  --cream:#F0F3FA;--txt:#212B3C;
+  --muted:#5C6880;--brd:#E8EAEF;--wh:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--cream);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;color:var(--txt);line-height:1.65}
+.container{width:100%;max-width:600px;background:var(--wh);border-radius:14px;padding:2rem;box-shadow:0 2px 20px rgba(42,77,158,.08);border-top:4px solid var(--gold)}
+.header{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.25rem}
+.header-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.header-title{font-size:17px;font-weight:800;color:var(--blue-dk);margin-bottom:3px;letter-spacing:-.01em}
+.header-sub{font-size:12px;color:var(--muted)}
+.progress-wrap{height:3px;background:var(--brd);border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+.progress-bar{height:100%;background:var(--blue);border-radius:2px;transition:width .3s}
+.step-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.4rem;font-weight:800}
+.step-q{font-size:15.5px;font-weight:700;color:var(--blue-dk);margin-bottom:1rem;line-height:1.4}
+.options{display:flex;flex-direction:column;gap:8px;margin-bottom:1.25rem}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid var(--brd);border-radius:8px;cursor:pointer;transition:all .14s;background:var(--wh)}
+.opt:hover{border-color:var(--blue);background:var(--cream)}
+.opt.selected{border-color:var(--blue);background:rgba(42,77,158,.07)}
+.opt-radio{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:2px;border:2px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .14s}
+.opt.selected .opt-radio{border-color:var(--blue);background:var(--blue)}
+.opt-dot{width:6px;height:6px;border-radius:50%;background:var(--wh);display:none}
+.opt.selected .opt-dot{display:block}
+.opt-check{width:16px;height:16px;border-radius:4px;flex-shrink:0;margin-top:2px;border:2px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .14s}
+.opt.selected .opt-check{border-color:var(--blue);background:var(--blue)}
+.check-icon{font-size:10px;color:var(--wh);display:none;line-height:1}
+.opt.selected .check-icon{display:block}
+.multi-hint{font-size:11px;color:var(--muted);margin-bottom:.75rem;font-style:italic}
+.opt-text{font-size:13.5px;line-height:1.45;color:var(--txt);font-weight:500}
+.opt.selected .opt-text{color:var(--blue-dk);font-weight:600}
+.input-group{margin-bottom:1rem}
+.input-label{font-size:13px;font-weight:700;display:block;margin-bottom:.4rem;color:var(--blue-dk)}
+input[type=text],input[type=email],input[type=number]{width:100%;padding:.65rem .85rem;border:1px solid var(--brd);border-radius:6px;font-size:14px;font-family:inherit;color:var(--txt);outline:none;background:var(--wh);transition:border-color .14s}
+input:focus{border-color:var(--blue)}
+input::placeholder{color:#aaa}
+.honeypot{position:absolute !important;left:-9999px !important;top:-9999px !important;visibility:hidden}
+.nav{display:flex;gap:8px;align-items:center;margin-top:.5rem}
+.btn{padding:11px 22px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .25s;letter-spacing:.06em;text-transform:uppercase;border:none}
+.btn-back{background:var(--wh);color:var(--blue-dk);border:1px solid var(--brd)}
+.btn-back:hover{background:var(--cream)}
+.btn-next{background:var(--blue);color:var(--wh)}
+.btn-next:hover{background:var(--blue-dk);box-shadow:0 4px 14px rgba(42,77,158,.28)}
+.btn-cta{background:var(--gold);color:var(--blue-dk)}
+.btn-cta:hover{background:var(--gold-lt);box-shadow:0 6px 20px rgba(232,184,0,.35)}
+.step-count{font-size:12px;color:var(--muted);margin-left:auto;font-weight:600}
+.error{font-size:12px;color:#791F1F;background:#FCEBEB;border:1px solid #F7C1C1;border-radius:6px;padding:.5rem .75rem;margin-bottom:.75rem}
+@keyframes pulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeIn .25s ease}
+.loading{text-align:center;padding:2.5rem 0}
+.dots{display:flex;justify-content:center;gap:8px;margin-bottom:16px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:pulse .9s ease-in-out infinite}
+.loading-title{font-size:14px;font-weight:700;color:var(--blue-dk);margin-bottom:4px}
+.loading-sub{font-size:12px;color:var(--muted)}
+.result-header{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh);border-bottom:4px solid var(--gold)}
+.result-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.result-title{font-size:17px;font-weight:800;margin-bottom:4px}
+.result-syndicat{font-size:12px;color:rgba(255,255,255,.7)}
+.score-row{display:flex;align-items:flex-start;gap:14px;margin-top:14px}
+.score-circle{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--wh);flex-shrink:0}
+.score-niveau{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.85)}
+.score-resume{font-size:13px;color:rgba(255,255,255,.85);margin-top:4px;line-height:1.55}
+.forts{background:#E1F5EE;border:1px solid #9FE1CB;border-radius:10px;padding:12px 16px;margin-bottom:1rem}
+.forts-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#085041;margin-bottom:6px}
+.fort-item{font-size:13px;color:#0F6E56;line-height:1.55;margin-bottom:2px}
+.priorites-label{font-size:13px;font-weight:700;color:var(--blue-dk);margin-bottom:10px}
+.priorite{background:var(--wh);border:1px solid var(--brd);border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.urgence-badge{font-size:10px;font-weight:800;padding:3px 9px;border-radius:4px;margin-right:6px;letter-spacing:.04em;text-transform:uppercase}
+.echeance{font-size:11px;color:var(--muted);font-weight:600}
+.priorite-titre{font-size:13.5px;font-weight:700;color:var(--blue-dk);margin:6px 0 4px}
+.priorite-desc{font-size:12.5px;color:var(--muted);line-height:1.6}
+.cta-box{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh)}
+.cta-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:6px}
+.cta-forfait{font-size:18px;font-weight:800;margin-bottom:4px}
+.cta-justif{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:12px;line-height:1.55}
+.cta-msg{font-size:13px;color:rgba(255,255,255,.92);font-style:italic;line-height:1.55;margin-bottom:14px}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.cta-btn{display:inline-block;padding:11px 18px;border-radius:6px;font-size:12px;font-weight:800;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+.cta-btn-gold{background:var(--gold);color:var(--blue-dk)}
+.cta-btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:var(--wh)}
+.cta-contact{font-size:11px;color:rgba(255,255,255,.55);text-align:center;margin-top:10px}
+.cta-contact a{color:rgba(255,255,255,.7);text-decoration:none}
+.restart-btn{font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;font-family:inherit;margin-top:.5rem;font-weight:600}
+.err-box{background:#FCEBEB;border:1px solid #F7C1C1;border-radius:8px;padding:1rem 1.25rem;margin-bottom:1rem}
+.err-title{font-size:13px;font-weight:700;color:#791F1F;margin-bottom:4px}
+.err-msg{font-size:12px;color:#791F1F;opacity:.8}
+.recap-box{display:flex;align-items:center;gap:10px;background:var(--cream);border:1px solid var(--brd);border-radius:8px;padding:12px 16px;margin-bottom:.75rem}
+#turnstile-widget{display:none}
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+<div id="turnstile-widget"></div>
+
+<script>
+const API_URL       = "https://diagnostic-quatrepiliers.spring-rain-e8b8.workers.dev/api/diagnostic";
+const TURNSTILE_KEY = "0x4AAAAADJo5u5QHZZwI04R";
+
+const QS = [
+  {id:"syndicat_info",type:"fields",label:"Question 1 sur 10",q:"Quel est le nom de votre syndicat et combien d'unités compte-t-il ?",fields:[{key:"syndicat",label:"Nom du syndicat *",ph:"Ex : Syndicat des copropriétaires du 123 Maple",type:"text"},{key:"nb_unites",label:"Nombre d'unités *",ph:"Ex : 24",type:"number"}]},
+  {id:"gestion",type:"radio",label:"Question 2 sur 10",q:"Votre syndicat est actuellement géré par :",opts:[{v:"autogere",t:"Le conseil d'administration lui-même (autogéré)"},{v:"gestionnaire_ok",t:"Un gestionnaire professionnel — nous en sommes satisfaits"},{v:"gestionnaire_nok",t:"Un gestionnaire professionnel — mais nous voulons en changer"}]},
+  {id:"carnet",type:"radio",label:"Question 3 sur 10",q:"Votre syndicat possède-t-il un carnet d'entretien à jour ?",opts:[{v:"oui",t:"Oui, produit et signé par un professionnel indépendant"},{v:"partiel",t:"Partiellement — un document informel ou incomplet existe"},{v:"non",t:"Non, nous n'en avons pas"},{v:"nsp",t:"Je ne sais pas"}]},
+  {id:"etude_fp",type:"radio",label:"Question 4 sur 10",q:"Avez-vous réalisé une étude du fonds de prévoyance ?",opts:[{v:"oui_recente",t:"Oui, dans les 5 dernières années (conforme Loi 16)"},{v:"oui_ancienne",t:"Oui, mais datant de plus de 5 ans"},{v:"non",t:"Non, jamais"},{v:"nsp",t:"Je ne sais pas"}]},
+  {id:"fp_niveau",type:"radio",label:"Question 5 sur 10",q:"Votre fonds est-il alimenté à au moins 0,5 % de la valeur de reconstruction par année ?",opts:[{v:"oui",t:"Oui, nous contribuons au minimum requis"},{v:"sous",t:"Non, les contributions sont insuffisantes"},{v:"nsp",t:"Je ne connais pas la valeur de reconstruction"}]},
+  {id:"attestation",type:"radio",label:"Question 6 sur 10",q:"En cas de vente d'une unité, pouvez-vous fournir l'attestation syndicale dans les 15 jours ?",opts:[{v:"oui",t:"Oui, facilement — tous les documents sont disponibles"},{v:"difficile",t:"Oui, mais avec difficulté"},{v:"non",t:"Non, ce processus n'est pas en place"}]},
+  {id:"ag",type:"radio",label:"Question 7 sur 10",q:"Votre assemblée générale annuelle est-elle tenue avec procès-verbal officiel ?",opts:[{v:"oui",t:"Oui, chaque année avec PV rédigé et conservé"},{v:"irregulier",t:"Irrégulièrement — certaines années seulement"},{v:"non",t:"Non ou rarement"}]},
+  {id:"registre",type:"radio",label:"Question 8 sur 10",q:"Votre registre (déclaration, PV, états financiers) est-il à jour et accessible ?",opts:[{v:"oui",t:"Oui, tout est documenté et facilement accessible"},{v:"partiel",t:"Partiellement — certains documents manquent"},{v:"non",t:"Non — registre incomplet ou désorganisé"}]},
+  {id:"defi",type:"multi",label:"Question 9 sur 10",q:"Quels sont vos défis de gestion ? (un ou plusieurs choix)",opts:[{v:"conformite_loi16",t:"Conformité et obligations de la Loi 16"},{v:"fonds",t:"Fonds de prévoyance insuffisant"},{v:"conflits",t:"Conflits entre copropriétaires"},{v:"fournisseurs",t:"Gestion des fournisseurs, travaux et urgences"},{v:"temps",t:"Manque de temps et de ressources au CA"},{v:"communication",t:"Communication difficile entre copropriétaires et CA"}]},
+  {id:"contact",type:"fields",label:"Question 10 sur 10",q:"Votre courriel pour recevoir votre diagnostic personnalisé",fields:[{key:"email",label:"Courriel *",ph:"votre@courriel.com",type:"email"},{key:"nom",label:"Votre nom (optionnel)",ph:"Prénom Nom",type:"text"}]}
+];
+
+let step=0, ans={}, phase="form", result=null, score=0, niveau=null, apiErr="", formErr="";
+let turnstileWidgetId=null, turnstileToken="";
+
+window.onloadTurnstile = function(){
+  turnstileWidgetId = window.turnstile.render('#turnstile-widget', {
+    sitekey: TURNSTILE_KEY,
+    size: 'invisible',
+    callback: t => { turnstileToken = t; },
+    'error-callback': () => { turnstileToken = ''; },
+    'expired-callback': () => { turnstileToken = ''; },
+  });
+};
+
+function getNiveauLocal(s){
+  if(s<40)return{label:"Critique",color:"#A32D2D"};
+  if(s<60)return{label:"À risque",color:"#854F0B"};
+  if(s<80)return{label:"En progrès",color:"#2A4D9E"};
+  return{label:"Bien géré",color:"#0F6E56"};
+}
+
+function calcScore(){
+  let s=100;
+  if(["non","nsp"].includes(ans.carnet))s-=25; else if(ans.carnet==="partiel")s-=12;
+  if(["non","nsp"].includes(ans.etude_fp))s-=25; else if(ans.etude_fp==="oui_ancienne")s-=10;
+  if(["sous","nsp"].includes(ans.fp_niveau))s-=15;
+  if(ans.attestation==="non")s-=15; else if(ans.attestation==="difficile")s-=7;
+  if(ans.ag==="non")s-=10; else if(ans.ag==="irregulier")s-=5;
+  if(ans.registre==="non")s-=8; else if(ans.registre==="partiel")s-=4;
+  if(ans.gestion==="autogere")s-=3;
+  return Math.max(0,Math.min(100,s));
+}
+
+function validate(){
+  formErr="";
+  const q=QS[step];
+  if(q.type==="radio"&&!ans[q.id]){formErr="Veuillez sélectionner une réponse.";return false;}
+  if(q.type==="multi"&&(!ans[q.id]||ans[q.id].length===0)){formErr="Veuillez sélectionner au moins un défi.";return false;}
+  if(q.type==="fields"){
+    for(const f of q.fields){
+      if(f.label.includes("*")&&!ans[f.key]?.trim()){formErr=`Veuillez remplir le champ "${f.label.replace(" *","")}".`;return false;}
+    }
+    if(q.id==="contact"&&ans.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ans.email)){formErr="Adresse courriel invalide.";return false;}
+  }
+  return true;
+}
+
+async function getTurnstileToken(){
+  if(!window.turnstile||turnstileWidgetId===null) throw new Error("Vérification anti-bot indisponible. Rechargez la page.");
+  turnstileToken="";
+  window.turnstile.reset(turnstileWidgetId);
+  window.turnstile.execute(turnstileWidgetId);
+  for(let i=0;i<150;i++){
+    if(turnstileToken) return turnstileToken;
+    await new Promise(r=>setTimeout(r,100));
+  }
+  throw new Error("Délai de vérification dépassé");
+}
+
+async function nextStep(){
+  if(!validate()){render();return;}
+  if(step<QS.length-1){step++;render();return;}
+  score=calcScore();
+  phase="loading";
+  render();
+  try{
+    const token = await getTurnstileToken();
+    const honeypot = document.getElementById("hp-website")?.value || "";
+    const res = await fetch(API_URL,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({ answers: ans, turnstile_token: token, website: honeypot })
+    });
+    if(!res.ok){
+      const e = await res.json().catch(()=>({}));
+      throw new Error(e?.error||`Erreur ${res.status}`);
+    }
+    const data = await res.json();
+    result = data.result;
+    score = data.score;
+    niveau = data.niveau;
+    phase = "result";
+  }catch(e){
+    apiErr = e.message || "Erreur inconnue";
+    phase = "error";
+  }
+  render();
+}
+
+function selectOpt(id,val){ans[id]=val;formErr="";render();}
+function toggleMulti(id,val){
+  if(!ans[id])ans[id]=[];
+  const i=ans[id].indexOf(val);
+  if(i>-1)ans[id].splice(i,1); else ans[id].push(val);
+  formErr="";render();
+}
+function prev(){if(step>0)step--;formErr="";render();}
+function restart(){step=0;ans={};phase="form";result=null;score=0;niveau=null;apiErr="";formErr="";turnstileToken="";if(turnstileWidgetId!==null&&window.turnstile){window.turnstile.reset(turnstileWidgetId);}render();}
+
+function render(){
+  const app=document.getElementById("app");
+  const progress=Math.round((step/QS.length)*100);
+
+  if(phase==="loading"){
+    app.innerHTML=`<div class="loading fade">
+      <div class="dots"><div class="dot" style="animation-delay:0s"></div><div class="dot" style="animation-delay:.2s"></div><div class="dot" style="animation-delay:.4s"></div></div>
+      <div class="loading-title">L'agent IA de Quatre Piliers analyse votre syndicat...</div>
+      <div class="loading-sub">Génération de votre rapport personnalisé pour ${ans.syndicat}</div>
+    </div>`;
+    return;
+  }
+
+  if(phase==="result"&&result){
+    const niv = niveau || getNiveauLocal(score);
+    const URGENCE={Critique:{bg:"#FCEBEB",color:"#791F1F",border:"#A32D2D"},Important:{bg:"#FAEEDA",color:"#633806",border:"#854F0B"},Recommandé:{bg:"#E1F5EE",color:"#085041",border:"#0F6E56"}};
+    const ups=u=>URGENCE[u]||URGENCE["Recommandé"];
+    app.innerHTML=`<div class="fade">
+      <div class="result-header">
+        <div class="result-agency">Quatre Piliers — Diagnostic Loi 16</div>
+        <div class="result-title">${result.titre||"Diagnostic personnalisé"}</div>
+        <div class="result-syndicat">${ans.syndicat} · ${ans.nb_unites} unités</div>
+        <div class="score-row">
+          <div class="score-circle" style="background:${niv.color}">${score}</div>
+          <div>
+            <div class="score-niveau">${niv.label}</div>
+            <div class="score-resume">${result.resume||""}</div>
+          </div>
+        </div>
+      </div>
+      ${result.points_forts?.length?`<div class="forts">
+        <div class="forts-label">Points forts</div>
+        ${result.points_forts.map(p=>`<div class="fort-item">· ${p}</div>`).join("")}
+      </div>`:""}
+      <div class="priorites-label">Vos 3 priorités d'action</div>
+      ${(result.priorites||[]).map(p=>{const u=ups(p.urgence);return`<div class="priorite" style="border-left:4px solid ${u.border}">
+        <div>
+          <span class="urgence-badge" style="background:${u.bg};color:${u.color}">${p.urgence}</span>
+          <span class="echeance">${p.echeance||""}</span>
+        </div>
+        <div class="priorite-titre">${p.titre||""}</div>
+        <div class="priorite-desc">${p.description||""}</div>
+      </div>`;}).join("")}
+      <div class="cta-box">
+        <div class="cta-label">Recommandation Quatre Piliers</div>
+        <div class="cta-forfait">Forfait ${result.forfait_recommande||""}</div>
+        <div class="cta-justif">${result.justification_forfait||""}</div>
+        <div class="cta-msg">${result.message_cta||""}</div>
+        <div class="cta-actions">
+          <a class="cta-btn cta-btn-gold" href="tel:5148392494">📞 514-839-2494</a>
+          <a class="cta-btn cta-btn-outline" href="mailto:info@quatrepiliers.ca">✉ Nous écrire</a>
+        </div>
+        <div class="cta-contact"><a href="https://www.quatrepiliers.ca" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+      </div>
+      <div class="recap-box">
+        <span style="font-size:18px">📬</span>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--blue-dk)">Un récapitulatif vous a été envoyé</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">${ans.email?`Consultez votre boîte courriel à <strong>${ans.email}</strong>.`:"Fournissez votre courriel pour recevoir ce diagnostic."}</div>
+        </div>
+      </div>
+      <button class="restart-btn" onclick="restart()">Refaire le diagnostic</button>
+    </div>`;
+    return;
+  }
+
+  if(phase==="error"){
+    app.innerHTML=`<div class="fade">
+      <div class="err-box">
+        <div class="err-title">Erreur</div>
+        <div class="err-msg">${apiErr}</div>
+      </div>
+      <button class="btn btn-next" onclick="restart()">Réessayer</button>
+    </div>`;
+    return;
+  }
+
+  const q=QS[step];
+  let qHTML="";
+
+  if(q.type==="radio"){
+    qHTML=`<div class="options">${q.opts.map(o=>{
+      const sel=ans[q.id]===o.v;
+      return`<div class="opt${sel?" selected":""}" onclick="selectOpt('${q.id}','${o.v}')">
+        <div class="opt-radio"><div class="opt-dot"></div></div>
+        <div class="opt-text">${o.t}</div>
+      </div>`;
+    }).join("")}</div>`;
+  } else if(q.type==="multi"){
+    qHTML=`<div class="multi-hint">Sélectionnez tout ce qui s'applique</div><div class="options">${q.opts.map(o=>{
+      const sel=Array.isArray(ans[q.id])&&ans[q.id].includes(o.v);
+      return`<div class="opt${sel?" selected":""}" onclick="toggleMulti('${q.id}','${o.v}')">
+        <div class="opt-check"><span class="check-icon">✓</span></div>
+        <div class="opt-text">${o.t}</div>
+      </div>`;
+    }).join("")}</div>`;
+  } else {
+    const isContact = q.id === "contact";
+    qHTML=`<div>${q.fields.map(f=>`<div class="input-group">
+      <label class="input-label">${f.label}</label>
+      <input type="${f.type}" value="${ans[f.key]||""}" placeholder="${f.ph}" oninput="ans['${f.key}']=this.value">
+    </div>`).join("")}${isContact?`<input class="honeypot" type="text" id="hp-website" tabindex="-1" autocomplete="off" placeholder="Ne pas remplir">`:""}</div>`;
+  }
+
+  const isLast = step===QS.length-1;
+  app.innerHTML=`<div class="fade">
+    <div class="header">
+      <div class="header-agency">Quatre Piliers — Diagnostic gratuit</div>
+      <div class="header-title">Êtes-vous en conformité avec la Loi 16 ?</div>
+      <div class="header-sub">10 questions · Rapport personnalisé · 100% gratuit</div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:${progress}%"></div></div>
+    <div class="step-label">${q.label}</div>
+    <div class="step-q">${q.q}</div>
+    ${qHTML}
+    ${formErr?`<div class="error">${formErr}</div>`:""}
+    <div class="nav">
+      ${step>0?`<button class="btn btn-back" onclick="prev()">Retour</button>`:""}
+      <button class="btn ${isLast?'btn-cta':'btn-next'}" onclick="nextStep()">${isLast?"Obtenir mon diagnostic":"Continuer"}</button>
+      <span class="step-count">${step+1} / ${QS.length}</span>
+    </div>
+  </div>`;
+}
+
+render();
+</script>
+</body>
+</html>

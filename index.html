@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="fr">
 <head>
@@ -7,190 +7,208 @@
 <title>Quatre Piliers – Gestion de copropriété Grand Montréal</title>
 <meta content="Quatre Piliers – Gestion experte et ultra réactive pour votre copropriété dans le Grand Montréal. Urgence 24/7." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&amp;family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&amp;display=swap" rel="stylesheet"/>
 <style>
-
-:root{--gold:#f0a500;--gold-lt:#f7c04a;--blue:#3d5a73;--blue-dk:#2d4a5f;--cream:#f5f2ed;--txt:#2a3d4a;--muted:#5a6e7d;--brd:#ddd8d0;--wh:#fff}
+/* MUNICIPAL MODERNE — Quatre Piliers
+   Nunito Sans · #2A4D9E · #E8B800 · #F0F3FA
+*/
+:root{
+  --gold:#E8B800;--gold-lt:#F5CC00;
+  --blue:#2A4D9E;--blue-dk:#1A3270;
+  --cream:#F0F3FA;--txt:#212B3C;
+  --muted:#5C6880;--brd:#E8EAEF;--wh:#FFFFFF
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Raleway',sans-serif;color:var(--txt);background:var(--wh);overflow-x:hidden;line-height:1.65}
-h1,h2,h3,h4{font-family:'Tenor Sans',serif;letter-spacing:.04em;line-height:1.25;color:var(--blue)}
+body{font-family:'Nunito Sans',sans-serif;color:var(--txt);background:var(--wh);overflow-x:hidden;line-height:1.65}
+h1,h2,h3,h4{font-family:'Nunito Sans',sans-serif;letter-spacing:-.01em;line-height:1.25;color:var(--blue)}
 a{text-decoration:none;color:inherit}
 
 /* BANNER */
-.banner{background:var(--gold);color:#fff;text-align:center;padding:9px 16px;font-size:12.5px;font-weight:700;letter-spacing:.04em;position:relative;z-index:1001}
-.banner a{color:#fff;text-decoration:underline}
+.banner{background:var(--blue-dk);color:#fff;text-align:center;padding:9px 16px;font-size:12.5px;font-weight:700;letter-spacing:.04em;position:relative;z-index:1001}
+.banner a{color:var(--gold);text-decoration:underline}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:1000;background:rgba(245,242,237,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--brd);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:96px;transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 4px 24px rgba(61,90,115,.12)}
-.logo-wrap{display:flex;align-items:center;cursor:pointer}
-.logo-img{height:80px;width:auto;object-fit:contain}
-.nav-links{display:flex;list-style:none;gap:0}
-.nav-links a{color:var(--muted);font-size:11px;font-weight:700;padding:8px 12px;border-radius:4px;transition:all .2s;letter-spacing:.1em;text-transform:uppercase;font-family:'Raleway',sans-serif;cursor:pointer;display:block}
-.nav-links a:hover,.nav-links a.active{color:var(--gold)}
-.nav-right{display:flex;align-items:center;gap:10px}
-.lang-sw{display:flex;background:rgba(61,90,115,.08);border-radius:20px;padding:3px}
-.lang-btn{background:none;border:none;cursor:pointer;padding:5px 12px;border-radius:16px;font-size:11px;font-weight:800;color:var(--muted);transition:all .2s;font-family:'Raleway',sans-serif;letter-spacing:.08em}
+nav{position:sticky;top:0;z-index:1000;background:#fff;border-top:3px solid var(--gold);border-bottom:1px solid var(--brd);padding:0 3%;display:flex;align-items:center;justify-content:space-between;height:72px;transition:box-shadow .3s;flex-wrap:nowrap}
+nav.scrolled{box-shadow:0 4px 20px rgba(42,77,158,.1)}
+.logo-wrap{display:flex;align-items:center;cursor:pointer;flex-shrink:0}
+.logo-img{height:64px;width:auto;object-fit:contain}
+.nav-links{display:flex;list-style:none;gap:0;flex-shrink:1;flex-wrap:nowrap}
+.nav-links a{color:var(--muted);font-size:11.5px;font-weight:700;padding:8px 9px;border-radius:4px;transition:all .2s;letter-spacing:.04em;text-transform:uppercase;font-family:'Nunito Sans',sans-serif;cursor:pointer;display:block;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.lang-sw{display:flex;background:rgba(42,77,158,.07);border-radius:20px;padding:3px}
+.lang-btn{background:none;border:none;cursor:pointer;padding:5px 12px;border-radius:16px;font-size:11px;font-weight:800;color:var(--muted);transition:all .2s;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em}
 .lang-btn.active{background:var(--blue);color:#fff !important}
-.btn-devis{background:var(--gold);color:#fff;border:none;padding:10px 17px;border-radius:5px;font-size:11px;font-weight:800;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;transition:all .25s;white-space:nowrap}
-.btn-devis:hover{background:var(--gold-lt);box-shadow:0 4px 14px rgba(240,165,0,.35);transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:6px;cursor:pointer;background:var(--blue);border:none;padding:0;width:46px;height:46px;border-radius:8px;flex-shrink:0}
-.hamburger span{width:24px;height:2.5px;background:#fff;border-radius:3px;display:block}
+.btn-devis{background:var(--blue);color:#fff;border:none;padding:10px 18px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;transition:all .25s;white-space:nowrap}
+.btn-devis:hover{background:var(--blue-dk);box-shadow:0 4px 14px rgba(42,77,158,.28);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:6px;cursor:pointer;background:var(--blue);border:none;padding:0;width:44px;height:44px;border-radius:7px;flex-shrink:0}
+.hamburger span{width:22px;height:2.5px;background:#fff;border-radius:3px;display:block}
 
 /* MOB MENU */
 .mob-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:9999;flex-direction:column;gap:2px;padding:76px 6% 40px;overflow-y:auto}
 .mob-menu.open{display:flex}
-.mob-menu a{font-size:16px;color:var(--blue);font-weight:600;padding:15px 0;border-bottom:1px solid var(--brd);display:flex;align-items:center;gap:12px;font-family:'Tenor Sans',serif;letter-spacing:.05em;cursor:pointer}
+.mob-menu a{font-size:16px;color:var(--blue);font-weight:700;padding:15px 0;border-bottom:1px solid var(--brd);display:flex;align-items:center;gap:12px;font-family:'Nunito Sans',sans-serif;letter-spacing:.02em;cursor:pointer}
 .mob-menu a:last-child{color:var(--gold);border-bottom:none}
-.mob-close{position:absolute;top:16px;right:18px;background:var(--blue);border:none;color:#fff;width:46px;height:46px;border-radius:8px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.mob-lang{display:flex;align-items:center;justify-content:center;background:rgba(61,90,115,.08);border-radius:20px;padding:3px;margin-top:10px;width:fit-content}
+.mob-close{position:absolute;top:16px;right:18px;background:var(--blue);border:none;color:#fff;width:44px;height:44px;border-radius:7px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mob-lang{display:flex;align-items:center;justify-content:center;background:rgba(42,77,158,.07);border-radius:20px;padding:3px;margin-top:10px;width:fit-content}
 
 /* HERO */
 .hero{min-height:90vh;background:url('hero.jpg') center/cover no-repeat;position:relative;display:flex;align-items:center;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(118deg,rgba(18,34,52,.88) 0%,rgba(45,74,95,.76) 60%,rgba(45,74,95,.35) 100%)}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,#fff 0%,rgba(255,255,255,.65) 50%,transparent 100%)}
-.hero-inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:110px 5% 170px}
-.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(240,165,0,.14);border:1px solid rgba(240,165,0,.42);color:#f7c04a;padding:6px 16px;border-radius:3px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;margin-bottom:22px;font-family:'Raleway',sans-serif}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(155deg,rgba(26,50,112,.85) 0%,rgba(42,77,158,.7) 55%,rgba(53,96,184,.45) 100%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:110px 5% 160px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(232,184,0,.15);border:1px solid rgba(232,184,0,.35);color:#F5CC00;padding:6px 16px;border-radius:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;margin-bottom:22px;font-family:'Nunito Sans',sans-serif}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.6)}}
-.hero h1{font-size:clamp(28px,4.2vw,58px);color:#fff;margin-bottom:20px;font-weight:600;max-width:900px;text-shadow:0 2px 24px rgba(0,0,0,.25)}
-.tpc{transition:box-shadow .35s,transform .35s}.tpc:hover{box-shadow:0 8px 32px rgba(61,90,115,.13);transform:translateY(-2px)}.tpc-ft:hover{box-shadow:0 0 0 2px var(--gold),0 12px 48px rgba(240,165,0,.55),0 0 80px rgba(240,165,0,.28)!important;transform:translateY(-3px)!important}@keyframes letterFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{font-size:clamp(28px,4.2vw,58px);color:#fff;margin-bottom:20px;font-weight:800;max-width:900px;text-shadow:0 2px 20px rgba(0,0,0,.2)}
+.tpc{transition:box-shadow .35s,transform .35s}
+.tpc:hover{box-shadow:0 8px 32px rgba(42,77,158,.13);transform:translateY(-2px)}
+.tpc-ft:hover{box-shadow:0 0 0 2px var(--gold),0 12px 48px rgba(232,184,0,.4),0 0 60px rgba(232,184,0,.2)!important;transform:translateY(-3px)!important}
+@keyframes letterFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .letter-anim{display:inline-block;opacity:0;animation:letterFadeIn .5s ease forwards;color:var(--gold)}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.88);margin-bottom:26px;max-width:600px;line-height:1.8}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.82);margin-bottom:26px;max-width:600px;line-height:1.8}
 .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;justify-content:center}
-.hero-pill{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.22);color:#fff;padding:7px 14px;border-radius:3px;font-size:11.5px;font-weight:600}
+.hero-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:7px 14px;border-radius:4px;font-size:11.5px;font-weight:600}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{background:var(--gold);color:#fff;border:none;padding:14px 28px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
-.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 26px rgba(240,165,0,.4)}
-.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.44);padding:14px 28px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.btn-primary{background:var(--gold);color:#212B3C;border:none;padding:14px 28px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 26px rgba(232,184,0,.35)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:14px 28px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
 .btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.8)}
-.btn-tarifs{background:rgba(61,90,115,.35);color:#fff;border:1.5px solid var(--blue);padding:14px 28px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
-.btn-tarifs:hover{background:var(--blue);border-color:var(--blue);transform:translateY(-1px)}
+.btn-tarifs{background:rgba(42,77,158,.3);color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:14px 28px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.btn-tarifs:hover{background:rgba(42,77,158,.6);border-color:rgba(255,255,255,.5);transform:translateY(-1px)}
 
 /* SECTIONS */
 section{padding:80px 5%}
 .si{max-width:1200px;margin:0 auto}
-.lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:10px;font-family:'Raleway',sans-serif}
-.stitle{font-size:clamp(22px,3vw,36px);color:var(--blue);margin-bottom:14px}
+.lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:10px;font-family:'Nunito Sans',sans-serif}
+.stitle{font-size:clamp(22px,3vw,36px);color:var(--blue);margin-bottom:14px;font-weight:800}
 .sdesc{color:var(--muted);max-width:580px;font-size:15.5px;line-height:1.75}
 .shdr{margin-bottom:52px}
 .bg-cream{background:var(--cream)}
 
-/* STATS STRIP */
-.strip{background:linear-gradient(135deg,var(--blue-dk) 0%,var(--blue) 100%);padding:54px 5%}
-.strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
-.strip h2{color:#fff;font-size:clamp(20px,2.6vw,30px);margin-bottom:10px}
-.strip p{color:rgba(255,255,255,.76);font-size:15px;line-height:1.75;max-width:540px}
-.stats{display:flex;gap:48px}
-.stat{text-align:center}
-.stat-n{display:block;font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--gold);font-family:'Tenor Sans',serif}
-.stat-l{display:block;font-size:10.5px;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+/* NOS ENGAGEMENTS */
+.eg{display:grid;grid-template-columns:repeat(6,1fr);column-gap:40px;row-gap:56px}
+.ec{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;transition:transform .5s ease}
+.ec:hover{transform:translateY(-6px)}
+.ec-ico{position:relative;width:94px;height:94px;border-radius:50%;border:2.5px solid var(--blue);display:flex;align-items:center;justify-content:center;color:var(--blue);background:var(--wh);box-shadow:0 6px 18px rgba(42,77,158,.06);transition:border-color .5s ease,color .5s ease,box-shadow .5s ease}
+.ec-ico::before{content:'';position:absolute;inset:7px;border-radius:50%;border:1px solid rgba(232,184,0,.30);transition:border-color .5s ease}
+.ec:hover .ec-ico{border-color:var(--gold);color:var(--gold);box-shadow:0 10px 26px rgba(232,184,0,.18)}
+.ec:hover .ec-ico::before{border-color:rgba(232,184,0,.6)}
+.ec-ico svg{width:54px;height:54px;display:block;position:relative;z-index:1}
+.ec-trait{width:36px;height:2px;background:var(--gold);border-radius:2px;margin:20px 0}
+.ec h3{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:14px;line-height:1.2;margin-bottom:12px}
+.ec p{color:var(--muted);font-size:13.5px;line-height:1.7;max-width:215px;font-weight:500}
 
 /* SERVICE CARDS */
 .sg{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.sc{background:var(--wh);border:1.5px solid var(--brd);border-radius:10px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;transition:all .26s}
-.sc:hover{border-color:var(--gold);box-shadow:0 12px 36px rgba(240,165,0,.11);transform:translateY(-4px)}
-.sc-ico{width:48px;height:48px;background:rgba(61,90,115,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sc{background:var(--wh);border:1px solid var(--brd);border-left:3px solid var(--gold);border-radius:7px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;transition:all .26s}
+.sc:hover{border-left-color:var(--blue);box-shadow:0 8px 28px rgba(42,77,158,.1);transform:translateY(-3px)}
+.sc-ico{width:44px;height:44px;background:rgba(42,77,158,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sc-ico svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:1.8}
-.sc h3{font-size:14px;color:var(--blue);font-weight:600;margin:0;line-height:1.35}
+.sc h3{font-size:14px;color:var(--txt);font-weight:800;margin:0;line-height:1.35}
 .sc p{font-size:13px;color:var(--muted);line-height:1.65;flex:1}
-.sc-lnk{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-family:'Raleway',sans-serif;cursor:pointer}
+.sc-lnk{font-size:11px;font-weight:800;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;font-family:'Nunito Sans',sans-serif;cursor:pointer}
 .sec-cta{text-align:center;margin-top:40px}
-.btn-sec{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px 24px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:all .25s}
+.btn-sec{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px 24px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;transition:all .25s}
 .btn-sec:hover{background:var(--blue);color:#fff}
 
 /* PRICING CARDS */
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
-.pc{background:var(--wh);border:1.5px solid var(--brd);border-radius:10px;padding:30px 26px;position:relative;transition:box-shadow .35s,transform .35s;display:flex;flex-direction:column}.pc:hover{box-shadow:0 8px 32px rgba(61,90,115,.13);transform:translateY(-2px)}.pc.pc-ft:hover{box-shadow:0 0 0 2px var(--gold),0 12px 48px rgba(240,165,0,.55),0 0 80px rgba(240,165,0,.28);transform:translateY(-3px)}
-.pc:hover:not(.pc-ft){box-shadow:0 12px 36px rgba(61,90,115,.1)}
-.pc-ft:hover{border-color:var(--gold)!important;box-shadow:0 0 0 2px var(--gold),0 0 28px 6px rgba(240,165,0,.4),0 20px 50px rgba(45,74,95,.3)!important}
-.pc-ft{background:var(--blue-dk);border-color:var(--blue-dk);box-shadow:0 16px 50px rgba(45,74,95,.25);transition:box-shadow .4s ease,border-color .4s ease}
-.pc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:.06em;white-space:nowrap;font-family:'Raleway',sans-serif}
-.pc-name{font-size:20px;font-family:'Tenor Sans',serif;color:var(--blue);font-weight:600;margin-bottom:4px}
-.pc-price{font-size:32px;font-weight:700;color:var(--gold);font-family:'Tenor Sans',serif;margin-bottom:10px;line-height:1}
-.pc-price span{font-size:12.5px;color:var(--muted);font-family:'Raleway',sans-serif;font-weight:500}
+.pc{background:var(--wh);border:1px solid var(--brd);border-radius:8px;padding:30px 26px;position:relative;transition:box-shadow .35s,transform .35s;display:flex;flex-direction:column}
+.pc:hover:not(.pc-ft){box-shadow:0 8px 28px rgba(42,77,158,.1);transform:translateY(-2px)}
+.pc-ft{background:var(--blue-dk);border-color:var(--blue-dk);box-shadow:0 12px 40px rgba(26,50,112,.22);transition:box-shadow .4s ease}
+.pc-ft:hover{box-shadow:0 0 0 2px var(--gold),0 12px 40px rgba(232,184,0,.3),0 20px 50px rgba(26,50,112,.25)!important;transform:translateY(-3px)!important}
+.tpc-ft:hover{box-shadow:0 0 0 2px var(--gold),0 12px 48px rgba(232,184,0,.4),0 0 60px rgba(232,184,0,.2)!important;transform:translateY(-3px)!important}
+.pc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#212B3C;font-size:10px;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:.06em;white-space:nowrap;font-family:'Nunito Sans',sans-serif}
+.pc-name{font-size:20px;font-family:'Nunito Sans',sans-serif;color:var(--blue);font-weight:800;margin-bottom:4px}
+.pc-price{font-size:32px;font-weight:800;color:var(--txt);font-family:'Nunito Sans',sans-serif;margin-bottom:10px;line-height:1}
+.pc-price span{font-size:12.5px;color:var(--muted);font-family:'Nunito Sans',sans-serif;font-weight:500}
 .pc-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px;flex:1}
 .pc-list{list-style:none;margin-bottom:22px}
 .pc-list li{display:flex;gap:8px;align-items:flex-start;padding:6px 0;font-size:13px;border-bottom:1px solid rgba(0,0,0,.05)}
 .pc-list li:last-child{border:none}
 .pc-chk{color:var(--gold);font-weight:700;flex-shrink:0}
-.pc-btn{width:100%;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;transition:all .25s}
-.pc-btn:hover{background:var(--blue);color:#fff}
-.pc-btn-gold{background:var(--gold);border-color:var(--gold);color:#fff}
-.pc-btn-gold:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
+.pc-btn{width:100%;background:transparent;border:1.5px solid var(--brd);color:var(--txt);padding:11px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.04em;transition:all .25s}
+.pc-btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.pc-btn-gold{background:var(--gold);border-color:var(--gold);color:#212B3C}
+.pc-btn-gold:hover{background:var(--gold-lt);border-color:var(--gold-lt);color:#212B3C}
 
 /* LOI 16 */
 .loi-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.loi-text h2{font-size:clamp(22px,3vw,34px);color:var(--blue);margin-bottom:16px}
+.loi-text h2{font-size:clamp(22px,3vw,34px);color:var(--blue);margin-bottom:16px;font-weight:800}
 .loi-text p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:18px}
 .loi-items{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
-.loi-item{display:flex;gap:12px;align-items:flex-start;background:var(--wh);border:1px solid var(--brd);border-radius:8px;padding:14px 16px;transition:box-shadow .28s,transform .28s,border-color .28s;cursor:default}.loi-item:hover{box-shadow:0 6px 24px rgba(240,165,0,.22),0 0 0 1.5px var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+.loi-item{display:flex;gap:12px;align-items:flex-start;background:var(--wh);border:1px solid var(--brd);border-left:3px solid var(--gold);border-radius:6px;padding:14px 16px;transition:box-shadow .28s,transform .28s;cursor:default}
+.loi-item:hover{box-shadow:0 4px 18px rgba(42,77,158,.1);transform:translateY(-2px)}
 .loi-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:7px}
-.loi-item strong{display:block;font-size:13.5px;color:var(--blue);font-weight:600;margin-bottom:3px}
+.loi-item strong{display:block;font-size:13.5px;color:var(--blue);font-weight:700;margin-bottom:3px}
 .loi-item span{font-size:12.5px;color:var(--muted)}
-.loi-card{background:var(--blue);border-radius:12px;padding:38px 32px;color:#fff}
-.loi-card h3{color:#fff;font-size:18px;margin-bottom:20px}
+.loi-card{background:var(--blue-dk);border-radius:10px;padding:38px 32px;color:#fff}
+.loi-card h3{color:#fff;font-size:18px;margin-bottom:20px;font-weight:800}
 .echeances{display:flex;flex-direction:column;gap:14px}
 .ech{display:flex;gap:14px;align-items:flex-start}
-.ech-date{background:var(--gold);color:#fff;font-size:11px;font-weight:800;padding:5px 10px;border-radius:4px;white-space:nowrap;font-family:'Raleway',sans-serif;flex-shrink:0;letter-spacing:.04em}
-.ech-txt{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.6;padding-top:2px}
+.ech-date{background:var(--gold);color:#212B3C;font-size:11px;font-weight:800;padding:5px 10px;border-radius:4px;white-space:nowrap;font-family:'Nunito Sans',sans-serif;flex-shrink:0;letter-spacing:.04em}
+.ech-txt{font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.6;padding-top:2px}
 
 /* CONTACT */
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .ci-list{display:flex;flex-direction:column;gap:16px}
 .ci{display:flex;gap:14px;align-items:flex-start}
-.ci-ico{width:44px;height:44px;background:rgba(61,90,115,.08);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-ico{width:44px;height:44px;background:rgba(42,77,158,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ci-ico svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:1.8}
-.ci-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Raleway',sans-serif}
-.ci-val{font-size:14.5px;color:var(--txt);font-weight:500}
-.urg-box{background:rgba(240,165,0,.08);border:1px solid rgba(240,165,0,.28);border-radius:8px;padding:16px 18px;margin-top:8px}
-.urg-box strong{display:block;color:var(--blue);font-size:13.5px;margin-bottom:6px}
+.ci-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Nunito Sans',sans-serif}
+.ci-val{font-size:14.5px;color:var(--txt);font-weight:600}
+.urg-box{background:rgba(42,77,158,.05);border:1px solid rgba(42,77,158,.15);border-radius:7px;padding:16px 18px;margin-top:8px}
+.urg-box strong{display:block;color:var(--blue);font-size:13.5px;margin-bottom:6px;font-weight:700}
 .urg-box p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
-.mini-form{background:var(--cream);border:1.5px solid var(--brd);border-radius:10px;padding:34px 30px}
-.mini-form h3{font-size:18px;color:var(--blue);margin-bottom:20px}
+.mini-form{background:var(--wh);border:1.5px solid var(--brd);border-radius:8px;padding:34px 30px}
+.mini-form h3{font-size:18px;color:var(--blue);margin-bottom:20px;font-weight:800}
 .fg{margin-bottom:13px}
-.fg label{display:block;font-size:10px;font-weight:800;color:var(--muted);margin-bottom:5px;letter-spacing:.12em;text-transform:uppercase;font-family:'Raleway',sans-serif}
-.fg input,.fg textarea,.fg select{width:100%;padding:11px 13px;border:1.5px solid var(--brd);border-radius:5px;font-size:14px;font-family:'Raleway',sans-serif;color:var(--txt);background:var(--wh);outline:none;transition:border-color .2s}
-.fg input:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg label{display:block;font-size:10px;font-weight:800;color:var(--muted);margin-bottom:5px;letter-spacing:.12em;text-transform:uppercase;font-family:'Nunito Sans',sans-serif}
+.fg input,.fg textarea,.fg select{width:100%;padding:11px 13px;border:1.5px solid var(--brd);border-radius:6px;font-size:14px;font-family:'Nunito Sans',sans-serif;color:var(--txt);background:var(--wh);outline:none;transition:border-color .2s}
+.fg input:focus,.fg textarea:focus{border-color:var(--blue)}
 .fg textarea{resize:vertical;min-height:70px}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.btn-form{width:100%;background:var(--blue);color:#fff;border:none;padding:13px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:all .25s;margin-top:4px}
+.btn-form{width:100%;background:var(--blue);color:#fff;border:none;padding:13px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:all .25s;margin-top:4px}
 .btn-form:hover{background:var(--blue-dk)}
-.ok-msg{background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);color:#b87000;padding:12px 16px;border-radius:5px;font-size:13px;font-weight:600;display:none;margin-top:12px;text-align:center}
+.ok-msg{background:rgba(42,77,158,.06);border:1px solid rgba(42,77,158,.2);color:var(--blue);padding:12px 16px;border-radius:5px;font-size:13px;font-weight:600;display:none;margin-top:12px;text-align:center}
 
-/* CTA */
-.cta-band{background:linear-gradient(135deg,var(--blue-dk) 0%,var(--blue) 100%);padding:72px 5%;text-align:center}
-.cta-band h2{color:#fff;font-size:clamp(22px,3vw,36px);margin-bottom:14px}
-.cta-band p{color:rgba(255,255,255,.8);font-size:15.5px;margin-bottom:30px;max-width:530px;margin-left:auto;margin-right:auto;line-height:1.8}
+/* CTA BAND */
+.cta-band{background:var(--cream);border-top:3px solid var(--gold);padding:72px 5%;text-align:center}
+.cta-band h2{color:var(--blue);font-size:clamp(22px,3vw,36px);margin-bottom:14px;font-weight:800}
+.cta-band p{color:var(--muted);font-size:15.5px;margin-bottom:30px;max-width:530px;margin-left:auto;margin-right:auto;line-height:1.8}
 
 /* FOOTER */
 footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
-.fg-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:52px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.fg-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:52px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
 .logo-ft{height:44px;filter:brightness(0) invert(1);opacity:.9}
-.ft-brand p{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.78;margin-top:16px}
-.ft-col h4{font-family:'Tenor Sans',serif;color:#fff;font-size:13px;font-weight:600;margin-bottom:16px}
+.ft-brand p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.78;margin-top:16px}
+.ft-col h4{font-family:'Nunito Sans',sans-serif;color:var(--gold);font-size:12px;font-weight:800;margin-bottom:16px;letter-spacing:.08em;text-transform:uppercase}
 .ft-col ul{list-style:none}
-.ft-col ul li a{font-size:13.5px;color:rgba(255,255,255,.55);cursor:pointer;transition:color .2s;display:block;margin-bottom:9px}
+.ft-col ul li a{font-size:13.5px;color:rgba(255,255,255,.5);cursor:pointer;transition:color .2s;display:block;margin-bottom:9px}
 .ft-col ul li a:hover{color:var(--gold)}
 .ft-nl{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
-.ft-nl input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;padding:9px 12px;border-radius:5px;font-size:13px;font-family:'Raleway',sans-serif;outline:none}
-.ft-nl input::placeholder{color:rgba(255,255,255,.35)}
-.btn-ft-nl{background:var(--gold);color:#fff;border:none;padding:9px 14px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;transition:all .25s}
+.ft-nl input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;padding:9px 12px;border-radius:5px;font-size:13px;font-family:'Nunito Sans',sans-serif;outline:none}
+.ft-nl input::placeholder{color:rgba(255,255,255,.3)}
+.btn-ft-nl{background:var(--gold);color:#212B3C;border:none;padding:9px 14px;border-radius:5px;font-size:11.5px;font-weight:800;cursor:pointer;font-family:'Nunito Sans',sans-serif;transition:all .25s}
 .btn-ft-nl:hover{background:var(--gold-lt)}
-.ft-addr{font-size:13px;color:rgba(255,255,255,.5);line-height:1.95}
-.ft-btm{max-width:1200px;margin:0 auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,.35)}
+.ft-addr{font-size:13px;color:rgba(255,255,255,.45);line-height:1.95}
+.ft-btm{max-width:1200px;margin:0 auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,.3)}
 .ft-btm-lnk{display:flex;gap:22px}
-.ft-btm-lnk a{color:rgba(255,255,255,.35);cursor:pointer;transition:color .2s}
+.ft-btm-lnk a{color:rgba(255,255,255,.3);cursor:pointer;transition:color .2s}
 .ft-btm-lnk a:hover{color:var(--gold)}
+.ft-social{display:flex;gap:8px;align-items:center}
+.ft-social a{color:rgba(255,255,255,.4);transition:color .2s,border-color .2s;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.15);flex-shrink:0}
+.ft-social a:hover{color:var(--gold);border-color:var(--gold)}
 
 /* MODAL */
-.overlay{position:fixed;inset:0;background:rgba(25,45,65,.65);z-index:9000;display:none;align-items:center;justify-content:center;padding:20px}
+.overlay{position:fixed;inset:0;background:rgba(26,50,112,.6);z-index:9000;display:none;align-items:center;justify-content:center;padding:20px}
 .overlay.open{display:flex}
-.modal{background:var(--wh);border-radius:12px;padding:36px 32px;max-width:500px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
+.modal{background:var(--wh);border-radius:10px;padding:36px 32px;max-width:500px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
 .modal-x{position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
 .modal-x:hover{background:var(--cream)}
-.modal h3{font-size:20px;color:var(--blue);margin-bottom:8px}
+.modal h3{font-size:20px;color:var(--blue);margin-bottom:8px;font-weight:800}
 .modal>p{font-size:13.5px;color:var(--muted);margin-bottom:20px;line-height:1.65}
 
 /* REVEAL */
@@ -199,62 +217,58 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 .reveal.anim.visible{opacity:1;transform:none}
 
 /* RESPONSIVE */
-
-
-
-.hero-pills{display:inline-flex;flex-direction:column;gap:8px;align-items:stretch}
-.hero-pills-top{display:flex;gap:8px}
-.hero-pills-bot{display:flex}
-.hero-pill-law{flex:1;text-align:center;justify-content:center;display:flex;align-items:center}
+.hero-pills{display:flex;flex-wrap:nowrap;gap:8px;justify-content:center}
+.hero-pill{display:flex;align-items:center;justify-content:center;text-align:center;gap:5px}
+.hero-pill svg{flex-shrink:0}
+@media(max-width:1280px){.eg{grid-template-columns:repeat(3,1fr);row-gap:64px}}
 @media(max-width:1100px){
   .sg{grid-template-columns:repeat(2,1fr)}
   .pg{grid-template-columns:repeat(2,1fr)}
-  .strip-inner{grid-template-columns:1fr}
-  .stats{justify-content:flex-start}
+  .eg{grid-template-columns:repeat(2,1fr);column-gap:32px;row-gap:56px}
   .fg-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
   .nav-links,.lang-sw,.btn-devis{display:none!important}
   .hamburger{display:flex!important}
-  nav{height:70px;padding:0 4%}
-  .logo-img{height:66px}
+  nav{height:60px;padding:0 4%}
+  .logo-img{height:44px}
   .hero{min-height:72vh}
   .hero-inner{padding:80px 5% 120px}
   .hero-btns{flex-direction:column}
   .hero-btns a,.hero-btns button{width:100%;justify-content:center}
+  .hero-pills{flex-wrap:wrap;justify-content:center}
+  .hero-pill{flex:0 0 calc(50% - 4px);white-space:nowrap;justify-content:center}
   section{padding:50px 5%}
   .sg,.pg{grid-template-columns:1fr}
+  .eg{grid-template-columns:1fr;row-gap:44px}
   .loi-grid,.cg{grid-template-columns:1fr}
   .fg-grid{grid-template-columns:1fr}
   .ft-btm{flex-direction:column;text-align:center;gap:10px}
-  .stats{flex-direction:column;gap:20px}
   .fg-row{grid-template-columns:1fr}
-  .strip-inner{grid-template-columns:1fr}
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp .7s ease forwards}
 
-
-/* === PAGE HEADER (pages internes) === */
+/* PAGE HEADER */
 .page-hdr{background:var(--blue);padding:72px 5%;text-align:center}
-.page-hdr h1{color:#fff;font-size:clamp(24px,3.8vw,46px);margin-bottom:16px}
-.page-hdr p{color:rgba(255,255,255,.78);max-width:640px;margin:0 auto;font-size:16px;line-height:1.78}
+.page-hdr h1{color:#fff;font-size:clamp(24px,3.8vw,46px);margin-bottom:16px;font-weight:800}
+.page-hdr p{color:rgba(255,255,255,.75);max-width:640px;margin:0 auto;font-size:16px;line-height:1.78}
 
-/* === PAGES SYSTÈME === */
+/* PAGES SYSTEME */
 .page{display:none}
 .page.active{display:block}
 
-/* === CTA BAND (pages internes) === */
-.cta-band{background:linear-gradient(135deg,var(--blue-dk) 0%,var(--blue) 100%);padding:64px 5%;text-align:center}
-.cta-band h2{color:#fff;font-size:clamp(20px,2.8vw,32px);margin-bottom:12px}
-.cta-band p{color:rgba(255,255,255,.8);font-size:15px;margin-bottom:26px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8}
+/* CTA BAND pages internes */
+.cta-band{background:var(--wh);border-top:3px solid var(--gold);padding:64px 5%;text-align:center}
+.cta-band h2{color:var(--blue);font-size:clamp(20px,2.8vw,32px);margin-bottom:12px;font-weight:800}
+.cta-band p{color:var(--muted);font-size:15px;margin-bottom:26px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8}
 
-/* === LISTE SERVICES === */
+/* LISTE SERVICES */
 .srv-list li{display:flex;gap:10px;padding:9px 0;font-size:13.5px;border-bottom:1px solid var(--cream);line-height:1.55;list-style:none}
 .srv-list li:last-child{border-bottom:none}
 .srv-list li::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:8px}
 
-/* === RESPONSIVE PAGES INTERNES === */
+/* RESPONSIVE PAGES INTERNES */
 @media(max-width:860px){
   .srv-cards-2col{grid-template-columns:1fr!important}
   .tarif-3col{grid-template-columns:1fr!important}
@@ -266,16 +280,45 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
   .fiches-4col{grid-template-columns:1fr!important}
 }
 @keyframes heroBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* DIAGNOSTIC BANNER */
+.diag-banner{background:var(--blue-dk);color:#fff;text-align:center;padding:9px 16px;font-size:12.5px;font-weight:700;letter-spacing:.03em;position:relative;z-index:1001;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.diag-banner:hover{background:#111f4a}
+.diag-banner-pill{background:rgba(232,184,0,.2);border:1px solid rgba(232,184,0,.5);color:#F5CC00;font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0}
+.diag-banner-cta{color:#F5CC00;text-decoration:underline;white-space:nowrap}
+
+/* DIAGNOSTIC OVERLAY */
+.diag-overlay{position:fixed;inset:0;background:rgba(26,50,112,.65);z-index:9500;display:none;align-items:center;justify-content:center;padding:16px}
+.diag-overlay.open{display:flex}
+.diag-wrap{position:relative;width:100%;max-width:660px;max-height:94vh;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.4)}
+.diag-iframe{width:100%;flex:1;border:none;min-height:600px;max-height:calc(94vh - 0px)}
+.diag-close-btn{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.95);border:none;width:34px;height:34px;border-radius:50%;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.18);color:#5C6880;z-index:10;transition:background .2s}
+.diag-close-btn:hover{background:#fff}
+
+/* DIAGNOSTIC CTA INLINE */
+.diag-cta-card{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dk) 100%);border-radius:10px;padding:24px 28px;margin-top:18px;display:flex;align-items:center;gap:20px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.diag-cta-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(42,77,158,.3)}
+.diag-cta-icon{width:48px;height:48px;background:rgba(232,184,0,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.diag-cta-text strong{display:block;color:#fff;font-size:14.5px;font-weight:800;margin-bottom:3px}
+.diag-cta-text span{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.5}
+.diag-cta-arrow{margin-left:auto;color:var(--gold);font-size:20px;flex-shrink:0}
+@media(max-width:768px){.diag-banner{font-size:11.5px;padding:8px 12px}.diag-cta-card{flex-wrap:wrap;gap:14px}.diag-cta-arrow{display:none}}
 </style>
 <link rel="icon" type="image/png" href="logo.png"/>
 <link rel="apple-touch-icon" href="logo.png"/>
 </head>
 <body>
+<!-- DIAGNOSTIC BANNER -->
+<div class="diag-banner" onclick="openDiagnostic()">
+  <span class="diag-banner-pill" data-i18n="diag.banner.pill">Nouveau</span>
+  <span data-i18n="diag.banner.text">Loi 16 — Êtes-vous en conformité ?</span>
+  <span class="diag-banner-cta" data-i18n="diag.banner.cta">Diagnostic gratuit →</span>
+</div>
 <!-- NAV -->
 <nav id="mainNav">
-<div class="logo-wrap" onclick="showPage('accueil')">
+<a class="logo-wrap" href="#" onclick="showPage('accueil');return false;">
 <img alt="Quatre Piliers" class="logo-img" src="logo.png"/>
-</div>
+</a>
 <ul class="nav-links">
 <li><a class="active" href="javascript:void(0)" id="nav-accueil" onclick="showPage('accueil')"><span data-i18n="nav.home">Accueil</span></a></li>
 <li><a href="javascript:void(0)" id="nav-services" onclick="showPage('services')"><span data-i18n="nav.services">Services</span></a></li>
@@ -285,28 +328,28 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><a href="javascript:void(0)" id="nav-contact" onclick="showPage('contact')"><span data-i18n="nav.contact">Contact</span></a></li>
 </ul>
 <div class="nav-right">
-<div style="display:flex;background:rgba(61,90,115,.08);border-radius:20px;padding:3px;margin-right:6px">
-<button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="background:none;border:none;cursor:pointer;padding:5px 12px;border-radius:16px;font-size:11px;font-weight:800;color:var(--muted);transition:all .2s;font-family:'Raleway',sans-serif;letter-spacing:.08em">FR</button>
-<button class="lang-btn" data-lang="en" onclick="setLang('en')" style="background:none;border:none;cursor:pointer;padding:5px 12px;border-radius:16px;font-size:11px;font-weight:800;color:var(--muted);transition:all .2s;font-family:'Raleway',sans-serif;letter-spacing:.08em">EN</button>
+<div style="display:flex;background:rgba(42,77,158,.07);border-radius:20px;padding:3px;margin-right:6px">
+<button class="lang-btn active" data-lang="fr" onclick="setLang('fr')" style="background:none;border:none;cursor:pointer;padding:5px 12px;border-radius:16px;font-size:11px;font-weight:800;color:var(--muted);transition:all .2s;font-family:'Nunito Sans',sans-serif;letter-spacing:.08em">FR</button>
+<button class="lang-btn" data-lang="en" onclick="setLang('en')" style="background:none;border:none;cursor:pointer;padding:5px 12px;border-radius:16px;font-size:11px;font-weight:800;color:var(--muted);transition:all .2s;font-family:'Nunito Sans',sans-serif;letter-spacing:.08em">EN</button>
 </div>
-<a class="btn-devis" onclick="openModal()"><span data-i18n="nav.devis">📋 Soumission gratuite</span></a>
+<a class="btn-devis" onclick="openModal()"><span data-i18n="nav.devis">Soumission gratuite</span></a>
 <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </div>
 </nav>
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
 <button class="mob-close" onclick="toggleMenu()">✕</button>
-<div style="display:flex;background:rgba(61,90,115,.08);border-radius:20px;padding:3px;margin-bottom:12px;width:fit-content">
-<button class="lang-btn active" data-lang="fr" onclick="setLang('fr');toggleMenu()" style="background:none;border:none;cursor:pointer;padding:6px 16px;border-radius:16px;font-size:12px;font-weight:800;color:var(--muted);font-family:'Raleway',sans-serif">FR</button>
-<button class="lang-btn" data-lang="en" onclick="setLang('en');toggleMenu()" style="background:none;border:none;cursor:pointer;padding:6px 16px;border-radius:16px;font-size:12px;font-weight:800;color:var(--muted);font-family:'Raleway',sans-serif">EN</button>
+<div style="display:flex;background:rgba(42,77,158,.07);border-radius:20px;padding:3px;margin-bottom:12px;width:fit-content">
+<button class="lang-btn active" data-lang="fr" onclick="setLang('fr');toggleMenu()" style="background:none;border:none;cursor:pointer;padding:6px 16px;border-radius:16px;font-size:12px;font-weight:800;color:var(--muted);font-family:'Nunito Sans',sans-serif">FR</button>
+<button class="lang-btn" data-lang="en" onclick="setLang('en');toggleMenu()" style="background:none;border:none;cursor:pointer;padding:6px 16px;border-radius:16px;font-size:12px;font-weight:800;color:var(--muted);font-family:'Nunito Sans',sans-serif">EN</button>
 </div>
-<a href="javascript:void(0)" onclick="mobNav('accueil')">🏠 <span data-i18n="nav.home">Accueil</span></a>
-<a href="javascript:void(0)" onclick="mobNav('services')">⚙️ <span data-i18n="nav.services">Services</span></a>
-<a href="javascript:void(0)" onclick="mobNav('tarification')">💰 <span data-i18n="nav.pricing">Tarification</span></a>
-<a href="javascript:void(0)" onclick="mobNav('informations')">📚 <span data-i18n="nav.law16">Loi 16</span></a>
-<a href="javascript:void(0)" onclick="mobNav('blog')">✍️ <span data-i18n="nav.blog">Blog</span></a>
-<a href="javascript:void(0)" onclick="mobNav('contact')">✉️ <span data-i18n="nav.contact">Contact</span></a>
-<a href="javascript:void(0)" onclick="openModal();toggleMenu()">📋 <span data-i18n="nav.devis.short">Soumission gratuite</span></a>
+<a href="javascript:void(0)" onclick="mobNav('accueil')"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14L14 6l10 8"/><path d="M6 12v10h5v-6h6v6h5V12"/></svg> <span data-i18n="nav.home">Accueil</span></a>
+<a href="javascript:void(0)" onclick="mobNav('services')"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="3"/><path d="M14 4v3M14 21v3M4 14h3M21 14h3M7.1 7.1l2.1 2.1M18.8 18.8l2.1 2.1M7.1 20.9l2.1-2.1M18.8 9.2l2.1-2.1"/></svg> <span data-i18n="nav.services">Services</span></a>
+<a href="javascript:void(0)" onclick="mobNav('tarification')"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="20" height="22" rx="2"/><path d="M9 8h10M9 13h10M9 18h6"/></svg> <span data-i18n="nav.pricing">Tarification</span></a>
+<a href="javascript:void(0)" onclick="mobNav('informations')"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 3.5v7c0 5-3.5 8-9 10C8.5 22 5 19 5 14.5V7.5L14 4z"/><path d="M10 13.5l3 3 5-5"/></svg> <span data-i18n="nav.law16">Loi 16</span></a>
+<a href="javascript:void(0)" onclick="mobNav('blog')"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3.5a2.5 2.5 0 0 1 3.5 3.5L8 19.5 4 21l1.5-4L17 3.5z"/><path d="M9 24h12"/></svg> <span data-i18n="nav.blog">Blog</span></a>
+<a href="javascript:void(0)" onclick="mobNav('contact')"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="22" height="16" rx="2"/><path d="M3 8l11 7 11-7"/></svg> <span data-i18n="nav.contact">Contact</span></a>
+<a href="javascript:void(0)" onclick="openModal();toggleMenu()" style="color:var(--gold)"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="22" height="16" rx="2"/><path d="M3 8l11 7 11-7"/></svg> <span data-i18n="nav.devis.short">Soumission gratuite</span></a>
 
 </div>
 <!-- ================================================================
@@ -317,69 +360,146 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div class="hero">
 <div class="hero-inner" style="text-align:center;">
 <div class="fade-up">
-<h1 style="text-align:center;max-width:900px;margin-left:auto;margin-right:auto;line-height:1.25;color:#fff;"><span style="color:var(--gold)" data-i18n="hero.brand">QUATRE PILIERS</span> <span data-i18n="hero.title.rest">simplifie la gestion de votre copropriété</span></h1>
-<p class="hero-sub" style="text-align:center;max-width:760px;font-size:16px;font-weight:400;color:rgba(255,255,255,.88);line-height:1.85;margin-left:auto;margin-right:auto;"><span data-i18n-html="hero.subtitle">Votre copropriété mérite une <strong>gestion ultra-réactive</strong>. Fini l’attente. Nous propulsons votre syndicat avec une <strong>prise en charge complète</strong> : technique, financière, administrative et humaine. Notre équipe intervient rapidement pour régler vos dossiers et valoriser votre immeuble au quotidien.</span></p>
-<div class="hero-pills" style="margin:0 auto 28px;">
-<div class="hero-pills-top">
-<span class="hero-pill"><span data-i18n="hero.pill1">⚡ Urgence 24/7</span></span>
-<span class="hero-pill"><span data-i18n="hero.pill2">💬 Réponse &lt; 24h</span></span>
-<span class="hero-pill"><span data-i18n="hero.pill3">📊 Transparent</span></span>
-</div>
-<div class="hero-pills-bot">
-<span class="hero-pill hero-pill-law" style="background:rgba(240,165,0,.22);border-color:rgba(240,165,0,.55);color:#f7c04a;font-weight:700;width:100%;"><span data-i18n="hero.pill4">✅ Conformité Loi 16</span></span>
-</div>
-</div>
-<div class="hero-btns" style="justify-content:center;">
-<a class="btn-primary" onclick="openModal()"><span data-i18n="hero.btn.quote">📋 Obtenir une soumission gratuite</span></a>
-<a href="javascript:void(0)" class="btn-outline" onclick="showPage('services')"><span data-i18n="hero.btn.services">Découvrir nos services →</span></a>
-<a href="javascript:void(0)" class="btn-tarifs" onclick="showPage('tarification')"><span data-i18n="hero.btn.pricing">Voir nos tarifs →</span></a>
+<h1 style="text-align:center;max-width:900px;margin-left:auto;margin-right:auto;line-height:1.25;color:#fff;" data-i18n="hero.title">La gestion de votre copropriété, confiée à des experts</h1>
+<p class="hero-sub" style="text-align:center;max-width:760px;font-size:16px;font-weight:400;color:rgba(255,255,255,.88);line-height:1.85;margin-left:auto;margin-right:auto;" data-i18n="hero.subtitle">Prise en charge complète ou à la carte : technique, financière, administrative et humaine</p>
+<div style="margin-top:32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;">
+<a class="btn-primary" onclick="openModal()"><span data-i18n="hero.btn.quote">Obtenir une soumission gratuite</span></a>
+<a class="btn-outline" onclick="openDiagnostic()" style="display:inline-flex;align-items:center;gap:8px;">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+  <span data-i18n="diag.hero.btn">Diagnostic Loi 16 gratuit — 2 minutes</span>
+</a>
 </div>
 </div>
 </div>
 </div>
-<!-- STATS STRIP -->
-<div class="strip">
-<div class="strip-inner">
-<div>
-<h2 data-i18n="strip.title">Réactivité : notre engagement premier</h2>
-<p data-i18n-html="strip.desc">Disponibles <strong>7 jours sur 7, 24h sur 24</strong> pour les urgences. La vie de votre copropriété ne s'arrête jamais, nous non plus.</p>
+<!-- NOS ENGAGEMENTS -->
+<section class="bg-cream">
+<div class="si">
+<div class="shdr">
+<div class="lbl" data-i18n="eng.lbl">Nos engagements</div>
+<h2 class="stitle" data-i18n="eng.title">Six valeurs au cœur de chaque mandat</h2>
+<p class="sdesc" style="max-width:none" data-i18n="eng.desc">Notre approche repose sur des principes concrets qui guident chaque action, chaque décision et chaque interaction avec votre syndicat.</p>
 </div>
-<div class="stats">
-<div class="stat"><span class="stat-n">24/7</span><span class="stat-l" data-i18n="strip.stat1">Urgences</span></div>
-<div class="stat"><span class="stat-n">&lt;24h</span><span class="stat-l" data-i18n="strip.stat2">Réponses courantes</span></div>
+<div class="eg">
+
+  <!-- 1. RÉACTIVITÉ -->
+  <div class="ec">
+    <div class="ec-ico">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="24" cy="24" r="16"/>
+        <path d="M24 15v10l6 4"/>
+        <path d="M24 8v2M40 24h-2M24 40v-2M8 24h2" opacity="0.45"/>
+      </svg>
+    </div>
+    <div class="ec-trait"></div>
+    <h3 data-i18n="eng.1.title">Réactivité</h3>
+    <p data-i18n="eng.1.desc">Une réponse rapide et des solutions efficaces à chaque situation.</p>
+  </div>
+
+  <!-- 2. TRANSPARENCE -->
+  <div class="ec">
+    <div class="ec-ico">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 6l13 5v11c0 9-6 14-13 18-7-4-13-9-13-18V11l13-5z"/>
+        <path d="M17 24l5 5 9-10"/>
+      </svg>
+    </div>
+    <div class="ec-trait"></div>
+    <h3 data-i18n="eng.2.title">Transparence</h3>
+    <p data-i18n="eng.2.desc">Communication claire et accès à l'information en tout temps.</p>
+  </div>
+
+  <!-- 3. RIGUEUR -->
+  <div class="ec">
+    <div class="ec-ico">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 36h28"/>
+        <rect x="13" y="22" width="5" height="14" rx="1"/>
+        <rect x="22" y="16" width="5" height="20" rx="1"/>
+        <rect x="31" y="10" width="5" height="26" rx="1"/>
+      </svg>
+    </div>
+    <div class="ec-trait"></div>
+    <h3 data-i18n="eng.3.title">Rigueur</h3>
+    <p data-i18n="eng.3.desc">Processus structurés et contrôles efficaces pour une gestion optimale.</p>
+  </div>
+
+  <!-- 4. PROXIMITÉ -->
+  <div class="ec">
+    <div class="ec-ico">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="18" r="5"/>
+        <circle cx="31" cy="20" r="4"/>
+        <path d="M8 36c0-6 5-10 10-10s10 4 10 10"/>
+        <path d="M25 36c1-4 4-7 9-7 3 0 5 1 6 2" opacity="0.65"/>
+      </svg>
+    </div>
+    <div class="ec-trait"></div>
+    <h3 data-i18n="eng.4.title">Proximité</h3>
+    <p data-i18n="eng.4.desc">Une équipe disponible et à l'écoute de vos besoins.</p>
+  </div>
+
+  <!-- 5. VALORISATION -->
+  <div class="ec">
+    <div class="ec-ico">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 38V12l14-4 14 4v26"/>
+        <path d="M18 18h.01M30 18h.01M18 25h.01M30 25h.01M22 38V30h4v8"/>
+      </svg>
+    </div>
+    <div class="ec-trait"></div>
+    <h3 data-i18n="eng.5.title">Valorisation</h3>
+    <p data-i18n="eng.5.desc">Gestion proactive pour assurer la pérennité et la valeur de votre actif.</p>
+  </div>
+
+  <!-- 6. CONFORMITÉ LOI 16 -->
+  <div class="ec">
+    <div class="ec-ico">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 10v28"/>
+        <path d="M12 15h24"/>
+        <path d="M15 15l-5 10h10l-5-10z"/>
+        <path d="M33 15l-5 10h10l-5-10z"/>
+        <path d="M18 38h12"/>
+      </svg>
+    </div>
+    <div class="ec-trait"></div>
+    <h3 data-i18n="eng.6.title">Conformité Loi 16</h3>
+    <p data-i18n="eng.6.desc">Nous assurons le respect des exigences de la Loi 16 et des meilleures pratiques.</p>
+  </div>
 
 </div>
 </div>
-</div>
+</section>
 <!-- RÉSUMÉ SERVICES -->
 <section>
 <div class="si">
 <div class="shdr">
 <div class="lbl" data-i18n="home.srv.lbl">Nos quatre piliers de services</div>
 <h2 class="stitle" data-i18n="home.srv.title">Une gestion complète sur tous les fronts</h2>
-<p class="sdesc" data-i18n="home.srv.desc">Quatre domaines intégrés pour couvrir chaque aspect de la vie de votre syndicat — avec la réactivité qui nous distingue.</p>
+<p class="sdesc" style="max-width:none" data-i18n="home.srv.desc">Quatre domaines intégrés pour couvrir chaque aspect de la vie de votre syndicat — avec la réactivité qui nous distingue.</p>
 </div>
 <div class="sg">
 <div class="sc">
-<div class="sc-ico"><svg fill="none" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="22" height="22"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+<div class="sc-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="22" height="22"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
 <h3 data-i18n="srv.admin.title">Administratif &amp; juridique</h3>
 <p data-i18n="srv.admin.desc">Assemblées, contrats, registres et conformité légale — le tout géré avec rigueur.</p>
 <a href="javascript:void(0)" class="sc-lnk" onclick="showPage('services')" data-i18n="btn.detail">Voir le détail →</a>
 </div>
 <div class="sc">
-<div class="sc-ico"><svg fill="none" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="22" height="22"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></div>
+<div class="sc-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="22" height="22"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></div>
 <h3 data-i18n="srv.fin.title">Financier &amp; comptable</h3>
 <p data-i18n="srv.fin.desc">Budgets, charges, fonds de prévoyance et rapports trimestriels transparents.</p>
 <a href="javascript:void(0)" class="sc-lnk" onclick="showPage('services')" data-i18n="btn.detail">Voir le détail →</a>
 </div>
 <div class="sc">
-<div class="sc-ico"><svg fill="none" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="22" height="22"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+<div class="sc-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="22" height="22"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
 <h3 data-i18n="srv.tech.title">Technique &amp; entretien</h3>
 <p data-i18n="srv.tech.desc">Carnet d'entretien, travaux, contrats et urgences 24h/24 — votre immeuble est entre de bonnes mains.</p>
 <a href="javascript:void(0)" class="sc-lnk" onclick="showPage('services')" data-i18n="btn.detail">Voir le détail →</a>
 </div>
 <div class="sc">
-<div class="sc-ico"><svg fill="none" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="22" height="22"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+<div class="sc-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="22" height="22"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
 <h3 data-i18n="srv.com.title">Communication &amp; gouvernance</h3>
 <p data-i18n="srv.com.desc">Communication proactive, plateforme logicielle et soutien complet au CA.</p>
 <a href="javascript:void(0)" class="sc-lnk" onclick="showPage('services')" data-i18n="btn.detail">Voir le détail →</a>
@@ -391,15 +511,15 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <!-- RÉSUMÉ TARIFICATION -->
 <section class="bg-cream">
 <div class="si">
-<div class="shdr" style="text-align:center;max-width:620px;margin:0 auto 52px">
+<div class="shdr" style="margin-bottom:52px">
 <div class="lbl" data-i18n="lbl.pricing">Tarification</div>
 <h2 class="stitle" data-i18n="home.pricing.title">Des forfaits adaptés à chaque syndicat</h2>
-<p style="color:var(--muted);font-size:15.5px;line-height:1.75" data-i18n-html="home.pricing.note"><strong>Soumission gratuite</strong>, réponse sous 24h.</p>
+<p style="color:var(--muted);font-size:15.5px;line-height:1.75;max-width:none" data-i18n-html="home.pricing.note"><strong>Soumission gratuite</strong>, réponse sous 24h.</p>
 </div>
 <div class="pg">
 <div class="pc">
 <div style="margin-bottom:20px">
-<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px;font-family:'Raleway',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
+<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
 <div class="pc-name" data-i18n="plan.essential">Essentiel</div>
 <div class="pc-price">25$<span data-i18n="lbl.perunit" data-i18n="lbl.perunit"> /unité/mois</span></div>
 </div>
@@ -413,7 +533,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div class="pc pc-ft">
 <div class="pc-badge" data-i18n="pc.badge">Plus populaire</div>
 <div style="margin-bottom:20px">
-<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:rgba(240,165,0,.7);margin-bottom:4px;font-family:'Raleway',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
+<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:rgba(240,165,0,.7);margin-bottom:4px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
 <div class="pc-name" style="color:#fff" data-i18n="plan.serenity">Sérénité</div>
 <div class="pc-price" style="color:var(--gold)">35$<span style="color:rgba(255,255,255,.5)" data-i18n="lbl.perunit" data-i18n="lbl.perunit"> /unité/mois</span></div>
 </div>
@@ -429,7 +549,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </div>
 <div class="pc">
 <div style="margin-bottom:20px">
-<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px;font-family:'Raleway',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
+<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
 <div class="pc-name" data-i18n="plan.custom">Sur mesure</div>
 <div class="pc-price" style="font-size:24px;padding-top:4px" data-i18n="plan.discuss">À discuter</div>
 </div>
@@ -459,6 +579,16 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div class="loi-item"><div class="loi-dot"></div><div><strong data-i18n="law.item3.title">Attestation du syndicat</strong><span data-i18n="law.item3.desc">Obligatoire à chaque vente d'unité depuis 2025.</span></div></div>
 </div>
 <a href="javascript:void(0)" class="btn-sec" onclick="showPage('informations')" data-i18n="btn.fullguide">Lire notre guide complet →</a>
+<div class="diag-cta-card" onclick="openDiagnostic()">
+  <div class="diag-cta-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B800" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+  </div>
+  <div class="diag-cta-text">
+    <strong data-i18n="diag.home.card.title">Diagnostic de conformité Loi 16 — Gratuit</strong>
+    <span data-i18n="diag.home.card.desc">10 questions · Rapport personnalisé par IA · Résultat immédiat</span>
+  </div>
+  <div class="diag-cta-arrow">→</div>
+</div>
 </div>
 <div style="display:flex;flex-direction:column;gap:16px">
 <img src="loi16.jpg" alt="Loi 16 copropriété Québec"
@@ -480,19 +610,19 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <p style="color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:28px" data-i18n="home.contact.desc">Notre équipe vous répond sous 24 heures ouvrables. Pour les urgences, appelez directement 24/7.</p>
 <div class="ci-list">
 <div class="ci">
-<div class="ci-ico"><svg fill="none" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.64a19.79 19.79 0 01-2.86-8.57A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.4a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg></div>
+<div class="ci-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.64a19.79 19.79 0 01-2.86-8.57A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.4a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg></div>
 <div><div class="ci-lbl" data-i18n="contact.phone.lbl">Téléphone (urgence 24/7)</div><div class="ci-val"><a href="tel:+15148392494" style="color:var(--txt)">514-839-2494</a></div></div>
 </div>
 <div class="ci">
-<div class="ci-ico"><svg fill="none" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+<div class="ci-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
 <div><div class="ci-lbl" data-i18n="contact.email.lbl">Courriel</div><div class="ci-val" data-i18n="contact.email.val"><a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
 <div class="ci">
-<div class="ci-ico"><svg fill="none" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+<div class="ci-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
 <div><div class="ci-lbl" data-i18n="contact.zone.lbl">Zone desservie</div><div class="ci-val" data-i18n="contact.zone.val">Grand Montréal — Laval, Longueuil, Rive-Nord, Rive-Sud</div></div>
 </div>
 <div class="ci">
-<div class="ci-ico"><svg fill="none" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="ci-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
 <div><div class="ci-lbl" data-i18n="contact.hours.lbl">Heures de bureau</div><div class="ci-val" data-i18n="contact.hours.val">Lun–Ven 8h30–17h30 · Urgences 24/7</div></div>
 </div>
 <div class="urg-box">
@@ -518,7 +648,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div style="max-width:600px;margin:0 auto">
 <h2 data-i18n="cta.title">Prêt à confier votre copropriété à des experts ?</h2>
 <p data-i18n-html="cta.desc"><strong>Soumission personnalisée gratuite</strong>, sans engagement. Réponse garantie <strong>sous 24 heures ouvrables</strong>.</p>
-<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:15px 34px"><span data-i18n="cta.btn">📋 Obtenir ma soumission gratuite</span></a>
+<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:15px 34px"><span data-i18n="cta.btn">Obtenir ma soumission gratuite</span></a>
 </div>
 </div>
 <!-- FOOTER dans accueil -->
@@ -540,6 +670,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </div>
 <div class="ft-btm">
 <span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span>
+<div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div>
 <div class="ft-btm-lnk"><a data-i18n="footer.privacy">Politique de confidentialité</a><a data-i18n="footer.legal">Mentions légales</a><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div>
 </div>
 </footer>
@@ -557,8 +688,8 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div class="srv-cards-2col" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">
 <div style="background:var(--wh);border:1.5px solid var(--brd);border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;">
 <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--brd)">
-<div style="width:52px;height:52px;background:rgba(61,90,115,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="24" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
-<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:5px;font-family:'Raleway',sans-serif">01</div><h2 style="font-size:20px;color:var(--blue);font-weight:600;margin:0" data-i18n="srv.admin.title">Administratif &amp; juridique</h2></div>
+<div style="width:52px;height:52px;background:rgba(42,77,158,.07);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="24" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:5px;font-family:'Nunito Sans',sans-serif">01</div><h2 style="font-size:20px;color:var(--blue);font-weight:600;margin:0" data-i18n="srv.admin.title">Administratif &amp; juridique</h2></div>
 </div>
 <ul class="srv-list" style="flex:1;margin-bottom:24px">
 <li><span data-i18n="srv.p1.li1">Organisation et tenue des assemblées générales</span></li>
@@ -569,12 +700,12 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><span data-i18n="srv.p1.li6">Suivi des obligations de la loi 16</span></li>
 <li><span data-i18n="srv.p1.li7">Recrutement et paiement des employés embauchés par le syndicat</span></li>
 </ul>
-<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px 20px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.reqsrv">Demander ce service →</button>
+<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px 20px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.reqsrv">Demander ce service →</button>
 </div>
 <div style="background:var(--wh);border:1.5px solid var(--brd);border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;">
 <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--brd)">
-<div style="width:52px;height:52px;background:rgba(240,165,0,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="24" stroke="#f0a500" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></div>
-<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:5px;font-family:'Raleway',sans-serif">02</div><h2 style="font-size:20px;color:var(--blue);font-weight:600;margin:0" data-i18n="srv.fin.title">Financier &amp; comptable</h2></div>
+<div style="width:52px;height:52px;background:rgba(232,184,0,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="24" stroke="#E8B800" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></div>
+<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:5px;font-family:'Nunito Sans',sans-serif">02</div><h2 style="font-size:20px;color:var(--blue);font-weight:600;margin:0" data-i18n="srv.fin.title">Financier &amp; comptable</h2></div>
 </div>
 <ul class="srv-list" style="flex:1;margin-bottom:24px">
 <li><span data-i18n="srv.p2.li1">Préparation et suivi du budget annuel en collaboration étroite avec le conseil d'administration</span></li>
@@ -585,12 +716,12 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><span data-i18n="srv.p2.li6">Planification et suivi du fonds de prévoyance conforme à l'étude exigée par la loi 16</span></li>
 <li><span data-i18n="srv.p2.li7">Conciliation bancaire mensuelle</span></li>
 </ul>
-<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px 20px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.reqsrv">Demander ce service →</button>
+<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px 20px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.reqsrv">Demander ce service →</button>
 </div>
 <div style="background:var(--wh);border:1.5px solid var(--brd);border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;">
 <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--brd)">
-<div style="width:52px;height:52px;background:rgba(61,90,115,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="24" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:5px;font-family:'Raleway',sans-serif">03</div><h2 style="font-size:20px;color:var(--blue);font-weight:600;margin:0" data-i18n="srv.tech.title">Technique &amp; entretien</h2></div>
+<div style="width:52px;height:52px;background:rgba(42,77,158,.07);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="24" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:5px;font-family:'Nunito Sans',sans-serif">03</div><h2 style="font-size:20px;color:var(--blue);font-weight:600;margin:0" data-i18n="srv.tech.title">Technique &amp; entretien</h2></div>
 </div>
 <ul class="srv-list" style="flex:1;margin-bottom:24px">
 <li><span data-i18n="srv.p3.li1">Coordination des inspections périodiques et tenue du carnet d'entretien obligatoire</span></li>
@@ -602,12 +733,12 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><span data-i18n="srv.p3.li7">Inspection annuelle des alarmes d'incendie et autres</span></li>
 <li><span data-i18n="srv.p3.li8">Coordination des travaux (intérieur et extérieur)</span></li>
 </ul>
-<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px 20px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.reqsrv">Demander ce service →</button>
+<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px 20px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.reqsrv">Demander ce service →</button>
 </div>
 <div style="background:var(--wh);border:1.5px solid var(--brd);border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;">
 <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--brd)">
-<div style="width:52px;height:52px;background:rgba(240,165,0,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="24" stroke="#f0a500" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:5px;font-family:'Raleway',sans-serif">04</div><h2 style="font-size:20px;color:var(--blue);font-weight:600;margin:0" data-i18n="srv.com.title">Communication &amp; gouvernance</h2></div>
+<div style="width:52px;height:52px;background:rgba(232,184,0,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="24" stroke="#E8B800" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:5px;font-family:'Nunito Sans',sans-serif">04</div><h2 style="font-size:20px;color:var(--blue);font-weight:600;margin:0" data-i18n="srv.com.title">Communication &amp; gouvernance</h2></div>
 </div>
 <ul class="srv-list" style="flex:1;margin-bottom:24px">
 <li><span data-i18n="srv.p4.li1">Communication proactive avec tous les copropriétaires</span></li>
@@ -616,13 +747,13 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><span data-i18n="srv.p4.li4">Médiation et résolution de conflits</span></li>
 <li><span data-i18n="srv.p4.li5">Plateforme logicielle disponible pour tous les copropriétaires</span></li>
 </ul>
-<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px 20px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.reqsrv">Demander ce service →</button>
+<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:11px 20px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.reqsrv">Demander ce service →</button>
 </div>
 </div>
 <div style="text-align:center;margin-top:52px;background:var(--cream);border-radius:10px;padding:36px 24px">
 <h3 style="color:var(--blue);font-size:20px;margin-bottom:12px" data-i18n="srv.cta.title">Libérez-vous de la gestion complexe et des nouvelles obligations légales !</h3>
 <p style="color:var(--muted);max-width:500px;margin:0 auto 22px;font-size:15px;line-height:1.75" data-i18n="srv.cta.desc">Obtenez votre soumission gratuite en un clic et simplifiez la vie de votre syndicat dès aujourd'hui.</p>
-<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:14px 30px" data-i18n="srv.cta.btn">📋 Demander ma soumission gratuite</a>
+<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:14px 30px" data-i18n="srv.cta.btn">Demander ma soumission gratuite</a>
 </div>
 </div>
 </section>
@@ -639,7 +770,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </ul></div>
 <div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
-<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
+<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
 </div><!-- /page-services -->
 <!-- ================================================================
@@ -655,20 +786,20 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <p style="text-align:center;max-width:680px;margin:0 auto 52px;color:var(--muted);font-size:15px;line-height:1.78"><span data-i18n-html="page.tar.note">Nos tarifs sont indicatifs et varient selon le nombre d'unités et les services sélectionnés. <strong>Soumission personnalisée</strong>, réponse sous 24h.</span></p>
 <div class="tarif-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start">
 <div class="tpc" style="background:var(--wh);border:1.5px solid var(--brd);border-radius:10px;padding:36px 28px;display:flex;flex-direction:column">
-<div style="margin-bottom:20px"><div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px;font-family:'Raleway',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div><div style="font-size:24px;font-family:'Tenor Sans',serif;color:var(--blue);font-weight:600;margin-bottom:4px" data-i18n="plan.essential">Essentiel</div><div style="font-size:36px;font-weight:700;color:var(--gold);font-family:'Tenor Sans',serif;line-height:1;margin-bottom:14px">25$<span style="font-size:13px;color:var(--muted);font-family:'Raleway',sans-serif;font-weight:500" data-i18n="lbl.perunit"> /unité/mois</span></div></div>
+<div style="margin-bottom:20px"><div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div><div style="font-size:24px;font-family:'Nunito Sans',sans-serif;color:var(--blue);font-weight:600;margin-bottom:4px" data-i18n="plan.essential">Essentiel</div><div style="font-size:36px;font-weight:700;color:var(--gold);font-family:'Nunito Sans',sans-serif;line-height:1;margin-bottom:14px">25$<span style="font-size:13px;color:var(--muted);font-family:'Nunito Sans',sans-serif;font-weight:500" data-i18n="lbl.perunit"> /unité/mois</span></div></div>
 <p style="font-size:13px;color:var(--muted);line-height:1.72;margin-bottom:22px;flex:1" data-i18n="tar.ess.desc">Idéal pour les petits syndicats (moins de 10 unités) souhaitant une rigueur comptable pour éviter les conflits et faciliter les transactions notariales.</p>
-<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-bottom:14px;font-family:'Raleway',sans-serif" data-i18n="lbl.includes">Ce forfait inclut</div>
+<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-bottom:14px;font-family:'Nunito Sans',sans-serif" data-i18n="lbl.includes">Ce forfait inclut</div>
 <ul style="list-style:none;flex:1;margin-bottom:28px">
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px solid rgba(0,0,0,.05)"><span style="color:var(--gold);font-weight:700">✓</span><span data-i18n="feat.admin.base">Administratif de base</span></li>
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px"><span style="color:var(--gold);font-weight:700">✓</span><span data-i18n="feat.fin.comp.base">Financier et comptable de base</span></li>
 </ul>
-<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="width:100%;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.askquote">Demander une soumission →</button>
+<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="width:100%;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.askquote">Demander une soumission →</button>
 </div>
 <div class="tpc tpc-ft" style="background:var(--blue-dk);border:1.5px solid var(--blue-dk);border-radius:10px;padding:36px 28px;position:relative;display:flex;flex-direction:column;box-shadow:0 18px 54px rgba(45,74,95,.28);transition:box-shadow .4s ease,border-color .4s ease" onmouseover="this.style.boxShadow='0 0 0 2px var(--gold),0 0 28px 6px rgba(240,165,0,.4),0 20px 50px rgba(45,74,95,.3)';this.style.borderColor='var(--gold)'" onmouseout="this.style.boxShadow='0 18px 54px rgba(45,74,95,.28)';this.style.borderColor='var(--blue-dk)'">
-<div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:800;padding:5px 16px;border-radius:20px;letter-spacing:.06em;white-space:nowrap;font-family:'Raleway',sans-serif" data-i18n="pc.badge">Plus populaire</div>
-<div style="margin-bottom:20px"><div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:rgba(240,165,0,.7);margin-bottom:4px;font-family:'Raleway',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div><div style="font-size:24px;font-family:'Tenor Sans',serif;color:#fff;font-weight:600;margin-bottom:4px" data-i18n="plan.serenity">Sérénité</div><div style="font-size:36px;font-weight:700;color:var(--gold);font-family:'Tenor Sans',serif;line-height:1;margin-bottom:14px">35$<span style="font-size:13px;color:rgba(255,255,255,.55);font-family:'Raleway',sans-serif;font-weight:500" data-i18n="lbl.perunit"> /unité/mois</span></div></div>
+<div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:800;padding:5px 16px;border-radius:20px;letter-spacing:.06em;white-space:nowrap;font-family:'Nunito Sans',sans-serif" data-i18n="pc.badge">Plus populaire</div>
+<div style="margin-bottom:20px"><div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:rgba(240,165,0,.7);margin-bottom:4px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div><div style="font-size:24px;font-family:'Nunito Sans',sans-serif;color:#fff;font-weight:600;margin-bottom:4px" data-i18n="plan.serenity">Sérénité</div><div style="font-size:36px;font-weight:700;color:var(--gold);font-family:'Nunito Sans',sans-serif;line-height:1;margin-bottom:14px">35$<span style="font-size:13px;color:rgba(255,255,255,.55);font-family:'Nunito Sans',sans-serif;font-weight:500" data-i18n="lbl.perunit"> /unité/mois</span></div></div>
 <p style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.72;margin-bottom:22px;flex:1" data-i18n="tar.ser.desc">La formule la plus populaire. Elle décharge le CA de la paperasse et de la gestion des fournisseurs quotidiens, tout en laissant les décisions stratégiques aux administrateurs. Sa gestion inclut un gestionnaire dédié qui s'occupe de la planification à long terme des actifs (Loi 16) en plus d'une plateforme logicielle.</p>
-<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.45);margin-bottom:14px;font-family:'Raleway',sans-serif" data-i18n="lbl.includes">Ce forfait inclut</div>
+<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.45);margin-bottom:14px;font-family:'Nunito Sans',sans-serif" data-i18n="lbl.includes">Ce forfait inclut</div>
 <ul style="list-style:none;flex:1;margin-bottom:28px">
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,.08)"><span style="color:var(--gold);font-weight:700">✓</span><span style="color:rgba(255,255,255,.9)" data-i18n="srv.admin.title">Administratif &amp; juridique</span></li>
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,.08)"><span style="color:var(--gold);font-weight:700">✓</span><span style="color:rgba(255,255,255,.9)" data-i18n="srv.fin.title">Financier &amp; comptable</span></li>
@@ -676,12 +807,12 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,.08)"><span style="color:var(--gold);font-weight:700">✓</span><span style="color:rgba(255,255,255,.9)" data-i18n="srv.com.title">Communication &amp; gouvernance</span></li>
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px"><span style="color:var(--gold);font-weight:700">✓</span><span style="color:rgba(255,255,255,.9)" data-i18n="feat.platform">Plateforme logicielle</span></li>
 </ul>
-<button onclick="openModal()" onmouseout="this.style.background='var(--gold)'" onmouseover="this.style.background='var(--gold-lt)'" style="width:100%;background:var(--gold);border:1.5px solid var(--gold);color:#fff;padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.askquote">Demander une soumission →</button>
+<button onclick="openModal()" onmouseout="this.style.background='var(--gold)'" onmouseover="this.style.background='var(--gold-lt)'" style="width:100%;background:var(--gold);border:1.5px solid var(--gold);color:#fff;padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.askquote">Demander une soumission →</button>
 </div>
 <div class="tpc" style="background:var(--wh);border:1.5px solid var(--brd);border-radius:10px;padding:36px 28px;display:flex;flex-direction:column">
-<div style="margin-bottom:20px"><div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px;font-family:'Raleway',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div><div style="font-size:24px;font-family:'Tenor Sans',serif;color:var(--blue);font-weight:600;margin-bottom:4px" data-i18n="plan.custom">Sur mesure</div><div style="font-size:26px;font-weight:700;color:var(--gold);font-family:'Tenor Sans',serif;line-height:1;margin-bottom:14px;padding-top:4px" data-i18n="plan.discuss">À discuter</div></div>
+<div style="margin-bottom:20px"><div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div><div style="font-size:24px;font-family:'Nunito Sans',sans-serif;color:var(--blue);font-weight:600;margin-bottom:4px" data-i18n="plan.custom">Sur mesure</div><div style="font-size:26px;font-weight:700;color:var(--gold);font-family:'Nunito Sans',sans-serif;line-height:1;margin-bottom:14px;padding-top:4px" data-i18n="plan.discuss">À discuter</div></div>
 <p style="font-size:13px;color:var(--muted);line-height:1.72;margin-bottom:22px;flex:1" data-i18n="tar.cus.desc">Profitez d'une offre de services exclusive et évolutive : choisissez vos prestations à la carte ou optez pour un accompagnement renforcé avec des services récurrents. Notre flexibilité vous permet d'ajuster votre forfait à tout moment pour répondre parfaitement aux priorités de votre syndicat.</p>
-<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-bottom:14px;font-family:'Raleway',sans-serif" data-i18n="lbl.includes">Ce forfait inclut</div>
+<div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-bottom:14px;font-family:'Nunito Sans',sans-serif" data-i18n="lbl.includes">Ce forfait inclut</div>
 <ul style="list-style:none;flex:1;margin-bottom:28px">
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px solid rgba(0,0,0,.05)"><span style="color:var(--gold);font-weight:700">✓</span><span data-i18n="feat.alacarte">Services à la carte</span></li>
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px solid rgba(0,0,0,.05)"><span style="color:var(--gold);font-weight:700">✓</span><span data-i18n="feat.allbldg">Tous types d'immeubles</span></li>
@@ -689,12 +820,12 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px solid rgba(0,0,0,.05)"><span style="color:var(--gold);font-weight:700">✓</span><span data-i18n="feat.enhanced">Accompagnement renforcé possible</span></li>
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px"><span style="color:var(--gold);font-weight:700">✓</span><span data-i18n="feat.negotiated">Tarif négocié selon volume</span></li>
 </ul>
-<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="width:100%;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.contact">Nous contacter →</button>
+<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="width:100%;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.contact">Nous contacter →</button>
 </div>
 </div>
 <div style="text-align:center;margin-top:52px;background:var(--cream);border-radius:10px;padding:30px 24px">
 <p style="font-size:14px;color:var(--muted);margin-bottom:18px" data-i18n="tar.footnote">Les tarifs sont par unité par mois et peuvent varier selon le nombre d'unités et les services inclus.</p>
-<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:14px 30px"><span data-i18n="btn.custquote">📋 Demander ma tarification personnalisée</span></a>
+<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:14px 30px"><span data-i18n="btn.custquote">Demander ma tarification personnalisée</span></a>
 </div>
 </div>
 </section>
@@ -711,7 +842,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </ul></div>
 <div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
-<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
+<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
 </div><!-- /page-tarification -->
 <!-- ================================================================
@@ -840,9 +971,9 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <table style="width:100%;border-collapse:collapse;font-size:14px" data-i18n-html="info.sec4.table">
 <thead>
 <tr style="background:var(--blue);color:#fff">
-<th style="padding:12px 16px;text-align:left;font-family:'Tenor Sans',serif;font-weight:600;letter-spacing:.04em">Action</th>
-<th style="padding:12px 16px;text-align:left;font-family:'Tenor Sans',serif;font-weight:600;letter-spacing:.04em">Copropriétés existantes</th>
-<th style="padding:12px 16px;text-align:left;font-family:'Tenor Sans',serif;font-weight:600;letter-spacing:.04em">Nouvelles copropriétés</th>
+<th style="padding:12px 16px;text-align:left;font-family:'Nunito Sans',sans-serif;font-weight:600;letter-spacing:.04em">Action</th>
+<th style="padding:12px 16px;text-align:left;font-family:'Nunito Sans',sans-serif;font-weight:600;letter-spacing:.04em">Copropriétés existantes</th>
+<th style="padding:12px 16px;text-align:left;font-family:'Nunito Sans',sans-serif;font-weight:600;letter-spacing:.04em">Nouvelles copropriétés</th>
 </tr>
 </thead>
 <tbody>
@@ -868,6 +999,18 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </tr>
 </tbody>
 </table>
+</div>
+
+
+<div class="diag-cta-card" onclick="openDiagnostic()" style="margin-bottom:40px">
+  <div class="diag-cta-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B800" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+  </div>
+  <div class="diag-cta-text">
+    <strong data-i18n="diag.info.card.title">Votre syndicat est-il prêt pour août 2028 ?</strong>
+    <span data-i18n="diag.info.card.desc">Faites le diagnostic en 2 minutes — rapport personnalisé par IA, 100 % gratuit</span>
+  </div>
+  <div class="diag-cta-arrow">→</div>
 </div>
 
 <h2 style="color:var(--blue);font-size:clamp(18px,2.2vw,24px);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--brd)" data-i18n="info.h2.5">5. Qui fait quoi ?</h2>
@@ -914,7 +1057,13 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div style="background:var(--blue);border-radius:10px;padding:32px 36px;text-align:center">
 <p style="font-size:16px;font-weight:700;color:#fff;margin-bottom:10px" data-i18n="info.cta.title">Vous gérez un syndicat ? Vous préparez une vente ?</p>
 <p style="font-size:14px;color:rgba(255,255,255,.82);margin-bottom:22px" data-i18n="info.cta.desc">La Loi 16 marque le début d'une ère de gestion professionnelle et transparente. Bien appliquée, elle protège votre patrimoine collectif.</p>
-<button onclick="openModal()" class="btn-primary" data-i18n="info.cta.btn">Demander une évaluation gratuite →</button>
+<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center">
+  <button onclick="openDiagnostic()" style="background:var(--gold);color:#212B3C;border:none;padding:13px 26px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:all .25s">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <span data-i18n="diag.info.btn">Diagnostic gratuit — 2 min</span>
+  </button>
+  <button onclick="openModal()" class="btn-primary" style="background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.4);color:#fff" data-i18n="info.cta.btn">Demander une évaluation gratuite →</button>
+</div>
 </div>
 
 </div>
@@ -932,7 +1081,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </ul></div>
 <div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
-<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
+<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
 
 </div><!-- /page-informations -->
@@ -971,7 +1120,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </ul></div>
 <div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
-<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
+<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
 
 
@@ -982,7 +1131,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div id="blog-article" style="display:none">
 <section style="padding:60px 5%">
 <div class="si" style="max-width:860px">
-<button onclick="blogRetour()" style="display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:9px 18px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Raleway',sans-serif;letter-spacing:.06em;margin-bottom:40px;transition:all .25s" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" data-i18n="btn.retour">&#8592; Retour au blog</button>
+<button onclick="blogRetour()" style="display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:9px 18px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;margin-bottom:40px;transition:all .25s" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" data-i18n="btn.retour">&#8592; Retour au blog</button>
 <div id="blog-article-contenu"></div>
 </div>
 </section>
@@ -999,7 +1148,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </ul></div>
 <div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
-<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
+<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
 
 
@@ -1035,7 +1184,7 @@ function blogAfficherListe() {
       '<p style="font-size:13.5px;color:var(--muted);line-height:1.72;flex:1;margin-bottom:18px">' + resume + '</p>',
       '<div style="display:flex;align-items:center;justify-content:space-between">',
       '<span style="font-size:11.5px;color:var(--muted)">' + a.date + '</span>',
-      '<button data-id="' + a.id + '" class="blog-lire-btn" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:8px 16px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:Raleway,sans-serif;transition:all .25s">' + btnTxt + '</button>',
+      '<button data-id="' + a.id + '" class="blog-lire-btn" style="background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:8px 16px;border-radius:5px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:\'Nunito Sans\',sans-serif;transition:all .25s">' + btnTxt + '</button>',
       '</div></div></article>'
     ].join('');
   }).join('');
@@ -1046,6 +1195,7 @@ function blogAfficherListe() {
   });
 }
 function blogOuvrirArticle(id) {
+  window._currentBlogId = id;
   var a = blogArticles.find(function(x){ return x.id === id; });
   if (!a) return;
   var lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
@@ -1064,6 +1214,7 @@ function blogOuvrirArticle(id) {
 function blogRetour() {
   document.getElementById('blog-article').style.display = 'none';
   document.getElementById('blog-liste').style.display = 'block';
+  blogAfficherListe();
   window.scrollTo(0,0);
 }
 
@@ -1086,22 +1237,22 @@ document.addEventListener('DOMContentLoaded', function() { blogAfficherListe(); 
 <p style="font-size:15px;color:var(--muted);line-height:1.78;margin-bottom:30px" data-i18n="contact.main.desc">Que vous cherchiez un nouveau gestionnaire, une mise à niveau de votre gouvernance ou une structure plus fiable pour votre syndicat, nous sommes là pour vous aider rapidement. Notre équipe vous répond sous 24 heures ouvrables. Pour les urgences, appelez directement 24/7.</p>
 <div style="display:flex;flex-direction:column;gap:18px">
 <div style="display:flex;gap:14px;align-items:flex-start">
-<div style="width:42px;height:42px;background:rgba(61,90,115,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="18" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.64a19.79 19.79 0 01-2.86-8.57A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.4a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg></div>
-<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Raleway',sans-serif" data-i18n="contact.phone.lbl">Téléphone (urgence 24/7)</div><div style="font-size:14.5px;color:var(--txt);font-weight:500"><a href="tel:+15148392494" style="color:var(--txt)">514-839-2494</a></div></div>
+<div style="width:42px;height:42px;background:rgba(42,77,158,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="18" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.64a19.79 19.79 0 01-2.86-8.57A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.4a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg></div>
+<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Nunito Sans',sans-serif" data-i18n="contact.phone.lbl">Téléphone (urgence 24/7)</div><div style="font-size:14.5px;color:var(--txt);font-weight:500"><a href="tel:+15148392494" style="color:var(--txt)">514-839-2494</a></div></div>
 </div>
 <div style="display:flex;gap:14px;align-items:flex-start">
-<div style="width:42px;height:42px;background:rgba(61,90,115,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="18" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
-<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Raleway',sans-serif" data-i18n="contact.email.lbl">Courriel</div><div style="font-size:14.5px;color:var(--txt);font-weight:500"><a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
+<div style="width:42px;height:42px;background:rgba(42,77,158,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="18" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Nunito Sans',sans-serif" data-i18n="contact.email.lbl">Courriel</div><div style="font-size:14.5px;color:var(--txt);font-weight:500"><a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
 <div style="display:flex;gap:14px;align-items:flex-start">
-<div style="width:42px;height:42px;background:rgba(61,90,115,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="18" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
-<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Raleway',sans-serif" data-i18n="contact.zone.lbl">Zone desservie</div><div style="font-size:14.5px;color:var(--txt);font-weight:500" data-i18n="contact.zone.val">Grand Montréal — Laval, Longueuil, Rive-Nord, Rive-Sud</div></div>
+<div style="width:42px;height:42px;background:rgba(42,77,158,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="18" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Nunito Sans',sans-serif" data-i18n="contact.zone.lbl">Zone desservie</div><div style="font-size:14.5px;color:var(--txt);font-weight:500" data-i18n="contact.zone.val">Grand Montréal — Laval, Longueuil, Rive-Nord, Rive-Sud</div></div>
 </div>
 <div style="display:flex;gap:14px;align-items:flex-start">
-<div style="width:42px;height:42px;background:rgba(61,90,115,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="18" stroke="#3d5a73" stroke-width="1.8" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
-<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Raleway',sans-serif" data-i18n="contact.hours.lbl">Heures de bureau</div><div style="font-size:14.5px;color:var(--txt);font-weight:500" data-i18n="contact.hours.val">Lun–Ven 8h30–17h30 · Urgences 24/7</div></div>
+<div style="width:42px;height:42px;background:rgba(42,77,158,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg fill="none" height="18" stroke="#2A4D9E" stroke-width="1.8" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;font-family:'Nunito Sans',sans-serif" data-i18n="contact.hours.lbl">Heures de bureau</div><div style="font-size:14.5px;color:var(--txt);font-weight:500" data-i18n="contact.hours.val">Lun–Ven 8h30–17h30 · Urgences 24/7</div></div>
 </div>
-<div style="background:rgba(240,165,0,.08);border:1px solid rgba(240,165,0,.28);border-radius:8px;padding:18px 20px">
+<div style="background:rgba(232,184,0,.06);border:1px solid rgba(232,184,0,.25);border-radius:8px;padding:18px 20px">
 <strong style="display:block;color:var(--blue);font-size:14px;margin-bottom:7px" data-i18n="contact.urg.title">🚨 Urgence 24/7</strong>
 <p style="font-size:13px;color:var(--muted);line-height:1.65;margin:0" data-i18n="contact.urg.desc2">Pour tout sinistre, dégât d'eau ou bris majeur, appelez notre ligne d'urgence disponible 24h/24, 7j/7.</p>
 </div>
@@ -1133,7 +1284,7 @@ document.addEventListener('DOMContentLoaded', function() { blogAfficherListe(); 
 </ul></div>
 <div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
-<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('accueil')" data-i18n="nav.home">Accueil</a></div></div>
+<div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('accueil')" data-i18n="nav.home">Accueil</a></div></div>
 </footer>
 </div><!-- /page-contact -->
 <!-- CHAT WIDGET -->
@@ -1160,7 +1311,7 @@ document.addEventListener('DOMContentLoaded', function() { blogAfficherListe(); 
   width:340px;background:#fff;border-radius:16px;
   box-shadow:0 16px 60px rgba(45,74,95,.22);
   display:none;flex-direction:column;overflow:hidden;
-  font-family:'Raleway',sans-serif;">
+  font-family:'Nunito Sans',sans-serif;">
   <!-- Header -->
   <div style="background:linear-gradient(135deg,var(--blue-dk),var(--blue));padding:18px 20px;display:flex;align-items:center;gap:12px;">
     <div style="width:42px;height:42px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -1187,7 +1338,7 @@ document.addEventListener('DOMContentLoaded', function() { blogAfficherListe(); 
   <div style="padding:14px 16px;border-top:1px solid var(--brd);background:#fff;display:flex;gap:8px;align-items:flex-end;">
     <textarea id="chat-input" placeholder="Écrivez votre message…" data-i18n-ph="ph.chat.input" rows="2" style="
       flex:1;border:1.5px solid var(--brd);border-radius:10px;
-      padding:9px 12px;font-size:13px;font-family:'Raleway',sans-serif;
+      padding:9px 12px;font-size:13px;font-family:'Nunito Sans',sans-serif;
       resize:none;outline:none;color:var(--txt);line-height:1.5;
       transition:border-color .2s;"
       onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChatMsg();}"
@@ -1403,17 +1554,32 @@ var translations = {
   fr: {
     'nav.home':'Accueil','nav.services':'Services','nav.pricing':'Tarification',
     'nav.law16':'Loi 16','nav.blog':'Blog','nav.contact':'Contact',
-    'nav.devis':'📋 Soumission gratuite','nav.devis.short':'Soumission gratuite',
+    'nav.devis':'Soumission gratuite','nav.devis.short':'Soumission gratuite',
     'mob.devis':'Soumission gratuite',
-    'hero.brand':'QUATRE PILIERS','hero.title.rest':'simplifie la gestion de votre copropriété','hero.title1':'Gestion de copropriété',
-    'hero.pill1':'⚡ Urgence 24/7','hero.pill2':'💬 Réponse <24h',
-    'hero.pill3':'📊 Transparent','hero.pill4':'✅ Conformité Loi 16',
-    'hero.btn.quote':'📋 Obtenir une soumission gratuite',
+    'hero.title':'La gestion de votre copropriété, confiée à des experts',
+    'hero.pill1':'Urgence 24/7','hero.pill2':'Réponse <24h',
+    'hero.pill3':'Transparent','hero.pill4':'Conformité Loi 16',
+    'hero.btn.quote':'Obtenir une soumission gratuite',
+    'diag.banner.pill':'Nouveau',
+    'diag.banner.text':'Loi 16 — Êtes-vous en conformité ?',
+    'diag.banner.cta':'Diagnostic gratuit →',
+    'diag.hero.btn':'Diagnostic Loi 16 gratuit — 2 minutes',
+    'diag.home.card.title':'Diagnostic de conformité Loi 16 — Gratuit',
+    'diag.home.card.desc':'10 questions · Rapport personnalisé par IA · Résultat immédiat',
+    'diag.info.card.title':'Votre syndicat est-il prêt pour août 2028 ?',
+    'diag.info.card.desc':'Faites le diagnostic en 2 minutes — rapport personnalisé par IA, 100 % gratuit',
+    'diag.info.btn':'Diagnostic gratuit — 2 min',
     'hero.btn.services':'Découvrir nos services →',
     'hero.btn.pricing':'Voir nos tarifs →',
-    'strip.title':'Réactivité : notre engagement premier',
-    'strip.desc':'Disponibles <strong>7 jours sur 7, 24h sur 24</strong> pour les urgences. La vie de votre copropriété ne s’arrête jamais, nous non plus.',
-    'strip.stat1':'Urgences','strip.stat2':'Réponses courantes',
+    'eng.lbl':'Nos engagements',
+    'eng.title':'Six valeurs au cœur de chaque mandat',
+    'eng.desc':'Notre approche repose sur des principes concrets qui guident chaque action, chaque décision et chaque interaction avec votre syndicat.',
+    'eng.1.title':'Réactivité','eng.1.desc':'Une réponse rapide et des solutions efficaces à chaque situation.',
+    'eng.2.title':'Transparence','eng.2.desc':'Communication claire et accès à l\'information en tout temps.',
+    'eng.3.title':'Rigueur','eng.3.desc':'Processus structurés et contrôles efficaces pour une gestion optimale.',
+    'eng.4.title':'Proximité','eng.4.desc':'Une équipe disponible et à l\'écoute de vos besoins.',
+    'eng.5.title':'Valorisation','eng.5.desc':'Gestion proactive pour assurer la pérennité et la valeur de votre actif.',
+    'eng.6.title':'Conformité Loi 16','eng.6.desc':'Nous assurons le respect des exigences de la Loi 16 et des meilleures pratiques.',
     'home.srv.lbl':'Nos quatre piliers de services',
     'home.srv.title':'Une gestion complète sur tous les fronts',
     'home.srv.desc':'Quatre domaines intégrés pour couvrir chaque aspect de la vie de votre syndicat — avec la réactivité qui nous distingue.',
@@ -1462,7 +1628,7 @@ var translations = {
     'tar.ser.desc':'La formule la plus populaire. Elle décharge le CA de la paperasse et de la gestion des fournisseurs quotidiens, tout en laissant les décisions stratégiques aux administrateurs. Sa gestion inclut un gestionnaire dédié qui s’occupe de la planification à long terme des actifs (Loi 16) en plus d’une plateforme logicielle.',
     'tar.cus.desc':'Profitez d’une offre de services exclusive et évolutive : choisissez vos prestations à la carte ou optez pour un accompagnement renforcé avec des services récurrents. Notre flexibilité vous permet d’ajuster votre forfait à tout moment pour répondre parfaitement aux priorités de votre syndicat.',
     'tar.footnote':'Les tarifs sont par unité par mois et peuvent varier selon le nombre d’unités et les services inclus.',
-    'btn.custquote':'📋 Demander ma tarification personnalisée',
+    'btn.custquote':'Demander ma tarification personnalisée',
     'page.info.h1':'Loi 16',
     'page.info.sub':'Guide complet sur la Loi 16 et la gestion des copropriétés divises au Québec.',
     'page.contact.h1':'Contactez-nous',
@@ -1477,7 +1643,7 @@ var translations = {
     'form.ok':'✅ Merci ! Nous vous contacterons sous 24 heures ouvrables.',
     'footer.tagline':'Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7.',
     'footer.copy':'© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.',
-    'hero.subtitle':'Votre copropriété mérite une <strong>gestion ultra-réactive</strong>. Fini l’attente. Nous propulsons votre syndicat avec une <strong>prise en charge complète</strong> : technique, financière, administrative et humaine. Notre équipe intervient rapidement pour régler vos dossiers et valoriser votre immeuble au quotidien.',
+    'hero.subtitle':'Prise en charge complète ou à la carte : technique, financière, administrative et humaine',
     'lbl.pricing':'Tarification','lbl.plan':'Forfait','lbl.perunit':' /unité/mois',
     'home.pricing.note':'<strong>Soumission gratuite</strong>, réponse sous 24h.',
     'plan.essential':'Essentiel','plan.serenity':'Sérénité','plan.custom':'Sur mesure','plan.discuss':'À discuter',
@@ -1489,11 +1655,11 @@ var translations = {
     'contact.email.val':'<a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a>',
     'cta.title':'Prêt à confier votre copropriété à des experts ?',
     'cta.desc':'<strong>Soumission personnalisée gratuite</strong>, sans engagement. Réponse garantie <strong>sous 24 heures ouvrables</strong>.',
-    'cta.btn':'📋 Obtenir ma soumission gratuite',
+    'cta.btn':'Obtenir ma soumission gratuite',
     'cta.srv.title':'Libérez-vous de la gestion complexe et des nouvelles obligations légales !',
     'cta.srv.desc':'Obtenez votre soumission gratuite en un clic et simplifiez la vie de votre syndicat dès aujourd\'hui.',
     'footer.nav':'Navigation','footer.newsletter':'Infolettre',
-    'ph.email':'Votre courriel','btn.subscribe':"S'abonner →",
+    'ph.email':'Votre courriel','btn.subscribe':"S’abonner →",
     'footer.privacy':'Politique de confidentialité','footer.legal':'Mentions légales',
     'srv.tech.title2':'Gestion technique &amp; entretien',
     'btn.reqsrv':'Demander ce service →',
@@ -1524,7 +1690,7 @@ var translations = {
     'info.card.b.obj':'<strong style="color:var(--txt)">Objectif :</strong> Déterminer le montant nécessaire pour couvrir les réparations majeures et remplacements des parties communes sur 25 ans.',
     'info.card.c.obj':'<strong style="color:var(--txt)">Objectif :</strong> Informer l\'acheteur potentiel de l\'état financier et physique de la copropriété avant l\'achat. Fournie dans les <strong style="color:var(--txt)">15 jours</strong> suivant la demande.',
     'info.sec3.list':'<li><strong style="color:var(--txt)">Acomptes pour condos neufs (art. 1791.1 C.c.Q.) :</strong> Protection renforcée par fidéicommis, plan de garantie, assurance ou cautionnement.</li><li><strong style="color:var(--txt)">Transparence :</strong> Le conseil doit transmettre plus rapidement les procès-verbaux et résolutions.</li><li><strong style="color:var(--txt)">Assurances :</strong> Obligations accrues pour le syndicat.</li><li><strong style="color:var(--txt)">Fonds d\'auto-assurance :</strong> Règles précises sur son utilisation.</li>',
-    'info.sec4.table':'<thead><tr style="background:var(--blue);color:#fff"><th style="padding:12px 16px;text-align:left;font-family:\'Tenor Sans\',serif;font-weight:600;letter-spacing:.04em">Action</th><th style="padding:12px 16px;text-align:left;font-family:\'Tenor Sans\',serif;font-weight:600;letter-spacing:.04em">Copropriétés existantes</th><th style="padding:12px 16px;text-align:left;font-family:\'Tenor Sans\',serif;font-weight:600;letter-spacing:.04em">Nouvelles copropriétés</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--brd)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Carnet d\'entretien + Étude</td><td style="padding:12px 16px;color:var(--muted)"><strong style="color:var(--txt)">15 août 2028</strong> au plus tard</td><td style="padding:12px 16px;color:var(--muted)">Par le promoteur (30 j. ou 6 mois)</td></tr><tr style="border-bottom:1px solid var(--brd);background:var(--cream)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Mise à jour annuelle du carnet</td><td style="padding:12px 16px;color:var(--muted)">Dès production</td><td style="padding:12px 16px;color:var(--muted)">Dès production</td></tr><tr style="border-bottom:1px solid var(--brd)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Révision étude</td><td style="padding:12px 16px;color:var(--muted)">Tous les 5 ans</td><td style="padding:12px 16px;color:var(--muted)">Tous les 5 ans</td></tr><tr style="background:var(--cream)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Attestation (vente)</td><td style="padding:12px 16px;color:var(--muted)">Immédiat (15 jours)</td><td style="padding:12px 16px;color:var(--muted)">Immédiat (15 jours)</td></tr></tbody>',
+    'info.sec4.table':'<thead><tr style="background:var(--blue);color:#fff"><th style="padding:12px 16px;text-align:left;font-family:\'Nunito Sans\',serif;font-weight:600;letter-spacing:.04em">Action</th><th style="padding:12px 16px;text-align:left;font-family:\'Nunito Sans\',serif;font-weight:600;letter-spacing:.04em">Copropriétés existantes</th><th style="padding:12px 16px;text-align:left;font-family:\'Nunito Sans\',serif;font-weight:600;letter-spacing:.04em">Nouvelles copropriétés</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--brd)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Carnet d\'entretien + Étude</td><td style="padding:12px 16px;color:var(--muted)"><strong style="color:var(--txt)">15 août 2028</strong> au plus tard</td><td style="padding:12px 16px;color:var(--muted)">Par le promoteur (30 j. ou 6 mois)</td></tr><tr style="border-bottom:1px solid var(--brd);background:var(--cream)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Mise à jour annuelle du carnet</td><td style="padding:12px 16px;color:var(--muted)">Dès production</td><td style="padding:12px 16px;color:var(--muted)">Dès production</td></tr><tr style="border-bottom:1px solid var(--brd)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Révision étude</td><td style="padding:12px 16px;color:var(--muted)">Tous les 5 ans</td><td style="padding:12px 16px;color:var(--muted)">Tous les 5 ans</td></tr><tr style="background:var(--cream)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Attestation (vente)</td><td style="padding:12px 16px;color:var(--muted)">Immédiat (15 jours)</td><td style="padding:12px 16px;color:var(--muted)">Immédiat (15 jours)</td></tr></tbody>',
     'info.sec5.grid':'<div style="background:var(--cream);border-radius:8px;padding:18px 20px"><p style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px">Syndicat / CA</p><p style="font-size:13.5px;color:var(--muted);line-height:1.75">Commande les documents, met à jour le carnet, fixe les contributions, conserve au registre, fournit l\'attestation.</p></div><div style="background:var(--cream);border-radius:8px;padding:18px 20px"><p style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px">Copropriétaires</p><p style="font-size:13.5px;color:var(--muted);line-height:1.75">Paient les contributions obligatoires, ont droit d\'accès aux documents.</p></div><div style="background:var(--cream);border-radius:8px;padding:18px 20px"><p style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px">Promoteurs</p><p style="font-size:13.5px;color:var(--muted);line-height:1.75">Responsables des premiers documents dans les nouvelles copropriétés.</p></div><div style="background:var(--cream);border-radius:8px;padding:18px 20px"><p style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px">Professionnels</p><p style="font-size:13.5px;color:var(--muted);line-height:1.75">Ingénieurs, architectes, évaluateurs, technologues ou CPA — indépendants.</p></div>',
     'info.sec6.list':'<li><strong style="color:var(--txt)">Augmentation possible des charges :</strong> Pour rattraper un fonds sous-capitalisé (jusqu\'à 10 ans pour atteindre le niveau recommandé).</li><li><strong style="color:var(--txt)">Valeur des unités :</strong> Une copropriété bien gérée (carnet et étude à jour) se vend mieux et à meilleur prix.</li><li><strong style="color:var(--txt)">Responsabilité :</strong> Les administrateurs doivent justifier leurs décisions sur la base des documents professionnels.</li><li><strong style="color:var(--txt)">Non-conformité :</strong> Risque de poursuites, de difficultés de vente et d\'insatisfaction des copropriétaires.</li>',
     'info.sec7.list':'<li>Site SHQ : Copropriété divise</li><li>Guide explicatif SHQ (PDF) : Télécharger ici</li><li>Modèle d\'attestation : Disponible sur le site de la SHQ.</li><li>Texte du Règlement : Gazette officielle du Québec (30 juillet 2025).</li><li>Texte de la Loi 16 : Publications du Québec.</li>',
@@ -1566,7 +1732,7 @@ var translations = {
 
     'srv.cta.title':'Libérez-vous de la gestion complexe et des nouvelles obligations légales !',
     'srv.cta.desc':'Obtenez votre soumission gratuite en un clic et simplifiez la vie de votre syndicat dès aujourd’hui.',
-    'srv.cta.btn':'📋 Demander ma soumission gratuite',
+    'srv.cta.btn':'Demander ma soumission gratuite',
 
     'btn.contact':'Nous contacter →',
 
@@ -1594,17 +1760,32 @@ var translations = {
   en: {
     'nav.home':'Home','nav.services':'Services','nav.pricing':'Pricing',
     'nav.law16':'Law 16','nav.blog':'Blog','nav.contact':'Contact',
-    'nav.devis':'📋 Free Quote','nav.devis.short':'Free Quote',
+    'nav.devis':'Free Quote','nav.devis.short':'Free Quote',
     'mob.devis':'Free Quote',
-    'hero.brand':'Quatre Piliers','hero.title.rest':'simplifies your condominium management','hero.title1':'Condominium Management',
-    'hero.pill1':'⚡ Emergency 24/7','hero.pill2':'💬 Response <24h',
-    'hero.pill3':'📊 Transparent','hero.pill4':'✅ Law 16 Compliant',
-    'hero.btn.quote':'📋 Get a Free Quote',
+    'hero.title':'Your condominium management, entrusted to experts',
+    'hero.pill1':'Emergency 24/7','hero.pill2':'Response <24h',
+    'hero.pill3':'Transparent','hero.pill4':'Law 16 Compliant',
+    'hero.btn.quote':'Get a Free Quote',
+    'diag.banner.pill':'New',
+    'diag.banner.text':'Bill 16 — Are you compliant?',
+    'diag.banner.cta':'Free diagnostic →',
+    'diag.hero.btn':'Free Law 16 Diagnostic — 2 minutes',
+    'diag.home.card.title':'Law 16 Compliance Diagnostic — Free',
+    'diag.home.card.desc':'10 questions · AI-personalized report · Instant results',
+    'diag.info.card.title':'Is your condo association ready for August 2028?',
+    'diag.info.card.desc':'Complete the diagnostic in 2 minutes — AI-personalized report, 100% free',
+    'diag.info.btn':'Free diagnostic — 2 min',
     'hero.btn.services':'Discover our services →',
     'hero.btn.pricing':'View our pricing →',
-    'strip.title':'Responsiveness: our primary commitment',
-    'strip.desc':'Available <strong>7 days a week, 24h a day</strong> for emergencies. Your condo never stops — neither do we.',
-    'strip.stat1':'Emergencies','strip.stat2':'Standard responses',
+    'eng.lbl':'Our commitments',
+    'eng.title':'Six values at the heart of every mandate',
+    'eng.desc':'Our approach is built on concrete principles that guide every action, every decision and every interaction with your corporation.',
+    'eng.1.title':'Responsiveness','eng.1.desc':'Fast responses and effective solutions for every situation.',
+    'eng.2.title':'Transparency','eng.2.desc':'Clear communication and access to information at all times.',
+    'eng.3.title':'Rigour','eng.3.desc':'Structured processes and effective controls for optimal management.',
+    'eng.4.title':'Proximity','eng.4.desc':'A team that is available and attentive to your needs.',
+    'eng.5.title':'Value Creation','eng.5.desc':'Proactive management to ensure the longevity and value of your asset.',
+    'eng.6.title':'Law 16 Compliance','eng.6.desc':'We ensure compliance with Law 16 requirements and best practices.',
     'home.srv.lbl':'Our four pillars of service',
     'home.srv.title':'Complete management on all fronts',
     'home.srv.desc':'Four integrated domains covering every aspect of your condo corporation — with the responsiveness that sets us apart.',
@@ -1653,7 +1834,7 @@ var translations = {
     'tar.ser.desc':'Our most popular plan. It relieves the board of paperwork and day-to-day vendor management, while leaving strategic decisions to administrators. Includes a dedicated manager for long-term asset planning (Law 16) plus a software platform.',
     'tar.cus.desc':'Take advantage of an exclusive and scalable service offer: choose your services à la carte or opt for enhanced support with recurring services. Our flexibility lets you adjust your plan at any time to perfectly meet your condo’s priorities.',
     'tar.footnote':'Rates are per unit per month and may vary based on the number of units and services included.',
-    'btn.custquote':'📋 Request my custom quote',
+    'btn.custquote':'Request my custom quote',
     'page.info.h1':'Law 16',
     'page.info.sub':'Complete guide to Law 16 and the management of divided co-ownerships in Quebec.',
     'page.contact.h1':'Contact us',
@@ -1668,7 +1849,7 @@ var translations = {
     'form.ok':'✅ Thank you! We will contact you within 24 business hours.',
     'footer.tagline':'Expert and ultra-responsive condominium manager in Greater Montreal. Emergencies 24/7.',
     'footer.copy':'© 2025 Quatre Piliers Gestion Copropriété Inc. All rights reserved.',
-    'hero.subtitle':'Your condo deserves <strong>ultra-responsive management</strong>. No more waiting. We propel your corporation with a <strong>complete takeover</strong>: technical, financial, administrative and human. Our team acts quickly to handle your files and enhance your building every day.',
+    'hero.subtitle':'Complete or à-la-carte management: technical, financial, administrative and human',
     'lbl.pricing':'Pricing','lbl.plan':'Plan','lbl.perunit':' /unit/month',
     'home.pricing.note':'<strong>Free quote</strong>, response within 24h.',
     'plan.essential':'Essential','plan.serenity':'Serenity','plan.custom':'Custom','plan.discuss':'To discuss',
@@ -1680,7 +1861,7 @@ var translations = {
     'contact.email.val':'<a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a>',
     'cta.title':'Ready to entrust your condo to experts?',
     'cta.desc':'<strong>Free personalized quote</strong>, no obligation. Response guaranteed <strong>within 24 business hours</strong>.',
-    'cta.btn':'📋 Get my free quote',
+    'cta.btn':'Get my free quote',
     'cta.srv.title':'Free yourself from complex management and new legal obligations!',
     'cta.srv.desc':'Get your free quote in one click and simplify your condo corporation management today.',
     'footer.nav':'Navigation','footer.newsletter':'Newsletter',
@@ -1715,7 +1896,7 @@ var translations = {
     'info.card.b.obj':'<strong style="color:var(--txt)">Objective:</strong> Determine the amount needed to cover major repairs and replacements of common areas over 25 years.',
     'info.card.c.obj':'<strong style="color:var(--txt)">Objective:</strong> Inform the potential buyer of the financial and physical state of the co-ownership before purchase. Provided within <strong style="color:var(--txt)">15 days</strong> of request.',
     'info.sec3.list':'<li><strong style="color:var(--txt)">Advances for new condos (art. 1791.1 C.C.Q.):</strong> Enhanced protection through trust, warranty plan, insurance or surety bond.</li><li><strong style="color:var(--txt)">Transparency:</strong> The board must transmit minutes and resolutions more quickly.</li><li><strong style="color:var(--txt)">Insurance:</strong> Increased obligations for the corporation.</li><li><strong style="color:var(--txt)">Self-insurance fund:</strong> Specific rules on its use.</li>',
-    'info.sec4.table':'<thead><tr style="background:var(--blue);color:#fff"><th style="padding:12px 16px;text-align:left;font-family:\'Tenor Sans\',serif;font-weight:600;letter-spacing:.04em">Action</th><th style="padding:12px 16px;text-align:left;font-family:\'Tenor Sans\',serif;font-weight:600;letter-spacing:.04em">Existing condos</th><th style="padding:12px 16px;text-align:left;font-family:\'Tenor Sans\',serif;font-weight:600;letter-spacing:.04em">New condos</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--brd)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Maintenance log + Study</td><td style="padding:12px 16px;color:var(--muted)"><strong style="color:var(--txt)">August 15, 2028</strong> at latest</td><td style="padding:12px 16px;color:var(--muted)">By developer (30 days or 6 months)</td></tr><tr style="border-bottom:1px solid var(--brd);background:var(--cream)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Annual log update</td><td style="padding:12px 16px;color:var(--muted)">Upon production</td><td style="padding:12px 16px;color:var(--muted)">Upon production</td></tr><tr style="border-bottom:1px solid var(--brd)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Study revision</td><td style="padding:12px 16px;color:var(--muted)">Every 5 years</td><td style="padding:12px 16px;color:var(--muted)">Every 5 years</td></tr><tr style="background:var(--cream)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Attestation (sale)</td><td style="padding:12px 16px;color:var(--muted)">Immediate (15 days)</td><td style="padding:12px 16px;color:var(--muted)">Immediate (15 days)</td></tr></tbody>',
+    'info.sec4.table':'<thead><tr style="background:var(--blue);color:#fff"><th style="padding:12px 16px;text-align:left;font-family:\'Nunito Sans\',serif;font-weight:600;letter-spacing:.04em">Action</th><th style="padding:12px 16px;text-align:left;font-family:\'Nunito Sans\',serif;font-weight:600;letter-spacing:.04em">Existing condos</th><th style="padding:12px 16px;text-align:left;font-family:\'Nunito Sans\',serif;font-weight:600;letter-spacing:.04em">New condos</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--brd)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Maintenance log + Study</td><td style="padding:12px 16px;color:var(--muted)"><strong style="color:var(--txt)">August 15, 2028</strong> at latest</td><td style="padding:12px 16px;color:var(--muted)">By developer (30 days or 6 months)</td></tr><tr style="border-bottom:1px solid var(--brd);background:var(--cream)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Annual log update</td><td style="padding:12px 16px;color:var(--muted)">Upon production</td><td style="padding:12px 16px;color:var(--muted)">Upon production</td></tr><tr style="border-bottom:1px solid var(--brd)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Study revision</td><td style="padding:12px 16px;color:var(--muted)">Every 5 years</td><td style="padding:12px 16px;color:var(--muted)">Every 5 years</td></tr><tr style="background:var(--cream)"><td style="padding:12px 16px;color:var(--txt);font-weight:600">Attestation (sale)</td><td style="padding:12px 16px;color:var(--muted)">Immediate (15 days)</td><td style="padding:12px 16px;color:var(--muted)">Immediate (15 days)</td></tr></tbody>',
     'info.sec5.grid':'<div style="background:var(--cream);border-radius:8px;padding:18px 20px"><p style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px">Corporation / Board</p><p style="font-size:13.5px;color:var(--muted);line-height:1.75">Orders documents, updates log, sets contributions, keeps in registry, provides attestation.</p></div><div style="background:var(--cream);border-radius:8px;padding:18px 20px"><p style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px">Unit owners</p><p style="font-size:13.5px;color:var(--muted);line-height:1.75">Pay mandatory contributions, have right of access to documents.</p></div><div style="background:var(--cream);border-radius:8px;padding:18px 20px"><p style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px">Developers</p><p style="font-size:13.5px;color:var(--muted);line-height:1.75">Responsible for initial documents in new condos.</p></div><div style="background:var(--cream);border-radius:8px;padding:18px 20px"><p style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px">Professionals</p><p style="font-size:13.5px;color:var(--muted);line-height:1.75">Engineers, architects, appraisers, technologists or CPAs — independent.</p></div>',
     'info.sec6.list':'<li><strong style="color:var(--txt)">Possible fee increase:</strong> To catch up on an undercapitalized fund (up to 10 years to reach recommended level).</li><li><strong style="color:var(--txt)">Unit value:</strong> A well-managed condo (up-to-date log and study) sells better and at a better price.</li><li><strong style="color:var(--txt)">Liability:</strong> Administrators must justify decisions based on professional documents.</li><li><strong style="color:var(--txt)">Non-compliance:</strong> Risk of lawsuits, difficulty selling and unit owner dissatisfaction.</li>',
     'info.sec7.list':'<li>SHQ website: Divided co-ownership</li><li>SHQ explanatory guide (PDF): Download here</li><li>Attestation template: Available on the SHQ website.</li><li>Regulation text: Quebec Official Gazette (July 30, 2025).</li><li>Law 16 text: Publications du Québec.</li>',
@@ -1756,7 +1937,7 @@ var translations = {
 
     'srv.cta.title':'Free yourself from complex management and new legal obligations!',
     'srv.cta.desc':'Get your free quote in one click and simplify the life of your condo corporation today.',
-    'srv.cta.btn':'📋 Request my free quote',
+    'srv.cta.btn':'Request my free quote',
 
     'btn.contact':'Contact us →',
 
@@ -1813,7 +1994,13 @@ function setLang(lang) {
   // Refresh blog cards if open (they have FR/EN versions)
   if (typeof blogAfficherListe === 'function') {
     var bl = document.getElementById('blog-liste');
-    if (bl && bl.style.display !== 'none') blogAfficherListe();
+    var ba = document.getElementById('blog-article');
+    // Toujours mettre à jour le cache de la liste
+    blogAfficherListe();
+    // Si un article est ouvert, le re-rendre dans la nouvelle langue
+    if (ba && ba.style.display !== 'none' && window._currentBlogId) {
+      blogOuvrirArticle(window._currentBlogId);
+    }
   }
 }
 /* ===== END i18n ===== */
@@ -1871,13 +2058,24 @@ function _heroTypewriterOLD(lang){
   setTimeout(typeGold, 800);
 }
 heroTypewriter('fr');
+
+function openDiagnostic(){
+  var f=document.getElementById('diagFrame');
+  if(!f.src||f.src==='about:blank'||!f.src.includes('diagnostic'))f.src='diagnostic.html';
+  document.getElementById('diagOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDiagnostic(){
+  document.getElementById('diagOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
 </script>
 
 <!-- MODAL DEVIS -->
 <div class="overlay" id="modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;align-items:center;justify-content:center;padding:20px">
 <div class="modal" style="background:#fff;border-radius:12px;padding:36px 32px;max-width:520px;width:100%;position:relative;max-height:90vh;overflow-y:auto">
 <button class="modal-x" onclick="closeModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted)">×</button>
-<h3 style="font-family:'Tenor Sans',serif;font-size:20px;color:var(--blue);margin-bottom:6px" data-i18n="modal.title">Soumission gratuite &amp; sans engagement</h3>
+<h3 style="font-family:'Nunito Sans',sans-serif;font-size:20px;color:var(--blue);margin-bottom:6px" data-i18n="modal.title">Soumission gratuite &amp; sans engagement</h3>
 <p style="font-size:13px;color:var(--muted);margin-bottom:20px" data-i18n="modal.sub">Complétez ce formulaire et nous vous répondons sous 24 heures ouvrables.</p>
 <div class="fg"><label data-i18n="form.syndic.full">Nom du syndicat *</label><input data-i18n-ph="ph.syndic.full" placeholder="Ex. : Syndicat Les Érables" type="text"/></div>
 <div class="fg-row"><div class="fg"><label data-i18n="form.contact">Contact *</label><input data-i18n-ph="ph.name" placeholder="Prénom Nom" type="text"/></div><div class="fg"><label data-i18n="form.nbunits">Nb. unités *</label><input placeholder="40" type="number"/></div></div>
@@ -1888,5 +2086,12 @@ heroTypewriter('fr');
 </div>
 </div>
 
+<!-- DIAGNOSTIC MODAL -->
+<div class="diag-overlay" id="diagOverlay" onclick="if(event.target===this)closeDiagnostic()">
+  <div class="diag-wrap">
+    <button class="diag-close-btn" onclick="closeDiagnostic()">✕</button>
+    <iframe id="diagFrame" src="" class="diag-iframe"></iframe>
+  </div>
+</div>
 </body>
 </html>
