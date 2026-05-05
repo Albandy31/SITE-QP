@@ -98,7 +98,7 @@ input::placeholder{color:#aaa}
 .err-title{font-size:13px;font-weight:700;color:#791F1F;margin-bottom:4px}
 .err-msg{font-size:12px;color:#791F1F;opacity:.8}
 .recap-box{display:flex;align-items:center;gap:10px;background:var(--cream);border:1px solid var(--brd);border-radius:8px;padding:12px 16px;margin-bottom:.75rem}
-#turnstile-widget{position:fixed;left:-9999px;top:-9999px;visibility:hidden}
+#turnstile-widget{position:fixed;bottom:20px;right:20px;z-index:9999}
 </style>
 </head>
 <body>
@@ -128,13 +128,11 @@ let turnstileWidgetId=null, turnstileToken="";
 window.onloadTurnstile = function(){
   turnstileWidgetId = window.turnstile.render('#turnstile-widget', {
     sitekey: TURNSTILE_KEY,
-    size: 'invisible',
-    execution: 'execute',
+    appearance: 'interaction-only',
     callback: t => { turnstileToken = t; },
     'error-callback': () => { turnstileToken = ''; },
-    'expired-callback': () => { turnstileToken = ''; window.turnstile.execute(turnstileWidgetId); },
+    'expired-callback': () => { turnstileToken = ''; },
   });
-  window.turnstile.execute(turnstileWidgetId);
 };
 
 function getNiveauLocal(s){
@@ -172,8 +170,6 @@ function validate(){
 
 async function getTurnstileToken(){
   if(!window.turnstile||turnstileWidgetId===null) throw new Error("Vérification anti-bot indisponible. Rechargez la page.");
-  if(turnstileToken) return turnstileToken;
-  window.turnstile.execute(turnstileWidgetId);
   for(let i=0;i<300;i++){
     if(turnstileToken) return turnstileToken;
     await new Promise(r=>setTimeout(r,100));
