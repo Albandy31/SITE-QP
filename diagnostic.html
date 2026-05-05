@@ -132,8 +132,9 @@ window.onloadTurnstile = function(){
     execution: 'execute',
     callback: t => { turnstileToken = t; },
     'error-callback': () => { turnstileToken = ''; },
-    'expired-callback': () => { turnstileToken = ''; },
+    'expired-callback': () => { turnstileToken = ''; window.turnstile.execute(turnstileWidgetId); },
   });
+  window.turnstile.execute(turnstileWidgetId);
 };
 
 function getNiveauLocal(s){
@@ -171,10 +172,9 @@ function validate(){
 
 async function getTurnstileToken(){
   if(!window.turnstile||turnstileWidgetId===null) throw new Error("Vérification anti-bot indisponible. Rechargez la page.");
-  turnstileToken="";
-  window.turnstile.reset(turnstileWidgetId);
+  if(turnstileToken) return turnstileToken;
   window.turnstile.execute(turnstileWidgetId);
-  for(let i=0;i<150;i++){
+  for(let i=0;i<300;i++){
     if(turnstileToken) return turnstileToken;
     await new Promise(r=>setTimeout(r,100));
   }
