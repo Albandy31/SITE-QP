@@ -184,12 +184,11 @@ async function nextStep(){
   phase="loading";
   render();
   try{
-    const token = await getTurnstileToken();
     const honeypot = document.getElementById("hp-website")?.value || "";
     const res = await fetch(API_URL,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({ answers: ans, turnstile_token: token, website: honeypot })
+      body:JSON.stringify({ answers: ans, turnstile_token: "", website: honeypot })
     });
     if(!res.ok){
       const e = await res.json().catch(()=>({}));
