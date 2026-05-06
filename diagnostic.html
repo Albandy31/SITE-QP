@@ -96,6 +96,9 @@ input::placeholder{color:#aaa}
 .cta-contact{font-size:11px;color:rgba(255,255,255,.55);text-align:center;margin-top:10px}
 .cta-contact a{color:rgba(255,255,255,.7);text-decoration:none}
 .restart-btn{font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;font-family:inherit;margin-top:.5rem;font-weight:600}
+.page-footer{text-align:center;margin-top:1.25rem;font-size:11px;color:var(--muted)}
+.page-footer a{color:var(--muted);text-decoration:none;font-weight:600}
+.page-footer a:hover{color:var(--blue)}
 .err-box{background:#FCEBEB;border:1px solid #F7C1C1;border-radius:8px;padding:1rem 1.25rem;margin-bottom:1rem}
 .err-title{font-size:13px;font-weight:700;color:#791F1F;margin-bottom:4px}
 .err-msg{font-size:12px;color:#791F1F;opacity:.8}
@@ -339,6 +342,7 @@ function render(){
       <button class="btn ${isLast?'btn-cta':'btn-next'}" onclick="nextStep()">${isLast?"Valider":"Continuer"}</button>
       <span class="step-count">${step+1} / ${QS.length}</span>
     </div>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
   </div>`;
 }
 
