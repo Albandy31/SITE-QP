@@ -282,7 +282,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 @keyframes heroBlink{0%,100%{opacity:1}50%{opacity:0}}
 
 /* DIAGNOSTIC BANNER */
-.diag-banner{background:var(--blue-dk);color:#fff;text-align:center;padding:9px 16px;font-size:12.5px;font-weight:700;letter-spacing:.03em;position:relative;z-index:1001;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.diag-banner{background:var(--blue-dk);color:#fff;text-align:left;padding:9px 3%;font-size:12.5px;font-weight:700;letter-spacing:.03em;position:relative;z-index:1001;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:flex-start;gap:8px}
 .diag-banner:hover{background:#111f4a}
 .diag-banner-pill{background:rgba(232,184,0,.2);border:1px solid rgba(232,184,0,.5);color:#F5CC00;font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0}
 .diag-banner-cta{color:#F5CC00;text-decoration:underline;white-space:nowrap}
@@ -302,8 +302,8 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 .diag-cta-text strong{display:block;color:#fff;font-size:14.5px;font-weight:800;margin-bottom:3px}
 .diag-cta-text span{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.5}
 .diag-cta-arrow{margin-left:auto;color:var(--gold);font-size:20px;flex-shrink:0}
-.diag-txt-mob{display:none}
-@media(max-width:768px){.diag-banner{font-size:11.5px;padding:8px 12px}.diag-cta-card{flex-wrap:wrap;gap:14px}.diag-cta-arrow{display:none}.diag-txt-desk{display:none}.diag-txt-mob{display:inline}}
+.diag-txt-mob{display:none}.diag-cta-mob{display:none}
+@media(max-width:768px){.diag-banner{font-size:11.5px;padding:8px 12px}.diag-cta-card{flex-wrap:wrap;gap:14px}.diag-cta-arrow{display:none}.diag-txt-desk{display:none}.diag-txt-mob{display:inline}.diag-banner-pill{display:none}.diag-cta-desk{display:none}.diag-cta-mob{display:inline}}
 </style>
 <link rel="icon" type="image/png" href="logo.png"/>
 <link rel="apple-touch-icon" href="logo.png"/>
@@ -311,9 +311,10 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <body>
 <!-- DIAGNOSTIC BANNER -->
 <div class="diag-banner" onclick="openDiagnostic()">
+  <div id="diag-banner-spacer" style="flex-shrink:0"></div>
   <span class="diag-banner-pill" data-i18n="diag.banner.pill">Nouveau</span>
   <span class="diag-txt-desk" data-i18n="diag.banner.text">Loi 16 — Êtes-vous en conformité ?</span><span class="diag-txt-mob" data-i18n="diag.banner.text.mob">Loi 16 · Êtes-vous conforme ?</span>
-  <span class="diag-banner-cta" data-i18n="diag.banner.cta">Diagnostic gratuit →</span>
+  <span class="diag-banner-cta" data-i18n="diag.banner.cta">Évaluation gratuite en 2 minutes →</span>
 </div>
 <!-- NAV -->
 <nav id="mainNav">
@@ -365,8 +366,8 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <p class="hero-sub" style="text-align:center;max-width:760px;font-size:16px;font-weight:400;color:rgba(255,255,255,.88);line-height:1.85;margin-left:auto;margin-right:auto;" data-i18n="hero.subtitle">Prise en charge complète ou à la carte : technique, financière, administrative et humaine</p>
 <div style="margin-top:32px;display:flex;justify-content:center;">
 <div style="display:inline-flex;flex-direction:column;gap:14px;">
-<a class="btn-primary" onclick="openModal()" style="justify-content:center;"><span data-i18n="hero.btn.quote">Obtenir une soumission gratuite</span></a>
-<a class="btn-outline" onclick="openDiagnostic()" style="justify-content:center;"><span data-i18n="diag.hero.btn">Diagnostic conformité loi 16</span></a>
+<a class="btn-primary" onclick="showPage('tarification')" style="justify-content:center;"><span data-i18n="hero.btn.quote">Découvrez nos forfaits et nos tarifs</span></a>
+<a class="btn-outline" onclick="openDiagnostic()" style="justify-content:center;"><span data-i18n="diag.hero.btn">Évaluez votre conformité à la loi 16</span></a>
 </div>
 </div>
 </div>
@@ -514,7 +515,6 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div class="shdr" style="margin-bottom:52px">
 <div class="lbl" data-i18n="lbl.pricing">Tarification</div>
 <h2 class="stitle" data-i18n="home.pricing.title">Des forfaits adaptés à chaque syndicat</h2>
-<p style="color:var(--muted);font-size:15.5px;line-height:1.75;max-width:none" data-i18n-html="home.pricing.note"><strong>Soumission gratuite</strong>, réponse sous 24h.</p>
 </div>
 <div class="pg">
 <div class="pc">
@@ -665,7 +665,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </ul></div>
 <div class="ft-col"><h4 data-i18n="footer.newsletter">Infolettre</h4>
 <div class="ft-nl"><input data-i18n-ph="ph.email" placeholder="Votre courriel" type="email"/><button class="btn-ft-nl" onclick="submitForm(this)" data-i18n="btn.subscribe">S'abonner →</button></div>
-<div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div>
+<div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div>
 </div>
 </div>
 <div class="ft-btm">
@@ -768,7 +768,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><a href="javascript:void(0)" onclick="showPage('blog')" data-i18n="nav.blog">Blog</a></li>
 <li><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></li>
 </ul></div>
-<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
+<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
 <div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
@@ -798,7 +798,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div class="tpc tpc-ft" style="background:var(--blue-dk);border:1.5px solid var(--blue-dk);border-radius:10px;padding:36px 28px;position:relative;display:flex;flex-direction:column;box-shadow:0 18px 54px rgba(45,74,95,.28);transition:box-shadow .4s ease,border-color .4s ease" onmouseover="this.style.boxShadow='0 0 0 2px var(--gold),0 0 28px 6px rgba(240,165,0,.4),0 20px 50px rgba(45,74,95,.3)';this.style.borderColor='var(--gold)'" onmouseout="this.style.boxShadow='0 18px 54px rgba(45,74,95,.28)';this.style.borderColor='var(--blue-dk)'">
 <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:800;padding:5px 16px;border-radius:20px;letter-spacing:.06em;white-space:nowrap;font-family:'Nunito Sans',sans-serif" data-i18n="pc.badge">Plus populaire</div>
 <div style="margin-bottom:20px"><div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:rgba(240,165,0,.7);margin-bottom:4px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div><div style="font-size:24px;font-family:'Nunito Sans',sans-serif;color:#fff;font-weight:600;margin-bottom:4px" data-i18n="plan.serenity">Sérénité</div><div style="font-size:36px;font-weight:700;color:var(--gold);font-family:'Nunito Sans',sans-serif;line-height:1;margin-bottom:14px">35$<span style="font-size:13px;color:rgba(255,255,255,.55);font-family:'Nunito Sans',sans-serif;font-weight:500" data-i18n="lbl.perunit"> /unité/mois</span></div></div>
-<p style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.72;margin-bottom:22px;flex:1" data-i18n="tar.ser.desc">La formule la plus populaire. Elle décharge le CA de la paperasse et de la gestion des fournisseurs quotidiens, tout en laissant les décisions stratégiques aux administrateurs. Sa gestion inclut un gestionnaire dédié qui s'occupe de la planification à long terme des actifs (Loi 16) en plus d'une plateforme logicielle.</p>
+<p style="font-size:13px;color:rgba(255,255,255,.72);line-height:1.72;margin-bottom:22px;flex:1" data-i18n="tar.ser.desc">La formule tout-en-un la plus populaire. Elle libère le CA des tâches administratives et de la coordination quotidienne des fournisseurs. Elle comprend un gestionnaire dédié pour la planification à long terme des actifs (Loi 16) en plus d'une plateforme logicielle intégrée.</p>
 <div style="font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.45);margin-bottom:14px;font-family:'Nunito Sans',sans-serif" data-i18n="lbl.includes">Ce forfait inclut</div>
 <ul style="list-style:none;flex:1;margin-bottom:28px">
 <li style="display:flex;gap:10px;padding:8px 0;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,.08)"><span style="color:var(--gold);font-weight:700">✓</span><span style="color:rgba(255,255,255,.9)" data-i18n="srv.admin.title">Administratif &amp; juridique</span></li>
@@ -840,7 +840,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><a href="javascript:void(0)" onclick="showPage('blog')" data-i18n="nav.blog">Blog</a></li>
 <li><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></li>
 </ul></div>
-<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
+<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
 <div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
@@ -855,6 +855,17 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </div>
 <section style="padding:72px 5%">
 <div class="si" style="max-width:900px">
+
+<div class="diag-cta-card" onclick="openDiagnostic()" style="margin-bottom:36px">
+  <div class="diag-cta-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B800" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+  </div>
+  <div class="diag-cta-text">
+    <strong data-i18n="diag.info.card.title">Votre syndicat est-il prêt pour août 2028 ?</strong>
+    <span data-i18n="diag.info.card.desc">Faites le diagnostic en 2 minutes — rapport personnalisé par IA, 100 % gratuit</span>
+  </div>
+  <div class="diag-cta-arrow">→</div>
+</div>
 
 <div style="background:rgba(240,165,0,.10);border:1.5px solid rgba(240,165,0,.38);border-radius:8px;padding:14px 20px;margin-bottom:36px;font-size:13px;color:var(--muted);line-height:1.7">
 <span data-i18n-html="info.update"><strong style="color:var(--blue)">Mise à jour : mars 2026</strong> – Basé sur le Règlement établissant diverses règles en matière de copropriété divise, en vigueur depuis le <strong style="color:var(--txt)">14 août 2025</strong>.</span>
@@ -1001,11 +1012,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 </table>
 </div>
 
-
-<div class="diag-cta-card" onclick="openDiagnostic()" style="margin-bottom:40px">
-  <div class="diag-cta-icon">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B800" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-  </div>
+<div class="diag-cta-card" onclick="openDiagnostic()" style="margin-bottom:36px">
   <div class="diag-cta-text">
     <strong data-i18n="diag.info.card.title">Votre syndicat est-il prêt pour août 2028 ?</strong>
     <span data-i18n="diag.info.card.desc">Faites le diagnostic en 2 minutes — rapport personnalisé par IA, 100 % gratuit</span>
@@ -1060,9 +1067,9 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center">
   <button onclick="openDiagnostic()" style="background:var(--gold);color:#212B3C;border:none;padding:13px 26px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:all .25s">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-    <span data-i18n="diag.info.btn">Diagnostic gratuit — 2 min</span>
+    <span data-i18n="diag.info.btn">Évaluation conformité loi 16 gratuite</span>
   </button>
-  <button onclick="openModal()" class="btn-primary" style="background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.4);color:#fff" data-i18n="info.cta.btn">Demander une évaluation gratuite →</button>
+  <button onclick="openModal()" class="btn-primary" style="background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.4);color:#fff" data-i18n="info.cta.btn">Demander une consultation gratuite →</button>
 </div>
 </div>
 
@@ -1079,7 +1086,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><a href="javascript:void(0)" onclick="showPage('blog')" data-i18n="nav.blog">Blog</a></li>
 <li><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></li>
 </ul></div>
-<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
+<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
 <div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
@@ -1118,7 +1125,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><a href="javascript:void(0)" onclick="showPage('blog')" data-i18n="nav.blog">Blog</a></li>
 <li><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></li>
 </ul></div>
-<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
+<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
 <div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
@@ -1146,7 +1153,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 <li><a href="javascript:void(0)" onclick="showPage('blog')" data-i18n="nav.blog">Blog</a></li>
 <li><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></li>
 </ul></div>
-<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
+<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
 <div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></div></div>
 </footer>
@@ -1282,7 +1289,7 @@ document.addEventListener('DOMContentLoaded', function() { blogAfficherListe(); 
 <li><a href="javascript:void(0)" onclick="showPage('blog')" data-i18n="nav.blog">Blog</a></li>
 <li><a href="javascript:void(0)" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a></li>
 </ul></div>
-<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 514-839-2494<br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
+<div class="ft-col"><h4 data-i18n="nav.contact">Contact</h4><div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a></div></div>
 </div>
 <div class="ft-btm"><span data-i18n="footer.copy">© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.</span><div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div><div class="ft-btm-lnk"><a href="javascript:void(0)" onclick="showPage('accueil')" data-i18n="nav.home">Accueil</a></div></div>
 </footer>
@@ -1355,7 +1362,7 @@ document.addEventListener('DOMContentLoaded', function() { blogAfficherListe(); 
     </button>
   </div>
   <div style="text-align:center;padding:8px;font-size:10px;color:var(--muted);background:#fff;border-top:1px solid var(--brd);">
-    ✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a> &nbsp;·&nbsp; 📞 514-839-2494
+    ✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a>
   </div>
 </div>
 
@@ -1559,17 +1566,17 @@ var translations = {
     'hero.title':'La gestion de votre copropriété, confiée à des experts',
     'hero.pill1':'Urgence 24/7','hero.pill2':'Réponse <24h',
     'hero.pill3':'Transparent','hero.pill4':'Conformité Loi 16',
-    'hero.btn.quote':'Obtenir une soumission gratuite',
+    'hero.btn.quote':'Découvrez nos forfaits et nos tarifs',
     'diag.banner.pill':'Nouveau',
     'diag.banner.text':'Loi 16 — Êtes-vous en conformité ?',
     'diag.banner.text.mob':'Loi 16 · Êtes-vous conforme ?',
-    'diag.banner.cta':'Diagnostic gratuit →',
-    'diag.hero.btn':'Diagnostic conformité loi 16',
+    'diag.banner.cta':'Évaluation gratuite en 2 minutes →',
+    'diag.hero.btn':'Évaluez votre conformité à la loi 16',
     'diag.home.card.title':'Diagnostic de conformité Loi 16 — Gratuit',
     'diag.home.card.desc':'10 questions · Rapport personnalisé par IA · Résultat immédiat',
     'diag.info.card.title':'Votre syndicat est-il prêt pour août 2028 ?',
     'diag.info.card.desc':'Faites le diagnostic en 2 minutes — rapport personnalisé par IA, 100 % gratuit',
-    'diag.info.btn':'Diagnostic gratuit — 2 min',
+    'diag.info.btn':'Évaluation conformité loi 16 gratuite',
     'hero.btn.services':'Découvrir nos services →',
     'hero.btn.pricing':'Voir nos tarifs →',
     'eng.lbl':'Nos engagements',
@@ -1698,7 +1705,7 @@ var translations = {
     'info.rec':'<strong style="color:var(--blue)">Recommandation :</strong> Consultez un avocat spécialisé en copropriété ou un gestionnaire certifié (RGCQ) pour une analyse adaptée à votre immeuble. Ce guide est une synthèse vulgarisée ; le texte officiel du Règlement et du Code civil prime en cas de doute.',
     'info.cta.title':'Vous gérez un syndicat ? Vous préparez une vente ?',
     'info.cta.desc':'La Loi 16 marque le début d\'une ère de gestion professionnelle et transparente. Bien appliquée, elle protège votre patrimoine collectif.',
-    'info.cta.btn':'Demander une évaluation gratuite →',
+    'info.cta.btn':'Demander une consultation gratuite →',
     'srv.p1.li1':'Organisation et tenue des assemblées générales',
     'srv.p1.li2':'Convocation et animation des réunions du conseil d\'administration',
     'srv.p1.li3':'Mise à jour et gestion de la déclaration de copropriété et du registre des copropriétaires',
@@ -1776,7 +1783,7 @@ var translations = {
     'diag.home.card.desc':'10 questions · AI-personalized report · Instant results',
     'diag.info.card.title':'Is your condo association ready for August 2028?',
     'diag.info.card.desc':'Complete the diagnostic in 2 minutes — AI-personalized report, 100% free',
-    'diag.info.btn':'Free diagnostic — 2 min',
+    'diag.info.btn':'Free Bill 16 compliance evaluation',
     'hero.btn.services':'Discover our services →',
     'hero.btn.pricing':'View our pricing →',
     'eng.lbl':'Our commitments',
@@ -1905,7 +1912,7 @@ var translations = {
     'info.rec':'<strong style="color:var(--blue)">Recommendation:</strong> Consult a lawyer specializing in co-ownership or a certified manager (RGCQ) for an analysis tailored to your building. This guide is a simplified summary; the official text of the Regulation and the Civil Code takes precedence in case of doubt.',
     'info.cta.title':'Managing a corporation? Preparing a sale?',
     'info.cta.desc':'Bill 16 marks the beginning of an era of professional and transparent management. When properly applied, it protects your collective heritage.',
-    'info.cta.btn':'Request a free assessment →',
+    'info.cta.btn':'Request a free consultation →',
     'srv.p1.li1':'Organization and management of general meetings',
     'srv.p1.li2':'Scheduling and facilitating board of directors meetings',
     'srv.p1.li3':'Updating and managing the declaration of co-ownership and the unit owners registry',
@@ -2071,6 +2078,20 @@ function closeDiagnostic(){
   document.getElementById('diagOverlay').classList.remove('open');
   document.body.style.overflow='';
 }
+
+/* ALIGN BANNER PILL ABOVE ACCUEIL */
+function alignBannerToNav(){
+  var accueil=document.getElementById('nav-accueil');
+  var banner=document.querySelector('.diag-banner');
+  var spacer=document.getElementById('diag-banner-spacer');
+  if(!accueil||!banner||!spacer)return;
+  if(window.innerWidth<=768){spacer.style.width='0px';return;}
+  var bannerPL=parseFloat(getComputedStyle(banner).paddingLeft)||0;
+  var offset=accueil.getBoundingClientRect().left-banner.getBoundingClientRect().left-bannerPL;
+  spacer.style.width=Math.max(0,offset)+'px';
+}
+window.addEventListener('load',alignBannerToNav);
+window.addEventListener('resize',alignBannerToNav);
 </script>
 
 <!-- MODAL DEVIS -->
@@ -2092,6 +2113,7 @@ function closeDiagnostic(){
 <div class="diag-overlay" id="diagOverlay" onclick="if(event.target===this)closeDiagnostic()">
   <div class="diag-wrap">
     <button class="diag-close-btn" onclick="closeDiagnostic()">✕</button>
+    <button class="diag-close-btn" onclick="window.open('https://quatrepilliers.ca/diagnostic','_blank')" style="right:auto;left:12px;width:auto;padding:0 10px;border-radius:17px;font-size:13px;gap:4px" title="Ouvrir dans un onglet">↗ Ouvrir</button>
     <iframe id="diagFrame" src="" class="diag-iframe"></iframe>
   </div>
 </div>
