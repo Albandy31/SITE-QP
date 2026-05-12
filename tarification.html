@@ -32,9 +32,9 @@
 <!-- DIAGNOSTIC BANNER -->
 <div class="diag-banner" onclick="openDiagnostic()">
   <div id="diag-banner-spacer" style="flex-shrink:0"></div>
-  <span class="diag-banner-pill" data-i18n="diag.banner.pill">Nouveau</span>
-  <span class="diag-txt-desk" data-i18n="diag.banner.text">Loi 16 — Êtes-vous en conformité ?</span><span class="diag-txt-mob" data-i18n="diag.banner.text.mob">Loi 16 · Êtes-vous conforme ?</span>
-  <span class="diag-banner-cta" data-i18n="diag.banner.cta">Évaluation gratuite en 2 mn →</span>
+  <svg class="diag-banner-ico" viewBox="0 0 28 28" width="16" height="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 4l9 3.5v7c0 5-3.5 8-9 10C8.5 22 5 19 5 14.5V7.5L14 4z"/><path d="M10 13.5l3 3 5-5"/></svg>
+  <span class="diag-txt-desk" data-i18n="diag.banner.text">Loi 16 — Êtes-vous conforme ?</span><span class="diag-txt-mob" data-i18n="diag.banner.text.mob">Loi 16 · Êtes-vous conforme ?</span>
+  <span class="diag-banner-cta diag-cta-desk" data-i18n="diag.banner.cta">Évaluation gratuite en 2 mn →</span><span class="diag-banner-cta diag-cta-mob" data-i18n="diag.banner.cta.mob">Évaluation en 2 mn →</span>
 </div>
 <!-- NAV -->
 <nav id="mainNav">
@@ -72,7 +72,6 @@
 <a href="javascript:void(0)" onclick="openModal();toggleMenu()" style="color:var(--gold)"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="22" height="16" rx="2"/><path d="M3 8l11 7 11-7"/></svg> <span data-i18n="nav.devis.short">Soumission gratuite</span></a>
 </div>
 
-<nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span class="bc-sep">›</span><span>Tarification</span></nav>
 <!-- PAGE HEADER -->
 <div class="page-hdr">
 <h1 data-i18n="page.tar.h1">Nos forfaits sur mesure</h1>
@@ -87,7 +86,7 @@
 <div class="tarif-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start">
 
 <!-- ESSENTIEL -->
-<div style="background:var(--wh);border:1.5px solid var(--brd);border-radius:12px;padding:36px 30px;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s" class="tpc">
+<div style="background:#F2F3F5;border:1.5px solid var(--brd);border-radius:12px;padding:36px 30px;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s" class="tpc">
 <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-bottom:8px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
 <div style="font-size:26px;font-weight:800;color:var(--blue);font-family:'Nunito Sans',sans-serif;margin-bottom:6px" data-i18n="plan.essential">Essentiel</div>
 <div style="font-size:44px;font-weight:800;color:var(--txt);font-family:'Nunito Sans',sans-serif;line-height:1;margin-bottom:6px">25$<span style="font-size:14px;color:var(--muted);font-weight:500" data-i18n="lbl.perunit"> /unité/mois</span></div>
@@ -99,7 +98,7 @@
 <li><span class="pc-chk">✓</span><span data-i18n="feat.fin.comp.base">Financier et comptable de base</span></li>
 </ul>
 </div>
-<button class="btn-form" onclick="openModal()" data-i18n="btn.custquote">Demander ma tarification personnalisée</button>
+<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="width:100%;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.askquote">Demander une soumission →</button>
 </div>
 
 <!-- SÉRÉNITÉ -->
@@ -108,7 +107,7 @@
 <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:rgba(240,165,0,.7);margin-bottom:8px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
 <div style="font-size:26px;font-weight:800;color:#fff;font-family:'Nunito Sans',sans-serif;margin-bottom:6px" data-i18n="plan.serenity">Sérénité</div>
 <div style="font-size:44px;font-weight:800;color:var(--gold);font-family:'Nunito Sans',sans-serif;line-height:1;margin-bottom:6px">35$<span style="font-size:14px;color:rgba(255,255,255,.5);font-weight:500" data-i18n="lbl.perunit"> /unité/mois</span></div>
-<p style="font-size:13.5px;color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:24px;flex:1" data-i18n="tar.ser.desc">La formule la plus populaire. Elle décharge le CA de la paperasse et de la gestion des fournisseurs quotidiens, tout en laissant les décisions stratégiques aux administrateurs.</p>
+<p style="font-size:13.5px;color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:24px;flex:1" data-i18n="tar.ser.desc">La formule tout-en-un la plus populaire. Elle libère le CA des tâches administratives et de la coordination quotidienne des fournisseurs. Elle comprend un gestionnaire dédié pour la planification à long terme des actifs (Loi 16) en plus d'une plateforme logicielle intégrée.</p>
 <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:22px;margin-bottom:24px">
 <p style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:14px;font-family:'Nunito Sans',sans-serif" data-i18n="lbl.includes">Ce forfait inclut</p>
 <ul class="pc-list">
@@ -119,11 +118,11 @@
 <li><span class="pc-chk" style="color:var(--gold)">✓</span><span style="color:rgba(255,255,255,.9)" data-i18n="feat.platform">Plateforme logicielle</span></li>
 </ul>
 </div>
-<button class="btn-form" onclick="openModal()" style="background:var(--gold);color:#212B3C;border-color:var(--gold)" data-i18n="btn.custquote">Demander ma tarification personnalisée</button>
+<button onclick="openModal()" onmouseout="this.style.background='var(--gold)'" onmouseover="this.style.background='var(--gold-lt)'" style="width:100%;background:var(--gold);border:1.5px solid var(--gold);color:#fff;padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.askquote">Demander une soumission →</button>
 </div>
 
 <!-- SUR MESURE -->
-<div style="background:var(--wh);border:1.5px solid var(--brd);border-radius:12px;padding:36px 30px;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s" class="tpc">
+<div style="background:#F7F1E6;border:1.5px solid var(--brd);border-radius:12px;padding:36px 30px;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s" class="tpc">
 <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-bottom:8px;font-family:'Nunito Sans',sans-serif"><span data-i18n="lbl.plan">Forfait</span></div>
 <div style="font-size:26px;font-weight:800;color:var(--blue);font-family:'Nunito Sans',sans-serif;margin-bottom:6px" data-i18n="plan.custom">Sur mesure</div>
 <div style="font-size:28px;font-weight:800;color:var(--txt);font-family:'Nunito Sans',sans-serif;line-height:1;margin-bottom:6px;padding-top:8px" data-i18n="plan.discuss">À discuter</div>
@@ -138,28 +137,23 @@
 <li><span class="pc-chk">✓</span><span data-i18n="feat.negotiated">Tarif négocié selon volume</span></li>
 </ul>
 </div>
-<button class="btn-form" onclick="openModal()" data-i18n="btn.custquote">Demander ma tarification personnalisée</button>
+<button onclick="openModal()" onmouseout="this.style.background='transparent';this.style.color='var(--blue)'" onmouseover="this.style.background='var(--blue)';this.style.color='#fff'" style="width:100%;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito Sans',sans-serif;letter-spacing:.06em;transition:all .25s" data-i18n="btn.contact">Nous contacter →</button>
 </div>
 
 </div>
 
-<p style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:32px" data-i18n="tar.footnote">Les tarifs sont par unité par mois et peuvent varier selon le nombre d'unités et les services inclus.</p>
+<!-- CTA original (carte crème intégrée) -->
+<div style="text-align:center;margin-top:52px;background:var(--cream);border-radius:10px;padding:30px 24px">
+<p style="font-size:14px;color:var(--muted);margin-bottom:18px" data-i18n="tar.footnote">Les tarifs sont par unité par mois et peuvent varier selon le nombre d'unités et les services inclus.</p>
+<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:14px 30px;cursor:pointer"><span data-i18n="btn.custquote">Demander ma tarification personnalisée</span></a>
+</div>
 </div>
 </section>
-
-<!-- CTA -->
-<div class="cta-band">
-<div style="max-width:600px;margin:0 auto">
-<h2 data-i18n="cta.title">Prêt à confier votre copropriété à des experts ?</h2>
-<p data-i18n-html="cta.desc"><strong>Soumission personnalisée gratuite</strong>, sans engagement. Réponse garantie <strong>sous 24 heures ouvrables</strong>.</p>
-<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:15px 34px;cursor:pointer"><span data-i18n="cta.btn">Obtenir ma soumission gratuite</span></a>
-</div>
-</div>
 
 <!-- FOOTER -->
 <footer>
 <div class="fg-grid">
-<div class="ft-brand"><img alt="Quatre Piliers" class="logo-ft" src="/logo.png"/><p data-i18n="footer.tagline">Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7.</p></div>
+<div class="ft-brand"><img alt="Quatre Piliers" class="logo-ft" src="/logo.png"/><p data-i18n="footer.tagline">Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal.</p></div>
 <div class="ft-col"><h4 data-i18n="footer.nav">Navigation</h4><ul>
 <li><a href="/" data-i18n="nav.home">Accueil</a></li>
 <li><a href="/services" data-i18n="nav.services">Services</a></li>

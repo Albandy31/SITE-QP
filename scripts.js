@@ -143,7 +143,7 @@ var translations={
     'nav.law16':'Loi 16','nav.blog':'Blog','nav.contact':'Contact',
     'nav.devis':'Soumission gratuite','nav.devis.short':'Soumission gratuite',
     'mob.devis':'Soumission gratuite',
-    'hero.title':'Gestion de copropriété à Montréal — experts et réactifs 24/7',
+    'hero.title':'Gestion de copropriété dans le Grand Montréal',
     'hero.pill1':'Urgence 24/7','hero.pill2':'Réponse <24h',
     'hero.pill3':'Transparent','hero.pill4':'Conformité Loi 16',
     'hero.btn.quote':'Découvrez nos forfaits',
@@ -151,6 +151,7 @@ var translations={
     'diag.banner.text':'Loi 16 — Êtes-vous conforme ?',
     'diag.banner.text.mob':'Loi 16 · Êtes-vous conforme ?',
     'diag.banner.cta':'Évaluation gratuite en 2 mn →',
+    'diag.banner.cta.mob':'Évaluation en 2 mn →',
     'diag.hero.btn':'Évaluez votre conformité loi 16',
     'diag.home.card.title':'Diagnostic de conformité Loi 16 — Gratuit',
     'diag.home.card.desc':'10 questions · Rapport personnalisé par IA · Résultat immédiat',
@@ -213,7 +214,7 @@ var translations={
     'page.tar.sub':'Pas de prix rigides : un forfait adapté à vos besoins, votre taille et vos priorités.',
     'page.tar.note':'<span data-i18n-html="page.tar.note">Nos tarifs sont indicatifs et varient selon le nombre d\'unités et les services sélectionnés. <strong>Soumission personnalisée</strong>, réponse sous 24h.</span>',
     'tar.ess.desc':'Idéal pour les petits syndicats (moins de 10 unités) souhaitant une rigueur comptable pour éviter les conflits et faciliter les transactions notariales.',
-    'tar.ser.desc':'La formule la plus populaire. Elle décharge le CA de la paperasse et de la gestion des fournisseurs quotidiens, tout en laissant les décisions stratégiques aux administrateurs. Sa gestion inclut un gestionnaire dédié qui s\'occupe de la planification à long terme des actifs (Loi 16) en plus d\'une plateforme logicielle.',
+    'tar.ser.desc':'La formule tout-en-un la plus populaire. Elle libère le CA des tâches administratives et de la coordination quotidienne des fournisseurs. Elle comprend un gestionnaire dédié pour la planification à long terme des actifs (Loi 16) en plus d\'une plateforme logicielle intégrée.',
     'tar.cus.desc':'Profitez d\'une offre de services exclusive et évolutive : choisissez vos prestations à la carte ou optez pour un accompagnement renforcé avec des services récurrents. Notre flexibilité vous permet d\'ajuster votre forfait à tout moment pour répondre parfaitement aux priorités de votre syndicat.',
     'tar.footnote':'Les tarifs sont par unité par mois et peuvent varier selon le nombre d\'unités et les services inclus.',
     'btn.custquote':'Demander ma tarification personnalisée',
@@ -229,9 +230,9 @@ var translations={
     'ph.syndic.full':'Ex. : Syndicat Les Érables','ph.modal.message':'Vos besoins ou questions...',
     'btn.sendrequest':'Envoyer ma demande →',
     'form.ok':'✅ Merci ! Nous vous contacterons sous 24 heures ouvrables.',
-    'footer.tagline':'Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7.',
+    'footer.tagline':'Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal.',
     'footer.copy':'© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.',
-    'hero.subtitle':'Gestionnaire ultra réactif pour votre syndicat : prise en charge complète ou à la carte (administrative, financière, technique, humaine). Conformité Loi 16.',
+    'hero.subtitle':'Gestionnaire expert et ultra réactif pour votre syndicat. Prise en charge complète ou à la carte : administrative, financière, technique, humaine. Conformité Loi 16.',
     'lbl.pricing':'Tarification','lbl.plan':'Forfait','lbl.perunit':' /unité/mois',
     'home.pricing.note':'<strong>Soumission gratuite</strong>, réponse sous 24h.',
     'plan.essential':'Essentiel','plan.serenity':'Sérénité','plan.custom':'Sur mesure','plan.discuss':'À discuter',
@@ -246,7 +247,7 @@ var translations={
     'cta.btn':'Obtenir ma soumission gratuite',
     'cta.srv.title':'Libérez-vous de la gestion complexe et des nouvelles obligations légales !',
     'cta.srv.desc':'Obtenez votre soumission gratuite en un clic et simplifiez la vie de votre syndicat dès aujourd\'hui.',
-    'footer.nav':'Navigation','footer.newsletter':'Infolettre',
+    'footer.nav':'Navigation','footer.areas':'Zones desservies','footer.newsletter':'Infolettre',
     'ph.email':'Votre courriel','btn.subscribe':"S'abonner →",
     'footer.privacy':'Politique de confidentialité','footer.legal':'Mentions légales',
     'srv.tech.title2':'Gestion technique &amp; entretien',
@@ -349,6 +350,7 @@ var translations={
     'diag.banner.text':'Bill 16 — Are you compliant?',
     'diag.banner.text.mob':'Bill 16 · Compliant?',
     'diag.banner.cta':'Free diagnostic →',
+    'diag.banner.cta.mob':'Free diagnostic →',
     'diag.hero.btn':'Bill 16 Compliance Diagnostic',
     'diag.home.card.title':'Bill 16 Compliance Diagnostic — Free',
     'diag.home.card.desc':'10 questions · AI-personalized report · Instant results',
@@ -427,7 +429,7 @@ var translations={
     'ph.syndic.full':'Ex.: Les Erables Condo Corp','ph.modal.message':'Your needs or questions...',
     'btn.sendrequest':'Send my request →',
     'form.ok':'✅ Thank you! We will contact you within 24 business hours.',
-    'footer.tagline':'Expert and ultra-responsive condominium manager in Greater Montreal. Emergencies 24/7.',
+    'footer.tagline':'Expert and ultra-responsive condominium manager in Greater Montreal.',
     'footer.copy':'© 2025 Quatre Piliers Gestion Copropriété Inc. All rights reserved.',
     'hero.subtitle':'Ultra-responsive manager for your syndicate: complete or à-la-carte support (administrative, financial, technical, human). Law 16 compliance guaranteed.',
     'lbl.pricing':'Pricing','lbl.plan':'Plan','lbl.perunit':' /unit/month',
@@ -444,7 +446,7 @@ var translations={
     'cta.btn':'Get my free quote',
     'cta.srv.title':'Free yourself from complex management and new legal obligations!',
     'cta.srv.desc':'Get your free quote in one click and simplify your condo corporation management today.',
-    'footer.nav':'Navigation','footer.newsletter':'Newsletter',
+    'footer.nav':'Navigation','footer.areas':'Service areas','footer.newsletter':'Newsletter',
     'ph.email':'Your email','btn.subscribe':'Subscribe →',
     'footer.privacy':'Privacy policy','footer.legal':'Legal notices',
     'srv.tech.title2':'Technical management &amp; maintenance',
@@ -586,6 +588,7 @@ function heroTypewriter(lang){
   setTimeout(type,300);
 }
 document.addEventListener('DOMContentLoaded',function(){
+  setLang(currentLang||'fr');
   if(document.getElementById('hero-qp-type')) heroTypewriter('fr');
 });
 
@@ -603,7 +606,7 @@ function closeDiagnostic(){
 
 /* ===== ALIGN BANNER ===== */
 function alignBannerToNav(){
-  var accueil=document.querySelector('.nav-links a.active')||document.querySelector('.nav-links a');
+  var accueil=document.querySelector('.nav-links a');
   var banner=document.querySelector('.diag-banner');
   var spacer=document.getElementById('diag-banner-spacer');
   if(!accueil||!banner||!spacer){if(banner)banner.classList.add('aligned');return;}

@@ -34,8 +34,8 @@
 .contact-lbl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;}
 .contact-val{font-size:15px;font-weight:600;color:var(--blue-dk);}
 .urg-box{background:linear-gradient(135deg,#c0392b,#e74c3c);border-radius:12px;padding:22px 24px;color:#fff;margin-top:24px;}
-.urg-box h4{font-size:16px;font-weight:800;margin-bottom:8px;}
-.urg-box p{font-size:13px;line-height:1.65;opacity:.93;margin-bottom:14px;}
+.urg-box h4{font-size:16px;font-weight:800;margin-bottom:8px;color:#fff;}
+.urg-box p{font-size:13px;line-height:1.65;opacity:1;margin-bottom:14px;color:#fff;}
 .urg-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#c0392b;font-weight:800;font-size:14px;padding:11px 20px;border-radius:8px;text-decoration:none;}
 .contact-form-card{background:#fff;border-radius:14px;border:1px solid var(--brd);padding:36px 32px;}
 .contact-form-card h3{font-size:20px;color:var(--blue);font-weight:800;margin-bottom:6px;}
@@ -49,9 +49,9 @@
 <!-- DIAGNOSTIC BANNER -->
 <div class="diag-banner" onclick="openDiagnostic()">
   <div id="diag-banner-spacer" style="flex-shrink:0"></div>
-  <span class="diag-banner-pill" data-i18n="diag.banner.pill">Nouveau</span>
-  <span class="diag-txt-desk" data-i18n="diag.banner.text">Loi 16 — Êtes-vous en conformité ?</span><span class="diag-txt-mob" data-i18n="diag.banner.text.mob">Loi 16 · Êtes-vous conforme ?</span>
-  <span class="diag-banner-cta" data-i18n="diag.banner.cta">Évaluation gratuite en 2 mn →</span>
+  <svg class="diag-banner-ico" viewBox="0 0 28 28" width="16" height="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 4l9 3.5v7c0 5-3.5 8-9 10C8.5 22 5 19 5 14.5V7.5L14 4z"/><path d="M10 13.5l3 3 5-5"/></svg>
+  <span class="diag-txt-desk" data-i18n="diag.banner.text">Loi 16 — Êtes-vous conforme ?</span><span class="diag-txt-mob" data-i18n="diag.banner.text.mob">Loi 16 · Êtes-vous conforme ?</span>
+  <span class="diag-banner-cta diag-cta-desk" data-i18n="diag.banner.cta">Évaluation gratuite en 2 mn →</span><span class="diag-banner-cta diag-cta-mob" data-i18n="diag.banner.cta.mob">Évaluation en 2 mn →</span>
 </div>
 <!-- NAV -->
 <nav id="mainNav">
@@ -89,7 +89,6 @@
 <a href="javascript:void(0)" onclick="openModal();toggleMenu()" style="color:var(--gold)"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="22" height="16" rx="2"/><path d="M3 8l11 7 11-7"/></svg> <span data-i18n="nav.devis.short">Soumission gratuite</span></a>
 </div>
 
-<nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span class="bc-sep">›</span><span>Contact</span></nav>
 <!-- PAGE HEADER -->
 <div style="background:linear-gradient(135deg,var(--blue-dk) 0%,var(--blue) 100%);padding:72px 24px 60px;text-align:center;">
 <div style="max-width:700px;margin:0 auto;">
@@ -186,19 +185,10 @@
 </div>
 </section>
 
-<!-- CTA FINAL -->
-<div class="cta-band">
-<div style="max-width:600px;margin:0 auto">
-<h2 data-i18n="cta.title">Prêt à confier votre copropriété à des experts ?</h2>
-<p data-i18n-html="cta.desc"><strong>Soumission personnalisée gratuite</strong>, sans engagement. Réponse garantie <strong>sous 24 heures ouvrables</strong>.</p>
-<a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:15px 34px;cursor:pointer"><span data-i18n="cta.btn">Obtenir ma soumission gratuite</span></a>
-</div>
-</div>
-
 <!-- FOOTER -->
 <footer>
 <div class="fg-grid">
-<div class="ft-brand"><img alt="Quatre Piliers" class="logo-ft" src="/logo.png"/><p data-i18n="footer.tagline">Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7.</p></div>
+<div class="ft-brand"><img alt="Quatre Piliers" class="logo-ft" src="/logo.png"/><p data-i18n="footer.tagline">Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal.</p></div>
 <div class="ft-col"><h4 data-i18n="footer.nav">Navigation</h4><ul>
 <li><a href="/" data-i18n="nav.home">Accueil</a></li>
 <li><a href="/services" data-i18n="nav.services">Services</a></li>
