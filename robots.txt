@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /diagnostic.html
+Disallow: /icon-preview.html
+Disallow: /diagnostic
+
+Sitemap: https://quatrepiliers.ca/sitemap.xml
