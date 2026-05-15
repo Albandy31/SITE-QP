@@ -92,7 +92,8 @@ section{padding:80px 5%}
 
 /* SERVICE CARDS */
 .sg{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.sc{--sc-c:#2A4D9E;--sc-rgb:42,77,158;background:rgba(var(--sc-rgb),.06);border:1px solid var(--brd);border-left:3px solid var(--sc-c);border-radius:7px;padding:26px 22px;display:flex;flex-direction:column;gap:14px;transition:all .26s}
+.sc{--sc-c:#2A4D9E;--sc-rgb:42,77,158;background:rgba(var(--sc-rgb),.06);border:1px solid var(--brd);border-left:3px solid var(--sc-c);border-radius:7px;padding:0 22px 26px;display:flex;flex-direction:column;gap:14px;transition:all .26s;overflow:hidden}
+.sc-img{display:block;width:calc(100% + 44px);height:110px;object-fit:cover;margin:0 -22px 4px}
 .sc:hover{box-shadow:0 8px 28px rgba(var(--sc-rgb),.18);transform:translateY(-3px)}
 .sc-ico{width:44px;height:44px;background:rgba(var(--sc-rgb),.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sc-ico svg{width:22px;height:22px;stroke:var(--sc-c);fill:none;stroke-width:1.8}
@@ -243,7 +244,10 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 .fade-up{animation:fadeUp .7s ease forwards}
 
 /* PAGE HEADER */
-.page-hdr{background:linear-gradient(135deg,var(--blue-dk) 0%,var(--blue) 100%);padding:72px 5%;text-align:center}
+.page-hdr{background:linear-gradient(135deg,var(--blue-dk) 0%,var(--blue) 100%);padding:72px 5%;text-align:center;background-size:cover;background-position:center;background-repeat:no-repeat}
+.page-hdr--services{background-image:linear-gradient(135deg,rgba(26,50,112,.86) 0%,rgba(42,77,158,.78) 100%),url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=70')}
+.page-hdr--tarif{background-image:linear-gradient(135deg,rgba(26,50,112,.86) 0%,rgba(42,77,158,.78) 100%),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=70')}
+.page-hdr--blog{background-image:linear-gradient(135deg,rgba(26,50,112,.86) 0%,rgba(42,77,158,.78) 100%),url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1920&q=70')}
 .page-hdr h1{color:#fff;font-size:clamp(24px,3.8vw,46px);margin-bottom:16px;font-weight:800}
 .page-hdr p{color:rgba(255,255,255,.75);max-width:640px;margin:0 auto;font-size:16px;line-height:1.78}
 
