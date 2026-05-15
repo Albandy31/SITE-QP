@@ -177,7 +177,7 @@ section{padding:80px 5%}
 /* FOOTER */
 footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 .fg-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.5fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
-.logo-ft{height:44px;filter:brightness(0) invert(1);opacity:.9}
+.logo-ft{height:44px;width:auto;filter:brightness(0) invert(1);opacity:.9}
 .ft-brand p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.78;margin-top:16px}
 .ft-col h4{font-family:'Nunito Sans',sans-serif;color:var(--gold);font-size:12px;font-weight:800;margin-bottom:16px;letter-spacing:.08em;text-transform:uppercase}
 .ft-col ul{list-style:none}

@@ -28,6 +28,15 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://quatrepiliers.ca/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://quatrepiliers.ca/services"}]}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Quels services de gestion de copropriété offrez-vous ?","acceptedAnswer":{"@type":"Answer","text":"Nous couvrons les quatre piliers de la gestion : administratif et juridique (assemblées, registres, déclaration de copropriété, assurances), financier (budgets, cotisations, fonds de prévoyance), technique (entretien, appels d'offres, suivi des travaux) et communication (site privé, infolettre, gestion des plaintes). Tous nos forfaits incluent le service d'urgence 24/7."}},
+{"@type":"Question","name":"Intervenez-vous en urgence 24/7 ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Une ligne d'urgence est active 24 heures sur 24, 7 jours sur 7, pour les dégâts d'eau, pannes d'ascenseur, bris mécaniques majeurs ou tout incident affectant la sécurité des occupants. Un gestionnaire dépêche un fournisseur qualifié et coordonne l'intervention de bout en bout."}},
+{"@type":"Question","name":"Sur quels territoires intervenez-vous ?","acceptedAnswer":{"@type":"Answer","text":"Nous desservons l'ensemble du Grand Montréal : île de Montréal, Laval, Longueuil, Rive-Sud (Brossard, Saint-Lambert, Boucherville) et Rive-Nord (Terrebonne, Blainville, Repentigny). Nous étudions toute demande dans un rayon raisonnable."}},
+{"@type":"Question","name":"Puis-je choisir uniquement certains services (gestion à la carte) ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. En plus de la gestion complète, nous offrons des modules à la carte : tenue d'assemblée générale, préparation budgétaire annuelle, gestion d'un dossier de sinistre, mise en conformité Loi 16, ou accompagnement ponctuel d'un syndicat autogéré."}},
+{"@type":"Question","name":"Combien de temps prend la transition vers Quatre Piliers ?","acceptedAnswer":{"@type":"Answer","text":"La période de transition typique est de 30 à 60 jours. Elle comprend la récupération des dossiers, la reprise comptable, la mise à jour du registre des copropriétaires, la communication aux résidents et la rencontre de cadrage avec votre conseil d'administration."}}
+]}
+</script>
 </head>
 <body>
 <!-- DIAGNOSTIC BANNER -->
@@ -163,32 +172,25 @@
 <p style="color:var(--muted);max-width:500px;margin:0 auto 22px;font-size:15px;line-height:1.75" data-i18n="srv.cta.desc">Obtenez votre soumission gratuite en un clic et simplifiez la vie de votre syndicat dès aujourd'hui.</p>
 <a class="btn-primary" onclick="openModal()" style="display:inline-flex;padding:14px 30px;cursor:pointer" data-i18n="srv.cta.btn">Demander ma soumission gratuite</a>
 </div>
+
+<!-- FAQ -->
+<div style="margin-top:64px">
+<h2 style="text-align:center;color:var(--blue);font-size:28px;margin-bottom:12px;font-weight:700">Questions fréquentes sur nos services</h2>
+<p style="text-align:center;color:var(--muted);max-width:620px;margin:0 auto 36px;font-size:15px;line-height:1.7">Les réponses aux questions que se posent le plus souvent les conseils d'administration de syndicats de copropriété.</p>
+<div style="max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px">
+<details style="background:#fff;border:1.5px solid var(--brd);border-radius:10px;padding:18px 22px"><summary style="font-weight:700;color:var(--blue);font-size:15px;cursor:pointer;list-style:none">Quels services de gestion de copropriété offrez-vous ?</summary><div style="margin-top:12px;color:var(--muted);font-size:14px;line-height:1.75">Nous couvrons les quatre piliers de la gestion : administratif et juridique (assemblées, registres, déclaration de copropriété, assurances), financier (budgets, cotisations, fonds de prévoyance), technique (entretien, appels d'offres, suivi des travaux) et communication (site privé, infolettre, gestion des plaintes). Tous nos forfaits incluent le service d'urgence 24/7.</div></details>
+<details style="background:#fff;border:1.5px solid var(--brd);border-radius:10px;padding:18px 22px"><summary style="font-weight:700;color:var(--blue);font-size:15px;cursor:pointer;list-style:none">Intervenez-vous en urgence 24/7 ?</summary><div style="margin-top:12px;color:var(--muted);font-size:14px;line-height:1.75">Oui. Une ligne d'urgence est active 24 heures sur 24, 7 jours sur 7, pour les dégâts d'eau, pannes d'ascenseur, bris mécaniques majeurs ou tout incident affectant la sécurité des occupants. Un gestionnaire dépêche un fournisseur qualifié et coordonne l'intervention de bout en bout.</div></details>
+<details style="background:#fff;border:1.5px solid var(--brd);border-radius:10px;padding:18px 22px"><summary style="font-weight:700;color:var(--blue);font-size:15px;cursor:pointer;list-style:none">Sur quels territoires intervenez-vous ?</summary><div style="margin-top:12px;color:var(--muted);font-size:14px;line-height:1.75">Nous desservons l'ensemble du Grand Montréal : île de Montréal, Laval, Longueuil, Rive-Sud (Brossard, Saint-Lambert, Boucherville) et Rive-Nord (Terrebonne, Blainville, Repentigny). Nous étudions toute demande dans un rayon raisonnable.</div></details>
+<details style="background:#fff;border:1.5px solid var(--brd);border-radius:10px;padding:18px 22px"><summary style="font-weight:700;color:var(--blue);font-size:15px;cursor:pointer;list-style:none">Puis-je choisir uniquement certains services (gestion à la carte) ?</summary><div style="margin-top:12px;color:var(--muted);font-size:14px;line-height:1.75">Absolument. En plus de la gestion complète, nous offrons des modules à la carte : tenue d'assemblée générale, préparation budgétaire annuelle, gestion d'un dossier de sinistre, mise en conformité Loi 16, ou accompagnement ponctuel d'un syndicat autogéré.</div></details>
+<details style="background:#fff;border:1.5px solid var(--brd);border-radius:10px;padding:18px 22px"><summary style="font-weight:700;color:var(--blue);font-size:15px;cursor:pointer;list-style:none">Combien de temps prend la transition vers Quatre Piliers ?</summary><div style="margin-top:12px;color:var(--muted);font-size:14px;line-height:1.75">La période de transition typique est de 30 à 60 jours. Elle comprend la récupération des dossiers, la reprise comptable, la mise à jour du registre des copropriétaires, la communication aux résidents et la rencontre de cadrage avec votre conseil d'administration.</div></details>
+</div>
+</div>
+
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-<div class="fg-grid">
-<div class="ft-brand"><img alt="Quatre Piliers" class="logo-ft" src="/logo.png" width="300" height="135" loading="lazy" decoding="async"/><p data-i18n="footer.tagline">Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal.</p></div>
-<div class="ft-col"><h4 data-i18n="footer.nav">Navigation</h4><ul>
-<li><a href="/" data-i18n="nav.home">Accueil</a></li>
-<li><a href="/services" data-i18n="nav.services">Services</a></li>
-<li><a href="/tarification" data-i18n="nav.pricing">Tarification</a></li>
-<li><a href="/loi-16" data-i18n="nav.law16">Loi 16</a></li>
-<li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
-<li><a href="/contact" data-i18n="nav.contact">Contact</a></li>
-</ul></div>
-<div class="ft-col"><h4 data-i18n="footer.newsletter">Infolettre</h4>
-<div class="ft-nl"><input data-i18n-ph="ph.email" placeholder="Votre courriel" type="email"/><button class="btn-ft-nl" onclick="submitForm(this)" data-i18n="btn.subscribe">S'abonner →</button></div>
-<div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a><br/>📍 1115 Av. Beaumont, Montréal, QC H3P 0A1</div>
-</div>
-</div>
-<div class="ft-btm">
-<span data-i18n="footer.copy">© 2025 Gestion de Copropriété Quatre Piliers Inc. Tous droits réservés.</span>
-<div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div>
-<div class="ft-btm-lnk"><a href="/contact" data-i18n="nav.contact">Contact</a></div>
-</div>
-</footer>
+<div id="footer-mount"></div>
 
 <!-- CHAT WIDGET -->
 <div id="chat-bubble" onclick="toggleChat()" data-i18n-title="chat.bubble.title" title="Nous écrire" style="position:fixed;bottom:28px;right:28px;z-index:9998;width:58px;height:58px;border-radius:50%;background:var(--gold);box-shadow:0 6px 24px rgba(240,165,0,.45);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s,box-shadow .2s;">
@@ -271,8 +273,8 @@
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:30",
-      "closes": "17:30"
+      "opens": "08:00",
+      "closes": "18:00"
     }
   ],
   "sameAs": [

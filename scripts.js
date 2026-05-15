@@ -608,7 +608,53 @@ function heroTypewriter(lang){
   }
   setTimeout(type,300);
 }
+/* ===== FOOTER INJECTION =====
+   Single source of truth for the site footer.
+   Renders the correct language/paths based on the current URL. */
+function injectFooter(){
+  var mount=document.getElementById('footer-mount');
+  if(!mount) return;
+  var isEn=(window.location.pathname==='/en'||window.location.pathname.indexOf('/en/')===0);
+  var p=isEn?'/en':'';
+  var links=isEn
+    ? [['/en/','Home','nav.home'],['/en/services','Services','nav.services'],['/en/pricing','Pricing','nav.pricing'],['/en/law-16','Bill 16','nav.law16'],['/en/blog','Blog','nav.blog'],['/en/contact','Contact','nav.contact']]
+    : [['/','Accueil','nav.home'],['/services','Services','nav.services'],['/tarification','Tarification','nav.pricing'],['/loi-16','Loi 16','nav.law16'],['/blog','Blog','nav.blog'],['/contact','Contact','nav.contact']];
+  var areas=isEn
+    ? ['Montreal','Laval','Longueuil, Brossard, Boucherville','South Shore &amp; North Shore']
+    : ['Montréal','Laval','Longueuil, Brossard, Boucherville','Rive-Sud &amp; Rive-Nord'];
+  var tagline=isEn?'Expert and ultra-responsive condominium manager in Greater Montreal.':'Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal.';
+  var navL=isEn?'Navigation':'Navigation';
+  var areasL=isEn?'Service areas':'Zones desservies';
+  var nlL=isEn?'Newsletter':'Infolettre';
+  var emailPh=isEn?'Your email':'Votre courriel';
+  var subBtn=isEn?'Subscribe →':"S'abonner →";
+  var copy=isEn?'© 2025 Gestion de Copropriété Quatre Piliers Inc. All rights reserved.':'© 2025 Gestion de Copropriété Quatre Piliers Inc. Tous droits réservés.';
+  var contactL=isEn?'Contact':'Contact';
+  var contactHref=isEn?'/en/contact':'/contact';
+  var navHtml=links.map(function(l){return '<li><a href="'+l[0]+'" data-i18n="'+l[2]+'">'+l[1]+'</a></li>';}).join('');
+  var areasHtml=areas.map(function(a){return '<li>'+a+'</li>';}).join('');
+  var html=''+
+    '<footer>'+
+    '<div class="fg-grid">'+
+    '<div class="ft-brand"><img alt="Quatre Piliers" class="logo-ft" src="/logo.png" width="300" height="135" loading="lazy" decoding="async"/><p data-i18n="footer.tagline">'+tagline+'</p></div>'+
+    '<div class="ft-col"><h4 data-i18n="footer.nav">'+navL+'</h4><ul>'+navHtml+'</ul></div>'+
+    '<div class="ft-col"><h4 data-i18n="footer.areas">'+areasL+'</h4><ul>'+areasHtml+'</ul></div>'+
+    '<div class="ft-col"><h4 data-i18n="footer.newsletter">'+nlL+'</h4>'+
+    '<div class="ft-nl"><input data-i18n-ph="ph.email" placeholder="'+emailPh+'" type="email"/><button class="btn-ft-nl" onclick="submitForm(this)" data-i18n="btn.subscribe">'+subBtn+'</button></div>'+
+    '<div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a><br/>📍 1115 Av. Beaumont, Montréal, QC H3P 0A1</div>'+
+    '</div>'+
+    '</div>'+
+    '<div class="ft-btm">'+
+    '<span data-i18n="footer.copy">'+copy+'</span>'+
+    '<div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div>'+
+    '<div class="ft-btm-lnk"><a href="'+contactHref+'" data-i18n="nav.contact">'+contactL+'</a></div>'+
+    '</div>'+
+    '</footer>';
+  mount.outerHTML=html;
+}
+
 document.addEventListener('DOMContentLoaded',function(){
+  injectFooter();
   setLang(currentLang||'fr');
   if(document.getElementById('hero-qp-type')) heroTypewriter('fr');
 });
