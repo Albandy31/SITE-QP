@@ -44,7 +44,7 @@ nav.scrolled{box-shadow:0 4px 20px rgba(42,77,158,.1)}
 .mob-lang{display:flex;align-items:center;justify-content:center;background:rgba(42,77,158,.07);border-radius:20px;padding:3px;margin-top:10px;width:fit-content}
 
 /* HERO */
-.hero{min-height:90vh;background:url('/hero.jpg') center/cover no-repeat;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero{min-height:90vh;background:url('/hero.jpg') center/cover no-repeat;background-image:image-set(url('/hero.avif') type('image/avif'),url('/hero.webp') type('image/webp'),url('/hero.jpg') type('image/jpeg'));background-position:center;background-size:cover;background-repeat:no-repeat;position:relative;display:flex;align-items:center;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(155deg,rgba(26,50,112,.85) 0%,rgba(42,77,158,.7) 55%,rgba(53,96,184,.45) 100%)}
 .hero-inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:110px 5% 160px}
 .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(232,184,0,.15);border:1px solid rgba(232,184,0,.35);color:#F5CC00;padding:6px 16px;border-radius:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;margin-bottom:22px;font-family:'Nunito Sans',sans-serif}
@@ -294,7 +294,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.75);padding:62px 5% 0}
 .diag-cta-text span{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.5}
 .diag-cta-arrow{margin-left:auto;color:var(--gold);font-size:20px;flex-shrink:0}
 .diag-txt-mob{display:none}.diag-cta-mob{display:none}
-@media(max-width:768px){.diag-banner{font-size:11px;padding:8px 10px;gap:6px;flex-wrap:nowrap;white-space:nowrap;overflow:hidden}.diag-banner-ico{display:none}.diag-cta-card{flex-wrap:wrap;gap:14px}.diag-cta-arrow{display:none}.diag-txt-desk{display:none}.diag-txt-mob{display:inline}.diag-banner-pill{display:none}.diag-cta-desk{display:none}.diag-cta-mob{display:inline}}
+@media(max-width:768px){.diag-banner{font-size:11px;padding:8px 10px;gap:6px;flex-wrap:nowrap;white-space:nowrap;overflow:hidden}.diag-cta-card{flex-wrap:wrap;gap:14px}.diag-cta-arrow{display:none}.diag-txt-desk{display:none}.diag-txt-mob{display:inline}.diag-banner-pill{display:none}.diag-cta-desk{display:none}.diag-cta-mob{display:inline}}
 
 /* CHAT */
 #chat-bubble:hover{transform:scale(1.08);box-shadow:0 10px 32px rgba(240,165,0,.55);}

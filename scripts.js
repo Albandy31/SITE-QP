@@ -136,7 +136,7 @@ function toggleMenu(){
 }
 
 /* ===== i18n ===== */
-var currentLang='fr';
+var currentLang=(function(){var p=window.location.pathname;return (p==='/en'||p.indexOf('/en/')===0)?'en':'fr';})();
 var translations={
   fr:{
     'nav.home':'Accueil','nav.services':'Services','nav.pricing':'Tarification',
@@ -200,7 +200,7 @@ var translations={
     'home.contact.desc':'Notre équipe vous répond sous 24 heures ouvrables. Pour les urgences, appelez directement 24/7.',
     'contact.phone.lbl':'Téléphone (urgence 24/7)','contact.email.lbl':'Courriel',
     'contact.zone.lbl':'Zone desservie','contact.zone.val':'Grand Montréal — Laval, Longueuil, Rive-Nord, Rive-Sud',
-    'contact.hours.lbl':'Heures de bureau','contact.hours.val':'Lun–Ven 8h30–17h30 · Urgences 24/7',
+    'contact.hours.lbl':'Heures de bureau','contact.hours.val':'Lun–Ven 8h–18h · Urgences 24/7',
     'contact.urg.title':'🚨 Urgence 24/7',
     'contact.urg.desc':'Pour tout sinistre, dégât d\'eau ou bris majeur, appelez notre ligne d\'urgence 24h/24, 7j/7. Intervention rapide garantie.',
     'contact.urg.desc2':'Pour tout sinistre, dégât d\'eau ou bris majeur, appelez notre ligne d\'urgence disponible 24h/24, 7j/7.',
@@ -231,7 +231,7 @@ var translations={
     'btn.sendrequest':'Envoyer ma demande →',
     'form.ok':'✅ Merci ! Nous vous contacterons sous 24 heures ouvrables.',
     'footer.tagline':'Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal.',
-    'footer.copy':'© 2025 Quatre Piliers Gestion Copropriété Inc. Tous droits réservés.',
+    'footer.copy':'© 2025 Gestion de Copropriété Quatre Piliers Inc. Tous droits réservés.',
     'hero.subtitle':'Gestionnaire expert et ultra réactif pour votre syndicat. Prise en charge complète ou à la carte : administrative, financière, technique, humaine. Conformité Loi 16.',
     'lbl.pricing':'Tarification','lbl.plan':'Forfait','lbl.perunit':' /unité/mois',
     'home.pricing.note':'<strong>Soumission gratuite</strong>, réponse sous 24h.',
@@ -399,7 +399,7 @@ var translations={
     'home.contact.desc':'Our team responds within 24 business hours. For emergencies, call us directly 24/7.',
     'contact.phone.lbl':'Phone (24/7 emergency)','contact.email.lbl':'Email',
     'contact.zone.lbl':'Service area','contact.zone.val':'Greater Montreal — Laval, Longueuil, North Shore, South Shore',
-    'contact.hours.lbl':'Office hours','contact.hours.val':'Mon–Fri 8:30am–5:30pm · Emergencies 24/7',
+    'contact.hours.lbl':'Office hours','contact.hours.val':'Mon–Fri 8am–6pm · Emergencies 24/7',
     'contact.urg.title':'🚨 Emergency 24/7',
     'contact.urg.desc':'For any disaster, water damage or major failure, call our emergency line 24/7. Fast response guaranteed.',
     'contact.urg.desc2':'For any disaster, water damage or major failure, call our emergency line available 24/7.',
@@ -430,8 +430,8 @@ var translations={
     'btn.sendrequest':'Send my request →',
     'form.ok':'✅ Thank you! We will contact you within 24 business hours.',
     'footer.tagline':'Expert and ultra-responsive condominium manager in Greater Montreal.',
-    'footer.copy':'© 2025 Quatre Piliers Gestion Copropriété Inc. All rights reserved.',
-    'hero.subtitle':'Ultra-responsive manager for your syndicate: complete or à-la-carte support (administrative, financial, technical, human). Law 16 compliance guaranteed.',
+    'footer.copy':'© 2025 Gestion de Copropriété Quatre Piliers Inc. All rights reserved.',
+    'hero.subtitle':'Ultra-responsive manager for your syndicate: complete or à-la-carte support (administrative, financial, technical, human). Bill 16 compliance guaranteed.',
     'lbl.pricing':'Pricing','lbl.plan':'Plan','lbl.perunit':' /unit/month',
     'home.pricing.note':'<strong>Free quote</strong>, response within 24h.',
     'plan.essential':'Essential','plan.serenity':'Serenity','plan.custom':'Custom','plan.discuss':'To discuss',
@@ -538,7 +538,28 @@ var translations={
   }
 };
 
+var LANG_URL_MAP_FR_TO_EN={
+  '/':'/en/',
+  '/services':'/en/services',
+  '/tarification':'/en/pricing',
+  '/loi-16':'/en/law-16',
+  '/contact':'/en/contact',
+  '/blog':'/en/blog',
+  '/blog/gestionnaire-copropriete-montreal':'/en/blog/condo-manager-montreal',
+  '/blog/reclamations-assurance':'/en/blog/insurance-claims',
+  '/blog/fonds-prevoyance-loi16':'/en/blog/contingency-fund-law16',
+  '/blog/communication-gouvernance':'/en/blog/communication-governance'
+};
 function setLang(lang){
+  var path=window.location.pathname.replace(/\/+$/,'')||'/';
+  var onEn=(path==='/en'||path.indexOf('/en/')===0);
+  if(lang==='en'&&!onEn){
+    window.location.href=LANG_URL_MAP_FR_TO_EN[path]||'/en/';return;
+  }
+  if(lang==='fr'&&onEn){
+    var reverse={};for(var k in LANG_URL_MAP_FR_TO_EN){var v=LANG_URL_MAP_FR_TO_EN[k].replace(/\/+$/,'')||'/';reverse[v]=k;}
+    window.location.href=reverse[path]||'/';return;
+  }
   currentLang=lang;
   var t=translations[lang];
   if(!t) return;

@@ -1,54 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ===== FRENCH PAGES ===== -->
 
   <url>
     <loc>https://quatrepiliers.ca/</loc>
-    <lastmod>2026-05-12T10:00:00-04:00</lastmod>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/services</loc>
-    <lastmod>2026-04-10T10:00:00-04:00</lastmod>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/services"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/tarification</loc>
-    <lastmod>2026-04-10T10:00:00-04:00</lastmod>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/tarification"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/tarification"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/loi-16</loc>
-    <lastmod>2026-04-10T10:00:00-04:00</lastmod>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/loi-16"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/law-16"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/loi-16"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/contact</loc>
-    <lastmod>2026-04-10T10:00:00-04:00</lastmod>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/contact"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/blog</loc>
-    <lastmod>2026-05-12T10:00:00-04:00</lastmod>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/blog/gestionnaire-copropriete-montreal</loc>
     <lastmod>2026-05-12T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/gestionnaire-copropriete-montreal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/condo-manager-montreal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/gestionnaire-copropriete-montreal"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/blog/reclamations-assurance</loc>
     <lastmod>2026-04-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/reclamations-assurance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/insurance-claims"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/reclamations-assurance"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/blog/fonds-prevoyance-loi16</loc>
     <lastmod>2026-04-22T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/fonds-prevoyance-loi16"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/contingency-fund-law16"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/fonds-prevoyance-loi16"/>
   </url>
 
   <url>
     <loc>https://quatrepiliers.ca/blog/communication-gouvernance</loc>
     <lastmod>2026-04-29T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/communication-gouvernance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/communication-governance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/communication-gouvernance"/>
+  </url>
+
+  <!-- ===== ENGLISH PAGES ===== -->
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/</loc>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/services</loc>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/services"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/pricing</loc>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/tarification"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/tarification"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/law-16</loc>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/loi-16"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/law-16"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/loi-16"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/contact</loc>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/contact"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/blog</loc>
+    <lastmod>2026-05-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/blog/condo-manager-montreal</loc>
+    <lastmod>2026-05-12T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/gestionnaire-copropriete-montreal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/condo-manager-montreal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/gestionnaire-copropriete-montreal"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/blog/insurance-claims</loc>
+    <lastmod>2026-04-15T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/reclamations-assurance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/insurance-claims"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/reclamations-assurance"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/blog/contingency-fund-law16</loc>
+    <lastmod>2026-04-22T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/fonds-prevoyance-loi16"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/contingency-fund-law16"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/fonds-prevoyance-loi16"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/blog/communication-governance</loc>
+    <lastmod>2026-04-29T10:00:00-04:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/communication-gouvernance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/communication-governance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/communication-gouvernance"/>
   </url>
 
 </urlset>
