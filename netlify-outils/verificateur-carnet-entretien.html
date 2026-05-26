@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vérificateur de carnet d'entretien Loi 16 — Quatre Piliers</title>
+<meta name="description" content="Vérifiez en 5 minutes la conformité du carnet d'entretien de votre syndicat selon l'article 1070.2 C.c.Q. Score, liste des manques et plan d'action. Gratuit.">
+<link rel="canonical" href="https://quatrepiliers.ca/verificateur-carnet-entretien">
+<link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/verificateur-carnet-entretien">
+<link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/verificateur-carnet-entretien">
+<link rel="icon" type="image/png" href="logo.png"/>
+<link rel="apple-touch-icon" href="logo.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vérificateur de carnet d'entretien Loi 16 — Quatre Piliers">
+<meta property="og:description" content="Vérifiez en 5 minutes la conformité du carnet d'entretien de votre syndicat. Score, manques et plan d'action.">
+<meta property="og:url" content="https://quatrepiliers.ca/verificateur-carnet-entretien">
+<meta property="og:image" content="https://quatrepiliers.ca/hero.jpg">
+<style>
+:root{
+  --gold:#E8B800;--gold-lt:#F5CC00;
+  --blue:#2A4D9E;--blue-dk:#1A3270;
+  --cream:#F0F3FA;--txt:#212B3C;
+  --muted:#5C6880;--brd:#E8EAEF;--wh:#FFFFFF;
+  --crit:#A32D2D;--crit-bg:#FCEBEB;--crit-br:#F7C1C1;
+  --warn:#854F0B;--warn-bg:#FAEEDA;--warn-br:#E8C98A;
+  --good:#0F6E56;--good-bg:#E1F5EE;--good-br:#9FE1CB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--cream);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;color:var(--txt);line-height:1.65}
+.container{width:100%;max-width:640px;background:var(--wh);border-radius:14px;padding:2rem;box-shadow:0 2px 20px rgba(42,77,158,.08);border-top:4px solid var(--gold)}
+.header{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.25rem}
+.header-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.header-title{font-size:17px;font-weight:800;color:var(--blue-dk);margin-bottom:3px;letter-spacing:-.01em}
+.header-sub{font-size:12px;color:var(--muted)}
+.progress-wrap{height:3px;background:var(--brd);border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+.progress-bar{height:100%;background:var(--blue);border-radius:2px;transition:width .3s}
+.step-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.4rem;font-weight:800}
+.step-q{font-size:15.5px;font-weight:700;color:var(--blue-dk);margin-bottom:.4rem;line-height:1.4}
+.step-help{font-size:12.5px;color:var(--muted);margin-bottom:1rem;line-height:1.5}
+.cat-block{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.85rem}
+.cat-icon{font-size:26px;line-height:1;flex-shrink:0}
+.cat-title{font-size:14.5px;font-weight:800;color:var(--blue-dk);line-height:1.2}
+.cat-sub{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+.sub-q{margin-bottom:1.1rem}
+.sub-q-label{font-size:13px;font-weight:700;color:var(--blue-dk);margin-bottom:.5rem;display:flex;align-items:baseline;gap:6px}
+.sub-q-num{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:.04em}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border:1px solid var(--brd);border-radius:8px;cursor:pointer;transition:all .14s;background:var(--wh)}
+.opt:hover{border-color:var(--blue);background:var(--cream)}
+.opt.selected{border-color:var(--blue);background:rgba(42,77,158,.07)}
+.opt-radio{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:2px;border:2px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .14s}
+.opt.selected .opt-radio{border-color:var(--blue);background:var(--blue)}
+.opt-dot{width:6px;height:6px;border-radius:50%;background:var(--wh);display:none}
+.opt.selected .opt-dot{display:block}
+.opt-text{font-size:13.5px;line-height:1.45;color:var(--txt);font-weight:500}
+.opt.selected .opt-text{color:var(--blue-dk);font-weight:600}
+.input-group{margin-bottom:.6rem}
+.input-label{font-size:13px;font-weight:700;display:block;margin-bottom:.4rem;color:var(--blue-dk)}
+input[type=text],input[type=email],input[type=number],input[type=date]{width:100%;padding:.65rem .85rem;border:1px solid var(--brd);border-radius:6px;font-size:14px;font-family:inherit;color:var(--txt);outline:none;background:var(--wh);transition:border-color .14s}
+input:focus{border-color:var(--blue)}
+input::placeholder{color:#aaa}
+input:disabled{background:#F5F7FB;color:#A0A8B8;cursor:not-allowed}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input[type=number]{-moz-appearance:textfield}
+.nsp-row{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-size:12px;color:var(--muted);cursor:pointer;user-select:none;padding:4px 0}
+.nsp-row:hover{color:var(--blue)}
+.nsp-check{width:15px;height:15px;border:1.5px solid var(--brd);border-radius:3px;background:var(--wh);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .14s}
+.nsp-row.checked .nsp-check{background:var(--blue);border-color:var(--blue)}
+.nsp-check-icon{font-size:10px;color:var(--wh);display:none;line-height:1;font-weight:800}
+.nsp-row.checked .nsp-check-icon{display:block}
+.nsp-row.checked{color:var(--blue);font-weight:600}
+.nsp-stack{display:flex;flex-direction:column;gap:2px;margin-top:6px}
+.nsp-stack .nsp-row{margin-top:0}
+.none-banner{background:var(--good-bg);border:1px solid var(--good-br);border-radius:8px;padding:.7rem .9rem;font-size:12.5px;color:var(--good);line-height:1.5}
+.nav{display:flex;gap:8px;align-items:center;margin-top:1rem}
+.btn{padding:11px 22px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .25s;letter-spacing:.06em;text-transform:uppercase;border:none}
+.btn-back{background:var(--wh);color:var(--blue-dk);border:1px solid var(--brd);padding:11px 14px}
+.btn-back:hover{background:var(--cream)}
+.btn-next{background:var(--blue);color:var(--wh)}
+.btn-next:hover{background:var(--blue-dk);box-shadow:0 4px 14px rgba(42,77,158,.28)}
+.btn-cta{background:var(--gold);color:var(--blue-dk)}
+.btn-cta:hover{background:var(--gold-lt);box-shadow:0 6px 20px rgba(232,184,0,.35)}
+.step-count{font-size:12px;color:var(--muted);margin-left:auto;font-weight:600}
+.error{font-size:12px;color:#791F1F;background:#FCEBEB;border:1px solid #F7C1C1;border-radius:6px;padding:.5rem .75rem;margin-bottom:.75rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeIn .25s ease}
+.result-header{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh);border-bottom:4px solid var(--gold)}
+.result-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.result-title{font-size:17px;font-weight:800;margin-bottom:4px}
+.result-syndicat{font-size:12px;color:rgba(255,255,255,.7)}
+.score-row{display:flex;align-items:center;gap:14px;margin-top:14px}
+.score-circle{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--wh);flex-shrink:0}
+.score-niveau{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.85)}
+.score-resume{font-size:13px;color:rgba(255,255,255,.85);margin-top:4px;line-height:1.55}
+.section-label{font-size:13px;font-weight:800;color:var(--blue-dk);margin:1.25rem 0 .75rem;text-transform:uppercase;letter-spacing:.04em}
+.cat-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.5rem}
+.cat-card{background:var(--wh);border:1px solid var(--brd);border-radius:8px;padding:.65rem .8rem;display:flex;align-items:center;gap:8px}
+.cat-card-icon{font-size:18px;line-height:1;flex-shrink:0}
+.cat-card-name{font-size:11.5px;font-weight:700;color:var(--blue-dk);line-height:1.2;flex:1;min-width:0}
+.cat-card-status{font-size:10px;font-weight:800;padding:2px 7px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;flex-shrink:0}
+.st-ok{background:var(--good-bg);color:var(--good)}
+.st-warn{background:var(--warn-bg);color:var(--warn)}
+.st-crit{background:var(--crit-bg);color:var(--crit)}
+.st-na{background:var(--brd);color:var(--muted)}
+.issue{background:var(--wh);border:1px solid var(--brd);border-radius:8px;padding:13px 16px;margin-bottom:10px}
+.issue-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.urgence-badge{font-size:10px;font-weight:800;padding:3px 9px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase}
+.u-legale{background:var(--crit-bg);color:var(--crit)}
+.u-securite{background:#FCE4D6;color:#7A2D0D}
+.u-critique{background:var(--crit-bg);color:var(--crit)}
+.u-importante{background:var(--warn-bg);color:var(--warn)}
+.u-planif{background:#E3EEFD;color:var(--blue-dk)}
+.issue-cat{font-size:11px;color:var(--muted);font-weight:600}
+.issue-titre{font-size:13.5px;font-weight:700;color:var(--blue-dk);margin-bottom:4px;line-height:1.4}
+.issue-desc{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:6px}
+.issue-action{font-size:12.5px;color:var(--txt);line-height:1.55;padding:8px 12px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 6px 6px 0}
+.issue-action strong{color:var(--blue-dk);font-weight:800}
+.issue.l-legale{border-left:4px solid var(--crit)}
+.issue.l-securite{border-left:4px solid #7A2D0D}
+.issue.l-critique{border-left:4px solid var(--crit)}
+.issue.l-importante{border-left:4px solid var(--warn)}
+.issue.l-planif{border-left:4px solid var(--blue)}
+.no-issues{background:var(--good-bg);border:1px solid var(--good-br);border-radius:8px;padding:1rem 1.25rem;font-size:13px;color:var(--good);line-height:1.55;margin-bottom:1rem}
+.no-issues strong{color:var(--good);font-weight:800}
+.budget-box{background:var(--wh);border:1px solid var(--brd);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:1rem;border-left:4px solid var(--gold)}
+.budget-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:6px}
+.budget-title{font-size:14.5px;font-weight:800;color:var(--blue-dk);margin-bottom:6px}
+.budget-msg{font-size:12.5px;color:var(--muted);line-height:1.6}
+.budget-msg strong{color:var(--blue-dk);font-weight:800}
+.crosslink{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:12px}
+.crosslink-icon{font-size:24px;line-height:1;flex-shrink:0}
+.crosslink-text{flex:1;min-width:0}
+.crosslink-title{font-size:13px;font-weight:800;color:var(--blue-dk);margin-bottom:2px}
+.crosslink-msg{font-size:12px;color:var(--muted);line-height:1.5}
+.crosslink-link{font-size:12px;font-weight:800;color:var(--blue);text-decoration:none;white-space:nowrap;letter-spacing:.02em}
+.crosslink-link:hover{text-decoration:underline}
+.cta-box{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh)}
+.cta-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:6px}
+.cta-title{font-size:18px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.cta-msg{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:14px}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.cta-btn{display:inline-block;padding:11px 18px;border-radius:6px;font-size:12px;font-weight:800;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+.cta-btn-gold{background:var(--gold);color:var(--blue-dk)}
+.cta-btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:var(--wh)}
+.cta-contact{font-size:11px;color:rgba(255,255,255,.55);text-align:center;margin-top:10px}
+.cta-contact a{color:rgba(255,255,255,.7);text-decoration:none}
+.restart-btn{font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;font-family:inherit;margin-top:.5rem;font-weight:600}
+.page-footer{text-align:center;margin-top:1.25rem;font-size:11px;color:var(--muted);line-height:1.6}
+.page-footer a{color:var(--muted);text-decoration:none;font-weight:600}
+.page-footer a:hover{color:var(--blue)}
+.disclaimer{font-size:11px;color:var(--muted);background:var(--cream);border-radius:6px;padding:.65rem .85rem;margin-top:.75rem;line-height:1.5}
+.disclaimer strong{color:var(--blue-dk);font-weight:800}
+@media (max-width:480px){
+  .cat-summary{grid-template-columns:1fr}
+  .container{padding:1.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+
+<script>
+// ==============================================
+// VÉRIFICATEUR DE CARNET D'ENTRETIEN — Quatre Piliers
+// Conforme art. 1070.2 C.c.Q. (Loi 16, 2019)
+// ==============================================
+
+const LEAD_URL = "";
+
+const CATEGORIES = [
+  {
+    id:"toiture", icon:"🏠",
+    titre:"Toiture et étanchéité",
+    composants:"membrane, drains, solins, faîtages, ventilation",
+    duree:"durée de vie typique : 25 ans",
+    fresh:5, isMajor:true
+  },
+  {
+    id:"enveloppe", icon:"🧱",
+    titre:"Enveloppe extérieure",
+    composants:"revêtement, joints de scellement, fenêtres, portes",
+    duree:"durée de vie typique : 40 ans",
+    fresh:5, isMajor:false
+  },
+  {
+    id:"balcons", icon:"🚧",
+    titre:"Balcons et garde-corps",
+    composants:"balcons, garde-corps, dalles d'attache",
+    duree:"inspection professionnelle tous les 5 ans (sécurité publique au Québec)",
+    fresh:5, isMajor:false, special:"balcons", allowNone:true,
+    noneLabel:"L'immeuble n'a pas de balcons"
+  },
+  {
+    id:"ascenseur", icon:"🛗",
+    titre:"Ascenseur(s)",
+    composants:"cabine, machinerie, dispositifs de sécurité",
+    duree:"inspection RBQ annuelle obligatoire (Loi sur le bâtiment)",
+    fresh:1, isMajor:false, special:"ascenseur", allowNone:true,
+    noneLabel:"Aucun ascenseur dans l'immeuble"
+  },
+  {
+    id:"mecanique", icon:"⚙",
+    titre:"Systèmes mécaniques (CVC)",
+    composants:"chauffage, ventilation, climatisation, chaudière",
+    duree:"durée de vie : 15 à 25 ans selon les équipements",
+    fresh:3, isMajor:false
+  },
+  {
+    id:"plomberie", icon:"🚰",
+    titre:"Plomberie",
+    composants:"colonnes principales, drainage, alimentation",
+    duree:"durée de vie typique : 50 ans",
+    fresh:5, isMajor:false
+  },
+  {
+    id:"electricite", icon:"⚡",
+    titre:"Électricité",
+    composants:"panneau principal, distribution, génératrice si applicable",
+    duree:"durée de vie : 30 à 40 ans",
+    fresh:5, isMajor:false
+  },
+  {
+    id:"structure", icon:"🏛",
+    titre:"Structure",
+    composants:"fondations, dalles, murs porteurs, charpente",
+    duree:"inspection professionnelle recommandée tous les 10 ans",
+    fresh:10, isMajor:true
+  }
+];
+
+const TOTAL_STEPS = CATEGORIES.length + 2; // syndicat + 8 catégories + contact
+
+let step = 0, ans = {}, phase = "form", formErr = "", result = null;
+
+function fmt(n){
+  if(typeof n !== "number" || isNaN(n)) return "—";
+  return new Intl.NumberFormat('fr-CA', {maximumFractionDigits:0}).format(Math.round(n));
+}
+
+function yearsSince(dateStr){
+  if(!dateStr) return null;
+  const d = new Date(dateStr);
+  if(isNaN(d.getTime())) return null;
+  return (Date.now() - d.getTime()) / (365.25 * 24 * 3600 * 1000);
+}
+
+function selectOpt(id, val){ ans[id] = val; formErr = ""; render(); }
+function setField(key, val){ ans[key] = val; }
+function toggleFlag(key){ ans[key] = !ans[key]; if(ans[key]) ans[key.replace(/_(jamais|nsp_date|none)$/,"_date")] = ""; formErr = ""; render(); }
+function toggleNone(catId){
+  const k = catId + "_none";
+  ans[k] = !ans[k];
+  if(ans[k]){
+    ans[catId + "_doc"] = "";
+    ans[catId + "_date"] = "";
+    ans[catId + "_jamais"] = false;
+    ans[catId + "_nsp_date"] = false;
+    ans[catId + "_plan"] = "";
+  }
+  formErr = "";
+  render();
+}
+function prev(){ if(step > 0) step--; formErr = ""; render(); }
+function restart(){ step = 0; ans = {}; phase = "form"; formErr = ""; result = null; render(); }
+
+function validate(){
+  formErr = "";
+  if(step === 0){
+    if(!ans.nb_unites || parseInt(ans.nb_unites) < 2){ formErr = "Le nombre d'unités doit être au moins 2."; return false; }
+    const y = parseInt(ans.annee);
+    const now = new Date().getFullYear();
+    if(!y || y < 1800 || y > now + 1){ formErr = "Année de construction invalide."; return false; }
+    return true;
+  }
+  if(step === TOTAL_STEPS - 1){
+    if(!ans.nom || !ans.nom.trim()){ formErr = "Veuillez saisir le nom du syndicat."; return false; }
+    if(!ans.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ans.email)){ formErr = "Adresse courriel invalide."; return false; }
+    return true;
+  }
+  const cat = CATEGORIES[step - 1];
+  if(!cat) return true;
+  if(cat.allowNone && ans[cat.id + "_none"]) return true;
+  if(!ans[cat.id + "_doc"]){ formErr = `Indiquez si « ${cat.titre} » est documenté dans le carnet.`; return false; }
+  const hasDate = ans[cat.id + "_date"];
+  const jamais = ans[cat.id + "_jamais"];
+  const nspDate = ans[cat.id + "_nsp_date"];
+  if(!hasDate && !jamais && !nspDate){
+    formErr = `Saisissez la date de la dernière inspection pour « ${cat.titre} » (ou cochez « Jamais » ou « Je ne sais pas »).`;
+    return false;
+  }
+  if(!ans[cat.id + "_plan"]){ formErr = `Indiquez si une intervention est planifiée pour « ${cat.titre} ».`; return false; }
+  return true;
+}
+
+function compute(){
+  let score = 100;
+  const issues = [];
+  const catStatus = {};
+
+  for(const cat of CATEGORIES){
+    if(cat.allowNone && ans[cat.id + "_none"]){
+      catStatus[cat.id] = { label:"N/A", cls:"st-na", deduction:0 };
+      continue;
+    }
+
+    const doc = ans[cat.id + "_doc"];
+    const dateStr = ans[cat.id + "_date"];
+    const jamais = !!ans[cat.id + "_jamais"];
+    const nspDate = !!ans[cat.id + "_nsp_date"];
+    const plan = ans[cat.id + "_plan"];
+
+    const years = yearsSince(dateStr);
+    const isRecent = years !== null && years <= cat.fresh;
+
+    let catDeduction = 0;
+
+    // Documentation : 5 pts
+    let docDeduct = 0;
+    if(doc === "oui") docDeduct = 0;
+    else if(doc === "partiel") docDeduct = 3;
+    else if(doc === "non") docDeduct = 5;
+    else if(doc === "nsp") docDeduct = 4;
+    catDeduction += docDeduct;
+    score -= docDeduct;
+
+    // Inspection : 4 pts
+    let dateDeduct = 0;
+    if(jamais) dateDeduct = 4;
+    else if(nspDate) dateDeduct = 3;
+    else if(years === null) dateDeduct = 3;
+    else if(years <= cat.fresh) dateDeduct = 0;
+    else if(years <= cat.fresh * 2) dateDeduct = 2;
+    else dateDeduct = 4;
+    catDeduction += dateDeduct;
+    score -= dateDeduct;
+
+    // Planification : 3 pts
+    let planDeduct = 0;
+    if(plan === "oui") planDeduct = 0;
+    else if(plan === "non") planDeduct = 2;
+    else if(plan === "nsp") planDeduct = 3;
+    catDeduction += planDeduct;
+    score -= planDeduct;
+
+    // Pénalités spéciales
+    if(cat.special === "balcons" && !isRecent){
+      score -= 10;
+      issues.push({
+        urgence:"Sécurité publique", cls:"securite", priority:1, cat:cat.titre,
+        titre:"Inspection des balcons obligatoire en retard",
+        desc:"Au Québec, les structures avec balcons doivent être inspectées par un professionnel tous les 5 ans (Code de construction). Le non-respect engage la responsabilité civile du syndicat en cas d'accident.",
+        action:"Mandater dès maintenant un ingénieur en structure pour une inspection complète des balcons, garde-corps et dalles d'attache. Intégrer le rapport au carnet."
+      });
+    }
+    if(cat.special === "ascenseur" && !isRecent){
+      score -= 10;
+      issues.push({
+        urgence:"Obligation légale", cls:"legale", priority:1, cat:cat.titre,
+        titre:"Inspection RBQ d'ascenseur en retard",
+        desc:"L'inspection annuelle est exigée par la RBQ (Loi sur le bâtiment). Sans inspection à jour, l'ascenseur peut être condamné à tout moment et le syndicat est en infraction.",
+        action:"Contacter immédiatement votre contracteur d'entretien pour planifier l'inspection RBQ et corriger les anomalies. Conserver chaque rapport annuel au carnet."
+      });
+    }
+    if(cat.isMajor && (doc === "non" || doc === "nsp")){
+      score -= 8;
+      issues.push({
+        urgence:"Critique", cls:"critique", priority:2, cat:cat.titre,
+        titre:`Composant majeur absent du carnet : ${cat.titre.toLowerCase()}`,
+        desc:`${cat.titre} est un composant majeur du bâtiment (${cat.duree}). Son absence du carnet rend impossible la planification du remplacement et compromet directement la fiabilité de l'étude du fonds de prévoyance.`,
+        action:`Faire réaliser une inspection professionnelle de la catégorie « ${cat.titre.toLowerCase()} » et intégrer au carnet : inventaire des composants, état actuel, dates d'installation, plan de remplacement.`
+      });
+    } else if(doc === "non"){
+      issues.push({
+        urgence:"Important", cls:"importante", priority:3, cat:cat.titre,
+        titre:`${cat.titre} : aucune documentation`,
+        desc:`Composants à intégrer : ${cat.composants}. ${cat.duree.charAt(0).toUpperCase() + cat.duree.slice(1)}.`,
+        action:`Documenter dans le carnet : inventaire des composants, état actuel, dates d'installation et plan d'inspection.`
+      });
+    } else if(doc === "partiel"){
+      issues.push({
+        urgence:"Planification", cls:"planif", priority:4, cat:cat.titre,
+        titre:`${cat.titre} : documentation à compléter`,
+        desc:`Le carnet contient des éléments partiels. Composants à compléter : ${cat.composants}.`,
+        action:`Compléter le dossier : ajouter les éléments manquants, joindre les factures, rapports professionnels et certificats disponibles.`
+      });
+    } else if(doc === "nsp"){
+      issues.push({
+        urgence:"Planification", cls:"planif", priority:5, cat:cat.titre,
+        titre:`${cat.titre} : statut documentation inconnu`,
+        desc:`Vérifier ce qui figure déjà dans le carnet pour : ${cat.composants}.`,
+        action:`Faire un audit du carnet pour identifier ce qui est documenté et ce qui manque.`
+      });
+    }
+
+    // Inspections obsolètes (hors catégories spéciales déjà traitées)
+    if(!cat.special){
+      if(jamais){
+        issues.push({
+          urgence: cat.isMajor ? "Sécurité" : "Important", cls: cat.isMajor ? "securite" : "importante",
+          priority: cat.isMajor ? 2 : 3, cat:cat.titre,
+          titre:`${cat.titre} : aucune inspection professionnelle`,
+          desc:`Sans inspection, il est impossible d'évaluer l'état réel des composants ou d'anticiper les travaux. ${cat.duree.charAt(0).toUpperCase() + cat.duree.slice(1)}.`,
+          action:`Mandater un professionnel pour une inspection de référence. Le rapport servira de base au carnet et à la prochaine étude du fonds de prévoyance.`
+        });
+      } else if(years !== null && years > cat.fresh * 2){
+        issues.push({
+          urgence:"Planification", cls:"planif", priority:5, cat:cat.titre,
+          titre:`${cat.titre} : inspection ancienne (${Math.floor(years)} ans)`,
+          desc:`La dernière inspection date de plus de ${Math.floor(years)} ans. Une mise à jour est nécessaire pour valider l'état actuel et fiabiliser la planification.`,
+          action:`Planifier une nouvelle inspection professionnelle dans les 12 prochains mois et l'inscrire au carnet.`
+        });
+      }
+    }
+
+    if(plan === "non" && cat.isMajor){
+      issues.push({
+        urgence:"Planification", cls:"planif", priority:5, cat:cat.titre,
+        titre:`${cat.titre} : aucune intervention planifiée`,
+        desc:`Sans planification d'entretien préventif pour un composant majeur, les travaux risquent d'être réalisés en urgence — souvent à un coût multiplié par 2 ou 3, avec recours possible à une cotisation spéciale.`,
+        action:`Inscrire au carnet : type d'intervention prévue, échéance estimée, budget prévisionnel rattaché au fonds de prévoyance.`
+      });
+    }
+
+    // Statut catégorie pour le récapitulatif visuel
+    if(catDeduction === 0) catStatus[cat.id] = { label:"Conforme", cls:"st-ok" };
+    else if(catDeduction <= 4) catStatus[cat.id] = { label:"À surveiller", cls:"st-warn" };
+    else if(catDeduction <= 8) catStatus[cat.id] = { label:"Incomplet", cls:"st-warn" };
+    else catStatus[cat.id] = { label:"À risque", cls:"st-crit" };
+  }
+
+  score = Math.max(0, Math.min(100, score));
+
+  let niveau, color, verdictIcon, verdictTxt;
+  if(score >= 80){
+    niveau = "Conforme"; color = "#0F6E56"; verdictIcon = "✓";
+    verdictTxt = "Votre carnet d'entretien respecte largement les exigences de la Loi 16. Maintenez ce niveau en planifiant les mises à jour régulières.";
+  } else if(score >= 60){
+    niveau = "En progrès"; color = "#2A4D9E"; verdictIcon = "△";
+    verdictTxt = "Le cadre est en place mais plusieurs éléments restent à documenter ou à inspecter pour atteindre la conformité.";
+  } else if(score >= 40){
+    niveau = "À risque"; color = "#854F0B"; verdictIcon = "⚠";
+    verdictTxt = "Votre carnet présente des lacunes importantes. Plusieurs catégories doivent être traitées avant la prochaine étude du fonds de prévoyance.";
+  } else {
+    niveau = "Critique"; color = "#A32D2D"; verdictIcon = "!";
+    verdictTxt = "Le carnet n'est pas en état de répondre aux exigences de l'article 1070.2 C.c.Q. Une intervention coordonnée par un gestionnaire est urgente.";
+  }
+
+  issues.sort((a,b) => a.priority - b.priority);
+
+  return { score, niveau, color, verdictIcon, verdictTxt, issues, catStatus };
+}
+
+function renderSyndicat(){
+  return `
+    <div class="input-group">
+      <label class="input-label">Nombre d'unités *</label>
+      <input type="number" value="${ans.nb_unites||''}" placeholder="Ex : 24" min="2" inputmode="numeric" oninput="setField('nb_unites', this.value)">
+    </div>
+    <div class="input-group">
+      <label class="input-label">Année de construction *</label>
+      <input type="number" value="${ans.annee||''}" placeholder="Ex : 2008" min="1800" max="${new Date().getFullYear()+1}" inputmode="numeric" oninput="setField('annee', this.value)">
+    </div>
+  `;
+}
+
+function renderCategoryStep(cat){
+  const noneChecked = cat.allowNone && !!ans[cat.id + "_none"];
+  const jamais = !!ans[cat.id + "_jamais"];
+  const nspDate = !!ans[cat.id + "_nsp_date"];
+  const dateDisabled = jamais || nspDate;
+  const today = new Date().toISOString().slice(0,10);
+
+  const docOpts = [
+    {v:"oui", t:"Oui, complet et conservé au registre"},
+    {v:"partiel", t:"Partiellement / document informel"},
+    {v:"non", t:"Non, absent du carnet"},
+    {v:"nsp", t:"Je ne sais pas"}
+  ];
+  const planOpts = [
+    {v:"oui", t:"Oui, intervention planifiée"},
+    {v:"non", t:"Non, aucune planification"},
+    {v:"nsp", t:"Je ne sais pas"}
+  ];
+
+  let html = `<div class="cat-block">
+    <div class="cat-icon">${cat.icon}</div>
+    <div>
+      <div class="cat-title">${cat.titre}</div>
+      <div class="cat-sub">${cat.composants} · ${cat.duree}</div>
+    </div>
+  </div>`;
+
+  if(cat.allowNone){
+    html += `<div class="nsp-row${noneChecked?' checked':''}" onclick="toggleNone('${cat.id}')" style="margin-bottom:1rem">
+      <div class="nsp-check"><span class="nsp-check-icon">✓</span></div>
+      <span>${cat.noneLabel}</span>
+    </div>`;
+  }
+
+  if(noneChecked){
+    return html + `<div class="none-banner">Cette catégorie ne s'applique pas à votre immeuble. Passez à la suivante.</div>`;
+  }
+
+  // Sub-question 1: Documentation
+  html += `<div class="sub-q">
+    <div class="sub-q-label"><span class="sub-q-num">Q1.</span> Documenté dans le carnet ?</div>
+    <div class="options">${docOpts.map(o => {
+      const sel = ans[cat.id+"_doc"] === o.v;
+      return `<div class="opt${sel?" selected":""}" onclick="selectOpt('${cat.id}_doc','${o.v}')">
+        <div class="opt-radio"><div class="opt-dot"></div></div>
+        <div class="opt-text">${o.t}</div>
+      </div>`;
+    }).join("")}</div>
+  </div>`;
+
+  // Sub-question 2: Date inspection
+  const inspectionLabel = cat.special === "ascenseur"
+    ? "Date de la dernière inspection RBQ"
+    : cat.special === "balcons"
+    ? "Date de la dernière inspection professionnelle des balcons"
+    : "Date de la dernière inspection professionnelle";
+
+  html += `<div class="sub-q">
+    <div class="sub-q-label"><span class="sub-q-num">Q2.</span> ${inspectionLabel}</div>
+    <input type="date" max="${today}" min="1950-01-01" value="${ans[cat.id+'_date']||''}" oninput="setField('${cat.id}_date', this.value); render();" ${dateDisabled?'disabled':''}>
+    <div class="nsp-stack">
+      <div class="nsp-row${jamais?' checked':''}" onclick="toggleFlag('${cat.id}_jamais')">
+        <div class="nsp-check"><span class="nsp-check-icon">✓</span></div>
+        <span>Jamais inspecté professionnellement</span>
+      </div>
+      <div class="nsp-row${nspDate?' checked':''}" onclick="toggleFlag('${cat.id}_nsp_date')">
+        <div class="nsp-check"><span class="nsp-check-icon">✓</span></div>
+        <span>Je ne sais pas / date non accessible</span>
+      </div>
+    </div>
+  </div>`;
+
+  // Sub-question 3: Planning
+  html += `<div class="sub-q">
+    <div class="sub-q-label"><span class="sub-q-num">Q3.</span> Prochaine intervention planifiée ?</div>
+    <div class="options">${planOpts.map(o => {
+      const sel = ans[cat.id+"_plan"] === o.v;
+      return `<div class="opt${sel?" selected":""}" onclick="selectOpt('${cat.id}_plan','${o.v}')">
+        <div class="opt-radio"><div class="opt-dot"></div></div>
+        <div class="opt-text">${o.t}</div>
+      </div>`;
+    }).join("")}</div>
+  </div>`;
+
+  return html;
+}
+
+function renderContact(){
+  return `
+    <div class="input-group">
+      <label class="input-label">Nom du syndicat *</label>
+      <input type="text" value="${(ans.nom||'').replace(/"/g,'&quot;')}" placeholder="Ex : Syndicat des copropriétaires du 123 Maple" oninput="setField('nom', this.value)">
+    </div>
+    <div class="input-group">
+      <label class="input-label">Courriel *</label>
+      <input type="email" value="${(ans.email||'').replace(/"/g,'&quot;')}" placeholder="votre@courriel.com" oninput="setField('email', this.value)">
+    </div>
+    <div class="input-group">
+      <label class="input-label">Votre nom (optionnel)</label>
+      <input type="text" value="${(ans.nom_contact||'').replace(/"/g,'&quot;')}" placeholder="Prénom Nom" oninput="setField('nom_contact', this.value)">
+    </div>
+  `;
+}
+
+function renderForm(){
+  const isFirst = step === 0;
+  const isLast = step === TOTAL_STEPS - 1;
+  const isContact = isLast;
+  const isSyndicat = isFirst;
+
+  let stepLabel, stepQ, stepHelp, qHTML;
+
+  if(isSyndicat){
+    stepLabel = `Étape 1 sur ${TOTAL_STEPS}`;
+    stepQ = "Caractéristiques de votre immeuble";
+    stepHelp = "Quelques informations factuelles pour calibrer la vérification. Vous renseignerez le nom du syndicat à la fin.";
+    qHTML = renderSyndicat();
+  } else if(isContact){
+    stepLabel = `Étape ${TOTAL_STEPS} sur ${TOTAL_STEPS}`;
+    stepQ = "Recevez votre rapport personnalisé";
+    stepHelp = "Le nom du syndicat sert uniquement à personnaliser votre rapport, il ne sera jamais partagé. Aucun spam.";
+    qHTML = renderContact();
+  } else {
+    const cat = CATEGORIES[step - 1];
+    stepLabel = `Étape ${step + 1} sur ${TOTAL_STEPS} — Catégorie ${step} / ${CATEGORIES.length}`;
+    stepQ = `Évaluez : ${cat.titre}`;
+    stepHelp = "Trois questions courtes : documentation, dernière inspection professionnelle, prochaine planification.";
+    qHTML = renderCategoryStep(cat);
+  }
+
+  const progress = Math.round((step / (TOTAL_STEPS - 1)) * 100);
+
+  return `<div class="fade">
+    <div class="header">
+      <div class="header-agency">Quatre Piliers — Vérificateur gratuit</div>
+      <div class="header-title">Votre carnet d'entretien est-il conforme à la Loi 16 ?</div>
+      <div class="header-sub">Article 1070.2 C.c.Q. · ${TOTAL_STEPS} étapes · Score et plan d'action instantanés</div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:${progress}%"></div></div>
+    <div class="step-label">${stepLabel}</div>
+    <div class="step-q">${stepQ}</div>
+    <div class="step-help">${stepHelp}</div>
+    ${qHTML}
+    ${formErr ? `<div class="error">${formErr}</div>` : ""}
+    <div class="nav">
+      ${step > 0 ? `<button class="btn btn-back" onclick="prev()" aria-label="Précédent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>` : ""}
+      <button class="btn ${isLast ? 'btn-cta' : 'btn-next'}" onclick="nextStep()">${isLast ? "Voir mon score de conformité" : "Continuer"}</button>
+      <span class="step-count">${step+1} / ${TOTAL_STEPS}</span>
+    </div>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+  </div>`;
+}
+
+function nextStep(){
+  if(!validate()){ render(); return; }
+  if(step < TOTAL_STEPS - 1){ step++; render(); return; }
+  result = compute();
+  phase = "result";
+  if(LEAD_URL){
+    try{
+      fetch(LEAD_URL, {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ source:"verificateur-carnet", answers: ans, result })
+      }).catch(()=>{});
+    } catch(_){}
+  }
+  window.scrollTo({top:0, behavior:"smooth"});
+  render();
+}
+
+function renderResult(){
+  const r = result;
+
+  // Récapitulatif visuel des 8 catégories
+  const catCards = CATEGORIES.map(cat => {
+    const st = r.catStatus[cat.id] || { label:"—", cls:"st-na" };
+    return `<div class="cat-card">
+      <span class="cat-card-icon">${cat.icon}</span>
+      <span class="cat-card-name">${cat.titre}</span>
+      <span class="cat-card-status ${st.cls}">${st.label}</span>
+    </div>`;
+  }).join("");
+
+  // Liste priorisée des manques
+  let issuesHTML;
+  if(r.issues.length === 0){
+    issuesHTML = `<div class="no-issues">
+      <strong>Aucun manque majeur détecté.</strong> Votre carnet est en excellent état. Pensez à le mettre à jour à chaque intervention et à le réviser annuellement.
+    </div>`;
+  } else {
+    issuesHTML = r.issues.map(i => `<div class="issue l-${i.cls}">
+      <div class="issue-head">
+        <span class="urgence-badge u-${i.cls}">${i.urgence}</span>
+        <span class="issue-cat">${i.cat}</span>
+      </div>
+      <div class="issue-titre">${i.titre}</div>
+      <div class="issue-desc">${i.desc}</div>
+      <div class="issue-action"><strong>À faire :</strong> ${i.action}</div>
+    </div>`).join("");
+  }
+
+  const ctaTitle = r.score >= 80
+    ? "Faites auditer votre carnet par un professionnel"
+    : r.score >= 60
+    ? "Coordonnez la mise à niveau de votre carnet"
+    : "Confiez la production de votre carnet à Quatre Piliers";
+
+  const ctaMsg = r.score >= 80
+    ? "Excellent travail. Un audit indépendant tous les 5 ans permet de garantir que votre carnet reste opposable et utile à l'étude du fonds de prévoyance."
+    : r.score >= 60
+    ? "Votre carnet a une bonne base mais doit être consolidé. Nous coordonnons les inspections, centralisons les rapports professionnels et mettons le carnet à un niveau conforme à l'article 1070.2 C.c.Q."
+    : "Nous orchestrons l'ensemble : audit de l'existant, inspections professionnelles requises, rédaction du carnet et mise en place du suivi. Vous obtenez un document opposable, prêt pour l'AGA et l'étude du fonds.";
+
+  const mailBody = `Bonjour,\n\nSuite au vérificateur de carnet d'entretien Loi 16 de Quatre Piliers, je souhaite être contacté.\n\nSyndicat : ${ans.nom}\nUnités : ${ans.nb_unites}\nAnnée de construction : ${ans.annee}\nScore de conformité : ${r.score}/100 (${r.niveau})\nNombre de manques identifiés : ${r.issues.length}\n\nMerci.`;
+  const mailHref = `mailto:info@quatrepiliers.ca?subject=${encodeURIComponent("Carnet d'entretien — " + ans.nom)}&body=${encodeURIComponent(mailBody)}`;
+
+  return `<div class="fade">
+    <div class="result-header">
+      <div class="result-agency">Quatre Piliers — Vérificateur Loi 16</div>
+      <div class="result-title">Conformité de votre carnet d'entretien</div>
+      <div class="result-syndicat">${ans.nom} · ${ans.nb_unites} unités · construit en ${ans.annee}</div>
+      <div class="score-row">
+        <div class="score-circle" style="background:${r.color}">${r.score}</div>
+        <div>
+          <div class="score-niveau">${r.verdictIcon} ${r.niveau}</div>
+          <div class="score-resume">${r.verdictTxt}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Statut par catégorie</div>
+    <div class="cat-summary">${catCards}</div>
+
+    <div class="section-label">Manques prioritaires & plan d'action</div>
+    ${issuesHTML}
+
+    <div class="budget-box">
+      <div class="budget-label">Estimation budget</div>
+      <div class="budget-title">Mise à niveau d'un carnet : 2 000 à 5 000 $</div>
+      <div class="budget-msg">Pour un syndicat de taille moyenne (20 à 40 unités). <strong>Économies sur le long terme :</strong> un carnet à jour évite les cotisations spéciales d'urgence — qui coûtent typiquement 5 à 10 fois plus que les interventions planifiées au bon moment.</div>
+    </div>
+
+    <div class="crosslink">
+      <div class="crosslink-icon">📊</div>
+      <div class="crosslink-text">
+        <div class="crosslink-title">Étape suivante : fiabilisez votre fonds de prévoyance</div>
+        <div class="crosslink-msg">Un carnet bien tenu fiabilise directement votre étude du fonds.</div>
+      </div>
+      <a class="crosslink-link" href="calculateur-fonds-prevoyance.html">Calculateur →</a>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-label">${r.score < 60 ? "Recommandation prioritaire" : "Prochaine étape"}</div>
+      <div class="cta-title">${ctaTitle}</div>
+      <div class="cta-msg">${ctaMsg}</div>
+      <div class="cta-actions">
+        <a class="cta-btn cta-btn-gold" href="${mailHref}">✉ Demander un accompagnement</a>
+        <a class="cta-btn cta-btn-outline" href="tel:5148392494">📞 514-839-2494</a>
+      </div>
+      <div class="cta-contact"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+    </div>
+
+    <div class="disclaimer"><strong>Source légale :</strong> l'article 1070.2 du Code civil du Québec (introduit par la Loi 16, 2019) impose à tout syndicat de copropriété de tenir un carnet d'entretien des parties communes. Cette vérification est une auto-évaluation indicative et ne remplace pas la production d'un carnet par un professionnel qualifié.</div>
+
+    <button class="restart-btn" onclick="restart()">Recommencer la vérification</button>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+  </div>`;
+}
+
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = (phase === "result" && result) ? renderResult() : renderForm();
+}
+
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Prévisualisation — Images Unsplash candidates</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root { --bg:#0f1115; --card:#171a21; --txt:#e6e9ef; --muted:#9aa3b2; --accent:#4ea1ff; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
+  header{padding:32px 24px;border-bottom:1px solid #222;background:#0b0d12;position:sticky;top:0;z-index:10}
+  header h1{margin:0 0 6px;font-size:22px}
+  header p{margin:0;color:var(--muted);font-size:13px}
+  nav{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  nav a{color:var(--accent);text-decoration:none;font-size:12px;padding:4px 10px;border:1px solid #233044;border-radius:999px}
+  nav a:hover{background:#152033}
+  main{padding:24px;max-width:1400px;margin:0 auto}
+  section{margin:48px 0 16px;scroll-margin-top:120px}
+  section h2{font-size:18px;margin:0 0 4px}
+  section .desc{color:var(--muted);font-size:13px;margin-bottom:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  figure{margin:0;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid #1f2430}
+  figure img{display:block;width:100%;height:200px;object-fit:cover;background:#222}
+  figcaption{padding:10px 12px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;align-items:center}
+  figcaption a{color:var(--accent);text-decoration:none}
+  .tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:4px;background:#1f2937;color:#cbd5e1;letter-spacing:.5px;text-transform:uppercase}
+  .rec{outline:2px solid #4ea1ff;outline-offset:-2px}
+  .rec figcaption::before{content:"★ recommandé";color:var(--accent);font-weight:600;margin-right:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Prévisualisation des images Unsplash candidates</h1>
+  <p>4P Gestion — 1 vignette = 1 candidate. Clique sur une image pour ouvrir la page Unsplash et vérifier la licence. Les vignettes marquées ★ sont mes premiers choix.</p>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#tarification">Tarification</a>
+    <a href="#contact">Contact</a>
+    <a href="#diagnostic">Diagnostic</a>
+    <a href="#blog-comm">Blog · Gouvernance</a>
+    <a href="#blog-fonds">Blog · Fonds de prévoyance</a>
+    <a href="#blog-mtl">Blog · Gestionnaire Montréal</a>
+    <a href="#blog-reclam">Blog · Réclamations</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="accueil">
+  <h2>index.html — Section « À propos / Équipe »</h2>
+  <p class="desc">Image humaine, complémentaire au hero existant. Recherche : équipe / poignée de main professionnelle.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://unsplash.com/photos/1gRpznflIYM" target="_blank"><img loading="lazy" src="https://plus.unsplash.com/premium_photo-1664297543985-a0cef55975fd?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Poignée de main pro</span><a href="https://unsplash.com/photos/1gRpznflIYM" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://unsplash.com/photos/photo-1554902843-260acd0993f8" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1554902843-260acd0993f8?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Réunion bureau</span><a href="https://images.unsplash.com/photo-1554902843-260acd0993f8" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1571624436279-b272aff752b5" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Équipe consultation</span><a href="https://images.unsplash.com/photo-1571624436279-b272aff752b5" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="services">
+  <h2>services.html — 4 vignettes de services</h2>
+  <p class="desc">Une image par bloc : finance, entretien immeuble, gouvernance, réclamations.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1600427652630-f97cc4db10cd" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1600427652630-f97cc4db10cd?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span class="tag">Finance</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1670005382003-192767342166" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1670005382003-192767342166?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span class="tag">Immeuble</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure class="rec">
+      <a href="https://unsplash.com/photos/8RPgl_kEZaU" target="_blank"><img loading="lazy" src="https://plus.unsplash.com/premium_photo-1661347859297-859b8ae1d7c5?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span class="tag">Gouvernance</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1495774539583-885e02cca8c2" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1495774539583-885e02cca8c2?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span class="tag">Réclamations</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1582653291997-079a1c04e5a1" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Alt. gouvernance</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1558694924-78bf8ba63670" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1558694924-78bf8ba63670?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Alt. réclamations</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="tarification">
+  <h2>tarification.html — Bandeau discret</h2>
+  <p class="desc">Image en-tête : transparence, calculs, contrat.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1554902843-260acd0993f8" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1554902843-260acd0993f8?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Discussion contrat</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1618506487216-4e8c60a64c73" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1618506487216-4e8c60a64c73?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Plan + chiffres</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>contact.html — Bandeau Montréal</h2>
+  <p class="desc">Skyline ou quartier montréalais.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1470181942237-78ce33fec141" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1470181942237-78ce33fec141?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Montréal classique</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1575540576545-3db8561c29e4" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1575540576545-3db8561c29e4?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Montréal vue 2</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1559682468-a6a29e7d9517" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1559682468-a6a29e7d9517?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Montréal vue 3</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1577872134008-2032c595ecc3" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1577872134008-2032c595ecc3?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Montréal vue 4</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1659482513037-950fea76794c" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1659482513037-950fea76794c?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Montréal vue 5</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="diagnostic">
+  <h2>diagnostic.html — Bandeau inspection</h2>
+  <p class="desc">Architecte / plan / inspection technique.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1542621334-a254cf47733d" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Architecte travaillant</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1503387762-592deb58ef4e" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Plan + crayon</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1721244654392-9c912a6eb236" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1721244654392-9c912a6eb236?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Inspection</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1598368195835-91e67f80c9d7" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1598368195835-91e67f80c9d7?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Chantier</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1503387837-b154d5074bd2" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Plan vue 2</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="blog-comm">
+  <h2>blog/communication-gouvernance.html</h2>
+  <p class="desc">Assemblée, communication entre administrateurs.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://unsplash.com/photos/8RPgl_kEZaU" target="_blank"><img loading="lazy" src="https://plus.unsplash.com/premium_photo-1661347859297-859b8ae1d7c5?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Réunion CA</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1582653291997-079a1c04e5a1" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Assemblée</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="blog-fonds">
+  <h2>blog/fonds-prevoyance-loi16.html</h2>
+  <p class="desc">Bâtiment + finances : duo recommandé pour illustrer la planification.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1728573667725-35e7b420c4b7" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1728573667725-35e7b420c4b7?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Immeuble Montréal</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1600427652630-f97cc4db10cd" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1600427652630-f97cc4db10cd?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Tableau financier</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="blog-mtl">
+  <h2>blog/gestionnaire-copropriete-montreal.html</h2>
+  <p class="desc">Identité Montréal : skyline ou immeuble local.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1470181942237-78ce33fec141" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1470181942237-78ce33fec141?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Skyline Montréal</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1695391006461-28a81653e409" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1695391006461-28a81653e409?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Tours résidentielles</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1728228340487-f7061d206650" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1728228340487-f7061d206650?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Rue Montréal</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="blog-reclam">
+  <h2>blog/reclamations-assurance.html</h2>
+  <p class="desc">Dégât d'eau / signature de réclamation.</p>
+  <div class="grid">
+    <figure class="rec">
+      <a href="https://images.unsplash.com/photo-1495774539583-885e02cca8c2" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1495774539583-885e02cca8c2?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Dégât d'eau</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1558694924-78bf8ba63670" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1558694924-78bf8ba63670?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Fuite plafond</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1567769462911-520a38352744" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1567769462911-520a38352744?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Documents assurance</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+    <figure>
+      <a href="https://images.unsplash.com/photo-1661915209805-403e687aaf47" target="_blank"><img loading="lazy" src="https://images.unsplash.com/photo-1661915209805-403e687aaf47?auto=format&fit=crop&w=600&h=400&q=75" alt=""></a>
+      <figcaption><span>Réclamation 2</span><a href="#" target="_blank">Voir</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+</body>
+</html>

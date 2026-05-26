@@ -1,0 +1,27 @@
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
+.claude/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env / secrets (par sécurité, même si site statique)
+.env
+.env.*
+*.key
+*.pem
+
+# Build / dépendances (au cas où)
+node_modules/
+dist/
+build/
+.cache/

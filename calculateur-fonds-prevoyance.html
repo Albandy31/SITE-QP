@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur de fonds de prévoyance Loi 16 — Quatre Piliers</title>
+<meta name="description" content="Calculez en 2 minutes la contribution annuelle requise au fonds de prévoyance de votre copropriété selon la Loi 16. Estimation gratuite, instantanée, conforme C.c.Q. art. 1071-1072.">
+<link rel="canonical" href="https://quatrepiliers.ca/calculateur-fonds-prevoyance">
+<link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/calculateur-fonds-prevoyance">
+<link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/calculateur-fonds-prevoyance">
+<link rel="icon" type="image/png" href="logo.png"/>
+<link rel="apple-touch-icon" href="logo.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur de fonds de prévoyance Loi 16 — Quatre Piliers">
+<meta property="og:description" content="Estimez en 2 minutes la contribution annuelle requise au fonds de prévoyance de votre copropriété.">
+<meta property="og:url" content="https://quatrepiliers.ca/calculateur-fonds-prevoyance">
+<meta property="og:image" content="https://quatrepiliers.ca/hero.jpg">
+<style>
+:root{
+  --gold:#E8B800;--gold-lt:#F5CC00;
+  --blue:#2A4D9E;--blue-dk:#1A3270;
+  --cream:#F0F3FA;--txt:#212B3C;
+  --muted:#5C6880;--brd:#E8EAEF;--wh:#FFFFFF;
+  --crit:#A32D2D;--crit-bg:#FCEBEB;
+  --warn:#854F0B;--warn-bg:#FAEEDA;
+  --good:#0F6E56;--good-bg:#E1F5EE;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--cream);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;color:var(--txt);line-height:1.65}
+.container{width:100%;max-width:640px;background:var(--wh);border-radius:14px;padding:2rem;box-shadow:0 2px 20px rgba(42,77,158,.08);border-top:4px solid var(--gold)}
+.header{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.25rem}
+.header-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.header-title{font-size:17px;font-weight:800;color:var(--blue-dk);margin-bottom:3px;letter-spacing:-.01em}
+.header-sub{font-size:12px;color:var(--muted)}
+.progress-wrap{height:3px;background:var(--brd);border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+.progress-bar{height:100%;background:var(--blue);border-radius:2px;transition:width .3s}
+.step-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.4rem;font-weight:800}
+.step-q{font-size:15.5px;font-weight:700;color:var(--blue-dk);margin-bottom:.4rem;line-height:1.4}
+.step-help{font-size:12.5px;color:var(--muted);margin-bottom:1rem;line-height:1.5}
+.options{display:flex;flex-direction:column;gap:8px;margin-bottom:1.25rem}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid var(--brd);border-radius:8px;cursor:pointer;transition:all .14s;background:var(--wh)}
+.opt:hover{border-color:var(--blue);background:var(--cream)}
+.opt.selected{border-color:var(--blue);background:rgba(42,77,158,.07)}
+.opt-radio{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:2px;border:2px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .14s}
+.opt.selected .opt-radio{border-color:var(--blue);background:var(--blue)}
+.opt-dot{width:6px;height:6px;border-radius:50%;background:var(--wh);display:none}
+.opt.selected .opt-dot{display:block}
+.opt-text{font-size:13.5px;line-height:1.45;color:var(--txt);font-weight:500}
+.opt.selected .opt-text{color:var(--blue-dk);font-weight:600}
+.input-group{margin-bottom:1rem}
+.input-label{font-size:13px;font-weight:700;display:block;margin-bottom:.4rem;color:var(--blue-dk)}
+.input-hint{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+.input-hint a{color:var(--blue);text-decoration:underline;cursor:pointer;font-weight:700}
+.input-wrap{position:relative}
+.input-prefix{position:absolute;top:50%;transform:translateY(-50%);font-size:13px;color:var(--muted);font-weight:700;pointer-events:none;left:12px}
+.label-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:.4rem}
+.label-row .input-label{margin-bottom:0}
+.tooltip-btn{background:var(--cream);border:1px solid var(--brd);color:var(--blue);width:22px;height:22px;border-radius:50%;font-size:12px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;flex-shrink:0;transition:all .15s;padding:0;line-height:1}
+.tooltip-btn:hover,.tooltip-btn.open{background:var(--blue);color:var(--wh);border-color:var(--blue)}
+.tooltip-box{background:#FFF8DC;border-left:3px solid var(--gold);border-radius:6px;padding:.7rem .85rem;font-size:12px;color:var(--txt);line-height:1.55;margin:0 0 .6rem;animation:fadeIn .2s ease}
+.tooltip-box strong{color:var(--blue-dk);font-weight:800}
+.nsp-row{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-size:12px;color:var(--muted);cursor:pointer;user-select:none;padding:4px 0}
+.nsp-row:hover{color:var(--blue)}
+.nsp-check{width:15px;height:15px;border:1.5px solid var(--brd);border-radius:3px;background:var(--wh);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .14s}
+.nsp-row.checked .nsp-check{background:var(--blue);border-color:var(--blue)}
+.nsp-check-icon{font-size:10px;color:var(--wh);display:none;line-height:1;font-weight:800}
+.nsp-row.checked .nsp-check-icon{display:block}
+.nsp-row.checked{color:var(--blue);font-weight:600}
+input:disabled{background:#F5F7FB;color:#A0A8B8;cursor:not-allowed}
+input[type=text],input[type=email],input[type=number]{width:100%;padding:.65rem .85rem;border:1px solid var(--brd);border-radius:6px;font-size:14px;font-family:inherit;color:var(--txt);outline:none;background:var(--wh);transition:border-color .14s}
+input.with-prefix{padding-left:28px}
+input:focus{border-color:var(--blue)}
+input::placeholder{color:#aaa}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input[type=number]{-moz-appearance:textfield}
+.nav{display:flex;gap:8px;align-items:center;margin-top:.5rem}
+.btn{padding:11px 22px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .25s;letter-spacing:.06em;text-transform:uppercase;border:none}
+.btn-back{background:var(--wh);color:var(--blue-dk);border:1px solid var(--brd);padding:11px 14px}
+.btn-back:hover{background:var(--cream)}
+.btn-next{background:var(--blue);color:var(--wh)}
+.btn-next:hover{background:var(--blue-dk);box-shadow:0 4px 14px rgba(42,77,158,.28)}
+.btn-cta{background:var(--gold);color:var(--blue-dk)}
+.btn-cta:hover{background:var(--gold-lt);box-shadow:0 6px 20px rgba(232,184,0,.35)}
+.step-count{font-size:12px;color:var(--muted);margin-left:auto;font-weight:600}
+.error{font-size:12px;color:#791F1F;background:#FCEBEB;border:1px solid #F7C1C1;border-radius:6px;padding:.5rem .75rem;margin-bottom:.75rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeIn .25s ease}
+.result-header{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh);border-bottom:4px solid var(--gold)}
+.result-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.result-title{font-size:17px;font-weight:800;margin-bottom:4px}
+.result-syndicat{font-size:12px;color:rgba(255,255,255,.7)}
+.verdict-row{display:flex;align-items:center;gap:14px;margin-top:14px}
+.verdict-icon{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:var(--wh);flex-shrink:0;line-height:1}
+.verdict-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.85);margin-bottom:4px}
+.verdict-resume{font-size:13px;color:rgba(255,255,255,.85);line-height:1.55}
+.number-block{background:var(--wh);border:1px solid var(--brd);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:.75rem;display:flex;align-items:center;gap:1rem}
+.number-block-icon{font-size:24px;flex-shrink:0;line-height:1}
+.number-block-info{flex:1;min-width:0}
+.number-block-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:800;margin-bottom:3px}
+.number-block-value{font-size:24px;font-weight:800;color:var(--blue-dk);letter-spacing:-.02em;line-height:1.15}
+.number-block-detail{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.45}
+.number-block.crit{border-left:4px solid var(--crit);background:var(--crit-bg)}
+.number-block.crit .number-block-value{color:var(--crit)}
+.number-block.warn{border-left:4px solid var(--warn);background:var(--warn-bg)}
+.number-block.warn .number-block-value{color:var(--warn)}
+.number-block.good{border-left:4px solid var(--good);background:var(--good-bg)}
+.number-block.good .number-block-value{color:var(--good)}
+.proj-card{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:.75rem}
+.proj-title{font-size:12px;font-weight:800;color:var(--blue-dk);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.06em}
+.proj-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--brd);font-size:13px;gap:1rem}
+.proj-row:last-child{border-bottom:0;padding-top:9px;font-weight:800;color:var(--blue-dk)}
+.proj-label{color:var(--muted)}
+.proj-value{font-weight:700;color:var(--txt);text-align:right;white-space:nowrap}
+.proj-row:last-child .proj-value{color:var(--blue-dk)}
+.method-box{background:var(--wh);border:1px solid var(--brd);border-radius:8px;padding:.85rem 1rem;font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.method-box strong{color:var(--blue-dk)}
+.cta-box{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh)}
+.cta-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:6px}
+.cta-title{font-size:18px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.cta-msg{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:14px}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.cta-btn{display:inline-block;padding:11px 18px;border-radius:6px;font-size:12px;font-weight:800;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+.cta-btn-gold{background:var(--gold);color:var(--blue-dk)}
+.cta-btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:var(--wh)}
+.cta-contact{font-size:11px;color:rgba(255,255,255,.55);text-align:center;margin-top:10px}
+.cta-contact a{color:rgba(255,255,255,.7);text-decoration:none}
+.restart-btn{font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;font-family:inherit;margin-top:.5rem;font-weight:600}
+.page-footer{text-align:center;margin-top:1.25rem;font-size:11px;color:var(--muted);line-height:1.6}
+.page-footer a{color:var(--muted);text-decoration:none;font-weight:600}
+.page-footer a:hover{color:var(--blue)}
+.disclaimer{font-size:11px;color:var(--muted);background:var(--cream);border-radius:6px;padding:.65rem .85rem;margin-top:.75rem;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+
+<script>
+// ==============================================
+// CALCULATEUR FONDS DE PRÉVOYANCE — Quatre Piliers
+// Conforme C.c.Q. art. 1071-1072 (Loi 16, 2019)
+// ==============================================
+
+// Endpoint optionnel pour enregistrer le lead (laisser vide pour désactiver)
+const LEAD_URL = "";
+
+// Coûts de référence Grand Montréal 2025-2026 pour estimation auto
+const COST_PER_SQFT = 400;
+const AVG_UNIT_SQFT = 950;
+
+const QS = [
+  {
+    id:"syndicat",
+    type:"fields",
+    label:"Étape 1 sur 6",
+    q:"Caractéristiques de votre immeuble",
+    help:"Quelques informations factuelles pour calibrer le calcul. Vous renseignerez le nom du syndicat à la fin.",
+    fields:[
+      {key:"nb_unites",label:"Nombre d'unités *",ph:"Ex : 24",type:"number"},
+      {key:"annee",label:"Année de construction *",ph:"Ex : 2008",type:"number"}
+    ]
+  },
+  {
+    id:"type",
+    type:"radio",
+    label:"Étape 2 sur 6",
+    q:"Quel est le type de construction principal ?",
+    help:"Le type de structure influe sur le rythme d'usure et donc sur la contribution recommandée.",
+    opts:[
+      {v:"beton",t:"Béton et acier (structure lourde)"},
+      {v:"mixte",t:"Mixte (béton + bois ou ossature légère)"},
+      {v:"bois",t:"Bois (structure légère, généralement ≤ 4 étages)"},
+      {v:"nsp",t:"Je ne sais pas"}
+    ]
+  },
+  {
+    id:"valeur",
+    type:"fields",
+    label:"Étape 3 sur 6",
+    q:"Valeur de reconstruction estimée",
+    help:"C'est le coût pour reconstruire l'immeuble à neuf, hors terrain. On la trouve dans la police d'assurance du syndicat, ou en multipliant l'évaluation municipale par 1,3 à 1,5.",
+    fields:[
+      {key:"valeur_reconstruction",label:"Valeur de reconstruction ($CAD) *",ph:"Ex : 8 500 000",type:"number",prefix:"$"}
+    ],
+    estimateHint:true
+  },
+  {
+    id:"finances",
+    type:"fields",
+    label:"Étape 4 sur 6",
+    q:"État actuel de votre fonds de prévoyance",
+    help:"Ces montants se trouvent dans vos derniers états financiers approuvés en AGA. Cliquez sur le « ? » si vous hésitez, ou cochez « Je ne sais pas ».",
+    fields:[
+      {
+        key:"solde_actuel",
+        label:"Solde actuel du fonds ($CAD) *",
+        ph:"Ex : 145 000",
+        type:"number",
+        prefix:"$",
+        tooltip:"<strong>À saisir :</strong> le montant total accumulé sur le compte/placement dédié spécifiquement au fonds de prévoyance.<br><br><strong>À ne pas confondre avec :</strong> le fonds d'opérations (charges courantes), le fonds d'auto-assurance (Loi 141) ou l'actif total du syndicat.<br><br><strong>Où le trouver :</strong> au bilan des derniers états financiers approuvés en AGA, ligne « Fonds de prévoyance », ou sur le relevé du compte dédié.",
+        nsp:true
+      },
+      {
+        key:"contribution_annuelle",
+        label:"Contribution annuelle actuelle ($CAD) *",
+        ph:"Ex : 32 000",
+        type:"number",
+        prefix:"$",
+        tooltip:"<strong>À saisir :</strong> le montant total annuel versé par <em>tous</em> les copropriétaires AU fonds de prévoyance, pas au fonds d'opérations.<br><br><strong>À ne pas confondre avec :</strong> les charges communes totales, ni la contribution mensuelle d'un seul copropriétaire.<br><br><strong>Où le trouver :</strong> dans le budget voté en AGA, ligne « Contribution / Affectation au fonds de prévoyance ». Calcul rapide : (prélèvement mensuel par unité dédié au fonds) × 12 × nombre d'unités.",
+        nsp:true
+      }
+    ]
+  },
+  {
+    id:"etude",
+    type:"radio",
+    label:"Étape 5 sur 6",
+    q:"Avez-vous fait réaliser une étude du fonds de prévoyance ?",
+    help:"Depuis la Loi 16, une étude réalisée par un professionnel est obligatoire et doit être mise à jour tous les 5 ans.",
+    opts:[
+      {v:"recente",t:"Oui, dans les 5 dernières années"},
+      {v:"ancienne",t:"Oui, mais datant de plus de 5 ans"},
+      {v:"jamais",t:"Non, jamais"},
+      {v:"nsp",t:"Je ne sais pas"}
+    ]
+  },
+  {
+    id:"contact",
+    type:"fields",
+    label:"Étape 6 sur 6",
+    q:"Recevez votre rapport personnalisé",
+    help:"Le nom du syndicat sert uniquement à personnaliser votre rapport, il ne sera jamais partagé. Aucun spam.",
+    fields:[
+      {key:"nom",label:"Nom du syndicat *",ph:"Ex : Syndicat des copropriétaires du 123 Maple",type:"text"},
+      {key:"email",label:"Courriel *",ph:"votre@courriel.com",type:"email"},
+      {key:"nom_contact",label:"Votre nom (optionnel)",ph:"Prénom Nom",type:"text"}
+    ]
+  }
+];
+
+let step = 0, ans = {}, phase = "form", formErr = "", result = null;
+let tooltips = {};
+
+function toggleTooltip(key){ tooltips[key] = !tooltips[key]; render(); }
+function toggleNsp(key){
+  const nspKey = key + "_nsp";
+  ans[nspKey] = !ans[nspKey];
+  if(ans[nspKey]) ans[key] = "";
+  formErr = "";
+  render();
+}
+
+function fmt(n){
+  if(typeof n !== "number" || isNaN(n)) return "—";
+  return new Intl.NumberFormat('fr-CA', {maximumFractionDigits:0}).format(Math.round(n));
+}
+function fmtCAD(n){ return fmt(n) + " $"; }
+
+function compute(){
+  const year = parseInt(ans.annee) || new Date().getFullYear();
+  const age = Math.max(0, new Date().getFullYear() - year);
+  const value = parseFloat(ans.valeur_reconstruction) || 0;
+  const nbUnites = parseInt(ans.nb_unites) || 0;
+
+  const soldeNsp = !!ans.solde_actuel_nsp;
+  const contribNsp = !!ans.contribution_annuelle_nsp;
+  const balance = soldeNsp ? null : (parseFloat(ans.solde_actuel) || 0);
+  const current = contribNsp ? null : (parseFloat(ans.contribution_annuelle) || 0);
+  const hasMissing = soldeNsp || contribNsp;
+
+  // Taux selon âge de l'immeuble (référence RGCQ / pratique courante au QC)
+  let rate;
+  if(age < 10) rate = 0.0040;
+  else if(age < 25) rate = 0.0055;
+  else if(age < 40) rate = 0.0075;
+  else rate = 0.0095;
+
+  // Ajustement type de construction
+  if(ans.type === "bois") rate += 0.0015;
+  else if(ans.type === "mixte") rate += 0.0007;
+
+  const recommended = Math.round(value * rate);
+  const gap = current !== null ? recommended - current : null;
+  const ratio = (current !== null && recommended > 0) ? current / recommended : null;
+
+  const perUnitMonthly = nbUnites > 0 ? Math.round(recommended / nbUnites / 12) : 0;
+  const currentPerUnitMonthly = (nbUnites > 0 && current !== null) ? Math.round(current / nbUnites / 12) : null;
+
+  // Projection 10 ans (linéaire, hors rendement et inflation)
+  const proj10_current = (balance !== null && current !== null) ? balance + current * 10 : null;
+  const proj10_recommended = (balance !== null) ? balance + recommended * 10 : null;
+
+  let niveau, niveauColor, verdictIcon, verdictLabel, verdictTxt;
+  if(hasMissing){
+    niveau = "critique"; niveauColor = "#A32D2D"; verdictIcon = "?";
+    verdictLabel = "Étude prioritaire — chiffres clés manquants";
+    verdictTxt = "Ne pas avoir accès au solde du fonds ou au montant des contributions est en soi un signal d'alerte. Une étude conforme à la Loi 16 est prioritaire pour reprendre le contrôle des chiffres.";
+  } else if(ans.etude === "jamais" || (ratio !== null && ratio < 0.6)){
+    niveau = "critique"; niveauColor = "#A32D2D"; verdictIcon = "!";
+    verdictLabel = "Action urgente requise";
+    verdictTxt = "Votre syndicat présente un risque élevé de non-conformité à la Loi 16 et de sous-financement du fonds.";
+  } else if(ans.etude === "ancienne" || (ratio !== null && ratio < 0.9)){
+    niveau = "risque"; niveauColor = "#854F0B"; verdictIcon = "△";
+    verdictLabel = "Sous-financement modéré";
+    verdictTxt = "Votre fonds est en cours de constitution mais reste sous le niveau recommandé pour votre immeuble.";
+  } else {
+    niveau = "ok"; niveauColor = "#0F6E56"; verdictIcon = "✓";
+    verdictLabel = "Conforme aux bonnes pratiques";
+    verdictTxt = "Votre fonds est aligné sur les recommandations professionnelles. Maintenez ce rythme et planifiez la prochaine étude.";
+  }
+
+  return {
+    age, rate, value, recommended, current, gap, ratio,
+    perUnitMonthly, currentPerUnitMonthly,
+    balance, proj10_current, proj10_recommended,
+    niveau, niveauColor, verdictIcon, verdictLabel, verdictTxt,
+    soldeNsp, contribNsp, hasMissing
+  };
+}
+
+function validate(){
+  formErr = "";
+  const q = QS[step];
+  if(q.type === "radio" && !ans[q.id]){
+    formErr = "Veuillez sélectionner une réponse.";
+    return false;
+  }
+  if(q.type === "fields"){
+    for(const f of q.fields){
+      const required = f.label.includes("*");
+      const nspChecked = f.nsp && ans[f.key + "_nsp"];
+      const val = ans[f.key];
+      if(required && !nspChecked && (val === undefined || val === null || (typeof val === "string" && !val.trim()))){
+        formErr = `Veuillez remplir le champ « ${f.label.replace(" *","")} » ou cochez « Je ne sais pas ».`;
+        return false;
+      }
+      if(!nspChecked && f.type === "number" && val !== undefined && val !== ""){
+        const n = parseFloat(val);
+        if(isNaN(n) || n < 0){
+          formErr = `Le champ « ${f.label.replace(" *","")} » doit être un nombre positif.`;
+          return false;
+        }
+      }
+      if(f.type === "email" && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){
+        formErr = "Adresse courriel invalide.";
+        return false;
+      }
+    }
+    if(q.id === "syndicat"){
+      const y = parseInt(ans.annee);
+      const now = new Date().getFullYear();
+      if(y < 1800 || y > now + 1){ formErr = "Année de construction invalide."; return false; }
+      const u = parseInt(ans.nb_unites);
+      if(u < 2){ formErr = "Le nombre d'unités doit être au moins 2."; return false; }
+    }
+    if(q.id === "valeur"){
+      const v = parseFloat(ans.valeur_reconstruction);
+      if(v < 100000){ formErr = "La valeur de reconstruction semble trop faible. Vérifiez la saisie."; return false; }
+    }
+  }
+  return true;
+}
+
+function estimateValue(){
+  const n = parseInt(ans.nb_unites) || 0;
+  if(n < 2){
+    formErr = "Renseignez d'abord le nombre d'unités à l'étape 1.";
+    render();
+    return;
+  }
+  ans.valeur_reconstruction = String(n * AVG_UNIT_SQFT * COST_PER_SQFT);
+  formErr = "";
+  render();
+}
+
+function selectOpt(id, val){ ans[id] = val; formErr = ""; render(); }
+function setField(key, val){ ans[key] = val; }
+function prev(){ if(step > 0) step--; formErr = ""; render(); }
+function restart(){ step = 0; ans = {}; phase = "form"; formErr = ""; result = null; render(); }
+
+function nextStep(){
+  if(!validate()){ render(); return; }
+  if(step < QS.length - 1){ step++; render(); return; }
+  result = compute();
+  phase = "result";
+  if(LEAD_URL){
+    try{
+      fetch(LEAD_URL, {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ source:"calculateur-fp", answers: ans, result })
+      }).catch(()=>{});
+    } catch(_){}
+  }
+  render();
+}
+
+function renderForm(){
+  const q = QS[step];
+  let qHTML = "";
+
+  if(q.type === "radio"){
+    qHTML = `<div class="options">${q.opts.map(o => {
+      const sel = ans[q.id] === o.v;
+      return `<div class="opt${sel ? " selected" : ""}" onclick="selectOpt('${q.id}','${o.v}')">
+        <div class="opt-radio"><div class="opt-dot"></div></div>
+        <div class="opt-text">${o.t}</div>
+      </div>`;
+    }).join("")}</div>`;
+  } else {
+    qHTML = `<div>${q.fields.map(f => {
+      const val = ans[f.key] !== undefined ? String(ans[f.key]).replace(/"/g,'&quot;') : "";
+      const inputCls = f.prefix ? "with-prefix" : "";
+      const nspChecked = f.nsp && ans[f.key + "_nsp"];
+      const tooltipOpen = !!tooltips[f.key];
+      const labelHTML = f.tooltip
+        ? `<div class="label-row">
+            <label class="input-label">${f.label}</label>
+            <button type="button" class="tooltip-btn${tooltipOpen?' open':''}" onclick="toggleTooltip('${f.key}')" aria-label="Aide">?</button>
+          </div>
+          ${tooltipOpen ? `<div class="tooltip-box">${f.tooltip}</div>` : ""}`
+        : `<label class="input-label">${f.label}</label>`;
+      return `<div class="input-group">
+        ${labelHTML}
+        <div class="input-wrap">
+          ${f.prefix ? `<span class="input-prefix">${f.prefix}</span>` : ""}
+          <input class="${inputCls}" type="${f.type}" value="${val}" placeholder="${f.ph}" oninput="setField('${f.key}', this.value)" ${f.type==="number" ? 'min="0" step="any" inputmode="numeric"' : ''}${nspChecked ? ' disabled' : ''}>
+        </div>
+        ${f.nsp ? `<div class="nsp-row${nspChecked?' checked':''}" onclick="toggleNsp('${f.key}')">
+          <div class="nsp-check"><span class="nsp-check-icon">✓</span></div>
+          <span>Je ne sais pas / chiffre non accessible</span>
+        </div>` : ""}
+      </div>`;
+    }).join("")}${q.estimateHint ? `<div class="input-hint">Vous ne connaissez pas cette valeur ? <a onclick="estimateValue()">Estimer automatiquement</a> à partir du nombre d'unités (≈ ${COST_PER_SQFT} $/pi² × ${AVG_UNIT_SQFT} pi² par unité).</div>` : ""}</div>`;
+  }
+
+  const progress = Math.round((step / QS.length) * 100);
+  const isLast = step === QS.length - 1;
+
+  return `<div class="fade">
+    <div class="header">
+      <div class="header-agency">Quatre Piliers — Calculateur gratuit</div>
+      <div class="header-title">Combien votre fonds de prévoyance doit-il recevoir ?</div>
+      <div class="header-sub">Conforme Loi 16 · 6 questions · Résultat instantané</div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:${progress}%"></div></div>
+    <div class="step-label">${q.label}</div>
+    <div class="step-q">${q.q}</div>
+    ${q.help ? `<div class="step-help">${q.help}</div>` : ""}
+    ${qHTML}
+    ${formErr ? `<div class="error">${formErr}</div>` : ""}
+    <div class="nav">
+      ${step > 0 ? `<button class="btn btn-back" onclick="prev()" aria-label="Précédent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>` : ""}
+      <button class="btn ${isLast ? 'btn-cta' : 'btn-next'}" onclick="nextStep()">${isLast ? "Calculer mon résultat" : "Continuer"}</button>
+      <span class="step-count">${step+1} / ${QS.length}</span>
+    </div>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+  </div>`;
+}
+
+function renderResult(){
+  const r = result;
+  const NA = "Non renseigné";
+  const naDisplay = "—";
+
+  const typeLabel = ans.type === "beton" ? "béton/acier"
+    : ans.type === "bois" ? "bois"
+    : ans.type === "mixte" ? "mixte"
+    : "non précisé";
+
+  // Bloc écart : uniquement si la contribution actuelle est connue
+  let gapBlockHTML = "";
+  if(r.current !== null){
+    const gapBlockClass = r.gap > 5000 ? "crit" : r.gap > 0 ? "warn" : "good";
+    const gapLabel = r.gap > 0 ? "Écart annuel à combler" : "Vous dépassez le minimum recommandé";
+    const gapValue = Math.abs(r.gap);
+    const gapIcon = r.gap > 5000 ? "⚠" : r.gap > 0 ? "△" : "✓";
+    gapBlockHTML = `<div class="number-block ${gapBlockClass}">
+      <div class="number-block-icon">${gapIcon}</div>
+      <div class="number-block-info">
+        <div class="number-block-label">${gapLabel}</div>
+        <div class="number-block-value">${fmtCAD(gapValue)}</div>
+        <div class="number-block-detail">Contribution actuelle : ${fmtCAD(r.current)} (${fmtCAD(r.currentPerUnitMonthly)}/unité/mois)</div>
+      </div>
+    </div>`;
+  } else {
+    gapBlockHTML = `<div class="number-block crit">
+      <div class="number-block-icon">?</div>
+      <div class="number-block-info">
+        <div class="number-block-label">Contribution actuelle inconnue</div>
+        <div class="number-block-value" style="font-size:18px">Écart non calculable</div>
+        <div class="number-block-detail">Ne pas connaître le montant versé annuellement au fonds est un signal d'alerte : la première étape est de reconstituer les chiffres avec un professionnel.</div>
+      </div>
+    </div>`;
+  }
+
+  // Carte projection : adapter selon ce qui est connu
+  let projHTML = "";
+  if(r.balance !== null || r.current !== null){
+    const diff = (r.proj10_recommended !== null && r.proj10_current !== null)
+      ? r.proj10_recommended - r.proj10_current : null;
+    projHTML = `<div class="proj-card">
+      <div class="proj-title">Projection sur 10 ans (hors rendement et inflation)</div>
+      <div class="proj-row"><span class="proj-label">Solde actuel du fonds</span><span class="proj-value">${r.balance !== null ? fmtCAD(r.balance) : naDisplay}</span></div>
+      <div class="proj-row"><span class="proj-label">Au rythme actuel (+10 ans)</span><span class="proj-value">${r.proj10_current !== null ? fmtCAD(r.proj10_current) : naDisplay}</span></div>
+      <div class="proj-row"><span class="proj-label">Au rythme recommandé (+10 ans)</span><span class="proj-value">${r.proj10_recommended !== null ? fmtCAD(r.proj10_recommended) : naDisplay}</span></div>
+      <div class="proj-row"><span class="proj-label">Différence cumulée</span><span class="proj-value">${diff !== null ? fmtCAD(diff) : naDisplay}</span></div>
+    </div>`;
+  } else {
+    projHTML = `<div class="proj-card">
+      <div class="proj-title">Projection sur 10 ans</div>
+      <div class="proj-row" style="border:0;padding:4px 0"><span class="proj-label" style="font-style:italic">Solde et contribution actuels non renseignés : projection indisponible. Une étude permettra de la produire avec précision.</span></div>
+    </div>`;
+  }
+
+  const ctaTitle = r.niveau === "ok"
+    ? "Programmez votre prochaine étude"
+    : r.hasMissing
+    ? "Reprenez le contrôle de vos chiffres"
+    : "Faites valider votre situation par un professionnel";
+
+  const ctaMsg = r.hasMissing
+    ? "Quand les chiffres clés ne sont pas accessibles au CA, c'est souvent le symptôme d'un suivi financier lacunaire. Une étude conforme à la Loi 16 reconstitue les données, fixe la contribution juste et prévient les cotisations spéciales d'urgence. Nous coordonnons tout le processus."
+    : r.niveau === "critique"
+    ? "Une étude conforme à la Loi 16 est requise pour fixer le montant exact, protéger les copropriétaires et éviter une cotisation spéciale d'urgence. Nous coordonnons l'étude et accompagnons votre CA dans la mise à niveau."
+    : r.niveau === "risque"
+    ? "Votre fonds est en construction mais sous le niveau recommandé. Une étude à jour permettra de bâtir un plan de rattrapage progressif et indolore pour vos copropriétaires."
+    : "Excellent travail. La Loi 16 exige une mise à jour de l'étude tous les 5 ans. Nous pouvons coordonner cette mise à jour et auditer la performance de votre fonds.";
+
+  const mailBody = `Bonjour,\n\nSuite au calculateur Loi 16 de Quatre Piliers, je souhaite être contacté pour une étude du fonds de prévoyance.\n\nSyndicat : ${ans.nom}\nUnités : ${ans.nb_unites}\nAnnée de construction : ${ans.annee}\nContribution actuelle : ${r.current !== null ? fmtCAD(r.current) : NA}\nContribution recommandée : ${fmtCAD(r.recommended)}\nÉcart annuel : ${r.gap !== null ? fmtCAD(r.gap) : NA}\nSolde actuel du fonds : ${r.balance !== null ? fmtCAD(r.balance) : NA}\n\nMerci.`;
+  const mailHref = `mailto:info@quatrepiliers.ca?subject=${encodeURIComponent("Étude du fonds de prévoyance — " + ans.nom)}&body=${encodeURIComponent(mailBody)}`;
+
+  return `<div class="fade">
+    <div class="result-header">
+      <div class="result-agency">Quatre Piliers — Calculateur Loi 16</div>
+      <div class="result-title">Diagnostic de votre fonds de prévoyance</div>
+      <div class="result-syndicat">${ans.nom} · ${ans.nb_unites} unités · construit en ${ans.annee}</div>
+      <div class="verdict-row">
+        <div class="verdict-icon" style="background:${r.niveauColor}">${r.verdictIcon}</div>
+        <div>
+          <div class="verdict-label">${r.verdictLabel}</div>
+          <div class="verdict-resume">${r.verdictTxt}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="number-block">
+      <div class="number-block-icon">📊</div>
+      <div class="number-block-info">
+        <div class="number-block-label">Contribution annuelle recommandée</div>
+        <div class="number-block-value">${fmtCAD(r.recommended)}</div>
+        <div class="number-block-detail">Soit environ <strong>${fmtCAD(r.perUnitMonthly)}/unité/mois</strong> · taux retenu : ${(r.rate*100).toFixed(2)} % de la valeur de reconstruction</div>
+      </div>
+    </div>
+
+    ${gapBlockHTML}
+
+    ${projHTML}
+
+    <div class="method-box">
+      <strong>Méthode de calcul :</strong> la Loi 16 (C.c.Q. art. 1071.1) exige une étude professionnelle pour fixer la contribution exacte. À défaut, le repère reconnu par l'industrie est un pourcentage de la valeur de reconstruction, ajusté selon l'âge et le type de construction. Votre cas : <strong>${r.age} an${r.age>1?'s':''} · ${typeLabel}</strong> → taux appliqué <strong>${(r.rate*100).toFixed(2)} %</strong> de <strong>${fmtCAD(r.value)}</strong>.
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-label">${r.niveau === "critique" ? "Recommandation urgente" : "Prochaine étape"}</div>
+      <div class="cta-title">${ctaTitle}</div>
+      <div class="cta-msg">${ctaMsg}</div>
+      <div class="cta-actions">
+        <a class="cta-btn cta-btn-gold" href="${mailHref}">✉ Demander un accompagnement</a>
+        <a class="cta-btn cta-btn-outline" href="tel:5148392494">📞 514-839-2494</a>
+      </div>
+      <div class="cta-contact"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+    </div>
+
+    <div class="disclaimer"><strong>Avis :</strong> Ce calcul est une estimation indicative basée sur les pratiques courantes au Québec. Il ne remplace pas une étude du fonds de prévoyance réalisée par un professionnel qualifié, telle qu'exigée par la Loi 16 (art. 1071.1 C.c.Q.).</div>
+
+    <button class="restart-btn" onclick="restart()">Recommencer le calcul</button>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+  </div>`;
+}
+
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = (phase === "result" && result) ? renderResult() : renderForm();
+}
+
+render();
+</script>
+</body>
+</html>

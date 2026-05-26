@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnostic assurance copropriété Loi 141 — Quatre Piliers</title>
+<meta name="description" content="Vérifiez en 3 minutes la conformité de votre couverture d'assurance copropriété à la Loi 141 (Québec). Diagnostic gratuit : franchise, fonds d'auto-assurance, D&O, sous-assurance.">
+<link rel="canonical" href="https://quatrepiliers.ca/diagnostic-assurance">
+<link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/diagnostic-assurance">
+<link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/diagnostic-assurance">
+<link rel="icon" type="image/png" href="logo.png"/>
+<link rel="apple-touch-icon" href="logo.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diagnostic assurance copropriété Loi 141 — Quatre Piliers">
+<meta property="og:description" content="Vérifiez en 3 minutes la conformité de votre assurance copropriété à la Loi 141 du Québec.">
+<meta property="og:url" content="https://quatrepiliers.ca/diagnostic-assurance">
+<meta property="og:image" content="https://quatrepiliers.ca/og-reclamations-assurance.png">
+<style>
+:root{
+  --gold:#E8B800;--gold-lt:#F5CC00;
+  --blue:#2A4D9E;--blue-dk:#1A3270;
+  --cream:#F0F3FA;--txt:#212B3C;
+  --muted:#5C6880;--brd:#E8EAEF;--wh:#FFFFFF;
+  --crit:#A32D2D;--crit-bg:#FCEBEB;--crit-brd:#F7C1C1;
+  --warn:#854F0B;--warn-bg:#FAEEDA;--warn-brd:#E8C99A;
+  --info:#2A4D9E;--info-bg:#E6ECF7;--info-brd:#B9C8E5;
+  --good:#0F6E56;--good-bg:#E1F5EE;--good-brd:#9FE1CB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--cream);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;color:var(--txt);line-height:1.65}
+.container{width:100%;max-width:640px;background:var(--wh);border-radius:14px;padding:2rem;box-shadow:0 2px 20px rgba(42,77,158,.08);border-top:4px solid var(--gold)}
+.header{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.25rem}
+.header-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.header-title{font-size:17px;font-weight:800;color:var(--blue-dk);margin-bottom:3px;letter-spacing:-.01em}
+.header-sub{font-size:12px;color:var(--muted)}
+.progress-wrap{height:3px;background:var(--brd);border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+.progress-bar{height:100%;background:var(--blue);border-radius:2px;transition:width .3s}
+.step-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.4rem;font-weight:800}
+.step-q{font-size:15.5px;font-weight:700;color:var(--blue-dk);margin-bottom:.4rem;line-height:1.4}
+.step-q-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:.4rem}
+.step-q-row .step-q{flex:1;margin-bottom:0}
+.step-help{font-size:12.5px;color:var(--muted);margin-bottom:1rem;line-height:1.5}
+.options{display:flex;flex-direction:column;gap:8px;margin-bottom:1.25rem}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid var(--brd);border-radius:8px;cursor:pointer;transition:all .14s;background:var(--wh)}
+.opt:hover{border-color:var(--blue);background:var(--cream)}
+.opt.selected{border-color:var(--blue);background:rgba(42,77,158,.07)}
+.opt-radio{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:2px;border:2px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .14s}
+.opt.selected .opt-radio{border-color:var(--blue);background:var(--blue)}
+.opt-dot{width:6px;height:6px;border-radius:50%;background:var(--wh);display:none}
+.opt.selected .opt-dot{display:block}
+.opt-check{width:16px;height:16px;border-radius:4px;flex-shrink:0;margin-top:2px;border:2px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .14s}
+.opt.selected .opt-check{border-color:var(--blue);background:var(--blue)}
+.check-icon{font-size:10px;color:var(--wh);display:none;line-height:1}
+.opt.selected .check-icon{display:block}
+.multi-hint{font-size:11.5px;color:var(--muted);margin-bottom:.75rem;font-style:italic}
+.opt-text{font-size:13.5px;line-height:1.45;color:var(--txt);font-weight:500}
+.opt.selected .opt-text{color:var(--blue-dk);font-weight:600}
+.input-group{margin-bottom:1rem}
+.input-label{font-size:13px;font-weight:700;display:block;margin-bottom:.4rem;color:var(--blue-dk)}
+.input-hint{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+.input-hint a{color:var(--blue);text-decoration:underline;cursor:pointer;font-weight:700}
+.input-wrap{position:relative}
+.input-prefix{position:absolute;top:50%;transform:translateY(-50%);font-size:13px;color:var(--muted);font-weight:700;pointer-events:none;left:12px}
+.label-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:.4rem}
+.label-row .input-label{margin-bottom:0}
+.tooltip-btn{background:var(--cream);border:1px solid var(--brd);color:var(--blue);width:22px;height:22px;border-radius:50%;font-size:12px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;flex-shrink:0;transition:all .15s;padding:0;line-height:1;margin-top:1px}
+.tooltip-btn:hover,.tooltip-btn.open{background:var(--blue);color:var(--wh);border-color:var(--blue)}
+.tooltip-box{background:#FFF8DC;border-left:3px solid var(--gold);border-radius:6px;padding:.7rem .85rem;font-size:12px;color:var(--txt);line-height:1.55;margin:0 0 .9rem;animation:fadeIn .2s ease}
+.tooltip-box strong{color:var(--blue-dk);font-weight:800}
+.nsp-row{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-size:12px;color:var(--muted);cursor:pointer;user-select:none;padding:4px 0}
+.nsp-row:hover{color:var(--blue)}
+.nsp-check{width:15px;height:15px;border:1.5px solid var(--brd);border-radius:3px;background:var(--wh);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .14s}
+.nsp-row.checked .nsp-check{background:var(--blue);border-color:var(--blue)}
+.nsp-check-icon{font-size:10px;color:var(--wh);display:none;line-height:1;font-weight:800}
+.nsp-row.checked .nsp-check-icon{display:block}
+.nsp-row.checked{color:var(--blue);font-weight:600}
+input:disabled{background:#F5F7FB;color:#A0A8B8;cursor:not-allowed}
+input[type=text],input[type=email],input[type=number]{width:100%;padding:.65rem .85rem;border:1px solid var(--brd);border-radius:6px;font-size:14px;font-family:inherit;color:var(--txt);outline:none;background:var(--wh);transition:border-color .14s}
+input.with-prefix{padding-left:28px}
+input:focus{border-color:var(--blue)}
+input::placeholder{color:#aaa}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input[type=number]{-moz-appearance:textfield}
+.nav{display:flex;gap:8px;align-items:center;margin-top:.5rem}
+.btn{padding:11px 22px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .25s;letter-spacing:.06em;text-transform:uppercase;border:none}
+.btn-back{background:var(--wh);color:var(--blue-dk);border:1px solid var(--brd);padding:11px 14px}
+.btn-back:hover{background:var(--cream)}
+.btn-next{background:var(--blue);color:var(--wh)}
+.btn-next:hover{background:var(--blue-dk);box-shadow:0 4px 14px rgba(42,77,158,.28)}
+.btn-cta{background:var(--gold);color:var(--blue-dk)}
+.btn-cta:hover{background:var(--gold-lt);box-shadow:0 6px 20px rgba(232,184,0,.35)}
+.step-count{font-size:12px;color:var(--muted);margin-left:auto;font-weight:600}
+.error{font-size:12px;color:#791F1F;background:#FCEBEB;border:1px solid #F7C1C1;border-radius:6px;padding:.5rem .75rem;margin-bottom:.75rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeIn .25s ease}
+.result-header{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh);border-bottom:4px solid var(--gold)}
+.result-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.result-title{font-size:17px;font-weight:800;margin-bottom:4px}
+.result-syndicat{font-size:12px;color:rgba(255,255,255,.7)}
+.verdict-row{display:flex;align-items:center;gap:14px;margin-top:14px}
+.verdict-icon{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:var(--wh);flex-shrink:0;line-height:1}
+.verdict-score{font-size:22px;font-weight:800;color:var(--wh);line-height:1}
+.verdict-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.85);margin-bottom:4px}
+.verdict-resume{font-size:13px;color:rgba(255,255,255,.85);line-height:1.55}
+.risk-block{background:var(--crit-bg);border:1px solid var(--crit-brd);border-left:4px solid var(--crit);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:.85rem}
+.risk-block.warn{background:var(--warn-bg);border-color:var(--warn-brd);border-left-color:var(--warn)}
+.risk-block.good{background:var(--good-bg);border-color:var(--good-brd);border-left-color:var(--good)}
+.risk-block-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:800;margin-bottom:4px}
+.risk-block-value{font-size:26px;font-weight:800;color:var(--crit);letter-spacing:-.02em;line-height:1.15;margin-bottom:6px}
+.risk-block.warn .risk-block-value{color:var(--warn)}
+.risk-block.good .risk-block-value{color:var(--good)}
+.risk-block-detail{font-size:12.5px;color:var(--txt);line-height:1.55}
+.section-title{font-size:13px;font-weight:800;color:var(--blue-dk);margin:1.25rem 0 .6rem;text-transform:uppercase;letter-spacing:.06em}
+.nc-list{background:var(--wh);border:1px solid var(--crit-brd);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1rem}
+.nc-list-header{display:flex;align-items:center;gap:8px;margin-bottom:.6rem}
+.nc-list-title{font-size:13px;font-weight:800;color:var(--crit);text-transform:uppercase;letter-spacing:.04em}
+.nc-item{font-size:13px;color:var(--txt);line-height:1.55;padding:6px 0;border-top:1px solid var(--crit-brd)}
+.nc-item:first-of-type{border-top:0;padding-top:0}
+.nc-item strong{color:var(--crit);font-weight:800}
+.priorite{background:var(--wh);border:1px solid var(--brd);border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.urgence-badge{font-size:10px;font-weight:800;padding:3px 9px;border-radius:4px;margin-right:6px;letter-spacing:.04em;text-transform:uppercase}
+.echeance{font-size:11px;color:var(--muted);font-weight:600}
+.priorite-titre{font-size:13.5px;font-weight:700;color:var(--blue-dk);margin:6px 0 4px}
+.priorite-desc{font-size:12.5px;color:var(--muted);line-height:1.6}
+.summary-card{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem}
+.summary-title{font-size:12px;font-weight:800;color:var(--blue-dk);margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.06em}
+.summary-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--brd);font-size:13px;gap:1rem}
+.summary-row:last-child{border-bottom:0}
+.summary-label{color:var(--muted)}
+.summary-value{font-weight:700;color:var(--txt);text-align:right;white-space:nowrap}
+.summary-value.crit{color:var(--crit)}
+.summary-value.warn{color:var(--warn)}
+.summary-value.good{color:var(--good)}
+.cta-box{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh)}
+.cta-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:6px}
+.cta-title{font-size:18px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.cta-msg{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:14px}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.cta-btn{display:inline-block;padding:11px 18px;border-radius:6px;font-size:12px;font-weight:800;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+.cta-btn-gold{background:var(--gold);color:var(--blue-dk)}
+.cta-btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:var(--wh)}
+.cta-contact{font-size:11px;color:rgba(255,255,255,.55);text-align:center;margin-top:10px}
+.cta-contact a{color:rgba(255,255,255,.7);text-decoration:none}
+.cross-link{background:var(--wh);border:1px solid var(--brd);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:14px}
+.cross-link-icon{font-size:24px;flex-shrink:0;line-height:1}
+.cross-link-info{flex:1;min-width:0}
+.cross-link-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);font-weight:800;margin-bottom:3px}
+.cross-link-text{font-size:13px;color:var(--txt);line-height:1.5}
+.cross-link-text a{color:var(--blue);font-weight:700;text-decoration:none}
+.cross-link-text a:hover{text-decoration:underline}
+.restart-btn{font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;font-family:inherit;margin-top:.5rem;font-weight:600}
+.page-footer{text-align:center;margin-top:1.25rem;font-size:11px;color:var(--muted);line-height:1.6}
+.page-footer a{color:var(--muted);text-decoration:none;font-weight:600}
+.page-footer a:hover{color:var(--blue)}
+.disclaimer{font-size:11px;color:var(--muted);background:var(--cream);border-radius:6px;padding:.7rem .9rem;margin-top:.75rem;line-height:1.55}
+.disclaimer strong{color:var(--blue-dk)}
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+
+<script>
+// ==============================================
+// DIAGNOSTIC ASSURANCE COPROPRIÉTÉ — Quatre Piliers
+// Conforme Loi 141 (en vigueur depuis 15 avril 2021, ajustements 2024)
+// ==============================================
+
+const LEAD_URL = "";
+
+// Coûts de référence Grand Montréal 2025-2026 pour estimation auto
+const COST_PER_SQFT = 400;
+const AVG_UNIT_SQFT = 950;
+const FRANCHISE_PLAFOND_LOI141 = 25000;
+
+const COVERAGE_LABELS = {
+  refoulement: "Refoulement d'égout",
+  tremblement: "Tremblement de terre",
+  inondation: "Inondation",
+  equipements: "Bris d'équipements (ascenseurs, génératrice, chaufferie)",
+  perte_revenus: "Perte de revenus locatifs",
+  vol: "Vol et vandalisme",
+  rc_env: "Responsabilité civile environnementale"
+};
+const COVERAGES_LIST = Object.keys(COVERAGE_LABELS);
+const COVERAGES_HIGH_PRIO = ["refoulement","equipements","tremblement"];
+
+const QS = [
+  {
+    id:"syndicat",
+    type:"fields",
+    label:"Étape 1 sur 8",
+    q:"Caractéristiques de votre immeuble",
+    help:"Quelques informations factuelles pour calibrer le diagnostic. Vous renseignerez le nom du syndicat à la fin.",
+    fields:[
+      {key:"nb_unites",label:"Nombre d'unités *",ph:"Ex : 24",type:"number"},
+      {key:"annee",label:"Année de construction *",ph:"Ex : 2008",type:"number"}
+    ]
+  },
+  {
+    id:"valeur",
+    type:"fields",
+    label:"Étape 2 sur 8",
+    q:"Valeur de reconstruction assurée actuellement",
+    help:"C'est le montant maximum que votre police d'assurance prendra en charge en cas de sinistre total. Le chiffre figure sur la déclaration de la police du syndicat.",
+    fields:[
+      {key:"valeur_assuree",label:"Valeur assurée actuelle ($CAD) *",ph:"Ex : 8 500 000",type:"number",prefix:"$"}
+    ],
+    estimateHint:true
+  },
+  {
+    id:"franchise",
+    type:"fields",
+    label:"Étape 3 sur 8",
+    q:"Franchise standard pour dégât d'eau",
+    help:"Le dégât d'eau est de loin le sinistre le plus fréquent en copropriété. Cette franchise est généralement la plus élevée de la police.",
+    fields:[
+      {
+        key:"franchise",
+        label:"Franchise dégât d'eau ($CAD) *",
+        ph:"Ex : 25 000",
+        type:"number",
+        prefix:"$",
+        tooltip:"<strong>La Loi 141 plafonne la franchise du syndicat à 25 000 $</strong> (montant ajusté en 2024). Au-delà, le syndicat doit constituer un <strong>fonds d'auto-assurance</strong> dédié pour combler l'écart et éviter une cotisation spéciale d'urgence après chaque sinistre.",
+        nsp:true
+      }
+    ]
+  },
+  {
+    id:"fonds_auto",
+    type:"radio",
+    label:"Étape 4 sur 8",
+    q:"Avez-vous constitué un fonds d'auto-assurance ?",
+    help:"Ce fonds dédié, distinct du fonds de prévoyance, sert à couvrir la portion de franchise qui dépasse les plafonds réglementaires.",
+    tooltip:"<strong>Obligatoire depuis la Loi 141 (2021)</strong> pour combler les franchises élevées et éviter de cotiser en urgence après un sinistre. Distinct du fonds de prévoyance (qui finance les travaux majeurs).",
+    opts:[
+      {v:"oui",t:"Oui, constitué et alimenté régulièrement"},
+      {v:"en_cours",t:"En cours de constitution"},
+      {v:"non",t:"Non, pas de fonds dédié"},
+      {v:"nsp",t:"Je ne sais pas"}
+    ]
+  },
+  {
+    id:"do",
+    type:"radio",
+    label:"Étape 5 sur 8",
+    q:"Avez-vous une assurance responsabilité des administrateurs (D&O) ?",
+    help:"Cette couverture est distincte de la police principale du syndicat ; elle protège personnellement les membres du conseil d'administration.",
+    tooltip:"<strong>Protège personnellement les bénévoles du CA contre les poursuites</strong> liées à leurs décisions (gestion des fonds, choix de fournisseurs, conflit avec un copropriétaire, etc.). Indispensable — sans elle, un administrateur peut être tenu responsable sur son patrimoine personnel et le recrutement de bénévoles devient quasi impossible.",
+    opts:[
+      {v:"oui",t:"Oui, police D&O distincte en vigueur"},
+      {v:"incluse",t:"Oui, incluse dans la police du syndicat"},
+      {v:"non",t:"Non"},
+      {v:"nsp",t:"Je ne sais pas"}
+    ]
+  },
+  {
+    id:"maj_valeur",
+    type:"radio",
+    label:"Étape 6 sur 8",
+    q:"Quand la valeur assurée a-t-elle été mise à jour ?",
+    help:"Une évaluation à jour évite la sous-assurance, qui se traduit par un manque à gagner réparti entre copropriétaires en cas de sinistre.",
+    tooltip:"<strong>L'inflation des coûts de construction depuis 2020</strong> (béton, main-d'œuvre, matériaux) a fait grimper la valeur de reconstruction de 25 à 40 %. Toute valeur de plus de 2 ans devient rapidement obsolète. La pratique courante au Québec est une réévaluation par un expert tous les 1 à 2 ans.",
+    opts:[
+      {v:"moins_1",t:"Il y a moins d'un an"},
+      {v:"1_3",t:"Entre 1 et 3 ans"},
+      {v:"plus_3",t:"Il y a plus de 3 ans"},
+      {v:"nsp",t:"Je ne sais pas"}
+    ]
+  },
+  {
+    id:"couvertures",
+    type:"multi",
+    label:"Étape 7 sur 8",
+    q:"Quelles couvertures spécifiques sont incluses dans votre police ?",
+    help:"Cochez celles que vous savez être incluses. Une couverture absente peut entraîner un découvert majeur en cas de sinistre.",
+    opts:COVERAGES_LIST.map(k => ({v:k, t:COVERAGE_LABELS[k]}))
+  },
+  {
+    id:"contact",
+    type:"fields",
+    label:"Étape 8 sur 8",
+    q:"Recevez votre rapport personnalisé",
+    help:"Le nom du syndicat sert uniquement à personnaliser votre rapport, il ne sera jamais partagé. Aucun spam.",
+    fields:[
+      {key:"nom",label:"Nom du syndicat *",ph:"Ex : Syndicat des copropriétaires du 123 Maple",type:"text"},
+      {key:"email",label:"Courriel *",ph:"votre@courriel.com",type:"email"},
+      {key:"nom_contact",label:"Votre nom (optionnel)",ph:"Prénom Nom",type:"text"}
+    ]
+  }
+];
+
+let step = 0, ans = {}, phase = "form", formErr = "", result = null;
+let tooltips = {};
+
+function toggleTooltip(key){ tooltips[key] = !tooltips[key]; render(); }
+function toggleNsp(key){
+  const nspKey = key + "_nsp";
+  ans[nspKey] = !ans[nspKey];
+  if(ans[nspKey]) ans[key] = "";
+  formErr = "";
+  render();
+}
+
+function fmt(n){
+  if(typeof n !== "number" || isNaN(n)) return "—";
+  return new Intl.NumberFormat('fr-CA', {maximumFractionDigits:0}).format(Math.round(n));
+}
+function fmtCAD(n){ return fmt(n) + " $"; }
+
+function estimateValue(){
+  const n = parseInt(ans.nb_unites) || 0;
+  if(n < 2){
+    formErr = "Renseignez d'abord le nombre d'unités à l'étape 1.";
+    render();
+    return;
+  }
+  ans.valeur_assuree = String(n * AVG_UNIT_SQFT * COST_PER_SQFT);
+  formErr = "";
+  render();
+}
+
+function compute(){
+  const nbUnites = parseInt(ans.nb_unites) || 0;
+  const annee = parseInt(ans.annee) || new Date().getFullYear();
+  const age = Math.max(0, new Date().getFullYear() - annee);
+
+  const valeurAssuree = parseFloat(ans.valeur_assuree) || 0;
+  const valeurEstimee = nbUnites * COST_PER_SQFT * AVG_UNIT_SQFT;
+  const ratioCouverture = valeurEstimee > 0 ? valeurAssuree / valeurEstimee : 0;
+
+  const franchiseKnown = !ans.franchise_nsp;
+  const franchise = franchiseKnown ? (parseFloat(ans.franchise) || 0) : null;
+
+  const fondsAuto = ans.fonds_auto;
+  const doVal = ans.do;
+  const majValeur = ans.maj_valeur;
+  const couvertures = Array.isArray(ans.couvertures) ? ans.couvertures : [];
+  const missingCoverages = COVERAGES_LIST.filter(c => !couvertures.includes(c));
+
+  let score = 100;
+  const nonConformitesLoi141 = [];
+  const recommandations = [];
+
+  // 1. Couverture vs valeur estimée
+  if(valeurEstimee > 0){
+    if(ratioCouverture < 0.7){
+      score -= 25;
+      recommandations.push({
+        urgence:"Critique",
+        echeance:"Sous 30 jours",
+        titre:"Sous-assurance grave",
+        desc:`Votre valeur assurée (${fmtCAD(valeurAssuree)}) ne représente que ${Math.round(ratioCouverture*100)} % de la valeur estimée de reconstruction (${fmtCAD(valeurEstimee)}). En cas de sinistre total, le manque à gagner sera réparti entre les copropriétaires.`
+      });
+    } else if(ratioCouverture < 0.9){
+      score -= 10;
+      recommandations.push({
+        urgence:"Important",
+        echeance:"Sous 3 mois",
+        titre:"Sous-assurance modérée",
+        desc:`Votre couverture (${Math.round(ratioCouverture*100)} % de la valeur estimée) reste inférieure au niveau prudent. Faites réévaluer l'immeuble par un expert avant la prochaine échéance de la police.`
+      });
+    } else if(ratioCouverture > 1.1){
+      score -= 3;
+      recommandations.push({
+        urgence:"Recommandé",
+        echeance:"Sous 6 mois",
+        titre:"Surassurance probable",
+        desc:`Votre couverture excède d'environ ${Math.round((ratioCouverture-1)*100)} % la valeur estimée de reconstruction. Une réévaluation pourrait réduire la prime sans rogner sur la protection.`
+      });
+    }
+  }
+
+  // 2. Franchise + fonds auto-assurance (cœur Loi 141)
+  if(franchiseKnown && franchise > FRANCHISE_PLAFOND_LOI141){
+    if(fondsAuto !== "oui"){
+      score -= 25;
+      nonConformitesLoi141.push(`Franchise dégât d'eau de <strong>${fmtCAD(franchise)}</strong>, supérieure au plafond légal de ${fmtCAD(FRANCHISE_PLAFOND_LOI141)}, <strong>sans fonds d'auto-assurance constitué</strong>. Le syndicat n'est pas en conformité avec la Loi 141 (en vigueur depuis le 15 avril 2021, ajustements 2024).`);
+      recommandations.push({
+        urgence:"Critique",
+        echeance:"Sous 60 jours",
+        titre:"Constituer le fonds d'auto-assurance",
+        desc:`Votre franchise (${fmtCAD(franchise)}) dépasse le plafond légal de ${fmtCAD(FRANCHISE_PLAFOND_LOI141)}. La Loi 141 impose la constitution d'un fonds d'auto-assurance pour combler cet écart. Sans ce fonds, chaque sinistre déclenche une cotisation spéciale d'urgence répartie entre tous les copropriétaires.`
+      });
+    } else {
+      score -= 5;
+      recommandations.push({
+        urgence:"Recommandé",
+        echeance:"À la prochaine AGA",
+        titre:"Valider le niveau du fonds d'auto-assurance",
+        desc:`Vérifiez avec votre courtier que le fonds d'auto-assurance couvre bien l'écart entre votre franchise (${fmtCAD(franchise)}) et le plafond légal de ${fmtCAD(FRANCHISE_PLAFOND_LOI141)}, ainsi que les autres franchises de la police.`
+      });
+    }
+  } else if(!franchiseKnown){
+    score -= 12;
+    recommandations.push({
+      urgence:"Important",
+      echeance:"Sous 14 jours",
+      titre:"Connaître le montant des franchises",
+      desc:"Le CA ne dispose pas du montant des franchises de sa police. Demandez immédiatement le détail à votre courtier — c'est l'information la plus critique pour anticiper l'impact financier d'un sinistre."
+    });
+  }
+
+  // 3. Cas particulier : fonds_auto manquant même si franchise <= 25k
+  if(franchiseKnown && franchise > 0 && franchise <= FRANCHISE_PLAFOND_LOI141 && fondsAuto === "non"){
+    score -= 5;
+    recommandations.push({
+      urgence:"Recommandé",
+      echeance:"Sous 6 mois",
+      titre:"Anticiper un fonds d'auto-assurance",
+      desc:`Votre franchise actuelle (${fmtCAD(franchise)}) est sous le plafond légal mais le syndicat n'a aucun coussin pour absorber un sinistre. Toute hausse future de la franchise par l'assureur déclencherait une obligation de fonds d'auto-assurance.`
+    });
+  }
+
+  // 4. D&O
+  if(doVal === "non"){
+    score -= 15;
+    recommandations.push({
+      urgence:"Critique",
+      echeance:"Sous 30 jours",
+      titre:"Souscrire une assurance D&O",
+      desc:"Sans assurance des administrateurs, les membres du CA peuvent être tenus personnellement responsables en cas de poursuite (mauvaise gestion alléguée, conflit avec un copropriétaire, choix d'un fournisseur défaillant). C'est aussi un frein majeur au recrutement de bénévoles compétents."
+    });
+  } else if(doVal === "nsp"){
+    score -= 10;
+    recommandations.push({
+      urgence:"Important",
+      echeance:"Sous 14 jours",
+      titre:"Confirmer la couverture D&O",
+      desc:"Vérifiez auprès de votre courtier si une couverture D&O est en vigueur (distincte ou incluse) et quelle est la limite. C'est essentiel pour la protection personnelle des administrateurs."
+    });
+  }
+
+  // 5. MAJ valeur
+  if(majValeur === "plus_3" || majValeur === "nsp"){
+    score -= 10;
+    recommandations.push({
+      urgence:"Important",
+      echeance:"Sous 60 jours",
+      titre:"Réévaluer la valeur de reconstruction",
+      desc:"L'inflation des coûts de construction depuis 2020 a fait grimper la valeur de reconstruction de 25 à 40 %. Une évaluation de plus de 3 ans (ou inconnue) expose à une sous-assurance importante. Mandatez un évaluateur agréé."
+    });
+  } else if(majValeur === "1_3"){
+    score -= 5;
+    recommandations.push({
+      urgence:"Recommandé",
+      echeance:"Sous 6 mois",
+      titre:"Planifier une réévaluation",
+      desc:"La pratique recommande une réévaluation tous les 1 à 2 ans dans le contexte d'inflation actuel."
+    });
+  }
+
+  // 6. Couvertures manquantes
+  if(missingCoverages.length > 0){
+    score -= 2 * missingCoverages.length;
+    const missingLabels = missingCoverages.map(c => COVERAGE_LABELS[c].toLowerCase()).join(", ");
+    const hasHighPrio = missingCoverages.some(c => COVERAGES_HIGH_PRIO.includes(c));
+    recommandations.push({
+      urgence: hasHighPrio ? "Important" : "Recommandé",
+      echeance:"À la prochaine échéance de la police",
+      titre:"Compléter les couvertures spécifiques",
+      desc:`Couvertures non confirmées : ${missingLabels}. Le refoulement d'égout en particulier est responsable de la majorité des sinistres en zone urbaine ; le bris d'équipements peut paralyser un immeuble (panne d'ascenseur, génératrice).`
+    });
+  }
+
+  score = Math.max(0, Math.min(100, score));
+
+  // Tri des recommandations par urgence
+  const URG_ORDER = {"Critique":0,"Important":1,"Recommandé":2};
+  recommandations.sort((a,b) => URG_ORDER[a.urgence] - URG_ORDER[b.urgence]);
+
+  // Risque financier max par copropriétaire
+  let exposureFranchise = 0;
+  if(franchiseKnown && franchise > 0 && fondsAuto !== "oui"){
+    exposureFranchise = franchise;
+  }
+  const exposureSousAssurance = Math.max(0, valeurEstimee - valeurAssuree);
+  const totalExposure = exposureFranchise + exposureSousAssurance;
+  const exposurePerUnit = nbUnites > 0 ? Math.round(totalExposure / nbUnites) : 0;
+
+  // Niveau (verdict 4 niveaux)
+  let niveau, niveauColor, niveauIcon, niveauResume;
+  if(score < 40){
+    niveau = "Critique"; niveauColor = "#A32D2D"; niveauIcon = "!";
+    niveauResume = "Votre couverture présente plusieurs non-conformités majeures qui exposent les copropriétaires à des coûts importants en cas de sinistre. Une revue complète avec votre courtier est urgente.";
+  } else if(score < 60){
+    niveau = "À risque"; niveauColor = "#854F0B"; niveauIcon = "△";
+    niveauResume = "Votre couverture comporte des lacunes significatives. Plusieurs points doivent être corrigés rapidement avec votre courtier pour limiter l'exposition financière des copropriétaires.";
+  } else if(score < 80){
+    niveau = "En progrès"; niveauColor = "#2A4D9E"; niveauIcon = "↗";
+    niveauResume = "Votre couverture est globalement adéquate mais peut être renforcée sur plusieurs points pour éliminer les risques résiduels et sécuriser les copropriétaires.";
+  } else {
+    niveau = "Bien protégé"; niveauColor = "#0F6E56"; niveauIcon = "✓";
+    niveauResume = "Votre couverture respecte les exigences de la Loi 141 et les bonnes pratiques actuelles. Maintenez ce niveau en révisant la police chaque année avec votre courtier.";
+  }
+
+  return {
+    score, niveau, niveauColor, niveauIcon, niveauResume,
+    nonConformitesLoi141, recommandations,
+    valeurAssuree, valeurEstimee, ratioCouverture,
+    franchise, franchiseKnown, fondsAuto, doVal, majValeur,
+    couvertures, missingCoverages,
+    exposureFranchise, exposureSousAssurance, exposurePerUnit, totalExposure,
+    nbUnites, age
+  };
+}
+
+function validate(){
+  formErr = "";
+  const q = QS[step];
+  if(q.type === "radio" && !ans[q.id]){
+    formErr = "Veuillez sélectionner une réponse.";
+    return false;
+  }
+  if(q.type === "multi"){
+    // Pas d'obligation : 0 couverture cochée = aucune couverture spécifique, c'est une donnée valide
+    if(!Array.isArray(ans[q.id])) ans[q.id] = [];
+  }
+  if(q.type === "fields"){
+    for(const f of q.fields){
+      const required = f.label.includes("*");
+      const nspChecked = f.nsp && ans[f.key + "_nsp"];
+      const val = ans[f.key];
+      if(required && !nspChecked && (val === undefined || val === null || (typeof val === "string" && !val.trim()))){
+        formErr = `Veuillez remplir le champ « ${f.label.replace(" *","")} » ou cochez « Je ne sais pas ».`;
+        return false;
+      }
+      if(!nspChecked && f.type === "number" && val !== undefined && val !== ""){
+        const n = parseFloat(val);
+        if(isNaN(n) || n < 0){
+          formErr = `Le champ « ${f.label.replace(" *","")} » doit être un nombre positif.`;
+          return false;
+        }
+      }
+      if(f.type === "email" && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){
+        formErr = "Adresse courriel invalide.";
+        return false;
+      }
+    }
+    if(q.id === "syndicat"){
+      const y = parseInt(ans.annee);
+      const now = new Date().getFullYear();
+      if(y < 1800 || y > now + 1){ formErr = "Année de construction invalide."; return false; }
+      const u = parseInt(ans.nb_unites);
+      if(u < 2){ formErr = "Le nombre d'unités doit être au moins 2."; return false; }
+    }
+    if(q.id === "valeur"){
+      const v = parseFloat(ans.valeur_assuree);
+      if(v < 100000){ formErr = "La valeur assurée semble trop faible. Vérifiez la saisie."; return false; }
+    }
+  }
+  return true;
+}
+
+function selectOpt(id, val){ ans[id] = val; formErr = ""; render(); }
+function toggleMulti(id, val){
+  if(!Array.isArray(ans[id])) ans[id] = [];
+  const i = ans[id].indexOf(val);
+  if(i > -1) ans[id].splice(i,1); else ans[id].push(val);
+  formErr = "";
+  render();
+}
+function setField(key, val){ ans[key] = val; }
+function prev(){ if(step > 0) step--; formErr = ""; render(); }
+function restart(){ step = 0; ans = {}; phase = "form"; formErr = ""; result = null; tooltips = {}; render(); }
+
+function nextStep(){
+  if(!validate()){ render(); return; }
+  if(step < QS.length - 1){ step++; render(); return; }
+  result = compute();
+  phase = "result";
+  if(LEAD_URL){
+    try{
+      fetch(LEAD_URL, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({ source:"diagnostic-assurance", answers:ans, result })
+      }).catch(()=>{});
+    } catch(_){}
+  }
+  render();
+}
+
+function renderForm(){
+  const q = QS[step];
+  let qHTML = "";
+
+  if(q.type === "radio"){
+    qHTML = `<div class="options">${q.opts.map(o => {
+      const sel = ans[q.id] === o.v;
+      return `<div class="opt${sel ? " selected" : ""}" onclick="selectOpt('${q.id}','${o.v}')">
+        <div class="opt-radio"><div class="opt-dot"></div></div>
+        <div class="opt-text">${o.t}</div>
+      </div>`;
+    }).join("")}</div>`;
+  } else if(q.type === "multi"){
+    qHTML = `<div class="multi-hint">Cochez toutes celles qui sont incluses dans votre police actuelle (si vous l'ignorez, laissez décoché).</div><div class="options">${q.opts.map(o => {
+      const sel = Array.isArray(ans[q.id]) && ans[q.id].includes(o.v);
+      return `<div class="opt${sel ? " selected" : ""}" onclick="toggleMulti('${q.id}','${o.v}')">
+        <div class="opt-check"><span class="check-icon">✓</span></div>
+        <div class="opt-text">${o.t}</div>
+      </div>`;
+    }).join("")}</div>`;
+  } else {
+    qHTML = `<div>${q.fields.map(f => {
+      const val = ans[f.key] !== undefined ? String(ans[f.key]).replace(/"/g,'&quot;') : "";
+      const inputCls = f.prefix ? "with-prefix" : "";
+      const nspChecked = f.nsp && ans[f.key + "_nsp"];
+      const tooltipOpen = !!tooltips[f.key];
+      const labelHTML = f.tooltip
+        ? `<div class="label-row">
+            <label class="input-label">${f.label}</label>
+            <button type="button" class="tooltip-btn${tooltipOpen?' open':''}" onclick="toggleTooltip('${f.key}')" aria-label="Aide">?</button>
+          </div>
+          ${tooltipOpen ? `<div class="tooltip-box">${f.tooltip}</div>` : ""}`
+        : `<label class="input-label">${f.label}</label>`;
+      return `<div class="input-group">
+        ${labelHTML}
+        <div class="input-wrap">
+          ${f.prefix ? `<span class="input-prefix">${f.prefix}</span>` : ""}
+          <input class="${inputCls}" type="${f.type}" value="${val}" placeholder="${f.ph}" oninput="setField('${f.key}', this.value)" ${f.type==="number" ? 'min="0" step="any" inputmode="numeric"' : ''}${nspChecked ? ' disabled' : ''}>
+        </div>
+        ${f.nsp ? `<div class="nsp-row${nspChecked?' checked':''}" onclick="toggleNsp('${f.key}')">
+          <div class="nsp-check"><span class="nsp-check-icon">✓</span></div>
+          <span>Je ne sais pas / chiffre non accessible</span>
+        </div>` : ""}
+      </div>`;
+    }).join("")}${q.estimateHint ? `<div class="input-hint">Vous ne connaissez pas cette valeur ? <a onclick="estimateValue()">Estimer automatiquement</a> à partir du nombre d'unités (≈ ${COST_PER_SQFT} $/pi² × ${AVG_UNIT_SQFT} pi² par unité).</div>` : ""}</div>`;
+  }
+
+  // Tooltip global au niveau de la question (pour les radios)
+  const qTooltipOpen = !!tooltips["__q_" + q.id];
+  const stepHeader = q.tooltip
+    ? `<div class="step-q-row">
+        <div class="step-q">${q.q}</div>
+        <button type="button" class="tooltip-btn${qTooltipOpen?' open':''}" onclick="toggleTooltip('__q_${q.id}')" aria-label="Aide">?</button>
+      </div>
+      ${qTooltipOpen ? `<div class="tooltip-box">${q.tooltip}</div>` : ""}`
+    : `<div class="step-q">${q.q}</div>`;
+
+  const progress = Math.round((step / QS.length) * 100);
+  const isLast = step === QS.length - 1;
+
+  return `<div class="fade">
+    <div class="header">
+      <div class="header-agency">Quatre Piliers — Diagnostic gratuit</div>
+      <div class="header-title">Votre assurance copropriété est-elle conforme à la Loi 141 ?</div>
+      <div class="header-sub">8 étapes · Rapport personnalisé · 100 % gratuit</div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:${progress}%"></div></div>
+    <div class="step-label">${q.label}</div>
+    ${stepHeader}
+    ${q.help ? `<div class="step-help">${q.help}</div>` : ""}
+    ${qHTML}
+    ${formErr ? `<div class="error">${formErr}</div>` : ""}
+    <div class="nav">
+      ${step > 0 ? `<button class="btn btn-back" onclick="prev()" aria-label="Précédent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>` : ""}
+      <button class="btn ${isLast ? 'btn-cta' : 'btn-next'}" onclick="nextStep()">${isLast ? "Obtenir mon diagnostic" : "Continuer"}</button>
+      <span class="step-count">${step+1} / ${QS.length}</span>
+    </div>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+  </div>`;
+}
+
+function renderResult(){
+  const r = result;
+
+  // Bloc risque financier
+  let riskClass = "good", riskValue, riskDetail;
+  if(r.exposurePerUnit > 15000){
+    riskClass = "crit";
+  } else if(r.exposurePerUnit > 3000){
+    riskClass = "warn";
+  }
+  if(!r.franchiseKnown && r.fondsAuto !== "oui"){
+    riskClass = "crit";
+    riskValue = "Non calculable";
+    riskDetail = "Le montant de la franchise n'étant pas connu, il est impossible de chiffrer précisément l'exposition. Cette opacité est en soi un signal d'alerte : demandez le détail à votre courtier.";
+  } else if(r.exposurePerUnit === 0){
+    riskValue = "Risque maîtrisé";
+    riskDetail = "Dans la configuration actuelle, aucun montant significatif ne serait répercuté sur les copropriétaires en cas de sinistre majeur. Maintenez ce niveau lors du prochain renouvellement.";
+  } else {
+    riskValue = fmtCAD(r.exposurePerUnit) + " / unité";
+    const parts = [];
+    if(r.exposureFranchise > 0){
+      parts.push(`Franchise non couverte par un fonds d'auto-assurance : <strong>${fmtCAD(r.exposureFranchise)}</strong> (cotisation spéciale d'urgence en cas de sinistre)`);
+    }
+    if(r.exposureSousAssurance > 0){
+      parts.push(`Écart de couverture en cas de sinistre total : <strong>${fmtCAD(r.exposureSousAssurance)}</strong>`);
+    }
+    riskDetail = `Montant maximum qu'un copropriétaire pourrait devoir verser en cas de sinistre majeur dans la configuration actuelle. Décomposition : ${parts.join(" · ")}.`;
+  }
+
+  // Bloc résumé chiffres clés
+  const ratioPct = Math.round(r.ratioCouverture * 100);
+  const ratioClass = r.ratioCouverture < 0.7 ? "crit" : r.ratioCouverture < 0.9 ? "warn" : r.ratioCouverture > 1.1 ? "warn" : "good";
+  const fondsLabel = r.fondsAuto === "oui" ? "Constitué" : r.fondsAuto === "en_cours" ? "En cours" : r.fondsAuto === "non" ? "Aucun" : "Inconnu";
+  const fondsClass = r.fondsAuto === "oui" ? "good" : r.fondsAuto === "en_cours" ? "warn" : "crit";
+  const doLabel = r.doVal === "oui" || r.doVal === "incluse" ? "En vigueur" : r.doVal === "non" ? "Absente" : "Inconnu";
+  const doClass = (r.doVal === "oui" || r.doVal === "incluse") ? "good" : r.doVal === "non" ? "crit" : "warn";
+  const majLabels = {moins_1:"< 1 an",["1_3"]:"1 à 3 ans",plus_3:"> 3 ans",nsp:"Inconnu"};
+  const majClass = r.majValeur === "moins_1" ? "good" : r.majValeur === "1_3" ? "warn" : "crit";
+  const franchiseLabel = r.franchiseKnown ? fmtCAD(r.franchise) : "Inconnue";
+  const franchiseClass = !r.franchiseKnown ? "crit" : r.franchise > 25000 && r.fondsAuto !== "oui" ? "crit" : r.franchise > 25000 ? "warn" : "good";
+
+  const summaryHTML = `<div class="summary-card">
+    <div class="summary-title">Résumé de votre couverture</div>
+    <div class="summary-row"><span class="summary-label">Valeur assurée</span><span class="summary-value">${fmtCAD(r.valeurAssuree)}</span></div>
+    <div class="summary-row"><span class="summary-label">Valeur estimée de reconstruction</span><span class="summary-value">${fmtCAD(r.valeurEstimee)}</span></div>
+    <div class="summary-row"><span class="summary-label">Taux de couverture</span><span class="summary-value ${ratioClass}">${ratioPct} %</span></div>
+    <div class="summary-row"><span class="summary-label">Franchise dégât d'eau</span><span class="summary-value ${franchiseClass}">${franchiseLabel}</span></div>
+    <div class="summary-row"><span class="summary-label">Fonds d'auto-assurance</span><span class="summary-value ${fondsClass}">${fondsLabel}</span></div>
+    <div class="summary-row"><span class="summary-label">Assurance D&O</span><span class="summary-value ${doClass}">${doLabel}</span></div>
+    <div class="summary-row"><span class="summary-label">Dernière réévaluation</span><span class="summary-value ${majClass}">${majLabels[r.majValeur] || "Inconnu"}</span></div>
+    <div class="summary-row"><span class="summary-label">Couvertures incluses</span><span class="summary-value">${r.couvertures.length} / ${COVERAGES_LIST.length}</span></div>
+  </div>`;
+
+  // Non-conformités Loi 141
+  const ncHTML = r.nonConformitesLoi141.length > 0 ? `<div class="nc-list">
+    <div class="nc-list-header">
+      <div class="nc-list-title">⚠ Non-conformité Loi 141</div>
+    </div>
+    ${r.nonConformitesLoi141.map(n => `<div class="nc-item">${n}</div>`).join("")}
+  </div>` : "";
+
+  // Priorités
+  const URGENCE = {
+    Critique:{bg:"#FCEBEB",color:"#791F1F",border:"#A32D2D"},
+    Important:{bg:"#FAEEDA",color:"#633806",border:"#854F0B"},
+    Recommandé:{bg:"#E1F5EE",color:"#085041",border:"#0F6E56"}
+  };
+  const prioritiesHTML = r.recommandations.length > 0 ? `<div class="section-title">Recommandations priorisées</div>
+    ${r.recommandations.map(p => {
+      const u = URGENCE[p.urgence] || URGENCE["Recommandé"];
+      return `<div class="priorite" style="border-left:4px solid ${u.border}">
+        <div>
+          <span class="urgence-badge" style="background:${u.bg};color:${u.color}">${p.urgence}</span>
+          <span class="echeance">${p.echeance}</span>
+        </div>
+        <div class="priorite-titre">${p.titre}</div>
+        <div class="priorite-desc">${p.desc}</div>
+      </div>`;
+    }).join("")}` : `<div class="risk-block good" style="margin-top:1rem">
+      <div class="risk-block-label">Aucune action critique</div>
+      <div class="risk-block-detail">Votre couverture est alignée sur les exigences de la Loi 141 et les bonnes pratiques actuelles. Continuez à réviser la police annuellement avec votre courtier.</div>
+    </div>`;
+
+  // CTA
+  const ctaTitle = r.score < 60
+    ? "Faites auditer votre couverture sans plus attendre"
+    : r.score < 80
+    ? "Sécurisez les derniers points de votre couverture"
+    : "Maintenez votre niveau de protection";
+
+  const ctaMsg = r.score < 60
+    ? "Quatre Piliers audite votre police d'assurance avec votre courtier, identifie les manques précis et coordonne les correctifs avant la prochaine échéance. Aucun lien financier avec un assureur — notre seul mandat est de protéger votre syndicat."
+    : r.score < 80
+    ? "Quelques ajustements suffisent à éliminer les risques résiduels. Quatre Piliers prépare l'audit avec votre courtier et vous accompagne dans la mise à niveau."
+    : "Une revue annuelle avec votre courtier reste recommandée. Quatre Piliers peut auditer vos polices D&O et syndicat à chaque renouvellement pour valider la conformité.";
+
+  const mailBody = `Bonjour,\n\nSuite au diagnostic assurance Loi 141 de Quatre Piliers, je souhaite être contacté(e) pour un audit de la couverture du syndicat.\n\nSyndicat : ${ans.nom}\nUnités : ${ans.nb_unites}\nAnnée de construction : ${ans.annee}\nValeur assurée actuelle : ${fmtCAD(r.valeurAssuree)}\nValeur estimée de reconstruction : ${fmtCAD(r.valeurEstimee)}\nFranchise dégât d'eau : ${r.franchiseKnown ? fmtCAD(r.franchise) : "Inconnue"}\nFonds d'auto-assurance : ${fondsLabel}\nAssurance D&O : ${doLabel}\nScore diagnostic : ${r.score}/100 (${r.niveau})\n\nMerci.`;
+  const mailHref = `mailto:info@quatrepiliers.ca?subject=${encodeURIComponent("Audit assurance Loi 141 — " + ans.nom)}&body=${encodeURIComponent(mailBody)}`;
+
+  return `<div class="fade">
+    <div class="result-header">
+      <div class="result-agency">Quatre Piliers — Diagnostic Loi 141</div>
+      <div class="result-title">Diagnostic de votre couverture d'assurance</div>
+      <div class="result-syndicat">${ans.nom} · ${ans.nb_unites} unités · construit en ${ans.annee}</div>
+      <div class="verdict-row">
+        <div class="verdict-icon" style="background:${r.niveauColor}"><span class="verdict-score">${r.score}</span></div>
+        <div>
+          <div class="verdict-label">${r.niveau}</div>
+          <div class="verdict-resume">${r.niveauResume}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="risk-block ${riskClass}">
+      <div class="risk-block-label">Risque financier estimé par copropriétaire</div>
+      <div class="risk-block-value">${riskValue}</div>
+      <div class="risk-block-detail">${riskDetail}</div>
+    </div>
+
+    ${summaryHTML}
+
+    ${ncHTML}
+
+    ${prioritiesHTML}
+
+    <div class="cta-box">
+      <div class="cta-label">${r.score < 60 ? "Recommandation urgente" : "Prochaine étape"}</div>
+      <div class="cta-title">${ctaTitle}</div>
+      <div class="cta-msg">${ctaMsg}</div>
+      <div class="cta-actions">
+        <a class="cta-btn cta-btn-gold" href="${mailHref}">✉ Quatre Piliers audite ma couverture</a>
+        <a class="cta-btn cta-btn-outline" href="tel:5148392494">📞 514-839-2494</a>
+      </div>
+      <div class="cta-contact"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+    </div>
+
+    <div class="cross-link">
+      <div class="cross-link-icon">📊</div>
+      <div class="cross-link-info">
+        <div class="cross-link-label">Aller plus loin</div>
+        <div class="cross-link-text">Voir aussi notre <a href="calculateur-fonds-prevoyance.html">calculateur de fonds de prévoyance</a> (Loi 16) pour évaluer la contribution annuelle requise.</div>
+      </div>
+    </div>
+
+    <div class="disclaimer"><strong>Avis :</strong> Ce diagnostic ne remplace pas la consultation d'un courtier d'assurance agréé. Les obligations de la Loi 141 évoluent — vérifiez les montants à jour avec votre courtier. Les estimations de risque financier sont indicatives et basées sur les chiffres déclarés.</div>
+
+    <button class="restart-btn" onclick="restart()">Recommencer le diagnostic</button>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+  </div>`;
+}
+
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = (phase === "result" && result) ? renderResult() : renderForm();
+}
+
+render();
+</script>
+</body>
+</html>

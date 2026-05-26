@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quatre Piliers – Gestion de copropriété Grand Montréal | Urgences 24/7</title>
+<meta name="description" content="Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7, conformité Loi 16, gestion complète ou à la carte."/>
+<link rel="canonical" href="https://quatrepiliers.ca/"/>
+<link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/"/>
+<link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/"/>
+<link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/"/>
+<link rel="icon" type="image/png" href="/logo.png"/>
+<link rel="apple-touch-icon" href="/logo.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,500;1,6..12,600&display=swap" rel="stylesheet"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Quatre Piliers"/>
+<meta property="og:title" content="Quatre Piliers – Gestion de copropriété Grand Montréal | Urgences 24/7"/>
+<meta property="og:description" content="Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7, conformité Loi 16, gestion complète ou à la carte."/>
+<meta property="og:url" content="https://quatrepiliers.ca/"/>
+<meta property="og:image" content="https://quatrepiliers.ca/hero.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Quatre Piliers – Gestion de copropriété Grand Montréal | Urgences 24/7"/>
+<meta name="twitter:description" content="Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7, conformité Loi 16, gestion complète ou à la carte."/>
+<meta name="twitter:image" content="https://quatrepiliers.ca/hero.jpg"/>
+<style>
+:root{
+  --paper:#F0F3FA;
+  --paper-dk:#E5EAF5;
+  --ink:#212B3C;
+  --txt:#212B3C;
+  --blue:#2A4D9E;
+  --blue-dk:#1A3270;
+  --blue-ink:#0F1F4A;
+  --gold:#E8B800;
+  --gold-lt:#F5CC00;
+  --gold-dk:#C99F00;
+  --muted:#5C6880;
+  --brd:#E8EAEF;
+  --line:#DCE0EC;
+  --wh:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--wh);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:0}
+h1,h2,h3,h4{font-family:'Nunito Sans',sans-serif;font-weight:800;letter-spacing:-.015em;line-height:1.08;color:var(--blue-ink)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+
+/* ---------- diag banner ---------- */
+.diag-banner{display:none !important}
+.diag-banner:hover{background:#0a1635}
+.diag-banner-ico{flex-shrink:0}
+.diag-banner-cta{color:var(--gold);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+.diag-txt-mob,.diag-cta-mob{display:none}
+@media(max-width:680px){.diag-txt-desk,.diag-cta-desk{display:none}.diag-txt-mob,.diag-cta-mob{display:inline}}
+
+/* ---------- nav ---------- */
+nav#mainNav{position:fixed;top:0;left:0;right:0;z-index:40;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0);transition:background .3s,box-shadow .3s,padding .3s;color:#fff}
+nav#mainNav.scrolled{background:rgba(255,255,255,.97);color:var(--ink);padding:12px 40px}
+nav#mainNav.scrolled .nav-links a,nav#mainNav.scrolled .brand{color:var(--ink)}
+.logo-wrap{display:flex;align-items:center;gap:12px;font-family:'Nunito Sans',sans-serif;font-size:24px;font-weight:600;color:inherit}
+.logo-wrap em{font-style:italic;color:var(--gold);margin-left:2px}
+.logo-img{height:34px;width:auto;transition:opacity .3s}
+.logo-img.logo-light{position:absolute;opacity:1}
+.logo-img.logo-dark{opacity:0}
+nav#mainNav.scrolled .logo-img.logo-light{opacity:0}
+nav#mainNav.scrolled .logo-img.logo-dark{opacity:1}
+.logo-wrap{position:relative}
+.nav-links{list-style:none;display:flex;gap:4px;align-items:center}
+.nav-links a{padding:8px 14px;font-size:13px;font-weight:500;letter-spacing:.01em;opacity:.88;border-radius:2px;transition:opacity .2s}
+.nav-links a:hover,.nav-links a.active{opacity:1}
+.nav-links a.active,nav#mainNav.scrolled .nav-links a.active,nav#mainNav.solid .nav-links a.active{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-pill,nav#mainNav .nav-right > div:first-child{display:flex;background:rgba(255,255,255,.12);border-radius:20px;padding:3px}
+nav#mainNav.scrolled .lang-pill,nav#mainNav.scrolled .nav-right > div:first-child{background:rgba(42,77,158,.08)}
+.lang-btn{background:none;border:none;cursor:pointer;padding:5px 12px;border-radius:16px;font-size:11px;font-weight:700;color:inherit;opacity:.7;letter-spacing:.1em;font-family:'Nunito Sans',sans-serif}
+.lang-btn.active{background:var(--gold);color:var(--ink)!important;opacity:1}
+.btn-devis{display:inline-block;border:1px solid currentColor;padding:10px 20px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .25s}
+nav#mainNav .btn-devis:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:8px}
+.hamburger span{width:22px;height:2px;background:var(--gold);display:block}
+@media(max-width:980px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  nav#mainNav .btn-devis{display:none}
+  nav#mainNav .lang-pill,nav#mainNav .nav-right > div:first-child{display:none}
+}
+
+/* ---------- mobile menu ---------- */
+.mob-menu{position:fixed;inset:0;background:var(--paper);z-index:100;display:none;flex-direction:column;padding:80px 32px 32px;gap:8px}
+.mob-menu.open{display:flex}
+.mob-menu a{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:18px;font-family:'Nunito Sans',sans-serif;color:var(--blue-ink)}
+.mob-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;cursor:pointer;color:var(--blue-ink)}
+
+/* ---------- hero ---------- */
+.hero{height:100vh;min-height:680px;position:relative;background:var(--blue-ink);overflow:hidden;color:#fff;margin-top:0}
+.hero:before{content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(15,31,74,.55) 0,rgba(26,50,112,.2) 35%,rgba(15,31,74,.9) 100%),
+    url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=70') center/cover;
+  filter:saturate(.95) contrast(1.06);
+}
+.hero-inner{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 40px 80px;max-width:1320px;margin:0 auto;text-align:left!important}
+.hero-meta{display:flex;gap:24px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-bottom:24px}
+.hero-meta span:not(:last-child):after{content:"·";margin-left:24px;opacity:.5}
+.hero h1{font-size:clamp(40px,6.4vw,84px)!important;font-weight:800;max-width:18ch;color:#fff!important;line-height:1.04!important;text-align:left!important;margin:0!important;font-family:'Nunito Sans',sans-serif;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-bottom{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;margin-top:44px}
+.hero-sub{font-size:17px;opacity:.92;max-width:48ch;line-height:1.6!important;color:rgba(255,255,255,.92)!important;text-align:left!important;margin:0!important;font-weight:400!important}
+.hero-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.btn-primary,.btn-outline{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .28s;border:1px solid currentColor;text-decoration:none;font-family:'Nunito Sans',sans-serif}
+.btn-primary{background:var(--gold);border-color:var(--gold);color:var(--ink)!important}
+.btn-primary:hover{background:var(--gold-lt);border-color:var(--gold-lt);transform:translateY(-1px)}
+.btn-outline{color:#fff;background:transparent}
+.btn-outline:hover{background:#fff;color:var(--blue-ink)}
+@media(max-width:860px){
+  .hero-bottom{grid-template-columns:1fr}
+  .hero-actions{align-items:flex-start}
+}
+
+/* ---------- sections ---------- */
+section{padding:140px 0}
+.si{max-width:1320px;margin:0 auto;padding:0 40px}
+.bg-cream{background:var(--paper)}
+.shdr{margin-bottom:64px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
+.lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:18px}
+.lbl:before{content:"";display:inline-block;width:22px;height:2px;background:var(--gold);vertical-align:middle;margin-right:10px}
+.stitle{font-size:clamp(28px,3.8vw,46px);font-weight:800;max-width:18ch;color:var(--blue-ink);font-family:'Nunito Sans',sans-serif;line-height:1.1;margin-bottom:0;letter-spacing:-.015em}
+.stitle em{font-style:italic;color:var(--blue)}
+.sdesc{font-size:17px;color:var(--muted);max-width:50ch;line-height:1.65}
+@media(max-width:860px){.shdr{grid-template-columns:1fr;gap:18px;margin-bottom:40px}.stitle{max-width:none}}
+
+/* ---------- engagements (6) ---------- */
+.eg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.ec{padding:36px 32px 36px 0;border-bottom:1px solid var(--line);border-right:1px solid var(--line);position:relative;transition:background .2s}
+.ec:nth-child(3n){border-right:none;padding-right:0}
+.ec:nth-child(n+4){padding-bottom:0;border-bottom:none;padding-top:36px}
+.ec:hover{background:rgba(42,77,158,.025)}
+.ec-ico{width:42px;height:42px;color:var(--blue);margin-bottom:16px}
+.ec-ico svg{width:100%;height:100%}
+.ec-trait{width:32px;height:2px;background:var(--gold);margin-bottom:16px}
+.ec h3{font-family:'Nunito Sans',sans-serif;font-size:26px;font-weight:800;color:var(--blue-ink);margin-bottom:10px}
+.ec p{font-size:15px;color:var(--muted);line-height:1.6;max-width:32ch}
+@media(max-width:860px){.eg{grid-template-columns:1fr 1fr}.ec{padding:28px 20px 28px 0!important;border-right:1px solid var(--line)!important}.ec:nth-child(2n){border-right:none;padding-right:0!important}.ec:last-child{border-bottom:none}}
+@media(max-width:560px){.eg{grid-template-columns:1fr}.ec{border-right:none!important;padding-right:0!important}}
+
+/* ---------- 4 piliers services (cartes icône) ---------- */
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px}
+.sc{background:var(--blue-ink);color:#fff;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;text-decoration:none;display:flex;flex-direction:column;position:relative}
+.sc:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(15,31,74,.25)}
+.sc-iconbox{position:relative;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#15296b 0%,var(--blue-ink) 55%,#0b1740 100%);overflow:hidden}
+.sc-iconbox:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 25%,rgba(232,184,0,.18) 0,transparent 55%);pointer-events:none}
+.sc-iconbox:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,31,74,0) 60%,rgba(15,31,74,.45) 100%);pointer-events:none}
+.sc-pill{position:relative;z-index:1;width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,var(--gold),var(--gold-dk));display:flex;align-items:center;justify-content:center;box-shadow:0 14px 32px rgba(232,184,0,.32);flex-shrink:0}
+.sc-pill svg{width:44px;height:44px;stroke:var(--blue-ink);stroke-width:1.7;fill:none}
+.sc-iconbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+.sc-iconbox:after{z-index:1}
+.sc-n{position:absolute;top:14px;right:20px;z-index:1;font-family:'Playfair Display',Georgia,serif;font-size:54px;font-weight:900;font-style:italic;color:var(--gold);line-height:.9;letter-spacing:-.04em;opacity:.55}
+.sc-body{padding:26px;border-top:3px solid var(--gold);display:flex;flex-direction:column;flex:1}
+.sc-num{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.sc h3{font-family:'Nunito Sans',sans-serif;font-size:24px;color:#fff;font-weight:600;margin-bottom:10px;letter-spacing:-.01em;line-height:1.2}
+.sc p{font-size:14px;color:rgba(255,255,255,.78);line-height:1.55;flex:1;margin-bottom:16px}
+.sc-lnk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.sc-ico{display:none}
+.sec-cta{text-align:center}
+.btn-sec{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);border-bottom:1px solid var(--gold);padding-bottom:4px;cursor:pointer}
+.btn-sec:hover{color:var(--blue-ink);border-bottom-color:var(--blue)}
+@media(max-width:980px){.sg{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.sg{grid-template-columns:1fr}}
+
+/* ---------- pricing ---------- */
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:stretch}
+.pc{background:#fff;border:1px solid var(--line);padding:40px 32px;display:flex;flex-direction:column;position:relative;transition:transform .3s,box-shadow .3s}
+.pc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,31,74,.08)}
+.pc-name{font-family:'Nunito Sans',sans-serif;font-size:32px;font-weight:500;color:var(--blue-ink);letter-spacing:-.01em}
+.pc-price{font-family:'Nunito Sans',sans-serif;font-size:52px;font-weight:500;color:var(--blue);margin-top:8px;letter-spacing:-.03em;line-height:1;min-height:52px;display:flex;align-items:flex-end}
+.pc-price span{font-family:'Nunito Sans',sans-serif;font-size:13px;color:var(--muted);font-weight:400;letter-spacing:0}
+.pc-desc{font-size:14px;color:var(--muted);line-height:1.6;margin:18px 0 22px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.pc-list{list-style:none;flex:1;margin-bottom:26px}
+.pc-list li{display:flex;gap:10px;padding:8px 0;font-size:14px;color:var(--ink);align-items:flex-start}
+.pc-chk{color:var(--gold);font-weight:700;flex-shrink:0}
+.pc-btn{padding:14px 24px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;background:transparent;border:1px solid var(--blue-ink);color:var(--blue-ink);cursor:pointer;transition:all .25s;font-family:'Nunito Sans',sans-serif}
+.pc-btn:hover{background:var(--blue-ink);color:#fff}
+.pc-ft{background:var(--blue-ink);color:#fff;border-color:var(--blue-ink)}
+.pc-ft:hover{transform:translateY(-4px)}
+.pc-ft .pc-name{color:#fff}
+.pc-ft .pc-desc{color:rgba(255,255,255,.7);border-bottom-color:rgba(255,255,255,.18)}
+.pc-ft .pc-list li{color:rgba(255,255,255,.9)}
+.pc-badge{position:absolute;top:-12px;right:24px;background:var(--gold);color:var(--ink);padding:6px 14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.pc-btn-gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.pc-btn-gold:hover{background:var(--gold-lt);border-color:var(--gold-lt);color:var(--ink)}
+@media(max-width:980px){.pg{grid-template-columns:1fr;gap:20px}.pc-ft{transform:none}.pc-ft:hover{transform:translateY(-4px)}}
+
+/* ---------- Loi 16 ---------- */
+.loi-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.loi-items{margin:24px 0 28px;display:flex;flex-direction:column;gap:18px}
+.loi-item{display:flex;gap:14px;align-items:flex-start;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.loi-item:last-child{border-bottom:none}
+.loi-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;margin-top:9px;flex-shrink:0}
+.loi-item strong{display:block;font-family:'Nunito Sans',sans-serif;font-size:20px;font-weight:500;color:var(--blue-ink);margin-bottom:4px}
+.loi-item span{font-size:14px;color:var(--muted);line-height:1.55}
+.diag-cta-card{display:flex;gap:16px;align-items:center;padding:20px 22px;background:var(--blue-ink);color:#fff;cursor:pointer;border-left:3px solid var(--gold);transition:transform .25s,background .25s}
+.diag-cta-card:hover{transform:translateX(4px);background:var(--blue)}
+.diag-cta-icon{flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+.diag-cta-text strong{display:block;font-family:'Nunito Sans',sans-serif;font-size:19px;font-weight:500;color:#fff;margin-bottom:3px}
+.diag-cta-text span{font-size:12.5px;color:rgba(255,255,255,.75);letter-spacing:.02em}
+.diag-cta-arrow{font-size:22px;color:var(--gold);margin-left:auto}
+.loi-grid iframe{border:0;width:100%;height:640px;background:#fff;box-shadow:0 20px 60px rgba(15,31,74,.15)}
+@media(max-width:980px){.loi-grid{grid-template-columns:1fr;gap:32px}}
+
+/* ---------- contact ---------- */
+.cg{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:start}
+.ci-list{display:flex;flex-direction:column;gap:0;margin-top:8px}
+.ci{display:flex;gap:18px;align-items:flex-start;padding:22px 0;border-bottom:1px solid var(--line)}
+.ci-ico{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(42,77,158,.06);border:1px solid var(--line)}
+.ci-ico svg{width:18px;height:18px}
+.ci-lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px}
+.ci-val{font-size:15.5px;font-weight:500;color:var(--ink)}
+.ci-val a{color:inherit}
+.urg-box{margin-top:24px;background:#fef4ef;border-left:3px solid #d54c2a;padding:20px 22px}
+.urg-box strong{display:block;font-family:'Nunito Sans',sans-serif;font-size:20px;color:#9b2f17;margin-bottom:6px;font-weight:600}
+.urg-box p{font-size:13.5px;color:#6c1f0f;line-height:1.55}
+.mini-form{background:var(--wh);padding:40px 36px;border:1px solid var(--line)}
+.mini-form h3{font-family:'Nunito Sans',sans-serif;font-size:30px;color:var(--blue-ink);font-weight:800;margin-bottom:24px}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.fg label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.fg input,.fg textarea,.fg select{font-family:'Nunito Sans',sans-serif;font-size:14px;padding:12px 14px;border:1px solid var(--line);background:var(--wh);color:var(--ink);outline:none;transition:border-color .2s}
+.fg input:focus,.fg textarea:focus{border-color:var(--blue)}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.btn-form{width:100%;padding:15px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;background:var(--blue-ink);color:#fff;border:none;cursor:pointer;transition:background .25s;font-family:'Nunito Sans',sans-serif;margin-top:8px}
+.btn-form:hover{background:var(--blue)}
+.ok-msg{display:none;background:#e8f5e9;color:#1b5e20;padding:14px;margin-top:14px;font-size:14px}
+.ok-msg.show{display:block}
+@media(max-width:980px){.cg{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- CTA band ---------- */
+.cta-band{background:var(--blue-ink);color:#fff;padding:120px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-band:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(232,184,0,.1) 0,transparent 50%)}
+.cta-band > div{position:relative;max-width:760px;margin:0 auto}
+.cta-band h2{color:#fff;font-size:clamp(34px,4.5vw,56px);font-weight:400;margin-bottom:18px;letter-spacing:-.01em}
+.cta-band h2 em{font-style:italic;color:var(--gold)}
+.cta-band p{color:rgba(255,255,255,.78);font-size:17px;margin-bottom:32px;line-height:1.6}
+.cta-band p strong{color:#fff;font-weight:500}
+
+/* ---------- modal / overlays ---------- */
+.overlay{position:fixed;inset:0;background:rgba(10,22,53,.7);z-index:10000;display:none;align-items:center;justify-content:center;padding:20px}
+.overlay.show{display:flex}
+.modal{background:#fff;padding:44px 40px;max-width:540px;width:100%;position:relative;max-height:90vh;overflow-y:auto;border-top:3px solid var(--gold)}
+.modal h3{font-family:'Nunito Sans',sans-serif;font-size:30px!important;color:var(--blue-ink)!important;font-weight:500!important;margin-bottom:6px!important}
+.modal-x{position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--muted)}
+
+/* ---------- diag overlay ---------- */
+.diag-overlay{position:fixed;inset:0;background:rgba(10,22,53,.85);z-index:10001;display:none;align-items:center;justify-content:center;padding:40px}
+.diag-overlay.show{display:flex}
+.diag-wrap{position:relative;background:#fff;width:100%;max-width:640px;height:90vh;max-height:780px;overflow:hidden}
+.diag-close-btn{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;border:none;cursor:pointer;font-size:14px;z-index:2;display:flex;align-items:center;justify-content:center;font-weight:600}
+.diag-iframe{width:100%;height:100%;border:0}
+
+/* ---------- chat widget ---------- */
+#chat-bubble{transition:transform .25s}
+#chat-bubble:hover{transform:scale(1.08)}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.6}}
+
+/* ---------- footer ---------- */
+footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
+.fg-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-brand{display:flex;flex-direction:column;gap:18px}
+.logo-ft{height:40px;width:auto;align-self:flex-start;flex-shrink:0;object-fit:contain;filter:brightness(0) invert(1)}
+.ft-brand p{font-size:12.5px;color:rgba(255,255,255,.65);max-width:34ch;line-height:1.6}
+.ft-col h4{font-family:'Nunito Sans',sans-serif;font-size:17px;font-weight:500;color:#fff;margin-bottom:18px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ft-col ul a,.ft-col ul li{font-size:12.5px;color:rgba(255,255,255,.7);transition:color .2s}
+.ft-col ul a:hover{color:var(--gold)}
+.ft-nl{display:flex;gap:6px;margin-bottom:16px}
+.ft-nl input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#fff;padding:11px 14px;font-size:12px;font-family:'Nunito Sans',sans-serif;outline:none}
+.ft-nl input::placeholder{color:rgba(255,255,255,.45)}
+.btn-ft-nl{background:var(--gold);color:var(--ink);border:none;padding:11px 16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;cursor:pointer;white-space:nowrap}
+.btn-ft-nl:hover{background:var(--gold-lt)}
+.ft-addr{font-size:12px;color:rgba(255,255,255,.7);line-height:1.8}
+.ft-addr a{color:inherit}
+.ft-btm{max-width:1320px;margin:32px auto 0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;font-size:11px;color:rgba(255,255,255,.55)}
+.ft-btm > span{justify-self:start}
+.ft-btm-lnk{justify-self:end}
+.ft-social{display:flex;gap:10px;justify-self:center}
+@media(max-width:560px){.ft-btm{grid-template-columns:1fr;text-align:center}.ft-btm > span,.ft-btm-lnk{justify-self:center}}
+.ft-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:#fff;transition:background .25s}
+.ft-social a:hover{background:var(--gold);color:var(--ink)}
+.ft-btm-lnk a{color:inherit}
+@media(max-width:980px){.fg-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:560px){.fg-grid{grid-template-columns:1fr}}
+
+/* ---------- utilitaire ---------- */
+.fade-up{animation:fu .8s cubic-bezier(.2,.6,.2,1) both}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- DIAGNOSTIC BANNER -->
+<div class="diag-banner" onclick="openDiagnostic()">
+  <svg class="diag-banner-ico" viewBox="0 0 28 28" width="16" height="16" fill="none" stroke="#E8B800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 3.5v7c0 5-3.5 8-9 10C8.5 22 5 19 5 14.5V7.5L14 4z"/><path d="M10 13.5l3 3 5-5"/></svg>
+  <span class="diag-txt-desk" data-i18n="diag.banner.text">Loi 16 — Êtes-vous conforme ?</span>
+  <span class="diag-txt-mob" data-i18n="diag.banner.text.mob">Loi 16 · Êtes-vous conforme ?</span>
+  <span class="diag-banner-cta diag-cta-desk" data-i18n="diag.banner.cta">Évaluation gratuite en 2 mn →</span>
+  <span class="diag-banner-cta diag-cta-mob" data-i18n="diag.banner.cta.mob">Évaluation en 2 mn →</span>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="logo-wrap" href="/"><img alt="Quatre Piliers" class="logo-img logo-light" src="/logo-white.png" width="300" height="135" fetchpriority="high" decoding="async"/><img alt="" aria-hidden="true" class="logo-img logo-dark" src="/logo.png" width="300" height="135" decoding="async"/></a>
+  <ul class="nav-links">
+    <li><a class="active" href="/" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="/services" data-i18n="nav.services">Services</a></li>
+    <li><a href="/tarification" data-i18n="nav.pricing">Tarification</a></li>
+    <li><a href="/loi-16" data-i18n="nav.law16">Loi 16</a></li>
+    <li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
+    <li><a href="/contact" data-i18n="nav.contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-pill">
+      <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="btn-devis" onclick="openModal()" style="cursor:pointer"><span data-i18n="nav.devis">Soumission gratuite</span></a>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="toggleMenu()">✕</button>
+  <div style="display:flex;background:rgba(42,77,158,.07);border-radius:20px;padding:3px;margin-bottom:12px;width:fit-content">
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr');toggleMenu()" style="color:var(--muted)">FR</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en');toggleMenu()" style="color:var(--muted)">EN</button>
+  </div>
+  <a href="/" onclick="toggleMenu()"><span data-i18n="nav.home">Accueil</span></a>
+  <a href="/services" onclick="toggleMenu()"><span data-i18n="nav.services">Services</span></a>
+  <a href="/tarification" onclick="toggleMenu()"><span data-i18n="nav.pricing">Tarification</span></a>
+  <a href="/loi-16" onclick="toggleMenu()"><span data-i18n="nav.law16">Loi 16</span></a>
+  <a href="/blog" onclick="toggleMenu()"><span data-i18n="nav.blog">Blog</span></a>
+  <a href="/contact" onclick="toggleMenu()"><span data-i18n="nav.contact">Contact</span></a>
+  <a href="javascript:void(0)" onclick="openModal();toggleMenu()" style="color:var(--gold)"><span data-i18n="nav.devis.short">Soumission gratuite</span></a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner fade-up">
+    <div class="hero-meta">
+      <span>GESTION DE COPROPRIÉTÉ QUATRE PILIERS</span>
+    </div>
+    <h1 data-i18n="hero.title"><em>Gestion de copropriété</em><br>dans le Grand Montréal.</h1>
+    <div class="hero-bottom">
+      <p class="hero-sub" data-i18n="hero.subtitle">Gestionnaire expert et ultra réactif pour votre syndicat. Prise en charge complète - administrative, financière, technique, humaine. Conformité Loi 16.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/tarification"><span data-i18n="hero.btn.quote">Découvrez nos forfaits</span> →</a>
+        <a class="btn-outline" onclick="openDiagnostic()" style="cursor:pointer"><span data-i18n="diag.hero.btn">Évaluez votre conformité loi 16</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NOS ENGAGEMENTS -->
+<section>
+  <div class="si">
+    <div class="shdr">
+      <div>
+        <div class="lbl" data-i18n="eng.lbl">Nos engagements</div>
+        <h2 class="stitle" data-i18n="eng.title">Six valeurs au cœur de <em>chaque mandat</em>.</h2>
+      </div>
+      <p class="sdesc" data-i18n="eng.desc">Notre approche repose sur des principes concrets qui guident chaque action, chaque décision et chaque interaction avec votre syndicat.</p>
+    </div>
+    <div class="eg">
+      <div class="ec">
+        <div class="ec-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l6 4"/></svg></div>
+        <div class="ec-trait"></div>
+        <h3 data-i18n="eng.1.title">Réactivité</h3>
+        <p data-i18n="eng.1.desc">Une réponse rapide et des solutions efficaces à chaque situation.</p>
+      </div>
+      <div class="ec">
+        <div class="ec-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l13 5v11c0 9-6 14-13 18-7-4-13-9-13-18V11l13-5z"/><path d="M17 24l5 5 9-10"/></svg></div>
+        <div class="ec-trait"></div>
+        <h3 data-i18n="eng.2.title">Transparence</h3>
+        <p data-i18n="eng.2.desc">Communication claire et accès à l'information en tout temps.</p>
+      </div>
+      <div class="ec">
+        <div class="ec-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 36h28"/><rect x="13" y="22" width="5" height="14" rx="1"/><rect x="22" y="16" width="5" height="20" rx="1"/><rect x="31" y="10" width="5" height="26" rx="1"/></svg></div>
+        <div class="ec-trait"></div>
+        <h3 data-i18n="eng.3.title">Rigueur</h3>
+        <p data-i18n="eng.3.desc">Processus structurés et contrôles efficaces pour une gestion optimale.</p>
+      </div>
+      <div class="ec">
+        <div class="ec-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="5"/><circle cx="31" cy="20" r="4"/><path d="M8 36c0-6 5-10 10-10s10 4 10 10"/><path d="M25 36c1-4 4-7 9-7 3 0 5 1 6 2" opacity="0.65"/></svg></div>
+        <div class="ec-trait"></div>
+        <h3 data-i18n="eng.4.title">Proximité</h3>
+        <p data-i18n="eng.4.desc">Une équipe disponible et à l'écoute de vos besoins.</p>
+      </div>
+      <div class="ec">
+        <div class="ec-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 38V12l14-4 14 4v26"/><path d="M22 38V30h4v8"/></svg></div>
+        <div class="ec-trait"></div>
+        <h3 data-i18n="eng.5.title">Valorisation</h3>
+        <p data-i18n="eng.5.desc">Gestion proactive pour assurer la pérennité et la valeur de votre actif.</p>
+      </div>
+      <div class="ec">
+        <div class="ec-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10v28"/><path d="M12 15h24"/><path d="M15 15l-5 10h10l-5-10z"/><path d="M33 15l-5 10h10l-5-10z"/><path d="M18 38h12"/></svg></div>
+        <div class="ec-trait"></div>
+        <h3 data-i18n="eng.6.title">Conformité Loi 16</h3>
+        <p data-i18n="eng.6.desc">Nous assurons le respect des exigences de la Loi 16 et des meilleures pratiques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉSUMÉ SERVICES -->
+<section class="bg-cream">
+  <div class="si">
+    <div class="shdr">
+      <div>
+        <div class="lbl" data-i18n="home.srv.lbl">Nos quatre piliers de services</div>
+        <h2 class="stitle" data-i18n="home.srv.title">Une gestion <em>complète</em> sur tous les fronts.</h2>
+      </div>
+      <p class="sdesc" data-i18n="home.srv.desc">Quatre domaines intégrés pour couvrir chaque aspect de la vie de votre syndicat — avec la réactivité qui nous distingue.</p>
+    </div>
+    <div class="sg">
+      <a class="sc" href="/services#administratif">
+        <div class="sc-iconbox"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop" alt="Pilier Administratif" loading="lazy"/></div>
+        <div class="sc-body">
+          <div class="sc-num">01 · Pilier Administratif</div>
+          <h3 data-i18n="srv.admin.title">Administratif &amp; juridique</h3>
+          <p data-i18n="srv.admin.desc">Assemblées, contrats, registres, conformité légale</p>
+          <span class="sc-lnk" data-i18n="btn.detail">Voir le détail →</span>
+        </div>
+      </a>
+      <a class="sc sc-fin" href="/services#financier">
+        <div class="sc-iconbox"><img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=900&q=80&auto=format&fit=crop" alt="Pilier Financier" loading="lazy"/></div>
+        <div class="sc-body">
+          <div class="sc-num">02 · Pilier Financier</div>
+          <h3 data-i18n="srv.fin.title">Financier &amp; comptable</h3>
+          <p data-i18n="srv.fin.desc">Budgets, charges et fonds de prévoyance</p>
+          <span class="sc-lnk" data-i18n="btn.detail">Voir le détail →</span>
+        </div>
+      </a>
+      <a class="sc sc-tech" href="/services#technique">
+        <div class="sc-iconbox"><img src="https://images.unsplash.com/photo-1567361808960-dec9cb578182?w=900&q=80&auto=format&fit=crop" alt="Pilier Technique" loading="lazy"/></div>
+        <div class="sc-body">
+          <div class="sc-num">03 · Pilier Technique</div>
+          <h3 data-i18n="srv.tech.title">Technique &amp; entretien</h3>
+          <p data-i18n="srv.tech.desc">Carnet d'entretien, travaux, contrats, urgences 24h/24</p>
+          <span class="sc-lnk" data-i18n="btn.detail">Voir le détail →</span>
+        </div>
+      </a>
+      <a class="sc sc-com" href="/services#communication">
+        <div class="sc-iconbox"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&q=80&auto=format&fit=crop" alt="Pilier Communication" loading="lazy"/></div>
+        <div class="sc-body">
+          <div class="sc-num">04 · Pilier Communication</div>
+          <h3 data-i18n="srv.com.title">Communication &amp; gouvernance</h3>
+          <p data-i18n="srv.com.desc">Communication proactive et plateforme logicielle</p>
+          <span class="sc-lnk" data-i18n="btn.detail">Voir le détail →</span>
+        </div>
+      </a>
+    </div>
+    <div class="sec-cta"><a href="/services" class="btn-sec" data-i18n="btn.allservices">Voir tous les services en détail →</a></div>
+  </div>
+</section>
+
+<!-- TARIFICATION -->
+<section>
+  <div class="si">
+    <div class="shdr">
+      <div>
+        <div class="lbl" data-i18n="lbl.pricing">Tarification</div>
+        <h2 class="stitle" data-i18n="home.pricing.title">Des forfaits adaptés à <em>chaque syndicat</em>.</h2>
+      </div>
+      <p class="sdesc" data-i18n="home.pricing.desc">Trois cadences claires, zéro frais cachés. Toute soumission est personnalisée sous 24 heures ouvrables.</p>
+    </div>
+    <div class="pg">
+      <div class="pc pc-ess">
+        <div class="pc-name" data-i18n="plan.essential">Essentiel</div>
+        <div class="pc-price">25$<span data-i18n="lbl.perunit"> /unité/mois</span></div>
+        <p class="pc-desc" data-i18n="pc.ess.desc">Idéal pour les petits syndicats souhaitant rigueur comptable et conformité administrative.</p>
+        <ul class="pc-list">
+          <li><span class="pc-chk">✓</span><span data-i18n="feat.admin.base">Administratif de base</span></li>
+          <li><span class="pc-chk">✓</span><span data-i18n="feat.fin.base">Financier de base</span></li>
+        </ul>
+        <button class="pc-btn" onclick="openModal()"><span data-i18n="btn.askquote">Demander une soumission →</span></button>
+      </div>
+      <div class="pc pc-ft">
+        <div class="pc-badge" data-i18n="pc.badge">Plus populaire</div>
+        <div class="pc-name" data-i18n="plan.serenity">Sérénité</div>
+        <div class="pc-price" style="color:var(--gold)">35$<span style="color:rgba(255,255,255,.55)" data-i18n="lbl.perunit"> /unité/mois</span></div>
+        <p class="pc-desc" data-i18n="pc.ser.desc">Gestionnaire dédié, gestion technique et planification long terme inclus.</p>
+        <ul class="pc-list">
+          <li><span class="pc-chk">✓</span><span data-i18n="srv.admin.title">Administratif &amp; juridique</span></li>
+          <li><span class="pc-chk">✓</span><span data-i18n="srv.fin.title">Financier &amp; comptable</span></li>
+          <li><span class="pc-chk">✓</span><span data-i18n="srv.tech.title">Gestion technique &amp; entretien</span></li>
+          <li><span class="pc-chk">✓</span><span data-i18n="srv.com.title">Communication &amp; gouvernance</span></li>
+          <li><span class="pc-chk">✓</span><span data-i18n="feat.platform">Plateforme logicielle</span></li>
+        </ul>
+        <button class="pc-btn pc-btn-gold" onclick="openModal()"><span data-i18n="btn.askquote">Demander une soumission →</span></button>
+      </div>
+      <div class="pc pc-cus">
+        <div class="pc-name" data-i18n="plan.custom">Sur mesure</div>
+        <div class="pc-price" style="font-size:32px" data-i18n="plan.discuss">À discuter</div>
+        <p class="pc-desc" data-i18n="pc.cus.desc">Services à la carte, tous types d'immeubles, tarif négocié.</p>
+        <ul class="pc-list">
+          <li><span class="pc-chk">✓</span><span data-i18n="feat.alacarte">Services à la carte</span></li>
+          <li><span class="pc-chk">✓</span><span data-i18n="feat.adjustable">Ajustable en tout temps</span></li>
+          <li><span class="pc-chk">✓</span><span data-i18n="feat.negotiated">Tarif négocié selon volume</span></li>
+        </ul>
+        <button class="pc-btn" onclick="openModal()" data-i18n="btn.contact">Nous contacter →</button>
+      </div>
+    </div>
+    <div class="sec-cta" style="margin-top:48px"><a href="/tarification" class="btn-sec" data-i18n="btn.seepricing">Voir la tarification complète →</a></div>
+  </div>
+</section>
+
+<!-- LOI 16 -->
+<section class="bg-cream">
+  <div class="si">
+    <div class="loi-grid">
+      <div>
+        <div class="lbl" data-i18n="home.law.lbl">Informations</div>
+        <h2 class="stitle" style="margin-bottom:18px" data-i18n="home.law.title">La Loi 16 : <em>êtes-vous en règle</em> ?</h2>
+        <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:8px" data-i18n="home.law.desc">La Loi 16 impose de nouvelles obligations à tous les syndicats de copropriété au Québec. Chez Quatre Piliers, nous vous accompagnons pas à pas.</p>
+        <div class="loi-items">
+          <div class="loi-item"><div class="loi-dot"></div><div><strong data-i18n="law.item1.title">Carnet d'entretien obligatoire</strong><span data-i18n="law.item1.desc">Les syndicats doivent produire un carnet d'entretien d'ici le 14 août 2028.</span></div></div>
+          <div class="loi-item"><div class="loi-dot"></div><div><strong data-i18n="law.item2.title">Étude du fonds de prévoyance</strong><span data-i18n="law.item2.desc">Les syndicats ont jusqu'au 14 août 2028 pour obtenir leur première étude du fonds de prévoyance.</span></div></div>
+          <div class="loi-item"><div class="loi-dot"></div><div><strong data-i18n="law.item3.title">Attestation du syndicat</strong><span data-i18n="law.item3.desc">Obligatoire à chaque vente d'unité depuis 2025.</span></div></div>
+        </div>
+        <a href="/loi-16" class="btn-sec" data-i18n="btn.fullguide">Lire notre guide complet →</a>
+        <div class="diag-cta-card" onclick="openDiagnostic()" style="margin-top:24px">
+          <div class="diag-cta-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8B800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="diag-cta-text">
+            <strong data-i18n="diag.home.card.title">Diagnostic de conformité Loi 16 — Gratuit</strong>
+            <span data-i18n="diag.home.card.desc">10 questions · Rapport personnalisé par IA · Résultat immédiat</span>
+          </div>
+          <div class="diag-cta-arrow">→</div>
+        </div>
+      </div>
+      <div>
+        <iframe src="/diagnostic.html" title="Diagnostic de conformité Loi 16" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="si">
+    <div class="shdr" style="grid-template-columns:1fr">
+      <div>
+        <div class="lbl" data-i18n="home.contact.lbl">Contact</div>
+        <h2 class="stitle" data-i18n="home.contact.title">Parlons de votre <em>copropriété</em>.</h2>
+        <p class="sdesc" style="margin-top:18px" data-i18n="home.contact.desc">Notre équipe vous répond sous 24 heures ouvrables. Pour les urgences, appelez directement 24/7.</p>
+      </div>
+    </div>
+    <div class="cg">
+      <div>
+        <div class="ci-list">
+          <div class="ci">
+            <div class="ci-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.64a19.79 19.79 0 01-2.86-8.57A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.4a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="contact.phone.lbl">Téléphone (urgence 24/7)</div><div class="ci-val"><a href="tel:+15148392494">514-839-2494</a></div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="contact.email.lbl">Courriel</div><div class="ci-val" data-i18n="contact.email.val"><a href="mailto:info@quatrepiliers.ca">info@quatrepiliers.ca</a></div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="contact.zone.lbl">Zone desservie</div><div class="ci-val" data-i18n="contact.zone.val">Grand Montréal — Laval, Longueuil, Rive-Nord, Rive-Sud</div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><svg fill="none" stroke="#2A4D9E" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="contact.hours.lbl">Heures de bureau</div><div class="ci-val" data-i18n="contact.hours.val">Lun–Ven 8h–18h · Urgences 24/7</div></div>
+          </div>
+        </div>
+        <div class="urg-box">
+          <strong data-i18n="contact.urg.title">🚨 Urgence 24/7</strong>
+          <p data-i18n="contact.urg.desc">Pour tout sinistre, dégât d'eau ou bris majeur, appelez notre ligne d'urgence 24h/24, 7j/7. Intervention rapide garantie.</p>
+        </div>
+      </div>
+      <div class="mini-form">
+        <h3 data-i18n="form.title">Envoyer un message</h3>
+        <div class="fg-row">
+          <div class="fg"><label data-i18n="form.syndic">Syndicat *</label><input data-i18n-ph="ph.syndic" placeholder="Nom du syndicat" type="text"/></div>
+          <div class="fg"><label data-i18n="form.units">Unités</label><input data-i18n-ph="ph.units" placeholder="Nb. unités" type="number"/></div>
+        </div>
+        <div class="fg"><label data-i18n="form.name">Votre nom *</label><input data-i18n-ph="ph.name" placeholder="Prénom Nom" type="text"/></div>
+        <div class="fg-row">
+          <div class="fg"><label data-i18n="form.email">Courriel *</label><input data-i18n-ph="ph.email.addr" placeholder="adresse@email.com" type="email"/></div>
+          <div class="fg"><label data-i18n="form.phone">Téléphone</label><input data-i18n-ph="ph.phone" placeholder="514-xxx-xxxx" type="tel"/></div>
+        </div>
+        <div class="fg"><label data-i18n="form.message">Message *</label><textarea data-i18n-ph="ph.message" placeholder="Décrivez votre situation..." rows="4"></textarea></div>
+        <button class="btn-form" onclick="submitForm(this)" data-i18n="btn.send">Envoyer →</button>
+        <div class="ok-msg" data-i18n="form.ok2">✅ Message envoyé ! Nous vous répondons sous 2h.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-band">
+  <div>
+    <h2 data-i18n="cta.title">Prêt à confier votre copropriété à des <em>experts</em> ?</h2>
+    <p data-i18n-html="cta.desc"><strong>Soumission personnalisée gratuite</strong>, sans engagement. Réponse garantie <strong>sous 24 heures ouvrables</strong>.</p>
+    <a class="btn-primary" onclick="openModal()" style="display:inline-flex;cursor:pointer"><span data-i18n="cta.btn">Obtenir ma soumission gratuite</span> →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-mount"></div>
+
+<!-- CHAT WIDGET -->
+<div id="chat-bubble" onclick="toggleChat()" data-i18n-title="chat.bubble.title" title="Nous écrire" style="position:fixed;bottom:28px;right:28px;z-index:9998;width:56px;height:56px;border-radius:50%;background:var(--gold);box-shadow:0 8px 30px rgba(232,184,0,.45);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+  <svg id="chat-icon-open" width="24" height="24" fill="none" stroke="#212B3C" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  <svg id="chat-icon-close" width="20" height="20" fill="none" stroke="#212B3C" stroke-width="2.2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <span id="chat-notif" style="position:absolute;top:2px;right:2px;width:12px;height:12px;background:#e74c3c;border-radius:50%;border:2px solid #fff;animation:pulse 2s infinite;"></span>
+</div>
+<div id="chat-panel" style="position:fixed;bottom:96px;right:28px;z-index:9997;width:340px;background:#fff;box-shadow:0 16px 60px rgba(15,31,74,.25);display:none;flex-direction:column;overflow:hidden;font-family:'Nunito Sans',sans-serif;border-top:3px solid var(--gold)">
+  <div style="background:var(--blue-ink);padding:18px 20px;display:flex;align-items:center;gap:12px">
+    <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Nunito Sans',sans-serif;font-weight:600;color:var(--ink);font-size:18px">Q</div>
+    <div><div style="color:#fff;font-weight:600;font-family:'Nunito Sans',sans-serif;font-size:16px">Quatre Piliers</div><div style="color:rgba(255,255,255,.65);font-size:11px;display:flex;align-items:center;gap:5px;letter-spacing:.04em"><span style="width:7px;height:7px;background:#2ecc71;border-radius:50%"></span><span data-i18n="chat.status">Réponse sous 24h ouvrables</span></div></div>
+  </div>
+  <div id="chat-messages" style="padding:18px 16px;min-height:140px;max-height:220px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:var(--paper)">
+    <div style="display:flex;gap:8px;align-items:flex-end"><div style="width:28px;height:28px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px">🏢</div><div style="background:#fff;border:1px solid var(--line);padding:10px 14px;font-size:13px;color:var(--ink);max-width:230px;line-height:1.55"><span data-i18n="chat.greeting">Bonjour ! 👋 Comment puis-je vous aider concernant la gestion de votre copropriété ?</span></div></div>
+  </div>
+  <div style="padding:14px 16px;border-top:1px solid var(--line);background:#fff;display:flex;gap:8px;align-items:flex-end">
+    <textarea id="chat-input" placeholder="Écrivez votre message…" data-i18n-ph="ph.chat.input" rows="2" style="flex:1;border:1px solid var(--line);padding:9px 12px;font-size:13px;font-family:'Nunito Sans',sans-serif;resize:none;outline:none;color:var(--ink);line-height:1.5" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChatMsg();}"></textarea>
+    <button onclick="sendChatMsg()" style="background:var(--blue-ink);border:none;color:#fff;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </div>
+  <div style="text-align:center;padding:8px;font-size:10px;color:var(--muted);background:#fff;border-top:1px solid var(--line)">✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a></div>
+</div>
+
+<!-- MODAL DEVIS -->
+<div class="overlay" id="modal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">×</button>
+    <h3 data-i18n="modal.title">Soumission gratuite &amp; sans engagement</h3>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px" data-i18n="modal.sub">Complétez ce formulaire et nous vous répondons sous 24 heures ouvrables.</p>
+    <div class="fg"><label data-i18n="form.syndic.full">Nom du syndicat *</label><input data-i18n-ph="ph.syndic.full" placeholder="Ex. : Syndicat Les Érables" type="text"/></div>
+    <div class="fg-row"><div class="fg"><label data-i18n="form.contact">Contact *</label><input data-i18n-ph="ph.name" placeholder="Prénom Nom" type="text"/></div><div class="fg"><label data-i18n="form.nbunits">Nb. unités *</label><input placeholder="40" type="number"/></div></div>
+    <div class="fg-row"><div class="fg"><label>Courriel *</label><input placeholder="adresse@email.com" type="email"/></div><div class="fg"><label>Téléphone</label><input placeholder="514-xxx-xxxx" type="tel"/></div></div>
+    <div class="fg"><label data-i18n="form.message">Message</label><textarea data-i18n-ph="ph.modal.message" placeholder="Vos besoins ou questions..." rows="3"></textarea></div>
+    <button class="btn-form" onclick="submitForm(this)" data-i18n="btn.sendrequest">Envoyer ma demande →</button>
+    <div class="ok-msg" data-i18n="form.ok">✅ Merci ! Nous vous contacterons sous 24 heures ouvrables.</div>
+  </div>
+</div>
+
+<!-- DIAGNOSTIC OVERLAY -->
+<div class="diag-overlay" id="diagOverlay" onclick="if(event.target===this)closeDiagnostic()">
+  <div class="diag-wrap">
+    <button class="diag-close-btn" onclick="closeDiagnostic()">✕</button>
+    <button class="diag-close-btn" onclick="window.open('https://quatrepiliers.ca/diagnostic','_blank')" style="right:auto;left:12px;width:auto;padding:0 10px;border-radius:17px;font-size:13px;gap:4px" title="Ouvrir dans un onglet">↗ Ouvrir</button>
+    <iframe id="diagFrame" src="" class="diag-iframe"></iframe>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Gestion de Copropriété Quatre Piliers",
+  "alternateName": "Quatre Piliers",
+  "description": "Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7, conformité Loi 16, gestion complète ou à la carte.",
+  "url": "https://quatrepiliers.ca",
+  "telephone": "+15148392494",
+  "email": "info@quatrepiliers.ca",
+  "logo": "https://quatrepiliers.ca/logo.png",
+  "image": "https://quatrepiliers.ca/hero.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1115 Av. Beaumont",
+    "addressLocality": "Montréal",
+    "addressRegion": "QC",
+    "postalCode": "H3P 0A1",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.5591827,
+    "longitude": -73.7118733
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Montréal"},
+    {"@type": "City", "name": "Laval"},
+    {"@type": "City", "name": "Longueuil"},
+    {"@type": "City", "name": "Brossard"},
+    {"@type": "City", "name": "Boucherville"},
+    {"@type": "City", "name": "Saint-Lambert"},
+    {"@type": "City", "name": "Saint-Bruno-de-Montarville"},
+    {"@type": "City", "name": "Candiac"},
+    {"@type": "City", "name": "La Prairie"},
+    {"@type": "City", "name": "Repentigny"},
+    {"@type": "City", "name": "Terrebonne"},
+    {"@type": "City", "name": "Blainville"},
+    {"@type": "City", "name": "Mirabel"},
+    {"@type": "AdministrativeArea", "name": "Rive-Nord"},
+    {"@type": "AdministrativeArea", "name": "Rive-Sud"},
+    {"@type": "AdministrativeArea", "name": "Grand Montréal"}
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61574363193034",
+    "https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/"
+  ]
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var nav=document.getElementById('mainNav');
+  if(nav){addEventListener('scroll',function(){if(scrollY>40)nav.classList.add('scrolled');else nav.classList.remove('scrolled')})}
+});
+</script>
+<script src="/scripts.js"></script>
+</body>
+</html>

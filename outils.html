@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Outils gratuits pour syndicat de copropriété — Quatre Piliers</title>
+<meta name="description" content="4 outils interactifs gratuits pour syndicats de copropriété au Québec : calculateur de fonds de prévoyance, diagnostic d'assurance, vérificateur de carnet d'entretien et comparateur autogestion."/>
+<link rel="canonical" href="https://quatrepiliers.ca/outils"/>
+<link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/outils"/>
+<link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/outils"/>
+<link rel="icon" type="image/png" href="/logo.png"/>
+<link rel="apple-touch-icon" href="/logo.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,500;1,6..12,600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/style.css"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Quatre Piliers"/>
+<meta property="og:title" content="Outils gratuits pour syndicat de copropriété — Quatre Piliers"/>
+<meta property="og:description" content="4 outils interactifs gratuits pour syndicats de copropriété : calculateur fonds de prévoyance, diagnostic d'assurance, vérificateur carnet d'entretien et comparateur autogestion."/>
+<meta property="og:url" content="https://quatrepiliers.ca/outils"/>
+<meta property="og:image" content="https://quatrepiliers.ca/hero.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Outils gratuits pour syndicat de copropriété — Quatre Piliers"/>
+<meta name="twitter:description" content="4 outils interactifs gratuits pour syndicats de copropriété au Québec."/>
+<meta name="twitter:image" content="https://quatrepiliers.ca/hero.jpg"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://quatrepiliers.ca/"},{"@type":"ListItem","position":2,"name":"Outils","item":"https://quatrepiliers.ca/outils"}]}
+</script>
+<style>
+/* ---------- Tool cards (Style A — Premium éditorial) ---------- */
+.tcard{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;text-decoration:none;color:var(--ink);transition:transform .3s,box-shadow .3s;overflow:hidden}
+.tcard:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,31,74,.12)}
+.tcard-head{aspect-ratio:16/10;width:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue-ink),var(--blue))}
+.tcard-head:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 25%,rgba(232,184,0,.18) 0,transparent 55%);pointer-events:none}
+.tcard-icon{width:88px;height:88px;border-radius:20px;background:linear-gradient(135deg,var(--gold),var(--gold-dk));display:flex;align-items:center;justify-content:center;box-shadow:0 14px 32px rgba(232,184,0,.34);position:relative;z-index:1;transition:transform .3s}
+.tcard:hover .tcard-icon{transform:scale(1.06)}
+.tcard-icon svg{width:44px;height:44px;stroke:var(--blue-ink);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tcard-cat{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.15);color:#fff;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:5px 11px;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:1}
+.tcard-body{padding:28px 26px 32px;display:flex;flex-direction:column;flex:1}
+.tcard-meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dk);font-weight:800;margin-bottom:10px}
+.tcard h3{font-family:'Nunito Sans',sans-serif;font-size:22px;color:var(--blue-ink);font-weight:800;line-height:1.22;letter-spacing:-.01em;margin-bottom:12px}
+.tcard p{font-size:14.5px;color:var(--muted);line-height:1.6;flex:1;margin-bottom:18px}
+.tcard-lnk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);font-weight:800;border-bottom:1px solid var(--gold);padding-bottom:2px;align-self:flex-start;transition:color .2s}
+.tcard:hover .tcard-lnk{color:var(--blue-ink)}
+</style>
+</head>
+<body>
+
+<!-- DIAGNOSTIC BANNER -->
+<div class="diag-banner" onclick="openDiagnostic()">
+  <svg class="diag-banner-ico" viewBox="0 0 28 28" width="16" height="16" fill="none" stroke="#E8B800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 3.5v7c0 5-3.5 8-9 10C8.5 22 5 19 5 14.5V7.5L14 4z"/><path d="M10 13.5l3 3 5-5"/></svg>
+  <span class="diag-txt-desk" data-i18n="diag.banner.text">Loi 16 — Êtes-vous conforme ?</span>
+  <span class="diag-txt-mob" data-i18n="diag.banner.text.mob">Loi 16 · Êtes-vous conforme ?</span>
+  <span class="diag-banner-cta diag-cta-desk" data-i18n="diag.banner.cta">Évaluation gratuite en 2 mn →</span>
+  <span class="diag-banner-cta diag-cta-mob" data-i18n="diag.banner.cta.mob">Évaluation en 2 mn →</span>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="logo-wrap" href="/"><img alt="Quatre Piliers" class="logo-img" src="/logo.png" width="300" height="135" fetchpriority="high" decoding="async"/></a>
+  <ul class="nav-links">
+    <li><a href="/" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="/services" data-i18n="nav.services">Services</a></li>
+    <li><a href="/tarification" data-i18n="nav.pricing">Tarification</a></li>
+    <li><a href="/loi-16" data-i18n="nav.law16">Loi 16</a></li>
+    <li><a href="/blog" data-i18n="nav.blog">Blog</a></li>
+    <li><a href="/contact" data-i18n="nav.contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-pill">
+      <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="btn-devis" onclick="openModal()" style="cursor:pointer"><span data-i18n="nav.devis">Soumission gratuite</span></a>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="toggleMenu()">✕</button>
+  <div style="display:flex;background:rgba(42,77,158,.07);border-radius:20px;padding:3px;margin-bottom:12px;width:fit-content">
+    <a href="/outils" class="lang-btn active" style="background:none;border:none;cursor:pointer;padding:6px 16px;border-radius:16px;font-size:12px;font-weight:800;color:var(--muted);font-family:'Nunito Sans',sans-serif;text-decoration:none;display:inline-block">FR</a>
+    <a href="/en/tools" class="lang-btn" style="background:none;border:none;cursor:pointer;padding:6px 16px;border-radius:16px;font-size:12px;font-weight:800;color:var(--muted);font-family:'Nunito Sans',sans-serif;text-decoration:none;display:inline-block">EN</a>
+  </div>
+  <a href="/" onclick="toggleMenu()"><span data-i18n="nav.home">Accueil</span></a>
+  <a href="/services" onclick="toggleMenu()"><span data-i18n="nav.services">Services</span></a>
+  <a href="/tarification" onclick="toggleMenu()"><span data-i18n="nav.pricing">Tarification</span></a>
+  <a href="/loi-16" onclick="toggleMenu()"><span data-i18n="nav.law16">Loi 16</span></a>
+  <a href="/blog" onclick="toggleMenu()"><span data-i18n="nav.blog">Blog</span></a>
+  <a href="/contact" onclick="toggleMenu()"><span data-i18n="nav.contact">Contact</span></a>
+  <a href="javascript:void(0)" onclick="openModal();toggleMenu()" style="color:var(--gold)"><span data-i18n="nav.devis.short">Soumission gratuite</span></a>
+</div>
+
+<!-- PAGE HEADER -->
+<header class="page-head with-image" style="--ph-img:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop')">
+  <div class="page-head-inner stacked fade-up">
+    <div class="lbl">Outils</div>
+    <h1>4 outils <em style="color:var(--gold);font-style:normal">gratuits</em> pour votre syndicat.</h1>
+    <p class="page-head-sub">Estimez, diagnostiquez, vérifiez — en quelques minutes. Outils interactifs basés sur la Loi 16 et le Code civil du Québec, pensés pour les conseils d'administration de syndicats de copropriété.</p>
+  </div>
+</header>
+
+<!-- TOOLS GRID -->
+<section class="bg-cream">
+  <div class="si">
+    <div class="bg-grid">
+
+      <a class="tcard" href="/calculateur-fonds-prevoyance">
+        <div class="tcard-head">
+          <span class="tcard-cat">Loi 16</span>
+          <div class="tcard-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="11" y2="11"/><line x1="13" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="11" y2="15"/><line x1="13" y1="15" x2="15" y2="15"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
+          </div>
+        </div>
+        <div class="tcard-body">
+          <div class="tcard-meta">Outil · 2 min · Gratuit</div>
+          <h3>Calculateur Fonds de Prévoyance</h3>
+          <p>Estimez en 2 minutes la contribution annuelle requise au fonds de prévoyance de votre copropriété, conforme à la Loi 16 et aux articles 1071-1072 C.c.Q.</p>
+          <span class="tcard-lnk">Lancer le calcul →</span>
+        </div>
+      </a>
+
+      <a class="tcard" href="/diagnostic-assurance">
+        <div class="tcard-head">
+          <span class="tcard-cat">Assurances</span>
+          <div class="tcard-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M3 12h18"/><path d="M12 12v8"/><path d="M12 20a2 2 0 0 0 4 0"/></svg>
+          </div>
+        </div>
+        <div class="tcard-body">
+          <div class="tcard-meta">Outil · 3 min · Gratuit</div>
+          <h3>Diagnostic Assurance Copropriété</h3>
+          <p>Vérifiez si votre police d'assurance couvre tous les risques essentiels (dégâts d'eau, valeur à neuf, responsabilité civile…) et détectez les lacunes avant un sinistre.</p>
+          <span class="tcard-lnk">Vérifier ma police →</span>
+        </div>
+      </a>
+
+      <a class="tcard" href="/verificateur-carnet-entretien">
+        <div class="tcard-head">
+          <span class="tcard-cat">Entretien</span>
+          <div class="tcard-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1"/><line x1="9" y1="2" x2="9" y2="6"/><line x1="15" y1="2" x2="15" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="13" y2="18"/></svg>
+          </div>
+        </div>
+        <div class="tcard-body">
+          <div class="tcard-meta">Outil · 2 min · Gratuit</div>
+          <h3>Vérificateur Carnet d'Entretien</h3>
+          <p>Contrôlez la conformité de votre carnet d'entretien obligatoire selon la Loi 16. Identifiez les inspections manquantes ou en retard et générez votre plan d'action.</p>
+          <span class="tcard-lnk">Vérifier mon carnet →</span>
+        </div>
+      </a>
+
+      <a class="tcard" href="/comparateur-autogestion">
+        <div class="tcard-head">
+          <span class="tcard-cat">Décision</span>
+          <div class="tcard-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7l-2 6a4 4 0 0 0 8 0L9 7"/><path d="M19 7l2 6a4 4 0 0 1-8 0l2-6"/></svg>
+          </div>
+        </div>
+        <div class="tcard-body">
+          <div class="tcard-meta">Outil · 3 min · Gratuit</div>
+          <h3>Comparateur Autogestion vs Gestionnaire</h3>
+          <p>Chiffrez en 3 minutes le coût réel de votre autogestion (temps bénévole, risques juridiques, sinistres) et comparez-le au tarif d'un gestionnaire professionnel.</p>
+          <span class="tcard-lnk">Lancer le comparatif →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<div class="cta-band">
+  <div>
+    <h2>Besoin d'un <em>accompagnement humain</em> au-delà des outils ?</h2>
+    <p>Nos gestionnaires répondent à toutes vos questions et préparent une soumission personnalisée gratuite, sous 24 heures ouvrables.</p>
+    <a class="btn-primary" onclick="openModal()" style="display:inline-flex;cursor:pointer"><span>Obtenir ma soumission gratuite</span> →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-mount"></div>
+
+<!-- CHAT WIDGET -->
+<div id="chat-bubble" onclick="toggleChat()" data-i18n-title="chat.bubble.title" title="Nous écrire" style="position:fixed;bottom:28px;right:28px;z-index:9998;width:56px;height:56px;border-radius:50%;background:var(--gold);box-shadow:0 8px 30px rgba(232,184,0,.45);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+  <svg id="chat-icon-open" width="24" height="24" fill="none" stroke="#212B3C" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  <svg id="chat-icon-close" width="20" height="20" fill="none" stroke="#212B3C" stroke-width="2.2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <span id="chat-notif" style="position:absolute;top:2px;right:2px;width:12px;height:12px;background:#e74c3c;border-radius:50%;border:2px solid #fff;animation:pulse 2s infinite;"></span>
+</div>
+<div id="chat-panel" style="position:fixed;bottom:96px;right:28px;z-index:9997;width:340px;background:#fff;box-shadow:0 16px 60px rgba(15,31,74,.25);display:none;flex-direction:column;overflow:hidden;font-family:'Nunito Sans',sans-serif;border-top:3px solid var(--gold)">
+  <div style="background:var(--blue-ink);padding:18px 20px;display:flex;align-items:center;gap:12px">
+    <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Nunito Sans',sans-serif;font-weight:600;color:var(--ink);font-size:18px">Q</div>
+    <div><div style="color:#fff;font-weight:600;font-family:'Nunito Sans',sans-serif;font-size:16px">Quatre Piliers</div><div style="color:rgba(255,255,255,.65);font-size:11px;display:flex;align-items:center;gap:5px;letter-spacing:.04em"><span style="width:7px;height:7px;background:#2ecc71;border-radius:50%"></span><span data-i18n="chat.status">Réponse sous 24h ouvrables</span></div></div>
+  </div>
+  <div id="chat-messages" style="padding:18px 16px;min-height:140px;max-height:220px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:var(--paper)">
+    <div style="display:flex;gap:8px;align-items:flex-end"><div style="width:28px;height:28px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px">🏢</div><div style="background:#fff;border:1px solid var(--line);padding:10px 14px;font-size:13px;color:var(--ink);max-width:230px;line-height:1.55"><span data-i18n="chat.greeting">Bonjour ! 👋 Comment puis-je vous aider concernant la gestion de votre copropriété ?</span></div></div>
+  </div>
+  <div style="padding:14px 16px;border-top:1px solid var(--line);background:#fff;display:flex;gap:8px;align-items:flex-end">
+    <textarea id="chat-input" placeholder="Écrivez votre message…" data-i18n-ph="ph.chat.input" rows="2" style="flex:1;border:1px solid var(--line);padding:9px 12px;font-size:13px;font-family:'Nunito Sans',sans-serif;resize:none;outline:none;color:var(--ink);line-height:1.5" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChatMsg();}"></textarea>
+    <button onclick="sendChatMsg()" style="background:var(--blue-ink);border:none;color:#fff;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </div>
+  <div style="text-align:center;padding:8px;font-size:10px;color:var(--muted);background:#fff;border-top:1px solid var(--line)">✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a></div>
+</div>
+
+<!-- MODAL DEVIS -->
+<div class="overlay" id="modal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">×</button>
+    <h3 data-i18n="modal.title">Soumission gratuite &amp; sans engagement</h3>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px" data-i18n="modal.sub">Complétez ce formulaire et nous vous répondons sous 24 heures ouvrables.</p>
+    <div class="fg"><label data-i18n="form.syndic.full">Nom du syndicat *</label><input data-i18n-ph="ph.syndic.full" placeholder="Ex. : Syndicat Les Érables" type="text"/></div>
+    <div class="fg-row"><div class="fg"><label data-i18n="form.contact">Contact *</label><input data-i18n-ph="ph.name" placeholder="Prénom Nom" type="text"/></div><div class="fg"><label data-i18n="form.nbunits">Nb. unités *</label><input placeholder="40" type="number"/></div></div>
+    <div class="fg-row"><div class="fg"><label>Courriel *</label><input placeholder="adresse@email.com" type="email"/></div><div class="fg"><label>Téléphone</label><input placeholder="514-xxx-xxxx" type="tel"/></div></div>
+    <div class="fg"><label data-i18n="form.message">Message</label><textarea data-i18n-ph="ph.modal.message" placeholder="Vos besoins ou questions..." rows="3"></textarea></div>
+    <button class="btn-form" onclick="submitForm(this)" data-i18n="btn.sendrequest">Envoyer ma demande →</button>
+    <div class="ok-msg" data-i18n="form.ok">✅ Merci ! Nous vous contacterons sous 24 heures ouvrables.</div>
+  </div>
+</div>
+
+<!-- DIAGNOSTIC OVERLAY -->
+<div class="diag-overlay" id="diagOverlay" onclick="if(event.target===this)closeDiagnostic()">
+  <div class="diag-wrap">
+    <button class="diag-close-btn" onclick="closeDiagnostic()">✕</button>
+    <button class="diag-close-btn" onclick="window.open('https://quatrepiliers.ca/diagnostic','_blank')" style="right:auto;left:12px;width:auto;padding:0 10px;border-radius:17px;font-size:13px;gap:4px" title="Ouvrir dans un onglet">↗ Ouvrir</button>
+    <iframe id="diagFrame" src="" class="diag-iframe"></iframe>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var nav=document.getElementById('mainNav');
+  if(nav){addEventListener('scroll',function(){if(scrollY>40)nav.classList.add('scrolled');else nav.classList.remove('scrolled')})}
+});
+</script>
+<script src="/scripts.js"></script>
+</body>
+</html>

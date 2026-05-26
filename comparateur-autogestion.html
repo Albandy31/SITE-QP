@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparateur autogestion vs gestionnaire — Quatre Piliers</title>
+<meta name="description" content="Chiffrez en 3 minutes le coût réel de votre autogestion (temps bénévole, risques, sinistres) et comparez-le au tarif d'un gestionnaire professionnel. Estimation gratuite, méthodologie transparente.">
+<link rel="canonical" href="https://quatrepiliers.ca/comparateur-autogestion">
+<link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/comparateur-autogestion">
+<link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/comparateur-autogestion">
+<link rel="icon" type="image/png" href="logo.png"/>
+<link rel="apple-touch-icon" href="logo.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comparateur autogestion vs gestionnaire — Quatre Piliers">
+<meta property="og:description" content="Chiffrez en 3 minutes le coût caché de votre autogestion et comparez-le au prix d'un gestionnaire professionnel.">
+<meta property="og:url" content="https://quatrepiliers.ca/comparateur-autogestion">
+<meta property="og:image" content="https://quatrepiliers.ca/hero.jpg">
+<style>
+:root{
+  --gold:#E8B800;--gold-lt:#F5CC00;
+  --blue:#2A4D9E;--blue-dk:#1A3270;
+  --cream:#F0F3FA;--txt:#212B3C;
+  --muted:#5C6880;--brd:#E8EAEF;--wh:#FFFFFF;
+  --crit:#A32D2D;--crit-bg:#FCEBEB;
+  --warn:#854F0B;--warn-bg:#FAEEDA;
+  --good:#0F6E56;--good-bg:#E1F5EE;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--cream);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;color:var(--txt);line-height:1.65}
+.container{width:100%;max-width:640px;background:var(--wh);border-radius:14px;padding:2rem;box-shadow:0 2px 20px rgba(42,77,158,.08);border-top:4px solid var(--gold)}
+.header{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.25rem}
+.header-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.header-title{font-size:17px;font-weight:800;color:var(--blue-dk);margin-bottom:3px;letter-spacing:-.01em}
+.header-sub{font-size:12px;color:var(--muted)}
+.progress-wrap{height:3px;background:var(--brd);border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+.progress-bar{height:100%;background:var(--blue);border-radius:2px;transition:width .3s}
+.step-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.4rem;font-weight:800}
+.step-q{font-size:15.5px;font-weight:700;color:var(--blue-dk);margin-bottom:.4rem;line-height:1.4}
+.step-help{font-size:12.5px;color:var(--muted);margin-bottom:1rem;line-height:1.5}
+.options{display:flex;flex-direction:column;gap:8px;margin-bottom:1.25rem}
+.options-inline{margin-bottom:.25rem}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid var(--brd);border-radius:8px;cursor:pointer;transition:all .14s;background:var(--wh)}
+.opt:hover{border-color:var(--blue);background:var(--cream)}
+.opt.selected{border-color:var(--blue);background:rgba(42,77,158,.07)}
+.opt-radio{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:2px;border:2px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .14s}
+.opt.selected .opt-radio{border-color:var(--blue);background:var(--blue)}
+.opt-dot{width:6px;height:6px;border-radius:50%;background:var(--wh);display:none}
+.opt.selected .opt-dot{display:block}
+.opt-check{width:16px;height:16px;border-radius:4px;flex-shrink:0;margin-top:2px;border:2px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .14s}
+.opt.selected .opt-check{border-color:var(--blue);background:var(--blue)}
+.check-icon{font-size:10px;color:var(--wh);display:none;line-height:1}
+.opt.selected .check-icon{display:block}
+.opt-body{flex:1;min-width:0}
+.opt-text{font-size:13.5px;line-height:1.45;color:var(--txt);font-weight:500}
+.opt.selected .opt-text{color:var(--blue-dk);font-weight:600}
+.opt-sub{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.5}
+.multi-hint{font-size:11px;color:var(--muted);margin-bottom:.75rem;font-style:italic}
+.input-group{margin-bottom:1rem}
+.input-label{font-size:13px;font-weight:700;display:block;margin-bottom:.4rem;color:var(--blue-dk)}
+.input-hint{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+.input-wrap{position:relative}
+.input-prefix{position:absolute;top:50%;transform:translateY(-50%);font-size:13px;color:var(--muted);font-weight:700;pointer-events:none;left:12px}
+.input-suffix{position:absolute;top:50%;transform:translateY(-50%);font-size:12px;color:var(--muted);font-weight:600;pointer-events:none;right:12px}
+.label-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:.4rem}
+.label-row .input-label{margin-bottom:0}
+.tooltip-btn{background:var(--cream);border:1px solid var(--brd);color:var(--blue);width:22px;height:22px;border-radius:50%;font-size:12px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;flex-shrink:0;transition:all .15s;padding:0;line-height:1}
+.tooltip-btn:hover,.tooltip-btn.open{background:var(--blue);color:var(--wh);border-color:var(--blue)}
+.tooltip-box{background:#FFF8DC;border-left:3px solid var(--gold);border-radius:6px;padding:.7rem .85rem;font-size:12px;color:var(--txt);line-height:1.55;margin:0 0 .6rem;animation:fadeIn .2s ease}
+.tooltip-box strong{color:var(--blue-dk);font-weight:800}
+input[type=text],input[type=email],input[type=number]{width:100%;padding:.65rem .85rem;border:1px solid var(--brd);border-radius:6px;font-size:14px;font-family:inherit;color:var(--txt);outline:none;background:var(--wh);transition:border-color .14s}
+input.with-prefix{padding-left:28px}
+input.with-suffix{padding-right:68px}
+input:focus{border-color:var(--blue)}
+input::placeholder{color:#aaa}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input[type=number]{-moz-appearance:textfield}
+.extra-input{background:var(--cream);border:1px solid var(--brd);border-radius:8px;padding:14px 16px;margin:.25rem 0 1rem;animation:fadeIn .2s ease}
+.nav{display:flex;gap:8px;align-items:center;margin-top:.5rem}
+.btn{padding:11px 22px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .25s;letter-spacing:.06em;text-transform:uppercase;border:none}
+.btn-back{background:var(--wh);color:var(--blue-dk);border:1px solid var(--brd);padding:11px 14px}
+.btn-back:hover{background:var(--cream)}
+.btn-next{background:var(--blue);color:var(--wh)}
+.btn-next:hover{background:var(--blue-dk);box-shadow:0 4px 14px rgba(42,77,158,.28)}
+.btn-cta{background:var(--gold);color:var(--blue-dk)}
+.btn-cta:hover{background:var(--gold-lt);box-shadow:0 6px 20px rgba(232,184,0,.35)}
+.step-count{font-size:12px;color:var(--muted);margin-left:auto;font-weight:600}
+.error{font-size:12px;color:#791F1F;background:#FCEBEB;border:1px solid #F7C1C1;border-radius:6px;padding:.5rem .75rem;margin-bottom:.75rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeIn .25s ease}
+.result-header{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh);border-bottom:4px solid var(--gold)}
+.result-agency{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:6px;font-weight:800}
+.result-title{font-size:17px;font-weight:800;margin-bottom:4px}
+.result-syndicat{font-size:12px;color:rgba(255,255,255,.7)}
+.verdict-row{display:flex;align-items:center;gap:14px;margin-top:14px}
+.verdict-icon{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:var(--wh);flex-shrink:0;line-height:1}
+.verdict-body{flex:1;min-width:0}
+.verdict-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.85);margin-bottom:4px}
+.verdict-resume{font-size:13px;color:rgba(255,255,255,.85);line-height:1.55}
+.proj-card{background:var(--cream);border:1px solid var(--brd);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:.75rem}
+.proj-title{font-size:12px;font-weight:800;color:var(--blue-dk);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.06em}
+.proj-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--brd);font-size:13px;gap:1rem}
+.proj-row:last-child{border-bottom:0;padding-top:9px;font-weight:800;color:var(--blue-dk)}
+.proj-label{color:var(--muted)}
+.proj-value{font-weight:700;color:var(--txt);text-align:right;white-space:nowrap}
+.proj-row:last-child .proj-value{color:var(--blue-dk)}
+.bigfig-block{background:var(--wh);border:1px solid var(--brd);border-radius:12px;padding:1.35rem 1.4rem;margin:1rem 0 .75rem;text-align:center}
+.bigfig-block.crit{border:1px solid #F2C3C3;background:var(--crit-bg);box-shadow:inset 0 0 0 4px rgba(163,45,45,.06)}
+.bigfig-block.warn{border:1px solid #ECCFA1;background:var(--warn-bg);box-shadow:inset 0 0 0 4px rgba(133,79,11,.06)}
+.bigfig-block.good{border:1px solid #B8E2D1;background:var(--good-bg);box-shadow:inset 0 0 0 4px rgba(15,110,86,.06)}
+.bigfig-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin-bottom:8px}
+.bigfig-value{font-size:38px;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:8px}
+.bigfig-block.crit .bigfig-value{color:var(--crit)}
+.bigfig-block.warn .bigfig-value{color:var(--warn)}
+.bigfig-block.good .bigfig-value{color:var(--good)}
+.bigfig-sub{font-size:12.5px;color:var(--muted);line-height:1.55;max-width:440px;margin:0 auto}
+.nf-section{background:var(--wh);border:1px solid var(--brd);border-radius:10px;padding:1.25rem;margin-bottom:.75rem}
+.nf-title{font-size:12px;font-weight:800;color:var(--blue-dk);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.nf-intro{font-size:12.5px;color:var(--muted);margin-bottom:.9rem;line-height:1.55}
+.nf-item{display:flex;gap:12px;padding:11px 0;border-top:1px solid var(--brd)}
+.nf-item:first-of-type{border-top:0;padding-top:0}
+.nf-icon{flex-shrink:0;width:28px;height:28px;border-radius:6px;background:var(--cream);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;line-height:1}
+.nf-body{flex:1;min-width:0}
+.nf-name{font-size:13px;font-weight:700;color:var(--blue-dk);margin-bottom:2px}
+.nf-desc{font-size:12.5px;color:var(--muted);line-height:1.55}
+.method-box{background:var(--wh);border:1px solid var(--brd);border-radius:8px;padding:.85rem 1rem;font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.method-box strong{color:var(--blue-dk)}
+.cta-box{background:var(--blue-dk);border-radius:12px;padding:1.5rem;margin-bottom:1rem;color:var(--wh)}
+.cta-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:6px}
+.cta-title{font-size:18px;font-weight:800;margin-bottom:8px;line-height:1.3}
+.cta-msg{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:14px}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.cta-btn{display:inline-block;padding:11px 18px;border-radius:6px;font-size:12px;font-weight:800;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+.cta-btn-gold{background:var(--gold);color:var(--blue-dk)}
+.cta-btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:var(--wh)}
+.cta-contact{font-size:11px;color:rgba(255,255,255,.55);text-align:center;margin-top:10px}
+.cta-contact a{color:rgba(255,255,255,.7);text-decoration:none}
+.restart-btn{font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;font-family:inherit;margin-top:.5rem;font-weight:600}
+.page-footer{text-align:center;margin-top:1.25rem;font-size:11px;color:var(--muted);line-height:1.6}
+.page-footer a{color:var(--muted);text-decoration:none;font-weight:600}
+.page-footer a:hover{color:var(--blue)}
+.disclaimer{font-size:11px;color:var(--muted);background:var(--cream);border-radius:6px;padding:.65rem .85rem;margin-top:.75rem;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+
+<script>
+// ==============================================
+// COMPARATEUR AUTOGESTION vs GESTIONNAIRE — Quatre Piliers
+// Chiffre le coût réel du bénévolat (temps, risques, sinistres)
+// face au tarif d'un gestionnaire professionnel.
+// ==============================================
+
+const LEAD_URL = "";
+
+// Constantes — moyennes industrie québécoise 2025-2026
+// Chaque incident est amorti sur sa fréquence typique (en années) entre occurrences :
+// un sinistre majeur arrive ~1× / 10 ans, on ne peut donc pas le projeter comme un coût annuel.
+const INCIDENT_DATA = {
+  sinistre:      {cost: 8000,  freqYears: 10, label: "Sinistre mal coordonné"},
+  erreur_compta: {cost: 3000,  freqYears: 4,  label: "Erreur comptable"},
+  aga_reportee:  {cost: 1500,  freqYears: 5,  label: "AGA reportée"},
+  conflit:       {cost: 5000,  freqYears: 8,  label: "Conflit majeur"},
+  surcout:       {cost: 12000, freqYears: 8,  label: "Surcoût travaux >15 %"}
+};
+const PRO_RATE_PER_UNIT_MONTH = 30; // $ / unité / mois (médiane Quatre Piliers)
+const ASSURANCE_RISK = 800;          // $ / an de risque D&O non couvert
+const DEFAULT_TAUX = "50";
+
+const QS = [
+  {
+    id:"syndicat",
+    type:"fields",
+    label:"Étape 1 sur 7",
+    q:"Caractéristiques de votre immeuble",
+    help:"Quelques informations factuelles pour calibrer le comparatif. Vous renseignerez le nom du syndicat à la fin.",
+    fields:[
+      {key:"nb_unites", label:"Nombre d'unités *", ph:"Ex : 24", type:"number"},
+      {key:"annee", label:"Année de construction *", ph:"Ex : 2008", type:"number"}
+    ]
+  },
+  {
+    id:"ca",
+    type:"fields",
+    label:"Étape 2 sur 7",
+    q:"Composition de votre conseil d'administration",
+    help:"Ces données calibrent l'estimation et reflètent la maturité de votre CA.",
+    fields:[
+      {key:"nb_admins", label:"Nombre d'administrateurs actifs *", ph:"Ex : 3", type:"number"},
+      {
+        key:"anciennete",
+        label:"Ancienneté moyenne des administrateurs *",
+        type:"radio",
+        opts:[
+          {v:"recent", t:"Moins d'un an"},
+          {v:"intermediaire", t:"Entre 1 et 3 ans"},
+          {v:"experimente", t:"Plus de 3 ans"}
+        ]
+      }
+    ]
+  },
+  {
+    id:"temps",
+    type:"fields",
+    label:"Étape 3 sur 7",
+    q:"Temps total consacré par votre CA",
+    help:"Estimez les heures par mois cumulées par TOUS les administrateurs réunis. Cliquez sur le « ? » pour la grille de repères.",
+    fields:[
+      {
+        key:"heures_mois",
+        label:"Heures par mois (total CA) *",
+        ph:"Ex : 18",
+        type:"number",
+        suffix:"h/mois",
+        tooltip:"<strong>Postes typiques à additionner :</strong><br>· Saisie comptable et banque : ~6 h/mois<br>· AGA et préparation : ~20 h/an = ~2 h/mois<br>· Urgences et fournisseurs : ~3 h/mois<br>· Communications aux copropriétaires : ~2 h/mois<br>· Réunions du CA : ~3 h/mois<br>· Suivi des travaux et appels d'offres : ~3 h/mois<br><br><strong>Grille indicative par taille :</strong><br>· Moins de 12 unités : 8 à 15 h/mois<br>· De 12 à 30 unités : 15 à 30 h/mois<br>· Plus de 30 unités : 30 à 60 h/mois<br><br>Soyez réaliste — la sous-estimation est très fréquente."
+      }
+    ]
+  },
+  {
+    id:"taux",
+    type:"fields",
+    label:"Étape 4 sur 7",
+    q:"Valeur horaire du temps des administrateurs",
+    help:"Combien votre temps vaut-il par heure ? C'est ce qui permet de chiffrer le bénévolat. Par défaut nous proposons 50 $/h, à ajuster selon votre CA.",
+    fields:[
+      {
+        key:"taux_horaire",
+        label:"Taux horaire moyen *",
+        ph:"50",
+        type:"number",
+        prefix:"$",
+        tooltip:"<strong>Méthodologie :</strong> estimez ce que coûterait votre temps si vous le faisiez payer — salaire net horaire si vous étiez salarié, ou tarif facturé si vous étiez consultant.<br><br><strong>Repères raisonnables :</strong><br>· Salarié à 60 000 $/an net ≈ 30 $/h<br>· Cadre intermédiaire ≈ 40 à 60 $/h<br>· Profession libérale ≈ 75 à 150 $/h<br>· Retraité actif valorisé ≈ 25 à 40 $/h<br><br>La médiane observée sur les CA québécois se situe autour de 50 $/h."
+      }
+    ]
+  },
+  {
+    id:"incidents",
+    type:"multi",
+    label:"Étape 5 sur 7",
+    q:"Incidents survenus dans les 24 derniers mois",
+    help:"Cochez les situations vécues par votre syndicat sur les deux dernières années. La définition de chaque incident apparaît en dessous — soyez honnête, c'est la base d'un comparatif fiable.",
+    noneOption:"aucun",
+    opts:[
+      {v:"sinistre", t:"Sinistre mal coordonné", sub:"Dégât d'eau, incendie ou infiltration où une franchise non négociée, un retard de déclaration ou une mauvaise répartition a généré un surcoût ou un litige."},
+      {v:"erreur_compta", t:"Erreur comptable significative", sub:"Oubli de facturation, état financier à corriger, redressement, frais bancaires anormaux ou TPS/TVQ mal gérées."},
+      {v:"aga_reportee", t:"AGA reportée ou non tenue", sub:"Quorum non atteint, convocation incorrecte, délais légaux non respectés ou procès-verbal absent."},
+      {v:"conflit", t:"Conflit majeur entre copropriétaires", sub:"Situation ayant nécessité avocat, médiation ou intervention de la Régie / des tribunaux."},
+      {v:"surcout", t:"Surcoût travaux supérieur à 15 % du budget", sub:"Manque de devis comparatifs, suivi de chantier insuffisant, négociation faible ou décisions tardives."},
+      {v:"aucun", t:"Aucun incident à signaler sur la période"}
+    ]
+  },
+  {
+    id:"assurance",
+    type:"radio",
+    label:"Étape 6 sur 7",
+    q:"Assurance responsabilité des administrateurs (D&O)",
+    help:"L'assurance « administrateurs et dirigeants » protège chaque membre du CA contre les réclamations personnelles. C'est devenu un standard pour les syndicats sérieux.",
+    opts:[
+      {v:"oui_connue", t:"Oui — nous connaissons le montant de la prime annuelle"},
+      {v:"oui_inconnu", t:"Oui — mais nous ne connaissons pas le montant"},
+      {v:"non", t:"Non, nous n'avons pas cette assurance"},
+      {v:"nsp", t:"Je ne sais pas"}
+    ],
+    extraInput:{
+      showWhen:"oui_connue",
+      key:"prime_annuelle",
+      label:"Prime annuelle ($CAD) *",
+      ph:"800",
+      prefix:"$"
+    }
+  },
+  {
+    id:"contact",
+    type:"fields",
+    label:"Étape 7 sur 7",
+    q:"Recevez votre comparatif personnalisé",
+    help:"Le nom du syndicat sert uniquement à personnaliser votre rapport, il ne sera jamais partagé. Aucun spam.",
+    fields:[
+      {key:"nom", label:"Nom du syndicat *", ph:"Ex : Syndicat des copropriétaires du 123 Maple", type:"text"},
+      {key:"email", label:"Courriel *", ph:"votre@courriel.com", type:"email"},
+      {key:"nom_contact", label:"Votre nom (optionnel)", ph:"Prénom Nom", type:"text"}
+    ]
+  }
+];
+
+let step = 0, ans = {taux_horaire: DEFAULT_TAUX}, phase = "form", formErr = "", result = null;
+let tooltips = {};
+
+function toggleTooltip(key){ tooltips[key] = !tooltips[key]; render(); }
+function selectOpt(id, val){ ans[id] = val; formErr = ""; render(); }
+function toggleMulti(id, val, noneOpt){
+  if(!Array.isArray(ans[id])) ans[id] = [];
+  const arr = ans[id];
+  const i = arr.indexOf(val);
+  if(i > -1){
+    arr.splice(i, 1);
+  } else {
+    if(noneOpt && val === noneOpt){
+      ans[id] = [val];
+    } else {
+      if(noneOpt){
+        const j = arr.indexOf(noneOpt);
+        if(j > -1) arr.splice(j, 1);
+      }
+      arr.push(val);
+    }
+  }
+  formErr = "";
+  render();
+}
+function setField(key, val){ ans[key] = val; }
+function prev(){ if(step > 0) step--; formErr = ""; render(); }
+function restart(){
+  step = 0;
+  ans = {taux_horaire: DEFAULT_TAUX};
+  phase = "form";
+  formErr = "";
+  result = null;
+  tooltips = {};
+  render();
+}
+
+function fmt(n){
+  if(typeof n !== "number" || isNaN(n)) return "—";
+  return new Intl.NumberFormat('fr-CA', {maximumFractionDigits:0}).format(Math.round(n));
+}
+function fmtCAD(n){ return fmt(n) + " $"; }
+function fmtSigned(n){
+  const sign = n > 0 ? "+" : n < 0 ? "−" : "";
+  return sign + fmt(Math.abs(n)) + " $";
+}
+
+function compute(){
+  const nbUnites = parseInt(ans.nb_unites) || 0;
+  const nbAdmins = parseInt(ans.nb_admins) || 0;
+  const heuresMois = parseFloat(ans.heures_mois) || 0;
+  const tauxHoraire = parseFloat(ans.taux_horaire) || parseFloat(DEFAULT_TAUX);
+
+  const coutTemps = Math.round(heuresMois * 12 * tauxHoraire);
+
+  const incidents = Array.isArray(ans.incidents) ? ans.incidents.filter(i => i !== "aucun") : [];
+  let coutIncidentsAnnualise = 0;
+  const incidentsBreakdown = [];
+  incidents.forEach(i => {
+    const data = INCIDENT_DATA[i];
+    if(!data) return;
+    const annualCost = data.cost / data.freqYears;
+    coutIncidentsAnnualise += annualCost;
+    incidentsBreakdown.push({
+      id: i,
+      label: data.label,
+      cost: data.cost,
+      freqYears: data.freqYears,
+      annualCost: annualCost
+    });
+  });
+
+  const risqueNonAssure = ans.assurance === "non" ? ASSURANCE_RISK : 0;
+
+  const coutTotalAutogestion = coutTemps + coutIncidentsAnnualise + risqueNonAssure;
+  const coutProAnnuel = nbUnites * PRO_RATE_PER_UNIT_MONTH * 12;
+  const ecartAnnuel = coutTotalAutogestion - coutProAnnuel;
+  const ecart3ans = ecartAnnuel * 3;
+
+  let verdict, color, label, txt, icon;
+  if(ecart3ans > 15000){
+    verdict = "pro_avantageux";
+    color = "#A32D2D";
+    label = "L'autogestion vous coûte plus cher";
+    txt = `Sur 3 ans, votre autogestion coûte environ ${fmtCAD(Math.abs(ecart3ans))} de plus qu'un gestionnaire professionnel équivalent. Le bénévolat a un prix que les CA sous-estiment souvent.`;
+    icon = "!";
+  } else if(ecart3ans >= 0){
+    verdict = "serre";
+    color = "#854F0B";
+    label = "Décision serrée — autres critères à peser";
+    txt = "L'écart financier sur 3 ans est faible. Les critères qualitatifs (fatigue, recrutement, conformité, sérénité) feront pencher la balance dans votre décision.";
+    icon = "△";
+  } else {
+    verdict = "auto_rentable";
+    color = "#0F6E56";
+    label = "Votre autogestion est rentable financièrement";
+    txt = `Sur 3 ans, votre autogestion fait économiser ${fmtCAD(Math.abs(ecart3ans))} au syndicat par rapport à un gestionnaire professionnel. Restez vigilants sur les critères qualitatifs ci-dessous.`;
+    icon = "✓";
+  }
+
+  return {
+    nbUnites, nbAdmins, heuresMois, tauxHoraire,
+    coutTemps, coutIncidentsAnnualise, risqueNonAssure,
+    coutTotalAutogestion, coutProAnnuel,
+    ecartAnnuel, ecart3ans,
+    incidentsBreakdown, primeAnnuelle: parseFloat(ans.prime_annuelle) || null,
+    verdict, color, label, txt, icon
+  };
+}
+
+function validate(){
+  formErr = "";
+  const q = QS[step];
+
+  if(q.type === "radio"){
+    if(!ans[q.id]){ formErr = "Veuillez sélectionner une réponse."; return false; }
+    if(q.extraInput && ans[q.id] === q.extraInput.showWhen){
+      const v = ans[q.extraInput.key];
+      if(v === undefined || v === null || (typeof v === "string" && !v.trim())){
+        formErr = `Veuillez renseigner « ${q.extraInput.label.replace(" *","")} ».`;
+        return false;
+      }
+      const n = parseFloat(v);
+      if(isNaN(n) || n < 0){
+        formErr = `« ${q.extraInput.label.replace(" *","")} » doit être un nombre positif.`;
+        return false;
+      }
+    }
+    return true;
+  }
+
+  if(q.type === "multi"){
+    if(!Array.isArray(ans[q.id]) || ans[q.id].length === 0){
+      formErr = "Veuillez sélectionner au moins une option (ou « Aucun »).";
+      return false;
+    }
+    return true;
+  }
+
+  if(q.type === "fields"){
+    for(const f of q.fields){
+      const required = f.label.includes("*");
+      if(f.type === "radio"){
+        if(required && !ans[f.key]){
+          formErr = `Veuillez sélectionner « ${f.label.replace(" *","")} ».`;
+          return false;
+        }
+        continue;
+      }
+      const val = ans[f.key];
+      if(required && (val === undefined || val === null || (typeof val === "string" && !val.trim()))){
+        formErr = `Veuillez remplir le champ « ${f.label.replace(" *","")} ».`;
+        return false;
+      }
+      if(f.type === "number" && val !== undefined && val !== ""){
+        const n = parseFloat(val);
+        if(isNaN(n) || n < 0){
+          formErr = `« ${f.label.replace(" *","")} » doit être un nombre positif.`;
+          return false;
+        }
+      }
+      if(f.type === "email" && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){
+        formErr = "Adresse courriel invalide."; return false;
+      }
+    }
+    if(q.id === "syndicat"){
+      const y = parseInt(ans.annee);
+      const now = new Date().getFullYear();
+      if(isNaN(y) || y < 1800 || y > now + 1){ formErr = "Année de construction invalide."; return false; }
+      const u = parseInt(ans.nb_unites);
+      if(isNaN(u) || u < 2){ formErr = "Le nombre d'unités doit être au moins 2."; return false; }
+    }
+    if(q.id === "ca"){
+      const a = parseInt(ans.nb_admins);
+      if(isNaN(a) || a < 1){ formErr = "Le nombre d'administrateurs doit être au moins 1."; return false; }
+    }
+    if(q.id === "temps"){
+      const h = parseFloat(ans.heures_mois);
+      if(isNaN(h) || h <= 0){ formErr = "Indiquez un nombre d'heures par mois supérieur à 0."; return false; }
+    }
+    if(q.id === "taux"){
+      const t = parseFloat(ans.taux_horaire);
+      if(isNaN(t) || t <= 0){ formErr = "Indiquez un taux horaire supérieur à 0."; return false; }
+    }
+    return true;
+  }
+  return true;
+}
+
+function nextStep(){
+  if(!validate()){ render(); return; }
+  if(step < QS.length - 1){ step++; render(); return; }
+  result = compute();
+  phase = "result";
+  if(LEAD_URL){
+    try{
+      fetch(LEAD_URL, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({source:"comparateur-autogestion", answers: ans, result})
+      }).catch(()=>{});
+    } catch(_){}
+  }
+  render();
+}
+
+function renderField(f){
+  const val = ans[f.key] !== undefined ? String(ans[f.key]).replace(/"/g,'&quot;') : "";
+  const tooltipOpen = !!tooltips[f.key];
+  const labelHTML = f.tooltip
+    ? `<div class="label-row">
+        <label class="input-label">${f.label}</label>
+        <button type="button" class="tooltip-btn${tooltipOpen?' open':''}" onclick="toggleTooltip('${f.key}')" aria-label="Aide">?</button>
+      </div>
+      ${tooltipOpen ? `<div class="tooltip-box">${f.tooltip}</div>` : ""}`
+    : `<label class="input-label">${f.label}</label>`;
+
+  if(f.type === "radio"){
+    return `<div class="input-group">
+      ${labelHTML}
+      <div class="options options-inline">${f.opts.map(o => {
+        const sel = ans[f.key] === o.v;
+        return `<div class="opt${sel?' selected':''}" onclick="selectOpt('${f.key}','${o.v}')">
+          <div class="opt-radio"><div class="opt-dot"></div></div>
+          <div class="opt-body"><div class="opt-text">${o.t}</div></div>
+        </div>`;
+      }).join("")}</div>
+    </div>`;
+  }
+
+  const inputCls = (f.prefix?"with-prefix":"") + (f.suffix?" with-suffix":"");
+  return `<div class="input-group">
+    ${labelHTML}
+    <div class="input-wrap">
+      ${f.prefix ? `<span class="input-prefix">${f.prefix}</span>` : ""}
+      <input class="${inputCls.trim()}" type="${f.type}" value="${val}" placeholder="${f.ph}" oninput="setField('${f.key}', this.value)" ${f.type==="number" ? 'min="0" step="any" inputmode="numeric"' : ''}>
+      ${f.suffix ? `<span class="input-suffix">${f.suffix}</span>` : ""}
+    </div>
+  </div>`;
+}
+
+function renderForm(){
+  const q = QS[step];
+  let qHTML = "";
+
+  if(q.type === "radio"){
+    qHTML = `<div class="options">${q.opts.map(o => {
+      const sel = ans[q.id] === o.v;
+      return `<div class="opt${sel?' selected':''}" onclick="selectOpt('${q.id}','${o.v}')">
+        <div class="opt-radio"><div class="opt-dot"></div></div>
+        <div class="opt-body"><div class="opt-text">${o.t}</div></div>
+      </div>`;
+    }).join("")}</div>`;
+    if(q.extraInput && ans[q.id] === q.extraInput.showWhen){
+      const f = q.extraInput;
+      const val = ans[f.key] !== undefined ? String(ans[f.key]).replace(/"/g,'&quot;') : "";
+      qHTML += `<div class="extra-input">
+        <label class="input-label">${f.label}</label>
+        <div class="input-wrap">
+          ${f.prefix ? `<span class="input-prefix">${f.prefix}</span>` : ""}
+          <input class="${f.prefix?'with-prefix':''}" type="number" value="${val}" placeholder="${f.ph}" oninput="setField('${f.key}', this.value)" min="0" step="any" inputmode="numeric">
+        </div>
+      </div>`;
+    }
+  } else if(q.type === "multi"){
+    qHTML = `<div class="multi-hint">Sélectionnez tout ce qui s'applique. « Aucun » exclut les autres choix.</div>
+      <div class="options">${q.opts.map(o => {
+        const sel = Array.isArray(ans[q.id]) && ans[q.id].includes(o.v);
+        const noneAttr = q.noneOption ? `,'${q.noneOption}'` : "";
+        return `<div class="opt${sel?' selected':''}" onclick="toggleMulti('${q.id}','${o.v}'${noneAttr})">
+          <div class="opt-check"><span class="check-icon">✓</span></div>
+          <div class="opt-body">
+            <div class="opt-text">${o.t}</div>
+            ${o.sub ? `<div class="opt-sub">${o.sub}</div>` : ""}
+          </div>
+        </div>`;
+      }).join("")}</div>`;
+  } else {
+    qHTML = `<div>${q.fields.map(renderField).join("")}</div>`;
+  }
+
+  const progress = Math.round((step / QS.length) * 100);
+  const isLast = step === QS.length - 1;
+
+  return `<div class="fade">
+    <div class="header">
+      <div class="header-agency">Quatre Piliers — Comparateur gratuit</div>
+      <div class="header-title">Combien vous coûte vraiment votre autogestion ?</div>
+      <div class="header-sub">7 questions · Résultat instantané · Méthodologie transparente</div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:${progress}%"></div></div>
+    <div class="step-label">${q.label}</div>
+    <div class="step-q">${q.q}</div>
+    ${q.help ? `<div class="step-help">${q.help}</div>` : ""}
+    ${qHTML}
+    ${formErr ? `<div class="error">${formErr}</div>` : ""}
+    <div class="nav">
+      ${step > 0 ? `<button class="btn btn-back" onclick="prev()" aria-label="Précédent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>` : ""}
+      <button class="btn ${isLast ? 'btn-cta' : 'btn-next'}" onclick="nextStep()">${isLast ? "Voir mon comparatif" : "Continuer"}</button>
+      <span class="step-count">${step+1} / ${QS.length}</span>
+    </div>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+  </div>`;
+}
+
+function renderResult(){
+  const r = result;
+  const blockClass = r.verdict === "pro_avantageux" ? "crit" : r.verdict === "serre" ? "warn" : "good";
+
+  // Bloc 1 — Coût caché autogestion (décomposition)
+  const autoCard = `<div class="proj-card">
+    <div class="proj-title">Coût caché de votre autogestion — par an</div>
+    <div class="proj-row"><span class="proj-label">Temps bénévole (${fmt(r.heuresMois)} h/mois × 12 × ${fmtCAD(r.tauxHoraire)})</span><span class="proj-value">${fmtCAD(r.coutTemps)}</span></div>
+    <div class="proj-row"><span class="proj-label">Incidents — coût annuel amorti sur fréquence typique</span><span class="proj-value">${fmtCAD(r.coutIncidentsAnnualise)}</span></div>
+    <div class="proj-row"><span class="proj-label">${r.risqueNonAssure > 0 ? "Risque D&amp;O non couvert (sans assurance)" : "Risque D&amp;O (assurance en place)"}</span><span class="proj-value">${fmtCAD(r.risqueNonAssure)}</span></div>
+    <div class="proj-row"><span class="proj-label">Total annuel autogestion</span><span class="proj-value">${fmtCAD(r.coutTotalAutogestion)}</span></div>
+  </div>`;
+
+  // Bloc 1 bis — Détail des incidents (si applicable)
+  let incidentsDetail = "";
+  if(r.incidentsBreakdown.length > 0){
+    incidentsDetail = `<div class="proj-card">
+      <div class="proj-title">Détail des incidents — coût amorti par fréquence typique</div>
+      ${r.incidentsBreakdown.map(i => `<div class="proj-row"><span class="proj-label">${i.label} <span style="color:var(--muted);font-weight:500">(${fmtCAD(i.cost)} ÷ ${i.freqYears} ans)</span></span><span class="proj-value">${fmtCAD(i.annualCost)}/an</span></div>`).join("")}
+      <div class="proj-row"><span class="proj-label">Sous-total annuel amorti</span><span class="proj-value">${fmtCAD(r.coutIncidentsAnnualise)}/an</span></div>
+    </div>`;
+  }
+
+  // Bloc 2 — Coût gestionnaire pro
+  const proCard = `<div class="proj-card">
+    <div class="proj-title">Coût d'un gestionnaire professionnel équivalent — par an</div>
+    <div class="proj-row"><span class="proj-label">${r.nbUnites} unités × ${PRO_RATE_PER_UNIT_MONTH} $ / unité / mois × 12 mois</span><span class="proj-value">${fmtCAD(r.coutProAnnuel)}</span></div>
+    <div class="proj-row"><span class="proj-label">Total annuel gestion professionnelle</span><span class="proj-value">${fmtCAD(r.coutProAnnuel)}</span></div>
+  </div>`;
+
+  // Bloc 3 — Différence sur 3 ans (gros chiffre coloré)
+  const bigfigLabel = r.ecart3ans > 0
+    ? "Surcoût de votre autogestion sur 3 ans"
+    : r.ecart3ans < 0
+    ? "Économie de votre autogestion sur 3 ans"
+    : "Coûts équivalents sur 3 ans";
+  const bigfigSub = r.ecart3ans > 0
+    ? `Soit environ ${fmtCAD(Math.abs(r.ecartAnnuel))} par an de coût supplémentaire par rapport à un gestionnaire professionnel équivalent.`
+    : r.ecart3ans < 0
+    ? `Soit environ ${fmtCAD(Math.abs(r.ecartAnnuel))} par an que votre bénévolat fait économiser au syndicat — à efficacité équivalente, hors critères qualitatifs.`
+    : "Sur le plan financier, les deux modèles s'équivalent. Les critères non financiers vont déterminer la décision.";
+
+  const bigfig = `<div class="bigfig-block ${blockClass}">
+    <div class="bigfig-label">Différence cumulée sur 3 ans</div>
+    <div class="bigfig-value">${fmt(Math.abs(r.ecart3ans))} $</div>
+    <div class="bigfig-sub"><strong style="color:var(--blue-dk)">${bigfigLabel}.</strong> ${bigfigSub}</div>
+  </div>`;
+
+  // Section non financière (toujours)
+  const nfHTML = `<div class="nf-section">
+    <div class="nf-title">Critères non financiers à peser</div>
+    <div class="nf-intro">Un comparatif honnête ne s'arrête pas au prix. Quelle que soit la conclusion chiffrée, ces dimensions méritent une discussion en CA.</div>
+    <div class="nf-item">
+      <div class="nf-icon">1</div>
+      <div class="nf-body">
+        <div class="nf-name">Fatigue et burnout du CA</div>
+        <div class="nf-desc">Le bénévolat use. Vos administrateurs tiendront-ils encore deux, trois, cinq ans à ce rythme sans démotivation ?</div>
+      </div>
+    </div>
+    <div class="nf-item">
+      <div class="nf-icon">2</div>
+      <div class="nf-body">
+        <div class="nf-name">Rotation et recrutement des administrateurs</div>
+        <div class="nf-desc">Trouver une relève compétente devient de plus en plus difficile. Quel est votre plan si deux membres quittent simultanément ?</div>
+      </div>
+    </div>
+    <div class="nf-item">
+      <div class="nf-icon">3</div>
+      <div class="nf-body">
+        <div class="nf-name">Conformité Loi 16</div>
+        <div class="nf-desc">Carnet d'entretien, étude du fonds de prévoyance tous les 5 ans, formation continue : les obligations s'alourdissent et les sanctions se concrétisent.</div>
+      </div>
+    </div>
+    <div class="nf-item">
+      <div class="nf-icon">4</div>
+      <div class="nf-body">
+        <div class="nf-name">Sérénité des copropriétaires</div>
+        <div class="nf-desc">Un syndicat bien encadré rassure les acheteurs, sécurise la valeur de revente et désamorce les conflits internes.</div>
+      </div>
+    </div>
+  </div>`;
+
+  // CTA contextuel
+  const isVert = r.verdict === "auto_rentable";
+  const ctaLabel = isVert ? "Prochaine étape suggérée" : "Recommandation Quatre Piliers";
+  const ctaTitle = isVert
+    ? "Discuter d'un accompagnement à la carte"
+    : "Demander une soumission de gestion complète";
+  const ctaMsg = isVert
+    ? "Votre autogestion fonctionne sur le plan financier. Beaucoup de syndicats dans votre situation choisissent un accompagnement ponctuel : appui pour l'AGA, audit annuel, soutien comptable, gestion de crise. Vous gardez la main, vous limitez les risques."
+    : "Sur la base de ce comparatif, un gestionnaire professionnel allège votre CA, réduit votre exposition aux risques et préserve la valeur de votre immeuble. Nous bâtissons une proposition adaptée à votre taille et à votre budget.";
+  const ctaBtnLabel = isVert ? "✉ Accompagnement à la carte" : "✉ Demander une soumission";
+
+  // Préparation du mailto
+  const incLabelList = r.incidentsBreakdown.length > 0 ? r.incidentsBreakdown.map(i => i.label).join(", ") : "Aucun";
+  const ancienneteLabel = ans.anciennete === "recent" ? "moins d'un an"
+    : ans.anciennete === "intermediaire" ? "1 à 3 ans"
+    : ans.anciennete === "experimente" ? "plus de 3 ans"
+    : "non renseignée";
+  const assuranceLabel = ans.assurance === "oui_connue" ? `Oui — prime annuelle ${r.primeAnnuelle ? fmtCAD(r.primeAnnuelle) : "renseignée"}`
+    : ans.assurance === "oui_inconnu" ? "Oui — montant inconnu"
+    : ans.assurance === "non" ? "Non"
+    : "Inconnue";
+
+  const mailSubject = isVert
+    ? `Accompagnement à la carte — ${ans.nom}`
+    : `Soumission gestion complète — ${ans.nom}`;
+  const mailBody = `Bonjour,
+
+Suite au comparateur autogestion de Quatre Piliers, je souhaite être contacté.
+
+Verdict : ${r.label}
+
+— Syndicat : ${ans.nom}
+— Unités : ${ans.nb_unites}
+— Année de construction : ${ans.annee}
+— CA : ${r.nbAdmins} administrateur(s), ancienneté moyenne ${ancienneteLabel}
+— Temps bénévole : ${fmt(r.heuresMois)} h/mois total, valorisé ${fmtCAD(r.tauxHoraire)}/h
+— Incidents 24 mois : ${incLabelList}
+— Assurance D&O : ${assuranceLabel}
+
+— Coût autogestion annuel : ${fmtCAD(r.coutTotalAutogestion)}
+   · Temps bénévole : ${fmtCAD(r.coutTemps)}
+   · Incidents (amortis sur fréquence typique) : ${fmtCAD(r.coutIncidentsAnnualise)}
+   · Risque non assuré : ${fmtCAD(r.risqueNonAssure)}
+— Coût gestionnaire pro annuel : ${fmtCAD(r.coutProAnnuel)}
+— Écart annuel : ${fmtSigned(r.ecartAnnuel)}
+— Écart cumulé 3 ans : ${fmtSigned(r.ecart3ans)}
+
+Merci de me recontacter pour échanger.`;
+  const mailHref = `mailto:info@quatrepiliers.ca?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
+  return `<div class="fade">
+    <div class="result-header">
+      <div class="result-agency">Quatre Piliers — Comparateur autogestion</div>
+      <div class="result-title">Votre comparatif personnalisé</div>
+      <div class="result-syndicat">${ans.nom} · ${ans.nb_unites} unités · construit en ${ans.annee}</div>
+      <div class="verdict-row">
+        <div class="verdict-icon" style="background:${r.color}">${r.icon}</div>
+        <div class="verdict-body">
+          <div class="verdict-label">${r.label}</div>
+          <div class="verdict-resume">${r.txt}</div>
+        </div>
+      </div>
+    </div>
+
+    ${autoCard}
+    ${incidentsDetail}
+    ${proCard}
+    ${bigfig}
+    ${nfHTML}
+
+    <div class="method-box">
+      <strong>Méthode de calcul :</strong> coût bénévole annuel = heures/mois × 12 × taux horaire. <strong>Incidents amortis sur leur fréquence typique</strong> au Québec — un événement rare ne se reproduit pas chaque année : sinistre mal coordonné 8 000 $ ÷ 10 ans, erreur comptable 3 000 $ ÷ 4 ans, AGA reportée 1 500 $ ÷ 5 ans, conflit majeur 5 000 $ ÷ 8 ans, surcoût travaux 12 000 $ ÷ 8 ans. Risque D&amp;O non couvert : 800 $/an. Tarif gestionnaire professionnel : ${PRO_RATE_PER_UNIT_MONTH} $/unité/mois (médiane Quatre Piliers, Grand Montréal).
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-label">${ctaLabel}</div>
+      <div class="cta-title">${ctaTitle}</div>
+      <div class="cta-msg">${ctaMsg}</div>
+      <div class="cta-actions">
+        <a class="cta-btn cta-btn-gold" href="${mailHref}">${ctaBtnLabel}</a>
+        <a class="cta-btn cta-btn-outline" href="tel:5148392494">📞 514-839-2494</a>
+      </div>
+      <div class="cta-contact"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+    </div>
+
+    <div class="disclaimer"><strong>Avis :</strong> cette estimation utilise des moyennes de l'industrie québécoise (2025-2026). Les chiffres réels varient selon votre situation, votre taille, l'âge de l'immeuble et la qualité de votre gestion actuelle. Ce comparatif ne remplace pas une analyse personnalisée par un professionnel.</div>
+
+    <button class="restart-btn" onclick="restart()">Refaire le comparatif</button>
+    <div class="page-footer"><a href="https://quatrepiliers.ca/" target="_blank" rel="noopener">www.quatrepiliers.ca</a></div>
+  </div>`;
+}
+
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = (phase === "result" && result) ? renderResult() : renderForm();
+}
+
+render();
+</script>
+</body>
+</html>
