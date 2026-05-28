@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -42,8 +42,8 @@
   --wh:#fff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--wh);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--wh);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:0;overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Nunito Sans',sans-serif;font-weight:800;letter-spacing:-.015em;line-height:1.08;color:var(--blue-ink)}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
@@ -90,6 +90,8 @@ nav#mainNav .btn-devis:hover{background:var(--gold);border-color:var(--gold);col
   .hamburger{display:flex}
   nav#mainNav .btn-devis{display:none}
   nav#mainNav .lang-pill,nav#mainNav .nav-right > div:first-child{display:none}
+  nav#mainNav{padding:14px 16px}
+  nav#mainNav.scrolled{padding:10px 16px}
 }
 
 /* ---------- mobile menu ---------- */
@@ -107,7 +109,7 @@ nav#mainNav .btn-devis:hover{background:var(--gold);border-color:var(--gold);col
   filter:saturate(.95) contrast(1.06);
 }
 .hero-inner{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 40px 80px;max-width:1320px;margin:0 auto;text-align:left!important}
-.hero-meta{display:flex;gap:24px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-bottom:24px}
+.hero-meta{display:flex;gap:24px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-bottom:24px;flex-wrap:wrap}
 .hero-meta span:not(:last-child):after{content:"·";margin-left:24px;opacity:.5}
 .hero h1{font-size:clamp(40px,6.4vw,84px)!important;font-weight:800;max-width:18ch;color:#fff!important;line-height:1.04!important;text-align:left!important;margin:0!important;font-family:'Nunito Sans',sans-serif;letter-spacing:-.02em}
 .hero h1 em{font-style:italic;color:var(--gold)}
@@ -298,6 +300,23 @@ footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
 /* ---------- utility ---------- */
 .fade-up{animation:fu .8s cubic-bezier(.2,.6,.2,1) both}
 @keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* ---------- small screen responsive ---------- */
+@media(max-width:600px){
+  nav#mainNav{padding:12px 16px}
+  nav#mainNav.scrolled{padding:10px 16px}
+  .hero-inner{padding:0 20px 56px}
+  .hero-actions .btn-primary,.hero-actions .btn-outline{width:100%;justify-content:center}
+  section{padding:80px 0}
+  .si,.wrap{padding:0 20px}
+  .cta-band{padding:80px 20px}
+  footer{padding:60px 20px 24px}
+}
+@media(max-width:560px){
+  .fg-row{grid-template-columns:1fr}
+  .mini-form{padding:28px 20px}
+  .modal{padding:32px 20px}
+}
 </style>
 </head>
 <body>
@@ -318,7 +337,7 @@ footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
     <li><a class="active" href="/en/" data-i18n="nav.home">Home</a></li>
     <li><a href="/en/services" data-i18n="nav.services">Services</a></li>
     <li><a href="/en/pricing" data-i18n="nav.pricing">Pricing</a></li>
-    <li><a href="/en/law-16" data-i18n="nav.law16">Bill 16</a></li>
+    <li><a href="/en/bill-16" data-i18n="nav.law16">Bill 16</a></li>
     <li><a href="/en/blog" data-i18n="nav.blog">Blog</a></li>
     <li><a href="/en/contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
@@ -342,7 +361,7 @@ footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
   <a href="/en/" onclick="toggleMenu()" style="color:var(--gold)"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14L14 6l10 8"/><path d="M6 12v10h5v-6h6v6h5V12"/></svg> <span data-i18n="nav.home">Home</span></a>
   <a href="/en/services" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="3"/><path d="M14 4v3M14 21v3M4 14h3M21 14h3M7.1 7.1l2.1 2.1M18.8 18.8l2.1 2.1M7.1 20.9l2.1-2.1M18.8 9.2l2.1-2.1"/></svg> <span data-i18n="nav.services">Services</span></a>
   <a href="/en/pricing" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="20" height="22" rx="2"/><path d="M9 8h10M9 13h10M9 18h6"/></svg> <span data-i18n="nav.pricing">Pricing</span></a>
-  <a href="/en/law-16" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 3.5v7c0 5-3.5 8-9 10C8.5 22 5 19 5 14.5V7.5L14 4z"/><path d="M10 13.5l3 3 5-5"/></svg> <span data-i18n="nav.law16">Bill 16</span></a>
+  <a href="/en/bill-16" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 3.5v7c0 5-3.5 8-9 10C8.5 22 5 19 5 14.5V7.5L14 4z"/><path d="M10 13.5l3 3 5-5"/></svg> <span data-i18n="nav.law16">Bill 16</span></a>
   <a href="/en/blog" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3.5a2.5 2.5 0 0 1 3.5 3.5L8 19.5 4 21l1.5-4L17 3.5z"/><path d="M9 24h12"/></svg> <span data-i18n="nav.blog">Blog</span></a>
   <a href="/en/contact" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="22" height="16" rx="2"/><path d="M3 8l11 7 11-7"/></svg> <span data-i18n="nav.contact">Contact</span></a>
   <a href="javascript:void(0)" onclick="openModal();toggleMenu()" style="color:var(--gold)"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="22" height="16" rx="2"/><path d="M3 8l11 7 11-7"/></svg> <span data-i18n="nav.devis.short">Free Quote</span></a>
@@ -532,7 +551,7 @@ footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
           <div class="loi-item"><div class="loi-dot"></div><div><strong data-i18n="law.item2.title">Contingency fund study</strong><span data-i18n="law.item2.desc">Corporations have until August 14, 2028 to obtain their first contingency fund study.</span></div></div>
           <div class="loi-item"><div class="loi-dot"></div><div><strong data-i18n="law.item3.title">Corporation status certificate</strong><span data-i18n="law.item3.desc">Required at every unit sale since 2025.</span></div></div>
         </div>
-        <a href="/en/law-16" class="btn-sec" data-i18n="btn.fullguide">Read our complete guide →</a>
+        <a href="/en/bill-16" class="btn-sec" data-i18n="btn.fullguide">Read our complete guide →</a>
         <div class="diag-cta-card" onclick="openDiagnostic()" style="margin-top:24px">
           <div class="diag-cta-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8B800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>

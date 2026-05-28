@@ -1,4 +1,4 @@
-/* ===== CHAT ===== */
+﻿/* ===== CHAT ===== */
 function toggleChat(){
   var panel=document.getElementById('chat-panel');
   var iconOpen=document.getElementById('chat-icon-open');
@@ -285,7 +285,7 @@ var translations={
     'info.sec7.list':'<li>Site SHQ : Copropriété divise</li><li>Guide explicatif SHQ (PDF) : Télécharger ici</li><li>Modèle d\'attestation : Disponible sur le site de la SHQ.</li><li>Texte du Règlement : Gazette officielle du Québec (30 juillet 2025).</li><li>Texte de la Loi 16 : Publications du Québec.</li>',
     'info.rec':'<strong style="color:var(--blue)">Recommandation :</strong> Consultez un avocat spécialisé en copropriété ou un gestionnaire certifié (RGCQ) pour une analyse adaptée à votre immeuble. Ce guide est une synthèse vulgarisée ; le texte officiel du Règlement et du Code civil prime en cas de doute.',
     'info.cta.title':'Vous gérez un syndicat ?',
-    'info.cta.desc':'La Loi 16 marque le début d\'une ère de gestion professionnelle et transparente. Bien appliquée, elle protège votre patrimoine collectif.',
+    'info.cta.desc':'La Loi 16 marque le début d\'une ère de gestion professionnelle et transparente. Bien appliquée, elle protège votre patrimoine collectif. Quatre Piliers vous accompagne pour assurer la pleine conformité de votre syndicat.',
     'info.cta.btn':'Demander une consultation gratuite →',
     'srv.p1.li1':'Organisation et tenue des assemblées générales',
     'srv.p1.li2':'Convocation et animation des réunions du conseil d\'administration',
@@ -484,7 +484,7 @@ var translations={
     'info.sec7.list':'<li>SHQ website: Divided co-ownership</li><li>SHQ explanatory guide (PDF): Download here</li><li>Attestation template: Available on the SHQ website.</li><li>Regulation text: Quebec Official Gazette (July 30, 2025).</li><li>Bill 16 text: Publications du Québec.</li>',
     'info.rec':'<strong style="color:var(--blue)">Recommendation:</strong> Consult a lawyer specializing in co-ownership or a certified manager (RGCQ) for an analysis tailored to your building. This guide is a simplified summary; the official text of the Regulation and the Civil Code takes precedence in case of doubt.',
     'info.cta.title':'Managing a corporation?',
-    'info.cta.desc':'Bill 16 marks the beginning of an era of professional and transparent management. When properly applied, it protects your collective heritage.',
+    'info.cta.desc':'Bill 16 marks the beginning of an era of professional and transparent management. When properly applied, it protects your collective heritage. Quatre Piliers is here to ensure your corporation achieves full compliance.',
     'info.cta.btn':'Request a free consultation →',
     'srv.p1.li1':'Organization and management of general meetings',
     'srv.p1.li2':'Scheduling and facilitating board of directors meetings',
@@ -542,14 +542,14 @@ var LANG_URL_MAP_FR_TO_EN={
   '/':'/en/',
   '/services':'/en/services',
   '/tarification':'/en/pricing',
-  '/loi-16':'/en/law-16',
+  '/loi-16':'/en/bill-16',
   '/contact':'/en/contact',
   '/blog':'/en/blog',
   '/blog/gestionnaire-copropriete-montreal':'/en/blog/condo-manager-montreal',
   '/blog/reclamations-assurance':'/en/blog/insurance-claims',
   '/blog/fonds-prevoyance-loi16':'/en/blog/contingency-fund-law16',
   '/blog/communication-gouvernance':'/en/blog/communication-governance',
-  '/blog/loi-16-ou-en-etes-vous':'/en/blog/law-16-where-do-you-stand',
+  '/blog/loi-16-ou-en-etes-vous':'/en/blog/bill-16-where-do-you-stand',
   '/blog/autogestion-couts-caches':'/en/blog/self-management-hidden-costs'
 };
 function setLang(lang){
@@ -625,7 +625,7 @@ function injectFooter(){
   var isEn=(window.location.pathname==='/en'||window.location.pathname.indexOf('/en/')===0);
   var p=isEn?'/en':'';
   var links=isEn
-    ? [['/en/','Home','nav.home'],['/en/services','Services','nav.services'],['/en/pricing','Pricing','nav.pricing'],['/en/law-16','Bill 16','nav.law16'],['/en/blog','Blog','nav.blog'],['/en/contact','Contact','nav.contact']]
+    ? [['/en/','Home','nav.home'],['/en/services','Services','nav.services'],['/en/pricing','Pricing','nav.pricing'],['/en/bill-16','Bill 16','nav.law16'],['/en/blog','Blog','nav.blog'],['/en/contact','Contact','nav.contact']]
     : [['/','Accueil','nav.home'],['/services','Services','nav.services'],['/tarification','Tarification','nav.pricing'],['/loi-16','Loi 16','nav.law16'],['/blog','Blog','nav.blog'],['/contact','Contact','nav.contact']];
   var areas=isEn
     ? ['Island of Montreal','Laval','Longueuil','South Shore (Brossard, Saint-Lambert, Boucherville)','North Shore (Terrebonne, Blainville, Repentigny)']
