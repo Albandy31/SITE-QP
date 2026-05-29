@@ -346,6 +346,7 @@ footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
 .bcard:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,31,74,.1)}
 .bcard-img{aspect-ratio:16/10;width:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue-ink),var(--blue))}
 .bcard-img svg{opacity:.9;width:88px;height:88px}
+.bcard-img i[class*="ph-"]{font-size:88px;line-height:1;color:#fff;opacity:.95}
 .bcard-cat{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.15);color:#fff;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:5px 11px;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .bcard-body{padding:28px 26px 32px;display:flex;flex-direction:column;flex:1}
 .bcard-meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}

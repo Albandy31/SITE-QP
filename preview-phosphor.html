@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Preview – Phosphor Icons</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<!-- Phosphor Icons -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"/>
+<style>
+  :root{
+    --ink:#0F1F4A; --blue-ink:#212B3C; --blue:#2a4d9e; --blue-dk:#1a3a5c;
+    --gold:#E8B800; --paper:#FAF7F0; --cream:#F6F1E4; --line:#E8E2D0; --muted:#6b6f7a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito Sans',sans-serif;background:var(--paper);color:var(--ink);padding:40px 24px}
+  h1{font-size:28px;margin-bottom:6px}
+  h2{font-size:22px;margin:50px 0 6px;color:var(--blue-ink)}
+  .lead{color:var(--muted);font-size:14px;margin-bottom:24px;max-width:780px;line-height:1.5}
+  .wrap{max-width:1280px;margin:0 auto}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(15,31,74,.04);transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit;display:block}
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(15,31,74,.10)}
+  .card-img{position:relative;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .cat{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);color:var(--blue-ink);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;z-index:2}
+  .card-img i{font-size:88px;line-height:1}
+  .card-body{padding:18px 20px 22px}
+  .meta{font-size:11px;color:var(--muted);letter-spacing:.04em;margin-bottom:8px;text-transform:uppercase}
+  .card-body h3{font-size:17px;line-height:1.35;margin-bottom:8px;font-weight:700}
+  .card-body p{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .lnk{font-size:13px;color:var(--gold);font-weight:700}
+
+  /* === STYLE 1 : DUOTONE on dégradés sombres === */
+  .s1 .card-img i{color:#fff}
+  .s1 .card-img i.ph-duotone::before{color:#fff}
+  .s1 .card-img i.ph-duotone::after{color:var(--gold);opacity:.9}
+  .s1-loi16{background:linear-gradient(135deg,#1a3a5c,#2a4d9e)}
+  .s1-gest{background:linear-gradient(135deg,#0f2e3d,#1f5a72)}
+  .s1-assur{background:linear-gradient(135deg,#5c1a1a,#9e2a2a)}
+  .s1-fonds{background:linear-gradient(135deg,#3d2e0f,#8a6e1f)}
+  .s1-mtl{background:linear-gradient(135deg,#2c1654,#4a2d9e)}
+  .s1-gouv{background:linear-gradient(135deg,#0d5c3a,#1a8a5a)}
+
+  /* === STYLE 2 : DUOTONE on cream / pastel === */
+  .s2 .card-img i.ph-duotone::before{color:var(--blue-ink)}
+  .s2 .card-img i.ph-duotone::after{color:var(--gold);opacity:.65}
+  .s2-loi16{background:#EEF2FB}
+  .s2-gest{background:#EAF4F4}
+  .s2-assur{background:#FBEFEF}
+  .s2-fonds{background:#FBF6E5}
+  .s2-mtl{background:#F1EEFB}
+  .s2-gouv{background:#EAF5EE}
+  .s2 .card-img::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--gold)}
+
+  /* === STYLE 3 : BOLD on white minimal + gold accent === */
+  .s3 .card-img{background:#fff;border-bottom:1px solid var(--line)}
+  .s3 .card-img i{color:var(--blue-ink)}
+  .s3 .card-img::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+  .s3 .cat{background:var(--blue-ink);color:#fff}
+
+  /* === STYLE 4 : FILL on bold gold background === */
+  .s4 .card-img i{color:var(--blue-ink)}
+  .s4-a{background:var(--gold)}
+  .s4-b{background:#F5D547}
+  .s4-c{background:#FAE077}
+
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Phosphor Icons — 4 variantes pour ton blog</h1>
+  <p class="lead">Les vraies icônes Phosphor (pas faites main). Compare et choisis le style + la couleur de fond.</p>
+
+  <!-- STYLE 1 -->
+  <h2>Style 1 — Duotone sur dégradés colorés (1 couleur par catégorie)</h2>
+  <p class="lead">Style le plus riche. Le duotone donne de la profondeur, le doré ressort sur le bleu/vert/violet.</p>
+  <div class="grid s1">
+    <div class="card"><div class="card-img s1-loi16"><span class="cat">Loi 16</span><i class="ph-duotone ph-scales"></i></div><div class="card-body"><div class="meta">Loi 16 · 19 mai 2026</div><h3>Loi 16 : où en est votre syndicat en 2026 ?</h3><p>Mi-2026, les premières échéances sont derrière nous.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s1-gest"><span class="cat">Gestion</span><i class="ph-duotone ph-chart-line-down"></i></div><div class="card-body"><div class="meta">Gestion · 19 mai 2026</div><h3>Autogestion : les vrais coûts cachés</h3><p>Temps bénévole, incidents évitables, risques non assurés.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s1-assur"><span class="cat">Assurances</span><i class="ph-duotone ph-umbrella"></i></div><div class="card-body"><div class="meta">Assurances · 15 avril 2026</div><h3>Réclamations d'assurance : les 7 pièges</h3><p>Les erreurs fréquentes des syndicats.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s1-fonds"><span class="cat">Loi 16</span><i class="ph-duotone ph-piggy-bank"></i></div><div class="card-body"><div class="meta">Loi 16 · 22 avril 2026</div><h3>Préparer l'étude du fonds de prévoyance</h3><p>Guide étape par étape.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s1-mtl"><span class="cat">Gestion</span><i class="ph-duotone ph-buildings"></i></div><div class="card-body"><div class="meta">Gestion · 12 mai 2026</div><h3>Gestionnaire de copropriété Montréal</h3><p>7 critères essentiels.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s1-gouv"><span class="cat">Gouvernance</span><i class="ph-duotone ph-chats-circle"></i></div><div class="card-body"><div class="meta">Gouvernance · 29 avril 2026</div><h3>Communication en copropriété</h3><p>Outils modernes pour une gouvernance transparente.</p><span class="lnk">Lire l'article →</span></div></div>
+  </div>
+
+  <!-- STYLE 2 -->
+  <h2>Style 2 — Duotone sur fonds pastel + filet doré</h2>
+  <p class="lead">Plus doux, plus premium éditorial. Le filet or rappelle la marque.</p>
+  <div class="grid s2">
+    <div class="card"><div class="card-img s2-loi16"><span class="cat">Loi 16</span><i class="ph-duotone ph-scales"></i></div><div class="card-body"><div class="meta">Loi 16 · 19 mai 2026</div><h3>Loi 16 : où en est votre syndicat en 2026 ?</h3><p>Mi-2026, les premières échéances sont derrière nous.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s2-gest"><span class="cat">Gestion</span><i class="ph-duotone ph-chart-line-down"></i></div><div class="card-body"><div class="meta">Gestion · 19 mai 2026</div><h3>Autogestion : les vrais coûts cachés</h3><p>Temps bénévole, incidents évitables, risques non assurés.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s2-assur"><span class="cat">Assurances</span><i class="ph-duotone ph-umbrella"></i></div><div class="card-body"><div class="meta">Assurances · 15 avril 2026</div><h3>Réclamations d'assurance : les 7 pièges</h3><p>Les erreurs fréquentes des syndicats.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s2-fonds"><span class="cat">Loi 16</span><i class="ph-duotone ph-piggy-bank"></i></div><div class="card-body"><div class="meta">Loi 16 · 22 avril 2026</div><h3>Préparer l'étude du fonds de prévoyance</h3><p>Guide étape par étape.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s2-mtl"><span class="cat">Gestion</span><i class="ph-duotone ph-buildings"></i></div><div class="card-body"><div class="meta">Gestion · 12 mai 2026</div><h3>Gestionnaire de copropriété Montréal</h3><p>7 critères essentiels.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s2-gouv"><span class="cat">Gouvernance</span><i class="ph-duotone ph-chats-circle"></i></div><div class="card-body"><div class="meta">Gouvernance · 29 avril 2026</div><h3>Communication en copropriété</h3><p>Outils modernes pour une gouvernance transparente.</p><span class="lnk">Lire l'article →</span></div></div>
+  </div>
+
+  <!-- STYLE 3 -->
+  <h2>Style 3 — Bold trait épais, fond blanc, filet or en haut</h2>
+  <p class="lead">Minimal, sobre, très éditorial. Le filet or fait la signature de marque.</p>
+  <div class="grid s3">
+    <div class="card"><div class="card-img"><span class="cat">Loi 16</span><i class="ph-bold ph-scales"></i></div><div class="card-body"><div class="meta">Loi 16 · 19 mai 2026</div><h3>Loi 16 : où en est votre syndicat en 2026 ?</h3><p>Mi-2026, les premières échéances sont derrière nous.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img"><span class="cat">Gestion</span><i class="ph-bold ph-chart-line-down"></i></div><div class="card-body"><div class="meta">Gestion · 19 mai 2026</div><h3>Autogestion : les vrais coûts cachés</h3><p>Temps bénévole, incidents évitables, risques non assurés.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img"><span class="cat">Assurances</span><i class="ph-bold ph-umbrella"></i></div><div class="card-body"><div class="meta">Assurances · 15 avril 2026</div><h3>Réclamations d'assurance : les 7 pièges</h3><p>Les erreurs fréquentes des syndicats.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img"><span class="cat">Loi 16</span><i class="ph-bold ph-piggy-bank"></i></div><div class="card-body"><div class="meta">Loi 16 · 22 avril 2026</div><h3>Préparer l'étude du fonds de prévoyance</h3><p>Guide étape par étape.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img"><span class="cat">Gestion</span><i class="ph-bold ph-buildings"></i></div><div class="card-body"><div class="meta">Gestion · 12 mai 2026</div><h3>Gestionnaire de copropriété Montréal</h3><p>7 critères essentiels.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img"><span class="cat">Gouvernance</span><i class="ph-bold ph-chats-circle"></i></div><div class="card-body"><div class="meta">Gouvernance · 29 avril 2026</div><h3>Communication en copropriété</h3><p>Outils modernes pour une gouvernance transparente.</p><span class="lnk">Lire l'article →</span></div></div>
+  </div>
+
+  <!-- STYLE 4 -->
+  <h2>Style 4 — Fill plein sur fond doré (couleur signature marque)</h2>
+  <p class="lead">Le plus "marque". L'or de Quatre Piliers devient le fil rouge visuel. Très distinctif.</p>
+  <div class="grid s4">
+    <div class="card"><div class="card-img s4-a"><span class="cat">Loi 16</span><i class="ph-fill ph-scales"></i></div><div class="card-body"><div class="meta">Loi 16 · 19 mai 2026</div><h3>Loi 16 : où en est votre syndicat en 2026 ?</h3><p>Mi-2026, les premières échéances sont derrière nous.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s4-a"><span class="cat">Gestion</span><i class="ph-fill ph-chart-line-down"></i></div><div class="card-body"><div class="meta">Gestion · 19 mai 2026</div><h3>Autogestion : les vrais coûts cachés</h3><p>Temps bénévole, incidents évitables, risques non assurés.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s4-a"><span class="cat">Assurances</span><i class="ph-fill ph-umbrella"></i></div><div class="card-body"><div class="meta">Assurances · 15 avril 2026</div><h3>Réclamations d'assurance : les 7 pièges</h3><p>Les erreurs fréquentes des syndicats.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s4-a"><span class="cat">Loi 16</span><i class="ph-fill ph-piggy-bank"></i></div><div class="card-body"><div class="meta">Loi 16 · 22 avril 2026</div><h3>Préparer l'étude du fonds de prévoyance</h3><p>Guide étape par étape.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s4-a"><span class="cat">Gestion</span><i class="ph-fill ph-buildings"></i></div><div class="card-body"><div class="meta">Gestion · 12 mai 2026</div><h3>Gestionnaire de copropriété Montréal</h3><p>7 critères essentiels.</p><span class="lnk">Lire l'article →</span></div></div>
+    <div class="card"><div class="card-img s4-a"><span class="cat">Gouvernance</span><i class="ph-fill ph-chats-circle"></i></div><div class="card-body"><div class="meta">Gouvernance · 29 avril 2026</div><h3>Communication en copropriété</h3><p>Outils modernes pour une gouvernance transparente.</p><span class="lnk">Lire l'article →</span></div></div>
+  </div>
+
+  <div style="margin-top:50px;padding:20px;background:#fff;border:1px dashed var(--line);border-radius:10px;font-size:14px;color:var(--muted);text-align:center">
+    👉 Dis-moi : <strong style="color:var(--ink)">Style 1, 2, 3 ou 4</strong> ? (et si tu veux changer une icône précise, dis-le)
+  </div>
+</div>
+</body>
+</html>

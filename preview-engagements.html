@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Aperçu — Icônes Phosphor pour la section Engagements</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
+<!-- Phosphor Icons (police web CDN) -->
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+:root{
+  --ink:#212B3C;--wh:#fff;--blue:#2A4D9E;--blue-dk:#1A3270;--blue-ink:#0F1F4A;
+  --gold:#E8B800;--gold-lt:#F5CC00;--gold-dk:#C99F00;
+  --muted:#5C6880;--line:#DCE0EC;--cream:#FAF6EC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',sans-serif;color:var(--ink);background:#fff;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;padding:48px 0}
+.si{max-width:1280px;margin:0 auto;padding:0 40px}
+.lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dk);font-weight:700;margin-bottom:12px}
+.stitle{font-family:'Nunito Sans',sans-serif;font-size:42px;font-weight:800;color:var(--blue-ink);letter-spacing:-.015em;line-height:1.08;margin-bottom:18px}
+.stitle em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:800;color:var(--blue)}
+.sdesc{font-size:17px;color:var(--muted);line-height:1.65;max-width:62ch}
+.shdr{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px}
+
+/* mêmes styles que la section live */
+.eg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.ec{padding:36px 32px 36px 0;border-bottom:1px solid var(--line);border-right:1px solid var(--line);position:relative;transition:background .2s}
+.ec:nth-child(3n){border-right:none;padding-right:0}
+.ec:nth-child(n+4){padding-bottom:0;border-bottom:none;padding-top:36px}
+.ec:hover{background:rgba(42,77,158,.025)}
+.ec-ico{width:46px;height:46px;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;justify-content:center}
+.ec-ico i{font-size:44px;line-height:1;color:var(--blue)}
+.ec-trait{width:32px;height:2px;background:var(--gold);margin-bottom:16px}
+.ec h3{font-family:'Nunito Sans',sans-serif;font-size:26px;font-weight:800;color:var(--blue-ink);margin-bottom:10px}
+.ec p{font-size:15px;color:var(--muted);line-height:1.6;max-width:32ch}
+.ec .iconname{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dk);font-weight:700;margin-top:14px;font-family:'Nunito Sans',sans-serif}
+
+/* bandeau d'intro pour chaque variante */
+.variant-hdr{margin:64px 0 24px;padding:18px 24px;background:var(--cream);border-left:4px solid var(--gold)}
+.variant-hdr h2{font-size:22px;font-weight:800;color:var(--blue-ink);margin-bottom:4px}
+.variant-hdr p{font-size:14px;color:var(--muted)}
+.variant-hdr:first-of-type{margin-top:0}
+
+/* en-tête de page */
+.pg-intro{padding:24px 32px;background:var(--blue-ink);color:#fff;margin-bottom:48px;border-left:6px solid var(--gold)}
+.pg-intro h1{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:28px;color:#fff;font-weight:800;margin-bottom:8px}
+.pg-intro p{color:rgba(255,255,255,.85);font-size:15px}
+.pg-intro code{background:rgba(255,255,255,.1);padding:2px 8px;border-radius:3px;font-size:13px;color:var(--gold-lt)}
+</style>
+</head>
+<body>
+<div class="si">
+
+  <div class="pg-intro">
+    <h1>Aperçu — 3 styles Phosphor pour les 6 engagements</h1>
+    <p>Combinaison proposée : <code>clock-countdown</code> · <code>eye</code> · <code>list-checks</code> · <code>users-three</code> · <code>trend-up</code> · <code>shield-check</code> — affichée ci-dessous en 3 graisses (Light, Thin, Duotone-light) pour comparer.</p>
+  </div>
+
+  <!-- =============== VARIANTE 1 : REGULAR =============== -->
+  <div class="variant-hdr">
+    <h2>1. Phosphor — Light (un poil plus fin que l'actuel) ⭐ recommandé</h2>
+    <p>Trait délicat et élégant, lisible mais discret. Idéal pour un site de gestion premium.</p>
+  </div>
+  <div class="eg">
+    <div class="ec"><div class="ec-ico"><i class="ph-light ph-clock-countdown"></i></div><div class="ec-trait"></div><h3>Réactivité</h3><p>Une réponse rapide et des solutions efficaces à chaque situation.</p><span class="iconname">ph-light ph-clock-countdown</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-light ph-eye"></i></div><div class="ec-trait"></div><h3>Transparence</h3><p>Communication claire et accès à l'information en tout temps.</p><span class="iconname">ph-light ph-eye</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-light ph-list-checks"></i></div><div class="ec-trait"></div><h3>Rigueur</h3><p>Processus structurés et contrôles efficaces pour une gestion optimale.</p><span class="iconname">ph-light ph-list-checks</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-light ph-users-three"></i></div><div class="ec-trait"></div><h3>Proximité</h3><p>Une équipe disponible et à l'écoute de vos besoins.</p><span class="iconname">ph-light ph-users-three</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-light ph-trend-up"></i></div><div class="ec-trait"></div><h3>Valorisation</h3><p>Gestion proactive pour assurer la pérennité et la valeur de votre actif.</p><span class="iconname">ph-light ph-trend-up</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-light ph-shield-check"></i></div><div class="ec-trait"></div><h3>Conformité Loi 16</h3><p>Nous assurons le respect des exigences de la Loi 16 et des meilleures pratiques.</p><span class="iconname">ph-light ph-shield-check</span></div>
+  </div>
+
+  <!-- =============== VARIANTE 2 : BOLD =============== -->
+  <div class="variant-hdr">
+    <h2>2. Phosphor — Thin (très fin, look éditorial)</h2>
+    <p>Trait minimal, ultra-élégant. À tester pour voir si la lecture reste confortable à 44px.</p>
+  </div>
+  <div class="eg">
+    <div class="ec"><div class="ec-ico"><i class="ph-thin ph-clock-countdown"></i></div><div class="ec-trait"></div><h3>Réactivité</h3><p>Une réponse rapide et des solutions efficaces à chaque situation.</p><span class="iconname">ph-thin ph-clock-countdown</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-thin ph-eye"></i></div><div class="ec-trait"></div><h3>Transparence</h3><p>Communication claire et accès à l'information en tout temps.</p><span class="iconname">ph-thin ph-eye</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-thin ph-list-checks"></i></div><div class="ec-trait"></div><h3>Rigueur</h3><p>Processus structurés et contrôles efficaces pour une gestion optimale.</p><span class="iconname">ph-thin ph-list-checks</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-thin ph-users-three"></i></div><div class="ec-trait"></div><h3>Proximité</h3><p>Une équipe disponible et à l'écoute de vos besoins.</p><span class="iconname">ph-thin ph-users-three</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-thin ph-trend-up"></i></div><div class="ec-trait"></div><h3>Valorisation</h3><p>Gestion proactive pour assurer la pérennité et la valeur de votre actif.</p><span class="iconname">ph-thin ph-trend-up</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-thin ph-shield-check"></i></div><div class="ec-trait"></div><h3>Conformité Loi 16</h3><p>Nous assurons le respect des exigences de la Loi 16 et des meilleures pratiques.</p><span class="iconname">ph-thin ph-shield-check</span></div>
+  </div>
+
+  <!-- =============== VARIANTE 3 : DUOTONE =============== -->
+  <div class="variant-hdr">
+    <h2>3. Phosphor — Duotone (deux teintes, plus haut de gamme)</h2>
+    <p>Apporte profondeur et élégance. Idéal pour évoquer une expertise premium.</p>
+  </div>
+  <div class="eg">
+    <div class="ec"><div class="ec-ico"><i class="ph-duotone ph-clock-countdown"></i></div><div class="ec-trait"></div><h3>Réactivité</h3><p>Une réponse rapide et des solutions efficaces à chaque situation.</p><span class="iconname">ph-duotone ph-clock-countdown</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-duotone ph-eye"></i></div><div class="ec-trait"></div><h3>Transparence</h3><p>Communication claire et accès à l'information en tout temps.</p><span class="iconname">ph-duotone ph-eye</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-duotone ph-list-checks"></i></div><div class="ec-trait"></div><h3>Rigueur</h3><p>Processus structurés et contrôles efficaces pour une gestion optimale.</p><span class="iconname">ph-duotone ph-list-checks</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-duotone ph-users-three"></i></div><div class="ec-trait"></div><h3>Proximité</h3><p>Une équipe disponible et à l'écoute de vos besoins.</p><span class="iconname">ph-duotone ph-users-three</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-duotone ph-trend-up"></i></div><div class="ec-trait"></div><h3>Valorisation</h3><p>Gestion proactive pour assurer la pérennité et la valeur de votre actif.</p><span class="iconname">ph-duotone ph-trend-up</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph-duotone ph-shield-check"></i></div><div class="ec-trait"></div><h3>Conformité Loi 16</h3><p>Nous assurons le respect des exigences de la Loi 16 et des meilleures pratiques.</p><span class="iconname">ph-duotone ph-shield-check</span></div>
+  </div>
+
+  <!-- =============== ALTERNATIVES =============== -->
+  <div class="variant-hdr">
+    <h2>4. Alternatives par engagement (Regular)</h2>
+    <p>Si une icône ne plaît pas, voici 2 options de rechange par valeur.</p>
+  </div>
+  <div class="eg">
+    <div class="ec"><div class="ec-ico"><i class="ph ph-lightning"></i></div><div class="ec-trait"></div><h3>Réactivité — alt</h3><p>Éclair = vitesse, dynamisme.</p><span class="iconname">ph-lightning</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph ph-magnifying-glass"></i></div><div class="ec-trait"></div><h3>Transparence — alt</h3><p>Loupe = examen, ouverture.</p><span class="iconname">ph-magnifying-glass</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph ph-target"></i></div><div class="ec-trait"></div><h3>Rigueur — alt</h3><p>Cible = précision, objectif.</p><span class="iconname">ph-target</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph ph-headset"></i></div><div class="ec-trait"></div><h3>Proximité — alt</h3><p>Casque = écoute, support direct.</p><span class="iconname">ph-headset</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph ph-chart-line-up"></i></div><div class="ec-trait"></div><h3>Valorisation — alt</h3><p>Graphique = patrimoine qui croît.</p><span class="iconname">ph-chart-line-up</span></div>
+    <div class="ec"><div class="ec-ico"><i class="ph ph-scales"></i></div><div class="ec-trait"></div><h3>Conformité — alt</h3><p>Balance = cadre légal (icône actuelle).</p><span class="iconname">ph-scales</span></div>
+  </div>
+
+</div>
+</body>
+</html>
