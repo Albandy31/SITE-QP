@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>OG template</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:630px;overflow:hidden;background:#000}
+body{font-family:'Nunito Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.og{position:relative;width:1200px;height:630px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:60px 70px}
+.og::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(255,255,255,.08),transparent 60%);pointer-events:none}
+.og::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:#E8B800}
+.top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.cat{background:rgba(255,255,255,.15);color:#fff;font-size:15px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;padding:9px 18px;border:1px solid rgba(255,255,255,.32);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.logo{height:54px;width:auto;opacity:.95;filter:brightness(0) invert(1)}
+.middle{display:flex;align-items:center;justify-content:space-between;gap:48px;flex:1;position:relative;z-index:2;margin:30px 0}
+.title-wrap{flex:1;max-width:680px}
+.title{font-family:'Nunito Sans',sans-serif;font-weight:800;color:#fff;font-size:58px;line-height:1.08;letter-spacing:-.015em}
+.title.sm{font-size:50px}
+.title.xs{font-size:44px}
+.gold-bar{width:64px;height:4px;background:#E8B800;margin-top:26px}
+.icon{width:240px;height:240px;flex-shrink:0;opacity:.92}
+.icon svg{width:100%;height:100%}
+.bottom{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2}
+.tagline{color:rgba(255,255,255,.75);font-size:16px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.url{color:#E8B800;font-size:18px;letter-spacing:.12em;font-weight:700}
+</style>
+</head>
+<body>
+<div class="og" id="og">
+  <div class="top">
+    <span class="cat" id="cat"></span>
+    <img class="logo" src="/logo.png" alt="Quatre Piliers"/>
+  </div>
+  <div class="middle">
+    <div class="title-wrap">
+      <h1 class="title" id="title"></h1>
+      <div class="gold-bar"></div>
+    </div>
+    <div class="icon" id="icon"></div>
+  </div>
+  <div class="bottom">
+    <span class="tagline" id="tagline">Gestion de copropriété</span>
+    <span class="url">quatrepiliers.ca</span>
+  </div>
+</div>
+
+<script>
+const ICONS = {
+  shield: '<svg viewBox="0 0 80 80" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M40 10l24 9v18c0 13-9 21-24 27-15-6-24-14-24-27V19l24-9z"/><path d="M28 38l8 8 14-14"/></svg>',
+  calc: '<svg viewBox="0 0 80 80" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="10" width="44" height="60" rx="4"/><path d="M26 22h28"/><rect x="26" y="32" width="10" height="8" rx="1"/><rect x="40" y="32" width="14" height="8" rx="1"/><circle cx="30" cy="50" r="2"/><circle cx="40" cy="50" r="2"/><circle cx="50" cy="50" r="2"/><circle cx="30" cy="60" r="2"/><circle cx="40" cy="60" r="2"/><circle cx="50" cy="60" r="2"/></svg>',
+  umbrella: '<svg viewBox="0 0 80 80" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 38a30 30 0 0 1 60 0z"/><path d="M10 38h60"/><path d="M40 38v26"/><path d="M40 64a6 6 0 0 0 12 0"/></svg>',
+  piggy: '<svg viewBox="0 0 80 80" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 44c0-12 11-20 26-20s26 8 26 20c0 5-2 9-6 12l1 6h-6l-2-3a32 32 0 0 1-10 1l-2 2h-6l1-6c-7-3-12-7-12-12"/><path d="M34 32h12" stroke-width="2.5"/><circle cx="58" cy="42" r="1.5" fill="rgba(255,255,255,.95)" stroke="none"/><path d="M50 24l3-6 2 6"/></svg>',
+  buildings: '<svg viewBox="0 0 80 80" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 70V36h14v34"/><path d="M28 70V20h18v50"/><path d="M50 70V44h16v26"/><path d="M14 44h2M18 44h2M14 52h2M18 52h2M14 60h2M18 60h2"/><path d="M32 28h2M38 28h2M32 38h2M38 38h2M32 48h2M38 48h2M32 58h2M38 58h2"/><path d="M54 52h2M60 52h2M54 60h2M60 60h2"/><path d="M6 70h66"/></svg>',
+  chat: '<svg viewBox="0 0 80 80" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20h36a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H24l-10 8v-8h-4a4 4 0 0 1-4-4V24a4 4 0 0 1 4-4z"/><path d="M70 38h-30a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h22l8 6v-6h0a4 4 0 0 0 4-4V42" opacity=".7"/></svg>'
+};
+
+const CONFIGS = {
+  'loi-16-ou-en-etes-vous-fr': {
+    title: 'Loi 16 : où en est votre syndicat en 2026 ?',
+    cat: 'Loi 16',
+    tagline: 'Gestion de copropriété',
+    gradient: 'linear-gradient(135deg,#1a3a5c,#2a4d9e)',
+    icon: 'shield'
+  },
+  'bill-16-where-do-you-stand-en': {
+    title: 'Bill 16: where does your corporation stand in 2026?',
+    cat: 'Bill 16',
+    tagline: 'Condominium management',
+    gradient: 'linear-gradient(135deg,#1a3a5c,#2a4d9e)',
+    icon: 'shield'
+  },
+  'autogestion-couts-caches-fr': {
+    title: 'Autogestion ou gestionnaire pro : les vrais coûts cachés',
+    cat: 'Gestion',
+    tagline: 'Gestion de copropriété',
+    gradient: 'linear-gradient(135deg,#0f2e3d,#1f5a72)',
+    icon: 'calc'
+  },
+  'self-management-hidden-costs-en': {
+    title: 'Self-management or pro manager: the real hidden costs',
+    cat: 'Management',
+    tagline: 'Condominium management',
+    gradient: 'linear-gradient(135deg,#0f2e3d,#1f5a72)',
+    icon: 'calc'
+  },
+  'reclamations-assurance-fr': {
+    title: 'Réclamations d’assurance : les 7 pièges courants',
+    cat: 'Assurances',
+    tagline: 'Gestion de copropriété',
+    gradient: 'linear-gradient(135deg,#1A3270,#2A4D9E)',
+    icon: 'umbrella'
+  },
+  'insurance-claims-en': {
+    title: 'Condo insurance claims: the 7 common pitfalls',
+    cat: 'Insurance',
+    tagline: 'Condominium management',
+    gradient: 'linear-gradient(135deg,#1A3270,#2A4D9E)',
+    icon: 'umbrella'
+  },
+  'fonds-prevoyance-loi16-fr': {
+    title: 'Préparer l’étude du fonds de prévoyance sans stress',
+    cat: 'Loi 16',
+    tagline: 'Gestion de copropriété',
+    gradient: 'linear-gradient(135deg,#1a3a5c,#2a4d9e)',
+    icon: 'piggy'
+  },
+  'contingency-fund-law16-en': {
+    title: 'Prepare the contingency-fund study without stress',
+    cat: 'Bill 16',
+    tagline: 'Condominium management',
+    gradient: 'linear-gradient(135deg,#1a3a5c,#2a4d9e)',
+    icon: 'piggy'
+  },
+  'gestionnaire-copropriete-montreal-fr': {
+    title: 'Gestionnaire de copropriété Montréal : comment choisir ?',
+    cat: 'Gestion',
+    tagline: 'Gestion de copropriété',
+    gradient: 'linear-gradient(135deg,#2c1654,#4a2d9e)',
+    icon: 'buildings'
+  },
+  'condo-manager-montreal-en': {
+    title: 'Condo manager in Montreal: how to choose the right one?',
+    cat: 'Management',
+    tagline: 'Condominium management',
+    gradient: 'linear-gradient(135deg,#2c1654,#4a2d9e)',
+    icon: 'buildings'
+  },
+  'communication-gouvernance-fr': {
+    title: 'Communication en copropriété : outils pour une gouvernance transparente',
+    cat: 'Gouvernance',
+    tagline: 'Gestion de copropriété',
+    gradient: 'linear-gradient(135deg,#0d5c3a,#1a8a5a)',
+    icon: 'chat'
+  },
+  'communication-governance-en': {
+    title: 'Condo communication: modern tools for transparent governance',
+    cat: 'Governance',
+    tagline: 'Condominium management',
+    gradient: 'linear-gradient(135deg,#0d5c3a,#1a8a5a)',
+    icon: 'chat'
+  }
+};
+
+const id = new URLSearchParams(location.search).get('id') || 'loi-16-ou-en-etes-vous-fr';
+const cfg = CONFIGS[id];
+if(cfg){
+  document.getElementById('og').style.background = cfg.gradient;
+  document.getElementById('cat').textContent = cfg.cat;
+  const titleEl = document.getElementById('title');
+  titleEl.textContent = cfg.title;
+  if(cfg.title.length > 60) titleEl.classList.add('sm');
+  if(cfg.title.length > 75) titleEl.classList.remove('sm'), titleEl.classList.add('xs');
+  document.getElementById('icon').innerHTML = ICONS[cfg.icon];
+  document.getElementById('tagline').textContent = cfg.tagline;
+  document.title = 'OG · ' + id;
+}
+</script>
+</body>
+</html>

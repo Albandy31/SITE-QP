@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Quatre Piliers – Gestion de copropriété Grand Montréal | Urgences 24/7</title>
+<title>Quatre Piliers – Gestion de copropriété | Grand Montréal</title>
 <meta name="description" content="Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7, conformité Loi 16, gestion complète ou à la carte."/>
 <link rel="canonical" href="https://quatrepiliers.ca/"/>
 <link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/"/>
@@ -11,11 +11,15 @@
 <link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/"/>
 <link rel="icon" type="image/png" href="/logo.png"/>
 <link rel="apple-touch-icon" href="/logo.png"/>
+<link rel="preload" as="image" href="/hero.avif" type="image/avif" fetchpriority="high" media="(min-width:769px)"/>
+<link rel="preload" as="image" href="/hero.webp" type="image/webp" fetchpriority="high" media="(min-width:769px)"/>
+<link rel="preload" as="image" href="/hero-mobile.avif" type="image/avif" fetchpriority="high" media="(max-width:768px)"/>
+<link rel="preload" as="image" href="/hero-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width:768px)"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,500;1,6..12,600&display=swap" rel="stylesheet"/>
 <meta property="og:type" content="website"/>
-<meta property="og:site_name" content="Quatre Piliers"/>
+<meta property="og:site_name" content="Quatre Piliers – Gestion de copropriété"/>
 <meta property="og:title" content="Quatre Piliers – Gestion de copropriété Grand Montréal | Urgences 24/7"/>
 <meta property="og:description" content="Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal. Urgences 24/7, conformité Loi 16, gestion complète ou à la carte."/>
 <meta property="og:url" content="https://quatrepiliers.ca/"/>
@@ -105,9 +109,10 @@ nav#mainNav .btn-devis:hover{background:var(--gold);border-color:var(--gold);col
 .hero:before{content:"";position:absolute;inset:0;
   background:
     linear-gradient(180deg,rgba(15,31,74,.55) 0,rgba(26,50,112,.2) 35%,rgba(15,31,74,.9) 100%),
-    url('/hero.jpg') center/cover;
+    image-set(url('/hero.avif') type('image/avif'), url('/hero.webp') type('image/webp'), url('/hero.jpg') type('image/jpeg')) center/cover no-repeat;
   filter:saturate(.95) contrast(1.06);
 }
+@media(max-width:768px){.hero:before{background:linear-gradient(180deg,rgba(15,31,74,.55) 0,rgba(26,50,112,.2) 35%,rgba(15,31,74,.9) 100%),image-set(url('/hero-mobile.avif') type('image/avif'),url('/hero-mobile.webp') type('image/webp'),url('/hero-mobile.jpg') type('image/jpeg')) center/cover no-repeat}}
 .hero-inner{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 40px 80px;max-width:1320px;margin:0 auto;text-align:left!important}
 .hero-meta{display:flex;gap:24px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-bottom:24px;flex-wrap:wrap}
 .hero-meta span:not(:last-child):after{content:"·";margin-left:24px;opacity:.5}
