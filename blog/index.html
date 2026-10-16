@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
+<script src="/consent.js"></script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Blog – Conseils gestion de copropriété Québec | Quatre Piliers</title>
 <meta name="description" content="Articles et conseils pratiques sur la gestion de copropriété au Québec : Loi 16, assurances, gouvernance, fonds de prévoyance et plus."/>
@@ -9,8 +10,10 @@
 <link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/"/>
 <link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/"/>
 <link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/"/>
-<link rel="icon" type="image/png" href="/logo.png"/>
-<link rel="apple-touch-icon" href="/logo.png"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,500;1,6..12,600&display=swap" rel="stylesheet"/>
@@ -185,27 +188,6 @@
 
 <!-- FOOTER -->
 <div id="footer-mount"></div>
-
-<!-- CHAT WIDGET -->
-<div id="chat-bubble" onclick="toggleChat()" data-i18n-title="chat.bubble.title" title="Nous écrire" style="position:fixed;bottom:28px;right:28px;z-index:9998;width:56px;height:56px;border-radius:50%;background:var(--gold);box-shadow:0 8px 30px rgba(232,184,0,.45);display:flex;align-items:center;justify-content:center;cursor:pointer;">
-  <svg id="chat-icon-open" width="24" height="24" fill="none" stroke="#212B3C" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-  <svg id="chat-icon-close" width="20" height="20" fill="none" stroke="#212B3C" stroke-width="2.2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  <span id="chat-notif" style="position:absolute;top:2px;right:2px;width:12px;height:12px;background:#e74c3c;border-radius:50%;border:2px solid #fff;animation:pulse 2s infinite;"></span>
-</div>
-<div id="chat-panel" style="position:fixed;bottom:96px;right:28px;z-index:9997;width:340px;background:#fff;box-shadow:0 16px 60px rgba(15,31,74,.25);display:none;flex-direction:column;overflow:hidden;font-family:'Nunito Sans',sans-serif;border-top:3px solid var(--gold)">
-  <div style="background:var(--blue-ink);padding:18px 20px;display:flex;align-items:center;gap:12px">
-    <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Nunito Sans',sans-serif;font-weight:600;color:var(--ink);font-size:18px">Q</div>
-    <div><div style="color:#fff;font-weight:600;font-family:'Nunito Sans',sans-serif;font-size:16px">Quatre Piliers</div><div style="color:rgba(255,255,255,.65);font-size:11px;display:flex;align-items:center;gap:5px;letter-spacing:.04em"><span style="width:7px;height:7px;background:#2ecc71;border-radius:50%"></span><span data-i18n="chat.status">Réponse sous 24h ouvrables</span></div></div>
-  </div>
-  <div id="chat-messages" style="padding:18px 16px;min-height:140px;max-height:220px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:var(--paper)">
-    <div style="display:flex;gap:8px;align-items:flex-end"><div style="width:28px;height:28px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px">🏢</div><div style="background:#fff;border:1px solid var(--line);padding:10px 14px;font-size:13px;color:var(--ink);max-width:230px;line-height:1.55"><span data-i18n="chat.greeting">Bonjour ! 👋 Comment puis-je vous aider concernant la gestion de votre copropriété ?</span></div></div>
-  </div>
-  <div style="padding:14px 16px;border-top:1px solid var(--line);background:#fff;display:flex;gap:8px;align-items:flex-end">
-    <textarea id="chat-input" placeholder="Écrivez votre message…" data-i18n-ph="ph.chat.input" rows="2" style="flex:1;border:1px solid var(--line);padding:9px 12px;font-size:13px;font-family:'Nunito Sans',sans-serif;resize:none;outline:none;color:var(--ink);line-height:1.5" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChatMsg();}"></textarea>
-    <button onclick="sendChatMsg()" style="background:var(--blue-ink);border:none;color:#fff;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2.2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
-  </div>
-  <div style="text-align:center;padding:8px;font-size:10px;color:var(--muted);background:#fff;border-top:1px solid var(--line)">✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a></div>
-</div>
 
 <!-- MODAL DEVIS -->
 <div class="overlay" id="modal">

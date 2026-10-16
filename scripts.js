@@ -1,72 +1,4 @@
-﻿/* ===== CHAT ===== */
-function toggleChat(){
-  var panel=document.getElementById('chat-panel');
-  var iconOpen=document.getElementById('chat-icon-open');
-  var iconClose=document.getElementById('chat-icon-close');
-  var notif=document.getElementById('chat-notif');
-  var isOpen=panel.style.display==='flex';
-  if(!isOpen){
-    panel.style.display='flex';
-    iconOpen.style.display='none';
-    iconClose.style.display='block';
-    if(notif)notif.style.display='none';
-    setTimeout(function(){var ci=document.getElementById('chat-input');if(ci)ci.focus();},200);
-  } else {
-    panel.style.display='none';
-    iconOpen.style.display='block';
-    iconClose.style.display='none';
-  }
-}
-
-var chatState=0;
-var chatFirstMsg='';
-
-function botReply(text){
-  var msgs=document.getElementById('chat-messages');
-  var reply=document.createElement('div');
-  reply.style.cssText='display:flex;gap:8px;align-items:flex-end;';
-  reply.innerHTML='<div style="width:30px;height:30px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;">🏢</div><div style="background:#fff;border:1px solid var(--brd);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:var(--txt);max-width:230px;line-height:1.55;box-shadow:0 1px 4px rgba(0,0,0,.06);">'+text+'</div>';
-  msgs.appendChild(reply);
-  msgs.scrollTop=msgs.scrollHeight;
-}
-
-function sendChatMsg(){
-  var input=document.getElementById('chat-input');
-  var msg=input.value.trim();
-  if(!msg) return;
-  var msgs=document.getElementById('chat-messages');
-  var userBubble=document.createElement('div');
-  userBubble.style.cssText='display:flex;justify-content:flex-end;';
-  userBubble.innerHTML='<div style="background:var(--blue);color:#fff;border-radius:12px 12px 2px 12px;padding:10px 14px;font-size:13px;max-width:230px;line-height:1.55;box-shadow:0 1px 4px rgba(0,0,0,.1);">'+escHtml(msg)+'</div>';
-  msgs.appendChild(userBubble);
-  input.value='';
-  msgs.scrollTop=msgs.scrollHeight;
-  if(chatState===0){
-    chatFirstMsg=msg;
-    chatState=1;
-    setTimeout(function(){botReply(translations[currentLang||'fr']['chat.reply1']);},600);
-  } else if(chatState===1){
-    var contact=msg;
-    chatState=2;
-    fetch('https://formspree.io/f/mgoplwyd',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({'_subject':'Message chat – Quatre Piliers','Message':chatFirstMsg,'Contact':contact})
-    })
-    .then(function(r){return r.json();})
-    .then(function(res){
-      if(res.ok){botReply(translations[currentLang||'fr']['chat.ok']);}
-      else{botReply(translations[currentLang||'fr']['chat.err1']);chatState=1;}
-    })
-    .catch(function(){botReply(translations[currentLang||'fr']['chat.err2']);chatState=1;});
-  }
-}
-
-function escHtml(t){
-  return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-/* ===== MODAL ===== */
+﻿/* ===== MODAL ===== */
 function openModal(){
   var m=document.getElementById('modal');
   if(m){m.style.display='flex';document.body.style.overflow='hidden';}
@@ -111,6 +43,7 @@ function submitForm(btn){
   .then(function(res){
     if(res.ok){
       fields.forEach(function(f){f.value='';});
+      if(window.qpConversion)qpConversion('contact');
       btn.textContent=translations[currentLang||'fr']['btn.sent']||'Envoyé ✓';
       var ok=btn.nextElementSibling;
       if(ok&&ok.classList&&ok.classList.contains('ok-msg'))ok.style.display='block';
@@ -259,7 +192,7 @@ var translations={
     'feat.fin.comp.base':'Financier et comptable de base',
     'feat.tech.mgmt':'Gestion technique &amp; entretien',
     'feat.allbldg':'Tous types d\'immeubles',
-    'feat.enhanced':'Accompagnement renforcé possible',
+    'feat.horizontal':'Gestion horizontale',
     'info.update':'<strong style="color:var(--blue)">Mise à jour : mars 2026</strong> – Basé sur le Règlement établissant diverses règles en matière de copropriété divise, en vigueur depuis le <strong style="color:var(--txt)">14 août 2025</strong>.',
     'info.p1':'La Loi 16, officiellement le <strong style="color:var(--txt)">projet de loi n° 16 (2019, chapitre 28)</strong>, est la plus importante réforme de la copropriété divise au Québec depuis l\'entrée en vigueur du Code civil du Québec en 1994. Elle vise à moderniser la gestion des syndicats de copropriété, à renforcer la protection financière des copropriétaires et à assurer la pérennité du parc immobilier en copropriété.',
     'info.p2':'Le règlement d\'application (publié le 30 juillet 2025 dans la Gazette officielle du Québec) est entré en vigueur le <strong style="color:var(--txt)">14 août 2025</strong>. Il concrétise les trois grands outils prévus par la Loi 16 : le <strong style="color:var(--txt)">carnet d\'entretien</strong>, l\'<strong style="color:var(--txt)">étude du fonds de prévoyance</strong> et l\'<strong style="color:var(--txt)">attestation sur l\'état de la copropriété</strong>. Ces obligations s\'appliquent à toutes les copropriétés divises au Québec, sans exception.',
@@ -325,14 +258,6 @@ var translations={
     'form.subject.opts':'<option>Demande de soumission</option><option>Question sur la Loi 16</option><option>Urgence technique</option><option>Autre demande</option>',
     'ph.email.addr':'adresse@email.com',
     'ph.phone':'514-xxx-xxxx',
-    'chat.bubble.title':'Nous écrire',
-    'chat.status':'Réponse sous 24h ouvrables',
-    'chat.greeting':'Bonjour ! 👋 Comment puis-je vous aider concernant la gestion de votre copropriété ?',
-    'ph.chat.input':'Écrivez votre message…',
-    'chat.reply1':'Merci ! Pour que nous puissions vous recontacter, laissez-nous votre courriel ou numéro de téléphone. 📞',
-    'chat.ok':'Parfait ! Votre message a bien été envoyé. Nous vous recontactons sous 24h ouvrables. ✅',
-    'chat.err1':'Une erreur est survenue. Écrivez-nous directement à info@quatrepiliers.ca.',
-    'chat.err2':'Erreur de connexion. Écrivez-nous à info@quatrepiliers.ca.',
     'alert.email':'Veuillez entrer votre adresse courriel.',
     'btn.sending':'Envoi en cours…',
     'btn.sent':'Envoyé ✓',
@@ -458,7 +383,7 @@ var translations={
     'feat.fin.comp.base':'Financial & accounting basics',
     'feat.tech.mgmt':'Technical management &amp; maintenance',
     'feat.allbldg':'All building types',
-    'feat.enhanced':'Enhanced support available',
+    'feat.horizontal':'Horizontal condo management',
     'info.update':'<strong style="color:var(--blue)">Update: March 2026</strong> – Based on the Regulation establishing various rules regarding divided co-ownership, in force since <strong style="color:var(--txt)">August 14, 2025</strong>.',
     'info.p1':'Bill 16, officially <strong style="color:var(--txt)">Bill no. 16 (2019, chapter 28)</strong>, is the most significant reform of divided co-ownership in Quebec since the Civil Code of Quebec came into force in 1994. It aims to modernize the management of condo corporations, strengthen the financial protection of unit owners, and ensure the long-term sustainability of the condo property stock.',
     'info.p2':'The implementing regulation (published July 30, 2025 in the Quebec Official Gazette) came into force on <strong style="color:var(--txt)">August 14, 2025</strong>. It implements the three main tools introduced by Bill 16: the <strong style="color:var(--txt)">maintenance log</strong>, the <strong style="color:var(--txt)">reserve fund study</strong> and the <strong style="color:var(--txt)">attestation on the state of the co-ownership</strong>. These obligations apply to all divided co-ownerships in Quebec, without exception.',
@@ -524,14 +449,6 @@ var translations={
     'form.subject.opts':'<option>Quote request</option><option>Question about Bill 16</option><option>Technical emergency</option><option>Other request</option>',
     'ph.email.addr':'address@email.com',
     'ph.phone':'514-xxx-xxxx',
-    'chat.bubble.title':'Write to us',
-    'chat.status':'Response within 24 business hours',
-    'chat.greeting':'Hello! 👋 How can I help you with your condo corporation management?',
-    'ph.chat.input':'Write your message…',
-    'chat.reply1':'Thank you! So we can reach back out, please leave your email or phone number. 📞',
-    'chat.ok':'Great! Your message has been sent. We\'ll get back to you within 24 business hours. ✅',
-    'chat.err1':'An error occurred. Write to us directly at info@quatrepiliers.ca.',
-    'chat.err2':'Connection error. Write to us at info@quatrepiliers.ca.',
     'alert.email':'Please enter your email address.',
     'btn.sending':'Sending…',
     'btn.sent':'Sent ✓',
@@ -544,6 +461,7 @@ var LANG_URL_MAP_FR_TO_EN={
   '/tarification':'/en/pricing',
   '/loi-16':'/en/bill-16',
   '/contact':'/en/contact',
+  '/politique-confidentialite':'/en/privacy-policy',
   '/blog':'/en/blog',
   '/blog/gestionnaire-copropriete-montreal':'/en/blog/condo-manager-montreal',
   '/blog/reclamations-assurance':'/en/blog/insurance-claims',
@@ -638,6 +556,9 @@ function injectFooter(){
   var subBtn=isEn?'Subscribe →':"S'abonner →";
   var copy=isEn?'© 2025 Gestion de Copropriété Quatre Piliers Inc. All rights reserved.':'© 2025 Gestion de Copropriété Quatre Piliers Inc. Tous droits réservés.';
   var contactL=isEn?'Contact':'Contact';
+  var cookiesL=isEn?'Manage cookies':'Gérer les témoins';
+  var privacyL=isEn?'Privacy policy':'Politique de confidentialité';
+  var privacyHref=isEn?'/en/privacy-policy':'/politique-confidentialite';
   var contactHref=isEn?'/en/contact':'/contact';
   var navHtml=links.map(function(l){return '<li><a href="'+l[0]+'" data-i18n="'+l[2]+'">'+l[1]+'</a></li>';}).join('');
   var areasHtml=areas.map(function(a){return '<li>'+a+'</li>';}).join('');
@@ -655,7 +576,7 @@ function injectFooter(){
     '<div class="ft-btm">'+
     '<span data-i18n="footer.copy">'+copy+'</span>'+
     '<div class="ft-social"><a href="https://www.facebook.com/profile.php?id=61574363193034" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://www.linkedin.com/company/quatre-piliers-gestion-de-copropri%C3%A9t%C3%A9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div>'+
-    '<div class="ft-btm-lnk"><a href="'+contactHref+'" data-i18n="nav.contact">'+contactL+'</a></div>'+
+    '<div class="ft-btm-lnk"><a href="'+contactHref+'" data-i18n="nav.contact">'+contactL+'</a> · <a href="'+privacyHref+'" data-i18n="footer.privacy">'+privacyL+'</a> · <a href="#" onclick="return window.qpOpenConsent?qpOpenConsent():false">'+cookiesL+'</a></div>'+
     '</div>'+
     '</footer>';
   mount.outerHTML=html;

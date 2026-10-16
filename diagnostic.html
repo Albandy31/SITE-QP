@@ -2,10 +2,13 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<script src="/consent.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diagnostic Loi 16 — Quatre Piliers</title>
-<link rel="icon" type="image/png" href="logo.png"/>
-<link rel="apple-touch-icon" href="logo.png"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
@@ -204,6 +207,7 @@ async function nextStep(){
     score = data.score;
     niveau = data.niveau;
     phase = "result";
+    if(window.qpConversion) qpConversion("diagnostic");
   }catch(e){
     apiErr = e.message || "Erreur inconnue";
     phase = "error";

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<script src="/consent.js"></script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Self-management vs professional manager: the hidden costs | Quatre Piliers</title>
 <meta name="description" content="Self-management or professional manager? The real hidden costs your board never calculates: volunteer time, avoidable incidents, uninsured risks. A numbers-based method to decide."/>
@@ -9,8 +10,10 @@
 <link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/blog/autogestion-couts-caches"/>
 <link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/blog/self-management-hidden-costs"/>
 <link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/autogestion-couts-caches"/>
-<link rel="icon" type="image/png" href="/logo.png"/>
-<link rel="apple-touch-icon" href="/logo.png"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet"/>
@@ -416,27 +419,6 @@
 
 <!-- FOOTER -->
 <div id="footer-mount"></div>
-
-<!-- CHAT WIDGET -->
-<div id="chat-bubble" onclick="toggleChat()" title="Write to us" style="position:fixed;bottom:28px;right:28px;z-index:9998;width:58px;height:58px;border-radius:50%;background:var(--gold);box-shadow:0 6px 24px rgba(240,165,0,.45);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s,box-shadow .2s;">
-  <svg id="chat-icon-open" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-  <svg id="chat-icon-close" width="22" height="22" fill="none" stroke="#fff" stroke-width="2.2" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  <span id="chat-notif" style="position:absolute;top:2px;right:2px;width:14px;height:14px;background:#e74c3c;border-radius:50%;border:2px solid #fff;animation:pulse 2s infinite;display:block;"></span>
-</div>
-<div id="chat-panel" style="position:fixed;bottom:100px;right:28px;z-index:9997;width:340px;background:#fff;border-radius:16px;box-shadow:0 16px 60px rgba(45,74,95,.22);display:none;flex-direction:column;overflow:hidden;font-family:'Nunito Sans',sans-serif;">
-  <div style="background:linear-gradient(135deg,var(--blue-dk),var(--blue));padding:18px 20px;display:flex;align-items:center;gap:12px;">
-    <div style="width:42px;height:42px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-    <div><div style="color:#fff;font-weight:700;font-size:14px;">Quatre Piliers</div><div style="color:rgba(255,255,255,.7);font-size:11px;display:flex;align-items:center;gap:5px;"><span style="width:7px;height:7px;background:#2ecc71;border-radius:50%;display:inline-block;"></span><span>Reply within 1 business day</span></div></div>
-  </div>
-  <div id="chat-messages" style="padding:18px 16px;min-height:140px;max-height:220px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#f9f8f6;">
-    <div style="display:flex;gap:8px;align-items:flex-end;"><div style="width:30px;height:30px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;">🏢</div><div style="background:#fff;border:1px solid var(--brd);border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:13px;color:var(--txt);max-width:230px;line-height:1.55;box-shadow:0 1px 4px rgba(0,0,0,.06);"><span>Hello! 👋 How can I help you with your condominium management?</span></div></div>
-  </div>
-  <div style="padding:14px 16px;border-top:1px solid var(--brd);background:#fff;display:flex;gap:8px;align-items:flex-end;">
-    <textarea id="chat-input" placeholder="Write your message…" rows="2" style="flex:1;border:1.5px solid var(--brd);border-radius:10px;padding:9px 12px;font-size:13px;font-family:'Nunito Sans',sans-serif;resize:none;outline:none;color:var(--txt);line-height:1.5;transition:border-color .2s;" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChatMsg();}" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--brd)'"></textarea>
-    <button onclick="sendChatMsg()" style="background:var(--gold);border:none;color:#fff;width:40px;height:40px;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s;" onmouseover="this.style.background='var(--gold-lt)'" onmouseout="this.style.background='var(--gold)'"><svg width="17" height="17" fill="none" stroke="#fff" stroke-width="2.2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
-  </div>
-  <div style="text-align:center;padding:8px;font-size:10px;color:var(--muted);background:#fff;border-top:1px solid var(--brd);">✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a></div>
-</div>
 
 <!-- QUOTE MODAL -->
 <div class="overlay" id="modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;align-items:center;justify-content:center;padding:20px">
