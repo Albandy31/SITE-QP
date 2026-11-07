@@ -468,7 +468,10 @@ var LANG_URL_MAP_FR_TO_EN={
   '/blog/fonds-prevoyance-loi16':'/en/blog/contingency-fund-law16',
   '/blog/communication-gouvernance':'/en/blog/communication-governance',
   '/blog/loi-16-ou-en-etes-vous':'/en/blog/bill-16-where-do-you-stand',
-  '/blog/autogestion-couts-caches':'/en/blog/self-management-hidden-costs'
+  '/blog/autogestion-couts-caches':'/en/blog/self-management-hidden-costs',
+  '/gestion-copropriete-montreal':'/en/condo-management-montreal',
+  '/gestion-copropriete-longueuil':'/en/condo-management-longueuil',
+  '/gestion-copropriete-rive-nord':'/en/condo-management-north-shore'
 };
 function setLang(lang){
   var path=window.location.pathname.replace(/\/+$/,'')||'/';

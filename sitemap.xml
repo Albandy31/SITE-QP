@@ -16,6 +16,7 @@
     <loc>https://quatrepiliers.ca/gestion-copropriete-montreal</loc>
     <lastmod>2026-11-07T10:00:00-05:00</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-copropriete-montreal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-management-montreal"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-copropriete-montreal"/>
   </url>
 
@@ -23,6 +24,7 @@
     <loc>https://quatrepiliers.ca/gestion-copropriete-longueuil</loc>
     <lastmod>2026-11-07T10:00:00-05:00</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-copropriete-longueuil"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-management-longueuil"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-copropriete-longueuil"/>
   </url>
 
@@ -30,6 +32,7 @@
     <loc>https://quatrepiliers.ca/gestion-copropriete-rive-nord</loc>
     <lastmod>2026-11-07T10:00:00-05:00</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-copropriete-rive-nord"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-management-north-shore"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-copropriete-rive-nord"/>
   </url>
 
@@ -144,6 +147,30 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/condo-management-montreal</loc>
+    <lastmod>2026-11-07T10:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-copropriete-montreal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-management-montreal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-copropriete-montreal"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/condo-management-longueuil</loc>
+    <lastmod>2026-11-07T10:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-copropriete-longueuil"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-management-longueuil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-copropriete-longueuil"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/condo-management-north-shore</loc>
+    <lastmod>2026-11-07T10:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-copropriete-rive-nord"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-management-north-shore"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-copropriete-rive-nord"/>
   </url>
 
   <url>
