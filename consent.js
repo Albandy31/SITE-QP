@@ -6,8 +6,8 @@
   var AW_ID='AW-18368971500';
   // Etiquettes de conversion Google Ads (AW-18368971500/XXXX). Vide = aucun envoi.
   var CONVERSION_LABELS={
-    contact:'',     // formulaire de contact + infolettre
-    diagnostic:''   // diagnostic Loi 16 complete
+    contact:'w5JeCLSQuugcEOyFgbdE',     // formulaire de contact + infolettre
+    diagnostic:'6ze6CJDWuegcEOyFgbdE'   // diagnostic Loi 16 complete
   };
   var KEY='qp_consent';
 
@@ -47,7 +47,7 @@
   /* Conversion : appeler qpConversion('contact' | 'diagnostic') apres un succes. */
   window.qpConversion=function(type){
     var label=CONVERSION_LABELS[type];
-    if(label) gtag('event','conversion',{send_to:AW_ID+'/'+label});
+    if(label) gtag('event','conversion',{send_to:AW_ID+'/'+label,value:1.0,currency:'CAD'});
   };
 
   /* ===== BANDEAU ===== */
