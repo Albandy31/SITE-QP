@@ -43,6 +43,31 @@
   document.head.appendChild(tag);
   gtag('js',new Date());
   gtag('config',AW_ID);
+  gtag('config','G-6VRTEHH4Q0'); // Google Analytics 4 (Quatre piliers inc.)
+
+  /* Source de la visite : notee a l'arrivee (sessionStorage), envoyee avec le formulaire. */
+  var SRC_KEY='qp_src';
+  try{
+    var q=new URLSearchParams(location.search);
+    var click=q.get('gclid')||q.get('gbraid')||q.get('wbraid');
+    if(click||q.get('utm_source')||!sessionStorage.getItem(SRC_KEY)){
+      var ref='';try{ref=document.referrer?new URL(document.referrer).hostname:'';}catch(e){}
+      if(ref===location.hostname)ref='';
+      var src;
+      if(click)src='Google Ads (clic sur une pub)';
+      else if(q.get('utm_source'))src=q.get('utm_source')+(q.get('utm_medium')?' / '+q.get('utm_medium'):'');
+      else if(/(^|\.)google\./.test(ref))src='Google (recherche, carte ou fiche)';
+      else if(ref)src=ref;
+      else src='Direct (adresse tapee, favori ou courriel)';
+      sessionStorage.setItem(SRC_KEY,JSON.stringify({
+        source:src,campagne:q.get('utm_campaign')||'',gclid:click||'',
+        referent:ref,arrivee:location.pathname
+      }));
+    }
+  }catch(e){}
+  window.qpSource=function(){
+    try{return JSON.parse(sessionStorage.getItem(SRC_KEY))||{};}catch(e){return {};}
+  };
 
   /* Conversion : appeler qpConversion('contact' | 'diagnostic') apres un succes. */
   window.qpConversion=function(type){

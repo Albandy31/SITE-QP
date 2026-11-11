@@ -32,6 +32,14 @@ function submitForm(btn){
       if(f.value&&f.value.trim())data[label||f.type]=f.value.trim();
     });
   }
+  if(window.qpSource){
+    var s=qpSource();
+    if(s.source)data['Source de la visite']=s.source;
+    if(s.campagne)data['Campagne']=s.campagne;
+    if(s.arrivee)data['Page d’arrivée']=s.arrivee;
+    if(s.referent)data['Site référent']=s.referent;
+    if(s.gclid)data['gclid']=s.gclid;
+  }
   btn.disabled=true;
   btn.textContent=translations[currentLang||'fr']['btn.sending']||'Envoi en cours…';
   fetch('https://formspree.io/f/mgoplwyd',{
