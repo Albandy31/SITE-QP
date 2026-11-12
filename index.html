@@ -321,6 +321,7 @@ footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
   .mini-form{padding:28px 20px}
   .modal{padding:32px 20px}
 }
+.nav-links .has-sub{position:relative}.nav-links .has-sub>a:after{content:'';display:inline-block;width:5px;height:5px;margin-left:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-3px) rotate(45deg);opacity:.8}.nav-links .sub{display:none;position:absolute;top:100%;left:0;min-width:260px;margin:0;padding:8px;list-style:none;background:#fff;border:1px solid #DCE0EC;border-radius:10px;box-shadow:0 12px 32px rgba(15,31,74,.16);z-index:60}.nav-links .has-sub:hover .sub,.nav-links .has-sub:focus-within .sub{display:block}.nav-links .sub a{display:block;padding:9px 12px;border-radius:6px;color:#212B3C!important;opacity:1;font-size:13px;white-space:nowrap}.nav-links .sub a:hover{background:#F0F3FA;color:#2A4D9E!important}.mob-menu{overflow-y:auto}.mob-menu a.mob-sub{font-size:15px!important;padding:9px 0 9px 32px!important;border-bottom:none!important;opacity:.85}
 </style>
 </head>
 <body>
@@ -339,7 +340,7 @@ footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
   <a class="logo-wrap" href="/"><img alt="Quatre Piliers" class="logo-img logo-light" src="/logo-white-nav.webp" width="288" height="120" fetchpriority="high" decoding="async"/><img alt="" aria-hidden="true" class="logo-img logo-dark" src="/logo-nav.webp" width="288" height="120" decoding="async"/></a>
   <ul class="nav-links">
     <li><a class="active" href="/" data-i18n="nav.home">Accueil</a></li>
-    <li><a href="/services" data-i18n="nav.services">Services</a></li>
+    <li class="has-sub"><a href="/services" data-i18n="nav.services">Services</a><ul class="sub"><li><a href="/gestion-administrative-copropriete">Gestion administrative</a></li><li><a href="/gestion-financiere-copropriete">Gestion financière</a></li><li><a href="/gestion-technique-copropriete">Gestion technique et entretien</a></li><li><a href="/communication-gouvernance-copropriete">Communication et gouvernance</a></li><li><a href="/urgences-copropriete-24-7">Urgences 24/7</a></li><li><a href="/changer-gestionnaire-copropriete">Changer de gestionnaire</a></li></ul></li>
     <li><a href="/tarification" data-i18n="nav.pricing">Tarification</a></li>
     <li><a href="/loi-16" data-i18n="nav.law16">Loi 16</a></li>
     <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
@@ -364,6 +365,12 @@ footer{background:#0a1635;color:#fff;padding:80px 40px 30px}
   </div>
   <a href="/" onclick="toggleMenu()" style="color:var(--gold)"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14L14 6l10 8"/><path d="M6 12v10h5v-6h6v6h5V12"/></svg> <span data-i18n="nav.home">Accueil</span></a>
   <a href="/services" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="3"/><path d="M14 4v3M14 21v3M4 14h3M21 14h3M7.1 7.1l2.1 2.1M18.8 18.8l2.1 2.1M7.1 20.9l2.1-2.1M18.8 9.2l2.1-2.1"/></svg> <span data-i18n="nav.services">Services</span></a>
+  <a class="mob-sub" href="/gestion-administrative-copropriete" onclick="toggleMenu()">Gestion administrative</a>
+  <a class="mob-sub" href="/gestion-financiere-copropriete" onclick="toggleMenu()">Gestion financière</a>
+  <a class="mob-sub" href="/gestion-technique-copropriete" onclick="toggleMenu()">Gestion technique et entretien</a>
+  <a class="mob-sub" href="/communication-gouvernance-copropriete" onclick="toggleMenu()">Communication et gouvernance</a>
+  <a class="mob-sub" href="/urgences-copropriete-24-7" onclick="toggleMenu()">Urgences 24/7</a>
+  <a class="mob-sub" href="/changer-gestionnaire-copropriete" onclick="toggleMenu()">Changer de gestionnaire</a>
   <a href="/tarification" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="20" height="22" rx="2"/><path d="M9 8h10M9 13h10M9 18h6"/></svg> <span data-i18n="nav.pricing">Tarification</span></a>
   <a href="/loi-16" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l9 3.5v7c0 5-3.5 8-9 10C8.5 22 5 19 5 14.5V7.5L14 4z"/><path d="M10 13.5l3 3 5-5"/></svg> <span data-i18n="nav.law16">Loi 16</span></a>
   <a href="/blog/" onclick="toggleMenu()"><svg viewBox="0 0 28 28" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3.5a2.5 2.5 0 0 1 3.5 3.5L8 19.5 4 21l1.5-4L17 3.5z"/><path d="M9 24h12"/></svg> <span data-i18n="nav.blog">Blog</span></a>
