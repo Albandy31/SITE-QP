@@ -581,7 +581,7 @@ function injectFooter(){
     '<div class="ft-col"><h4 data-i18n="footer.areas">'+areasL+'</h4><ul>'+areasHtml+'</ul></div>'+
     '<div class="ft-col"><h4 data-i18n="footer.newsletter">'+nlL+'</h4>'+
     '<div class="ft-nl"><input data-i18n-ph="ph.email" placeholder="'+emailPh+'" type="email"/><button class="btn-ft-nl" onclick="submitForm(this)" data-i18n="btn.subscribe">'+subBtn+'</button></div>'+
-    '<div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a><br/>📍 1115 Av. Beaumont, Montréal, QC H3P 0A1</div>'+
+    '<div class="ft-addr">📞 <a href="tel:+15148392494" style="color:inherit">514-839-2494</a><br/>✉️ <a href="mailto:info@quatrepiliers.ca" style="color:inherit">info@quatrepiliers.ca</a><br/>📍 5253, boul. Décarie, bureau 303, Montréal, QC H3W 3C6</div>'+
     '</div>'+
     '</div>'+
     '<div class="ft-btm">'+
