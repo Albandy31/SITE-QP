@@ -467,7 +467,7 @@ var LANG_URL_MAP_FR_TO_EN={
   '/':'/en/',
   '/services':'/en/services',
   '/tarification':'/en/pricing',
-  '/loi-16':'/en/bill-16',
+  '/loi-16':'/en/bill-16','/diagnostic-loi-16':'/en/bill-16','/diagnostic-loi-16.html':'/en/bill-16',
   '/contact':'/en/contact',
   '/politique-confidentialite':'/en/privacy-policy',
   '/blog':'/en/blog',
@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded',function(){
 /* ===== DIAGNOSTIC ===== */
 function openDiagnostic(){
   var f=document.getElementById('diagFrame');
-  if(f&&(!f.src||f.src==='about:blank'||!f.src.includes('diagnostic')))f.src='/diagnostic.html';
+  if(f&&(!f.src||f.src==='about:blank'||f.src.indexOf('/diagnostic.html')<0))f.src='/diagnostic.html';
   var ov=document.getElementById('diagOverlay');
   if(ov){ov.classList.add('open');document.body.style.overflow='hidden';}
 }
