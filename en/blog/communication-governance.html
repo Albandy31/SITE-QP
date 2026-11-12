@@ -62,9 +62,24 @@
 .art-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid var(--brd);margin-top:32px;gap:16px;flex-wrap:wrap;}
 .art-nav a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;}
 .art-nav a:hover{color:var(--gold);}
+.key-box{background:#fff;border:1px solid var(--brd);border-top:3px solid var(--gold);border-radius:0 0 10px 10px;padding:20px 24px;margin:8px 0 32px;}
+.key-box .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-dk,#b8860b);margin-bottom:8px;}
+.key-box ul{margin:0;padding-left:20px;}
+.key-box li{font-size:15px;line-height:1.65;margin-bottom:6px;}
+.art-faq details{background:#fff;border:1px solid var(--brd);border-radius:10px;padding:16px 20px;margin-bottom:12px;}
+.art-faq summary{cursor:pointer;font-weight:800;color:var(--blue-dk);font-size:15.5px;list-style:none;}
+.art-faq summary::-webkit-details-marker{display:none}
+.art-faq details p{font-size:15px;margin:10px 0 0;}
+.art-more{background:var(--paper,#F0F3FA);border-radius:10px;padding:18px 22px;margin:28px 0 0;}
+.art-more .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-dk);margin-bottom:8px;}
+.art-more ul{margin:0;padding-left:20px;}
+.art-more a{color:var(--blue);font-weight:700;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://quatrepiliers.ca/en/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://quatrepiliers.ca/en/blog/"},{"@type":"ListItem","position":3,"name":"Condominium Communication","item":"https://quatrepiliers.ca/en/blog/communication-governance"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What tool should we use to communicate with owners?", "acceptedAnswer": {"@type": "Answer", "text": "An email distribution list is enough for most communications. Avoid group chats open to everyone: they quickly turn into complaint forums that are hard to manage."}}, {"@type": "Question", "name": "How do we keep a general meeting from going off the rails?", "acceptedAnswer": {"@type": "Answer", "text": "Prepare it: detailed agenda sent 10 days ahead, a neutral chair, speaking rules announced at the start, and an explanatory note sent before the meeting for sensitive topics."}}, {"@type": "Question", "name": "How should we announce an increase in condo fees?", "acceptedAnswer": {"@type": "Answer", "text": "Never without an explanation. Prepare a one-page document with the reasons, the exact calculation and, ideally, a comparison with similar buildings."}}]}
 </script>
 </head>
 <body>
@@ -117,7 +132,7 @@
     <div style="color:rgba(255,255,255,.75);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;">Condo Management — Quatre Piliers</div>
     <span class="cat-pill">Governance</span>
   <h1>Condominium communication: modern tools and tips for transparent governance</h1>
-  <div class="art-meta">April 29, 2026 &nbsp;·&nbsp; 6-min read &nbsp;·&nbsp; By Guillaume Prentki</div>
+  <div class="art-meta">April 29, 2026 &nbsp;·&nbsp; 6-min read &nbsp;·&nbsp; By Guillaume Prentki &nbsp;·&nbsp; Updated November 11, 2026</div>
   </div>
 </div>
 
@@ -126,6 +141,8 @@
 <div class="art-body">
 
 <p>In a condominium, the quality of communication between the board of directors, the manager and the unit owners is often the number-one factor that separates a harmonious community from a chronically conflicted building. Yet it remains one of the most neglected aspects of management.</p>
+
+<div class="key-box"><span class="kb-t">Key takeaways</span><ul><li>Most condo disputes come from a lack of transparency rather than a real disagreement.</li><li>Four channels are enough: a monthly newsletter, an owner portal, the annual general meeting and emergency notices.</li><li>Prefer an email distribution list over an open group chat.</li><li>Send minutes within 15 days and announce work at least 72 hours in advance.</li></ul></div>
 
 <p>Poorly run meetings, decisions made without explanation, work announced at the last minute, an inaccessible registry: these gaps create mistrust, rumours and tensions that end up poisoning collective life. Here's how to modernize your corporation's communication with concrete practices and tools.</p>
 
@@ -227,6 +244,14 @@
 
 <p>This role is particularly valuable in corporations where the board is made up of volunteers who have neither the time nor the expertise to manage day-to-day communication. <strong>The manager professionalizes the relationship between the building and its residents</strong> — which translates concretely into less conflict, less turnover and better long-term unit value.</p>
 
+<h2>Frequently asked questions</h2>
+<div class="art-faq">
+<details><summary>What tool should we use to communicate with owners?</summary><p>An email distribution list is enough for most communications. Avoid group chats open to everyone: they quickly turn into complaint forums that are hard to manage.</p></details>
+<details><summary>How do we keep a general meeting from going off the rails?</summary><p>Prepare it: detailed agenda sent 10 days ahead, a neutral chair, speaking rules announced at the start, and an explanatory note sent before the meeting for sensitive topics.</p></details>
+<details><summary>How should we announce an increase in condo fees?</summary><p>Never without an explanation. Prepare a one-page document with the reasons, the exact calculation and, ideally, a comparison with similar buildings.</p></details>
+</div>
+<div class="art-more"><span class="kb-t">Further reading</span><ul><li><a href="/en/services">Our services, including communication with owners</a></li><li><a href="/en/blog/condo-manager-montreal">How to choose a condo manager</a></li><li><a href="/en/switch-condo-manager">Switch condo managers</a></li><li><a href="/en/condo-management-montreal">Condo management in Montreal</a></li></ul></div>
+
 <div class="art-cta">
   <h3>A manager who communicates for you</h3>
   <p>Quatre Piliers handles all communications with your unit owners: newsletters, work notices, request follow-up, meeting preparation. Your board can focus on strategic decisions.</p>
@@ -281,7 +306,7 @@
   "headline": "Condominium communication: modern tools and tips for transparent governance",
   "description": "Modern tools and best practices to improve communication in your condominium corporation. Reduce conflict and modernize your governance.",
   "datePublished": "2026-04-29",
-  "dateModified": "2026-04-29",
+  "dateModified": "2026-11-11",
   "inLanguage": "en-CA",
   "image": "https://quatrepiliers.ca/og/communication-governance-en.png",
   "author": {"@type": "Person", "name": "Guillaume Prentki", "jobTitle": "Directeur", "worksFor": {"@type": "Organization", "name": "Gestion de Copropriété Quatre Piliers", "url": "https://quatrepiliers.ca"}},

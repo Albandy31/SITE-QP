@@ -64,9 +64,24 @@
 .art-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid var(--brd);margin-top:32px;gap:16px;flex-wrap:wrap;}
 .art-nav a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;}
 .art-nav a:hover{color:var(--gold);}
+.key-box{background:#fff;border:1px solid var(--brd);border-top:3px solid var(--gold);border-radius:0 0 10px 10px;padding:20px 24px;margin:8px 0 32px;}
+.key-box .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-dk,#b8860b);margin-bottom:8px;}
+.key-box ul{margin:0;padding-left:20px;}
+.key-box li{font-size:15px;line-height:1.65;margin-bottom:6px;}
+.art-faq details{background:#fff;border:1px solid var(--brd);border-radius:10px;padding:16px 20px;margin-bottom:12px;}
+.art-faq summary{cursor:pointer;font-weight:800;color:var(--blue-dk);font-size:15.5px;list-style:none;}
+.art-faq summary::-webkit-details-marker{display:none}
+.art-faq details p{font-size:15px;margin:10px 0 0;}
+.art-more{background:var(--paper,#F0F3FA);border-radius:10px;padding:18px 22px;margin:28px 0 0;}
+.art-more .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-dk);margin-bottom:8px;}
+.art-more ul{margin:0;padding-left:20px;}
+.art-more a{color:var(--blue);font-weight:700;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://quatrepiliers.ca/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://quatrepiliers.ca/blog/"},{"@type":"ListItem","position":3,"name":"Gestionnaire de copropriété Montréal : comment choisir ?","item":"https://quatrepiliers.ca/blog/gestionnaire-copropriete-montreal"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien de syndicats un gestionnaire peut-il bien suivre ?", "acceptedAnswer": {"@type": "Answer", "text": "Au-delà de 20 à 25 syndicats par gestionnaire, la qualité du suivi tend à se dégrader. La taille des immeubles compte aussi : les grands immeubles demandent plus de temps."}}, {"@type": "Question", "name": "Quelles questions poser à un gestionnaire de copropriété ?", "acceptedAnswer": {"@type": "Answer", "text": "Combien de syndicats il gère et avec combien d'employés, si les fonds du syndicat sont séparés des siens, quel est son protocole pour une urgence un samedi soir en hiver, et où en sont ses syndicats actuels dans leur conformité à la Loi 16."}}, {"@type": "Question", "name": "Comment changer de gestionnaire de copropriété ?", "acceptedAnswer": {"@type": "Answer", "text": "Relisez le contrat actuel et son préavis, faites adopter la décision par le conseil d'administration, envoyez l'avis de résiliation et récupérez tous les dossiers du syndicat. Notre guide détaille les 7 étapes."}}]}
 </script>
 </head>
 <body>
@@ -119,7 +134,7 @@
     <div style="color:rgba(255,255,255,.75);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;">GESTION DE COPROPRIÉTÉ QUATRE PILIERS</div>
     <span class="cat-pill">Gestion</span>
   <h1>Gestionnaire de copropriété Montréal : comment choisir le bon partenaire pour votre syndicat ?</h1>
-  <div class="art-meta">12 mai 2026 &nbsp;·&nbsp; 8 min de lecture &nbsp;·&nbsp; Par Guillaume Prentki</div>
+  <div class="art-meta">12 mai 2026 &nbsp;·&nbsp; 8 min de lecture &nbsp;·&nbsp; Par Guillaume Prentki &nbsp;·&nbsp; Mis à jour le 11 novembre 2026</div>
   </div>
 </div>
 
@@ -128,6 +143,8 @@
 <div class="art-body">
 
 <p>Votre syndicat de copropriété cherche un nouveau gestionnaire à Montréal — ou vous vous demandez si l'heure est venue de changer. C'est une décision qui engage votre immeuble pour plusieurs années et qui touche directement la qualité de vie de tous les copropriétaires, la santé financière du syndicat et la conformité à la Loi 16.</p>
+
+<div class="key-box"><span class="kb-t">À retenir</span><ul><li>Choisissez un gestionnaire spécialisé en copropriété divise, pas une agence qui fait de la gestion en service secondaire.</li><li>Vérifiez qu'il maîtrise la Loi 16 et qu'il accompagne déjà des syndicats dans leur étude du fonds de prévoyance.</li><li>Demandez ce que couvre vraiment son service d'urgence 24/7 et combien de syndicats gère votre interlocuteur.</li><li>Exigez des comptes bancaires au nom du syndicat et appelez trois références de syndicats semblables au vôtre.</li></ul></div>
 
 <p>Or, le marché montréalais de la gestion de copropriété est hétérogène : des firmes réputées côtoient des gestionnaires solo débordés, des agences immobilières qui font de la gestion en sous-produit, et des opérateurs qui promettent beaucoup mais livrent peu. Comment s'y retrouver ? Voici les 7 critères qui font vraiment la différence — et les questions concrètes à poser avant de signer.</p>
 
@@ -230,6 +247,14 @@
 
 <p>Avant de choisir un gestionnaire, prenez 3 minutes pour chiffrer honnêtement le coût réel de votre autogestion actuelle : <a href="/blog/autogestion-couts-caches" style="color:var(--blue);font-weight:700;border-bottom:2px solid var(--gold);text-decoration:none;">notre article sur les coûts cachés de l'autogestion</a> détaille la méthode et notre <a href="/comparateur-autogestion" style="color:var(--blue);font-weight:700;border-bottom:2px solid var(--gold);text-decoration:none;">comparateur en ligne</a> l'applique à votre immeuble.</p>
 
+<h2>Questions fréquentes</h2>
+<div class="art-faq">
+<details><summary>Combien de syndicats un gestionnaire peut-il bien suivre ?</summary><p>Au-delà de 20 à 25 syndicats par gestionnaire, la qualité du suivi tend à se dégrader. La taille des immeubles compte aussi : les grands immeubles demandent plus de temps.</p></details>
+<details><summary>Quelles questions poser à un gestionnaire de copropriété ?</summary><p>Combien de syndicats il gère et avec combien d'employés, si les fonds du syndicat sont séparés des siens, quel est son protocole pour une urgence un samedi soir en hiver, et où en sont ses syndicats actuels dans leur conformité à la Loi 16.</p></details>
+<details><summary>Comment changer de gestionnaire de copropriété ?</summary><p>Relisez le contrat actuel et son préavis, faites adopter la décision par le conseil d'administration, envoyez l'avis de résiliation et récupérez tous les dossiers du syndicat. Notre guide détaille les 7 étapes.</p></details>
+</div>
+<div class="art-more"><span class="kb-t">Pour aller plus loin</span><ul><li><a href="/changer-gestionnaire-copropriete">Changer de gestionnaire de copropriété en 7 étapes</a></li><li><a href="/gestion-copropriete-montreal">Gestion de copropriété à Montréal</a></li><li><a href="/gestion-copropriete-longueuil">Gestion de copropriété à Longueuil et sur la Rive-Sud</a></li><li><a href="/gestion-copropriete-rive-nord">Gestion de copropriété sur la Rive-Nord</a></li><li><a href="/urgences-copropriete-24-7">Notre ligne d'urgence 24/7</a></li></ul></div>
+
 <div class="art-cta">
   <h3>Vous cherchez un gestionnaire à Montréal ?</h3>
   <p>Quatre Piliers gère des syndicats dans le Grand Montréal avec une disponibilité 24/7, une expertise Loi 16 reconnue et une transparence financière totale. Obtenez une soumission personnalisée en 24 heures.</p>
@@ -284,7 +309,7 @@
   "headline": "Gestionnaire de copropriété Montréal : comment choisir le bon partenaire pour votre syndicat ?",
   "description": "Comment choisir le bon gestionnaire de copropriété à Montréal ? Les 7 critères essentiels, les questions à poser et les signaux d'alarme à éviter pour votre syndicat.",
   "datePublished": "2026-05-12",
-  "dateModified": "2026-05-12",
+  "dateModified": "2026-11-11",
   "inLanguage": "fr-CA",
   "image": "https://quatrepiliers.ca/og/gestionnaire-copropriete-montreal-fr.png",
   "author": {"@type": "Person", "name": "Guillaume Prentki", "jobTitle": "Directeur", "worksFor": {"@type": "Organization", "name": "Gestion de Copropriété Quatre Piliers", "url": "https://quatrepiliers.ca"}},

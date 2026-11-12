@@ -57,9 +57,24 @@
 .art-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid var(--brd);margin-top:32px;gap:16px;flex-wrap:wrap;}
 .art-nav a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;}
 .art-nav a:hover{color:var(--gold);}
+.key-box{background:#fff;border:1px solid var(--brd);border-top:3px solid var(--gold);border-radius:0 0 10px 10px;padding:20px 24px;margin:8px 0 32px;}
+.key-box .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-dk,#b8860b);margin-bottom:8px;}
+.key-box ul{margin:0;padding-left:20px;}
+.key-box li{font-size:15px;line-height:1.65;margin-bottom:6px;}
+.art-faq details{background:#fff;border:1px solid var(--brd);border-radius:10px;padding:16px 20px;margin-bottom:12px;}
+.art-faq summary{cursor:pointer;font-weight:800;color:var(--blue-dk);font-size:15.5px;list-style:none;}
+.art-faq summary::-webkit-details-marker{display:none}
+.art-faq details p{font-size:15px;margin:10px 0 0;}
+.art-more{background:var(--paper,#F0F3FA);border-radius:10px;padding:18px 22px;margin:28px 0 0;}
+.art-more .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-dk);margin-bottom:8px;}
+.art-more ul{margin:0;padding-left:20px;}
+.art-more a{color:var(--blue);font-weight:700;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://quatrepiliers.ca/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://quatrepiliers.ca/blog/"},{"@type":"ListItem","position":3,"name":"Réclamations d'assurance en copropriété","item":"https://quatrepiliers.ca/blog/reclamations-assurance"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Combien de temps a un syndicat pour déclarer un sinistre ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de la police, mais le délai est souvent de 5 à 15 jours. Le plus sûr est d'appeler votre courtier dans les 24 heures, même sans tous les détails : mieux vaut ouvrir un dossier et le fermer que rater le délai."}}, {"@type": "Question", "name": "Qui paie un dégât d'eau qui part d'une unité privative ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de l'origine du dégât, de la déclaration de copropriété et des polices du syndicat et du copropriétaire. Le syndicat couvre l'immeuble et les parties communes ; le copropriétaire, ses biens et sa responsabilité civile. Un syndicat mal préparé risque d'avancer des frais qui ne lui incombent pas."}}, {"@type": "Question", "name": "Faut-il accepter la première offre de l'assureur ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas forcément. L'expert mandaté par l'assureur défend les intérêts de l'assureur. Pour un sinistre important, au-delà d'environ 25 000 $, le syndicat peut mandater son propre expert en sinistres pour contre-expertiser l'évaluation."}}]}
 </script>
 </head>
 <body>
@@ -112,7 +127,7 @@
     <div style="color:rgba(255,255,255,.75);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;">GESTION DE COPROPRIÉTÉ QUATRE PILIERS</div>
     <span class="cat-pill">Assurances</span>
   <h1>Réclamations d'assurance en copropriété : les 7 pièges courants et comment les éviter</h1>
-  <div class="art-meta">15 avril 2026 &nbsp;·&nbsp; 7 min de lecture &nbsp;·&nbsp; Par Guillaume Prentki</div>
+  <div class="art-meta">15 avril 2026 &nbsp;·&nbsp; 7 min de lecture &nbsp;·&nbsp; Par Guillaume Prentki &nbsp;·&nbsp; Mis à jour le 11 novembre 2026</div>
   </div>
 </div>
 
@@ -121,6 +136,8 @@
 <div class="art-body">
 
 <p>Un dégât d'eau au 3e étage. Une infiltration par le toit. Un bris de canalisation dans les parties communes. Ce sont des situations que tout syndicat de copropriété redoute — et qui arrivent pourtant bien plus souvent qu'on ne le pense. Mais au-delà du sinistre lui-même, c'est la réclamation d'assurance qui fait souvent la différence entre une résolution rapide et un cauchemar administratif de plusieurs mois.</p>
+
+<div class="key-box"><span class="kb-t">À retenir</span><ul><li>Déclarez tout sinistre à votre courtier dans les 24 heures : les polices imposent souvent un délai de 5 à 15 jours.</li><li>L'assurance du syndicat couvre l'immeuble et les parties communes ; celle du copropriétaire couvre ses biens et sa responsabilité civile.</li><li>Assurez l'immeuble à sa valeur de reconstruction, et faites-la réévaluer tous les 3 à 5 ans.</li><li>Photographiez et filmez les dommages avant les réparations d'urgence, et ne signez aucune entente à l'amiable sans aviser l'assureur.</li></ul></div>
 
 <p>Après avoir accompagné des dizaines de syndicats à travers ces épreuves, l'équipe Quatre Piliers a identifié les 7 erreurs qui reviennent systématiquement. Les voici, avec les actions concrètes pour les éviter.</p>
 
@@ -204,6 +221,14 @@
   <li>Révisez la police chaque année, notamment les <strong>franchises et exclusions</strong></li>
 </ol>
 
+<h2>Questions fréquentes</h2>
+<div class="art-faq">
+<details><summary>Combien de temps a un syndicat pour déclarer un sinistre ?</summary><p>Cela dépend de la police, mais le délai est souvent de 5 à 15 jours. Le plus sûr est d'appeler votre courtier dans les 24 heures, même sans tous les détails : mieux vaut ouvrir un dossier et le fermer que rater le délai.</p></details>
+<details><summary>Qui paie un dégât d'eau qui part d'une unité privative ?</summary><p>Cela dépend de l'origine du dégât, de la déclaration de copropriété et des polices du syndicat et du copropriétaire. Le syndicat couvre l'immeuble et les parties communes ; le copropriétaire, ses biens et sa responsabilité civile. Un syndicat mal préparé risque d'avancer des frais qui ne lui incombent pas.</p></details>
+<details><summary>Faut-il accepter la première offre de l'assureur ?</summary><p>Pas forcément. L'expert mandaté par l'assureur défend les intérêts de l'assureur. Pour un sinistre important, au-delà d'environ 25 000 $, le syndicat peut mandater son propre expert en sinistres pour contre-expertiser l'évaluation.</p></details>
+</div>
+<div class="art-more"><span class="kb-t">Pour aller plus loin</span><ul><li><a href="/urgences-copropriete-24-7">Que faire en cas d'urgence en copropriété (ligne 24/7)</a></li><li><a href="/blog/fonds-prevoyance-loi16">Fonds de prévoyance et Loi 16 : le guide</a></li><li><a href="/loi-16">Loi 16 : le guide complet</a></li><li><a href="/gestion-copropriete-montreal">Gestion de copropriété à Montréal</a></li></ul></div>
+
 <div class="art-cta">
   <h3>Votre syndicat est-il bien protégé ?</h3>
   <p>Un gestionnaire expérimenté vous aide à optimiser votre couverture d'assurance, à documenter correctement vos sinistres et à éviter les pièges qui coûtent cher. Demandez une évaluation gratuite.</p>
@@ -258,7 +283,7 @@
   "headline": "Réclamations d'assurance en copropriété : les 7 pièges courants et comment les éviter",
   "description": "Les 7 erreurs les plus fréquentes des syndicats lors de réclamations d'assurance en copropriété au Québec, et comment les éviter pour protéger votre immeuble.",
   "datePublished": "2026-04-15",
-  "dateModified": "2026-04-15",
+  "dateModified": "2026-11-11",
   "inLanguage": "fr-CA",
   "image": "https://quatrepiliers.ca/og/reclamations-assurance-fr.png",
   "author": {"@type": "Person", "name": "Guillaume Prentki", "jobTitle": "Directeur", "worksFor": {"@type": "Organization", "name": "Gestion de Copropriété Quatre Piliers", "url": "https://quatrepiliers.ca"}},

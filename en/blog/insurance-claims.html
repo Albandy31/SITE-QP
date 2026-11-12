@@ -57,9 +57,24 @@
 .art-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid var(--brd);margin-top:32px;gap:16px;flex-wrap:wrap;}
 .art-nav a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;}
 .art-nav a:hover{color:var(--gold);}
+.key-box{background:#fff;border:1px solid var(--brd);border-top:3px solid var(--gold);border-radius:0 0 10px 10px;padding:20px 24px;margin:8px 0 32px;}
+.key-box .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-dk,#b8860b);margin-bottom:8px;}
+.key-box ul{margin:0;padding-left:20px;}
+.key-box li{font-size:15px;line-height:1.65;margin-bottom:6px;}
+.art-faq details{background:#fff;border:1px solid var(--brd);border-radius:10px;padding:16px 20px;margin-bottom:12px;}
+.art-faq summary{cursor:pointer;font-weight:800;color:var(--blue-dk);font-size:15.5px;list-style:none;}
+.art-faq summary::-webkit-details-marker{display:none}
+.art-faq details p{font-size:15px;margin:10px 0 0;}
+.art-more{background:var(--paper,#F0F3FA);border-radius:10px;padding:18px 22px;margin:28px 0 0;}
+.art-more .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-dk);margin-bottom:8px;}
+.art-more ul{margin:0;padding-left:20px;}
+.art-more a{color:var(--blue);font-weight:700;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://quatrepiliers.ca/en/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://quatrepiliers.ca/en/blog/"},{"@type":"ListItem","position":3,"name":"Condominium Insurance Claims","item":"https://quatrepiliers.ca/en/blog/insurance-claims"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does a condo corporation have to report a claim?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the policy, but the deadline is often 5 to 15 days. The safest approach is to call your broker within 24 hours, even without all the details: better to open a file and close it than to miss the deadline."}}, {"@type": "Question", "name": "Who pays for water damage that starts in a private unit?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the source of the damage, the declaration of co-ownership and the policies of the corporation and the owner. The corporation covers the building and common areas; the owner covers their belongings and civil liability."}}, {"@type": "Question", "name": "Should we accept the insurer's first offer?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. The adjuster hired by the insurer defends the insurer's interests. For a large claim, above roughly $25,000, the corporation can hire its own independent adjuster to review the assessment."}}]}
 </script>
 </head>
 <body>
@@ -112,7 +127,7 @@
     <div style="color:rgba(255,255,255,.75);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;">Condo Management — Quatre Piliers</div>
     <span class="cat-pill">Insurance</span>
   <h1>Condominium insurance claims: the 7 common pitfalls and how to avoid them</h1>
-  <div class="art-meta">April 15, 2026 &nbsp;·&nbsp; 7-min read &nbsp;·&nbsp; By Guillaume Prentki</div>
+  <div class="art-meta">April 15, 2026 &nbsp;·&nbsp; 7-min read &nbsp;·&nbsp; By Guillaume Prentki &nbsp;·&nbsp; Updated November 11, 2026</div>
   </div>
 </div>
 
@@ -121,6 +136,8 @@
 <div class="art-body">
 
 <p>A water leak on the 3rd floor. A roof infiltration. A pipe burst in the common areas. These are the situations every condominium corporation (syndicat) dreads — and which still happen far more often than people think. Yet beyond the loss itself, it is the insurance claim that often makes the difference between a quick resolution and a months-long administrative nightmare.</p>
+
+<div class="key-box"><span class="kb-t">Key takeaways</span><ul><li>Report any loss to your broker within 24 hours: policies often set a deadline of 5 to 15 days.</li><li>The corporation's policy covers the building and common areas; the owner's policy covers their belongings and civil liability.</li><li>Insure the building at its reconstruction value, and have it reassessed every 3 to 5 years.</li><li>Photograph and film the damage before emergency repairs, and never sign an out-of-court settlement without telling the insurer.</li></ul></div>
 
 <p>After helping dozens of condominium corporations through these ordeals, the Quatre Piliers team has identified the 7 mistakes that keep coming back. Here they are, with the concrete actions to avoid them.</p>
 
@@ -204,6 +221,14 @@
   <li>Review the policy each year, particularly <strong>deductibles and exclusions</strong></li>
 </ol>
 
+<h2>Frequently asked questions</h2>
+<div class="art-faq">
+<details><summary>How long does a condo corporation have to report a claim?</summary><p>It depends on the policy, but the deadline is often 5 to 15 days. The safest approach is to call your broker within 24 hours, even without all the details: better to open a file and close it than to miss the deadline.</p></details>
+<details><summary>Who pays for water damage that starts in a private unit?</summary><p>It depends on the source of the damage, the declaration of co-ownership and the policies of the corporation and the owner. The corporation covers the building and common areas; the owner covers their belongings and civil liability.</p></details>
+<details><summary>Should we accept the insurer's first offer?</summary><p>Not necessarily. The adjuster hired by the insurer defends the insurer's interests. For a large claim, above roughly $25,000, the corporation can hire its own independent adjuster to review the assessment.</p></details>
+</div>
+<div class="art-more"><span class="kb-t">Further reading</span><ul><li><a href="/en/condo-emergency-24-7">What to do in a condo emergency (24/7 line)</a></li><li><a href="/en/blog/contingency-fund-law16">Bill 16 contingency fund study: the guide</a></li><li><a href="/en/bill-16">Bill 16: the complete guide</a></li><li><a href="/en/condo-management-montreal">Condo management in Montreal</a></li></ul></div>
+
 <div class="art-cta">
   <h3>Is your corporation properly protected?</h3>
   <p>An experienced manager helps you optimize your insurance coverage, document your losses correctly and avoid the costly pitfalls. Request a free assessment.</p>
@@ -258,7 +283,7 @@
   "headline": "Condominium insurance claims: the 7 common pitfalls and how to avoid them",
   "description": "The 7 most common mistakes condominium corporations make with insurance claims in Quebec, and how to avoid them to protect your building.",
   "datePublished": "2026-04-15",
-  "dateModified": "2026-04-15",
+  "dateModified": "2026-11-11",
   "inLanguage": "en-CA",
   "image": "https://quatrepiliers.ca/og/insurance-claims-en.png",
   "author": {"@type": "Person", "name": "Guillaume Prentki", "jobTitle": "Directeur", "worksFor": {"@type": "Organization", "name": "Gestion de Copropriété Quatre Piliers", "url": "https://quatrepiliers.ca"}},

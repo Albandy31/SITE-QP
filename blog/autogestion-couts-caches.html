@@ -112,9 +112,24 @@
 .art-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid var(--brd);margin-top:32px;gap:16px;flex-wrap:wrap;}
 .art-nav a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;}
 .art-nav a:hover{color:var(--gold);}
+.key-box{background:#fff;border:1px solid var(--brd);border-top:3px solid var(--gold);border-radius:0 0 10px 10px;padding:20px 24px;margin:8px 0 32px;}
+.key-box .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-dk,#b8860b);margin-bottom:8px;}
+.key-box ul{margin:0;padding-left:20px;}
+.key-box li{font-size:15px;line-height:1.65;margin-bottom:6px;}
+.art-faq details{background:#fff;border:1px solid var(--brd);border-radius:10px;padding:16px 20px;margin-bottom:12px;}
+.art-faq summary{cursor:pointer;font-weight:800;color:var(--blue-dk);font-size:15.5px;list-style:none;}
+.art-faq summary::-webkit-details-marker{display:none}
+.art-faq details p{font-size:15px;margin:10px 0 0;}
+.art-more{background:var(--paper,#F0F3FA);border-radius:10px;padding:18px 22px;margin:28px 0 0;}
+.art-more .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-dk);margin-bottom:8px;}
+.art-more ul{margin:0;padding-left:20px;}
+.art-more a{color:var(--blue);font-weight:700;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://quatrepiliers.ca/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://quatrepiliers.ca/blog/"},{"@type":"ListItem","position":3,"name":"Autogestion vs gestionnaire pro : les coûts cachés","item":"https://quatrepiliers.ca/blog/autogestion-couts-caches"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "L'autogestion d'une copropriété est-elle vraiment gratuite ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Elle n'a pas de facture, mais elle a un coût : le temps bénévole des administrateurs, les incidents évitables (sinistre mal coordonné, erreur comptable, assemblée reportée) et les risques qui ne sont pas couverts tant qu'on ne s'en occupe pas."}}, {"@type": "Question", "name": "Combien d'heures un conseil d'administration consacre-t-il à l'autogestion ?", "acceptedAnswer": {"@type": "Answer", "text": "Environ 8 à 15 heures par mois pour moins de 12 unités, 15 à 30 heures de 12 à 30 unités, et 30 à 60 heures au-delà de 30 unités, au total pour tous les administrateurs."}}, {"@type": "Question", "name": "Comment comparer l'autogestion et un gestionnaire professionnel ?", "acceptedAnswer": {"@type": "Answer", "text": "Additionnez la valeur du temps bénévole, le coût moyen des incidents évitables et les risques non couverts, puis comparez au tarif d'un gestionnaire. Notre comparateur gratuit fait le calcul en 3 minutes."}}]}
 </script>
 </head>
 <body>
@@ -167,7 +182,7 @@
     <div style="color:rgba(255,255,255,.75);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;">GESTION DE COPROPRIÉTÉ QUATRE PILIERS</div>
     <span class="cat-pill">Gestion</span>
   <h1>Autogestion ou gestionnaire professionnel : les vrais coûts cachés que votre CA ne calcule jamais</h1>
-  <div class="art-meta">19 mai 2026 &nbsp;·&nbsp; 9 min de lecture &nbsp;·&nbsp; Par Guillaume Prentki</div>
+  <div class="art-meta">19 mai 2026 &nbsp;·&nbsp; 9 min de lecture &nbsp;·&nbsp; Par Guillaume Prentki &nbsp;·&nbsp; Mis à jour le 11 novembre 2026</div>
   </div>
 </div>
 
@@ -176,6 +191,8 @@
 <div class="art-body">
 
 <p>« On s'autogère, ça nous coûte zéro dollar en frais de gestion. » C'est la phrase qu'on entend dans la moitié des assemblées générales de petits et moyens syndicats au Québec. Elle est rassurante, intuitive — et financièrement trompeuse.</p>
+
+<div class="key-box"><span class="kb-t">À retenir</span><ul><li>L'autogestion n'est pas gratuite : son coût est caché dans le temps bénévole, les incidents évitables et les risques non couverts.</li><li>Un conseil d'administration consacre de 8 à 60 heures par mois selon la taille de l'immeuble.</li><li>À 50 $ de l'heure, 20 heures par mois représentent environ 12 000 $ par année de temps bénévole.</li><li>Un seul sinistre mal coordonné coûte souvent de 5 000 à 12 000 $.</li></ul></div>
 
 <p>L'autogestion n'est jamais gratuite. Elle a simplement un prix qui n'apparaît nulle part sur une facture : du temps bénévole valorisable, des incidents évitables qui finissent par survenir, des risques qu'aucune assurance ne couvre tant qu'on ne s'en occupe pas. Cet article décompose ces trois catégories de coûts cachés, propose une méthode de chiffrage honnête, et vous donne les chiffres comparatifs concrets pour décider en connaissance de cause.</p>
 
@@ -397,6 +414,14 @@
 
 <p>Cela ne signifie pas que tous les syndicats doivent confier leur gestion à un professionnel. Certains CA, certaines configurations d'immeuble, certains profils d'administrateurs justifient l'autogestion. Mais la décision doit être prise à l'aide d'un comparatif chiffré honnête — pas sur l'illusion du « zéro dollar ».</p>
 
+<h2>Questions fréquentes</h2>
+<div class="art-faq">
+<details><summary>L'autogestion d'une copropriété est-elle vraiment gratuite ?</summary><p>Non. Elle n'a pas de facture, mais elle a un coût : le temps bénévole des administrateurs, les incidents évitables (sinistre mal coordonné, erreur comptable, assemblée reportée) et les risques qui ne sont pas couverts tant qu'on ne s'en occupe pas.</p></details>
+<details><summary>Combien d'heures un conseil d'administration consacre-t-il à l'autogestion ?</summary><p>Environ 8 à 15 heures par mois pour moins de 12 unités, 15 à 30 heures de 12 à 30 unités, et 30 à 60 heures au-delà de 30 unités, au total pour tous les administrateurs.</p></details>
+<details><summary>Comment comparer l'autogestion et un gestionnaire professionnel ?</summary><p>Additionnez la valeur du temps bénévole, le coût moyen des incidents évitables et les risques non couverts, puis comparez au tarif d'un gestionnaire. Notre comparateur gratuit fait le calcul en 3 minutes.</p></details>
+</div>
+<div class="art-more"><span class="kb-t">Pour aller plus loin</span><ul><li><a href="/comparateur-autogestion">Comparateur autogestion ou gestionnaire (gratuit)</a></li><li><a href="/tarification">Nos forfaits, dès 25 $ par unité</a></li><li><a href="/changer-gestionnaire-copropriete">Passer de l'autogestion à un gestionnaire</a></li><li><a href="/gestion-copropriete-montreal">Gestion de copropriété à Montréal</a></li></ul></div>
+
 <div class="art-cta">
   <h3>Vous hésitez entre autogestion et gestion professionnelle ?</h3>
   <p>Nous bâtissons une proposition adaptée à la taille de votre immeuble, à votre budget et à votre niveau d'implication souhaité — de l'accompagnement à la carte au mandat complet. Soumission gratuite sous 24 heures ouvrables.</p>
@@ -451,7 +476,7 @@
   "headline": "Autogestion ou gestionnaire professionnel : les vrais coûts cachés que votre CA ne calcule jamais",
   "description": "Autogestion ou gestionnaire professionnel ? Les vrais coûts cachés que votre CA ne calcule jamais : temps bénévole, incidents évitables, risques non assurés. Méthode chiffrée pour décider.",
   "datePublished": "2026-05-19",
-  "dateModified": "2026-05-19",
+  "dateModified": "2026-11-11",
   "inLanguage": "fr-CA",
   "image": "https://quatrepiliers.ca/og/autogestion-couts-caches-fr.png",
   "author": {"@type": "Person", "name": "Guillaume Prentki", "jobTitle": "Directeur", "worksFor": {"@type": "Organization", "name": "Gestion de Copropriété Quatre Piliers", "url": "https://quatrepiliers.ca"}},

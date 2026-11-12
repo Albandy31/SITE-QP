@@ -82,9 +82,24 @@
 .art-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-top:1px solid var(--brd);margin-top:32px;gap:16px;flex-wrap:wrap;}
 .art-nav a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;}
 .art-nav a:hover{color:var(--gold);}
+.key-box{background:#fff;border:1px solid var(--brd);border-top:3px solid var(--gold);border-radius:0 0 10px 10px;padding:20px 24px;margin:8px 0 32px;}
+.key-box .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-dk,#b8860b);margin-bottom:8px;}
+.key-box ul{margin:0;padding-left:20px;}
+.key-box li{font-size:15px;line-height:1.65;margin-bottom:6px;}
+.art-faq details{background:#fff;border:1px solid var(--brd);border-radius:10px;padding:16px 20px;margin-bottom:12px;}
+.art-faq summary{cursor:pointer;font-weight:800;color:var(--blue-dk);font-size:15.5px;list-style:none;}
+.art-faq summary::-webkit-details-marker{display:none}
+.art-faq details p{font-size:15px;margin:10px 0 0;}
+.art-more{background:var(--paper,#F0F3FA);border-radius:10px;padding:18px 22px;margin:28px 0 0;}
+.art-more .kb-t{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-dk);margin-bottom:8px;}
+.art-more ul{margin:0;padding-left:20px;}
+.art-more a{color:var(--blue);font-weight:700;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://quatrepiliers.ca/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://quatrepiliers.ca/blog/"},{"@type":"ListItem","position":3,"name":"Loi 16 : où en est votre syndicat en 2026 ?","item":"https://quatrepiliers.ca/blog/loi-16-ou-en-etes-vous"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Un syndicat autogéré doit-il respecter la Loi 16 ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Un syndicat autogéré reste pleinement soumis à la Loi 16 : le carnet d'entretien, l'étude du fonds de prévoyance et l'attestation doivent répondre aux mêmes exigences qu'avec un gestionnaire professionnel."}}, {"@type": "Question", "name": "Un carnet d'entretien fait par un administrateur est-il valable ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Un fichier rédigé par un administrateur bénévole, même détaillé, ne remplit pas l'obligation : le carnet doit être produit par un professionnel."}}, {"@type": "Question", "name": "Que risque un syndicat en retard sur la Loi 16 ?", "acceptedAnswer": {"@type": "Answer", "text": "Une vente retardée ou un prix plus bas faute d'attestation, des cotisations spéciales imprévues, des primes d'assurance plus élevées et, en cas de négligence avérée, la responsabilité personnelle des administrateurs."}}]}
 </script>
 </head>
 <body>
@@ -137,7 +152,7 @@
     <div style="color:rgba(255,255,255,.75);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;">GESTION DE COPROPRIÉTÉ QUATRE PILIERS</div>
     <span class="cat-pill">Loi 16</span>
   <h1>Loi 16 : où en est votre syndicat en 2026 ?</h1>
-  <div class="art-meta">19 mai 2026 &nbsp;·&nbsp; 6 min de lecture &nbsp;·&nbsp; Par Guillaume Prentki</div>
+  <div class="art-meta">19 mai 2026 &nbsp;·&nbsp; 6 min de lecture &nbsp;·&nbsp; Par Guillaume Prentki &nbsp;·&nbsp; Mis à jour le 11 novembre 2026</div>
   </div>
 </div>
 
@@ -146,6 +161,8 @@
 <div class="art-body">
 
 <p>Nous sommes à mi-2026 — et <a href="/loi-16" style="color:var(--blue);font-weight:700;border-bottom:2px solid var(--gold);text-decoration:none;">la Loi 16 sur la copropriété divise au Québec</a> n'est plus une perspective lointaine. Pour beaucoup de syndicats, les premières échéances sont déjà derrière nous. Le moment est venu de poser une question simple mais essentielle : <strong>où en est mon syndicat ?</strong></p>
+
+<div class="key-box"><span class="kb-t">À retenir</span><ul><li>Trois obligations : un carnet d'entretien produit par un professionnel, une étude du fonds de prévoyance de moins de 5 ans et la capacité de remettre l'attestation lors d'une vente.</li><li>Un fichier Excel maison n'est pas un carnet d'entretien, et avoir un fonds n'est pas la même chose qu'avoir une étude.</li><li>Les syndicats autogérés sont soumis aux mêmes obligations.</li><li>Le retard coûte cher : ventes retardées, cotisations spéciales, primes d'assurance plus élevées et responsabilité des administrateurs.</li></ul></div>
 
 <p>La réponse, pour de nombreux conseils d'administration, est embarrassante : <em>« on ne sait pas trop »</em>. Carnet d'entretien partiel, étude du fonds repoussée d'année en année, attestation difficile à produire le jour où un copropriétaire annonce qu'il vend… Le problème n'est pas la mauvaise volonté — c'est le manque de repères clairs.</p>
 
@@ -305,6 +322,14 @@
 
 <p>Quelques heures d'audit aujourd'hui valent des dizaines de milliers de dollars économisés demain. Commencez par savoir <strong>où vous en êtes vraiment</strong>.</p>
 
+<h2>Questions fréquentes</h2>
+<div class="art-faq">
+<details><summary>Un syndicat autogéré doit-il respecter la Loi 16 ?</summary><p>Oui. Un syndicat autogéré reste pleinement soumis à la Loi 16 : le carnet d'entretien, l'étude du fonds de prévoyance et l'attestation doivent répondre aux mêmes exigences qu'avec un gestionnaire professionnel.</p></details>
+<details><summary>Un carnet d'entretien fait par un administrateur est-il valable ?</summary><p>Non. Un fichier rédigé par un administrateur bénévole, même détaillé, ne remplit pas l'obligation : le carnet doit être produit par un professionnel.</p></details>
+<details><summary>Que risque un syndicat en retard sur la Loi 16 ?</summary><p>Une vente retardée ou un prix plus bas faute d'attestation, des cotisations spéciales imprévues, des primes d'assurance plus élevées et, en cas de négligence avérée, la responsabilité personnelle des administrateurs.</p></details>
+</div>
+<div class="art-more"><span class="kb-t">Pour aller plus loin</span><ul><li><a href="/loi-16">Loi 16 : le guide complet</a></li><li><a href="/blog/fonds-prevoyance-loi16">Fonds de prévoyance et Loi 16 : le guide étape par étape</a></li><li><a href="/services">Nos services de gestion de copropriété</a></li><li><a href="/changer-gestionnaire-copropriete">Changer de gestionnaire de copropriété</a></li></ul></div>
+
 <div class="art-cta">
   <h3>Besoin d'un regard professionnel sur votre conformité ?</h3>
   <p>Quatre Piliers accompagne les syndicats du Grand Montréal dans la mise en conformité Loi 16 : audit complet, coordination des professionnels, préparation des AG et suivi long terme. Demandez une soumission gratuite.</p>
@@ -359,7 +384,7 @@
   "headline": "Loi 16 : où en est votre syndicat en 2026 ?",
   "description": "2026 est l'année charnière de la Loi 16 sur la copropriété divise au Québec. Faites le point sur la conformité de votre syndicat : carnet d'entretien, fonds de prévoyance, attestation et signaux d'alerte à surveiller.",
   "datePublished": "2026-05-19",
-  "dateModified": "2026-05-19",
+  "dateModified": "2026-11-11",
   "inLanguage": "fr-CA",
   "image": "https://quatrepiliers.ca/og/loi-16-ou-en-etes-vous-fr.png",
   "author": {"@type": "Person", "name": "Guillaume Prentki", "jobTitle": "Directeur", "worksFor": {"@type": "Organization", "name": "Gestion de Copropriété Quatre Piliers", "url": "https://quatrepiliers.ca"}},
