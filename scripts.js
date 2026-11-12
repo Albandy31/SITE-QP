@@ -478,7 +478,7 @@ var LANG_URL_MAP_FR_TO_EN={
   '/blog/loi-16-ou-en-etes-vous':'/en/blog/bill-16-where-do-you-stand',
   '/blog/autogestion-couts-caches':'/en/blog/self-management-hidden-costs',
   '/gestion-copropriete-montreal':'/en/condo-management-montreal',
-  '/gestion-copropriete-longueuil':'/en/condo-management-longueuil',
+  '/gestion-copropriete-longueuil':'/en/condo-management-longueuil','/gestion-copropriete-brossard':'/en/condo-management-brossard','/gestion-copropriete-westmount':'/en/condo-management-westmount',
   '/gestion-copropriete-rive-nord':'/en/condo-management-north-shore',
   '/urgences-copropriete-24-7':'/en/condo-emergency-24-7',
   '/changer-gestionnaire-copropriete':'/en/switch-condo-manager',
