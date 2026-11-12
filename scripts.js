@@ -131,9 +131,9 @@ var translations={
     'home.law.lbl':'Informations','home.law.title':'La Loi 16 : <em>êtes-vous en règle</em> ?',
     'home.law.desc':'La Loi 16 impose de nouvelles obligations à tous les syndicats de copropriété au Québec. Chez Quatre Piliers, nous vous accompagnons pas à pas.',
     'law.item1.title':'Carnet d\'entretien obligatoire',
-    'law.item1.desc':'Les syndicats doivent produire un carnet d\'entretien d\'ici le 14 août 2028.',
+    'law.item1.desc':'Les syndicats doivent produire un carnet d\'entretien d\'ici le 15 août 2028.',
     'law.item2.title':'Étude du fonds de prévoyance',
-    'law.item2.desc':'Les syndicats ont jusqu\'au 14 août 2028 pour obtenir leur première étude du fonds de prévoyance.',
+    'law.item2.desc':'Les syndicats ont jusqu\'au 15 août 2028 pour obtenir leur première étude du fonds de prévoyance.',
     'law.item3.title':'Attestation du syndicat',
     'law.item3.desc':'Obligatoire à chaque vente d\'unité depuis 2025.',
     'btn.fullguide':'Lire notre guide complet →',
@@ -172,7 +172,7 @@ var translations={
     'btn.sendrequest':'Envoyer ma demande →',
     'form.ok':'✅ Merci ! Nous vous contacterons sous 24 heures ouvrables.',
     'footer.tagline':'Gestionnaire de copropriété expert et ultra réactif dans le Grand Montréal.',
-    'footer.copy':'© 2025 Gestion de Copropriété Quatre Piliers Inc. Tous droits réservés.',
+    'footer.copy':'© '+new Date().getFullYear()+' Gestion de Copropriété Quatre Piliers Inc. Tous droits réservés.',
     'hero.subtitle':'Gestionnaire expert et ultra réactif pour votre syndicat. Prise en charge complète - administrative, financière, technique, humaine. Conformité Loi 16.',
     'lbl.pricing':'Tarification','lbl.plan':'Forfait','lbl.perunit':' /unité/mois',
     'home.pricing.note':'<strong>Soumission gratuite</strong>, réponse sous 24h.',
@@ -322,9 +322,9 @@ var translations={
     'home.law.lbl':'Information','home.law.title':'Bill 16: <em>are you compliant</em>?',
     'home.law.desc':'Bill 16 imposes new obligations on all condo corporations in Quebec. At Quatre Piliers, we guide you step by step.',
     'law.item1.title':'Mandatory maintenance log',
-    'law.item1.desc':'Condo corporations must produce a maintenance log by August 14, 2028.',
+    'law.item1.desc':'Condo corporations must produce a maintenance log by August 15, 2028.',
     'law.item2.title':'Reserve fund study',
-    'law.item2.desc':'Condo corporations have until August 14, 2028 to obtain their first reserve fund study.',
+    'law.item2.desc':'Condo corporations have until August 15, 2028 to obtain their first reserve fund study.',
     'law.item3.title':'Condo corporation attestation',
     'law.item3.desc':'Mandatory at every unit sale since 2025.',
     'btn.fullguide':'Read our complete guide →',
@@ -363,7 +363,7 @@ var translations={
     'btn.sendrequest':'Send my request →',
     'form.ok':'✅ Thank you! We will contact you within 24 business hours.',
     'footer.tagline':'Expert and ultra-responsive condominium manager in Greater Montreal.',
-    'footer.copy':'© 2025 Gestion de Copropriété Quatre Piliers Inc. All rights reserved.',
+    'footer.copy':'© '+new Date().getFullYear()+' Gestion de Copropriété Quatre Piliers Inc. All rights reserved.',
     'hero.subtitle':'Expert and ultra-responsive manager for your condominium corporation. Full-service coverage — administrative, financial, technical, human. Bill 16 compliance.',
     'lbl.pricing':'Pricing','lbl.plan':'Plan','lbl.perunit':' /unit/month',
     'home.pricing.note':'<strong>Free quote</strong>, response within 24h.',
@@ -567,7 +567,7 @@ function injectFooter(){
   var nlL=isEn?'Newsletter':'Infolettre';
   var emailPh=isEn?'Your email':'Votre courriel';
   var subBtn=isEn?'Subscribe →':"S'abonner →";
-  var copy=isEn?'© 2025 Gestion de Copropriété Quatre Piliers Inc. All rights reserved.':'© 2025 Gestion de Copropriété Quatre Piliers Inc. Tous droits réservés.';
+  var copy=isEn?'© '+new Date().getFullYear()+' Gestion de Copropriété Quatre Piliers Inc. All rights reserved.':'© '+new Date().getFullYear()+' Gestion de Copropriété Quatre Piliers Inc. Tous droits réservés.';
   var contactL=isEn?'Contact':'Contact';
   var cookiesL=isEn?'Manage cookies':'Gérer les témoins';
   var privacyL=isEn?'Privacy policy':'Politique de confidentialité';
