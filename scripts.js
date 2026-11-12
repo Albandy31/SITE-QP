@@ -481,7 +481,11 @@ var LANG_URL_MAP_FR_TO_EN={
   '/gestion-copropriete-longueuil':'/en/condo-management-longueuil',
   '/gestion-copropriete-rive-nord':'/en/condo-management-north-shore',
   '/urgences-copropriete-24-7':'/en/condo-emergency-24-7',
-  '/changer-gestionnaire-copropriete':'/en/switch-condo-manager'
+  '/changer-gestionnaire-copropriete':'/en/switch-condo-manager',
+  '/gestion-administrative-copropriete':'/en/condo-administrative-management',
+  '/gestion-financiere-copropriete':'/en/condo-financial-management',
+  '/gestion-technique-copropriete':'/en/condo-technical-management',
+  '/communication-gouvernance-copropriete':'/en/condo-communication-governance'
 };
 function setLang(lang){
   var path=window.location.pathname.replace(/\/+$/,'')||'/';

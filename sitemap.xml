@@ -336,4 +336,36 @@
     <lastmod>2026-11-11T16:00:00-05:00</lastmod>
   </url>
 
+  <url>
+    <loc>https://quatrepiliers.ca/en/condo-administrative-management</loc>
+    <lastmod>2026-11-12T12:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-administrative-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-administrative-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-administrative-copropriete"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/condo-financial-management</loc>
+    <lastmod>2026-11-12T12:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-financiere-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-financial-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-financiere-copropriete"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/condo-technical-management</loc>
+    <lastmod>2026-11-12T12:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/gestion-technique-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-technical-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/gestion-technique-copropriete"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/condo-communication-governance</loc>
+    <lastmod>2026-11-12T12:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/communication-gouvernance-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-communication-governance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/communication-gouvernance-copropriete"/>
+  </url>
+
 </urlset>
