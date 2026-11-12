@@ -576,7 +576,7 @@ function injectFooter(){
   var html=''+
     '<footer>'+
     '<div class="fg-grid">'+
-    '<div class="ft-brand"><img alt="Quatre Piliers" class="logo-ft" src="/logo.png" width="300" height="135" loading="lazy" decoding="async"/><p data-i18n="footer.tagline">'+tagline+'</p></div>'+
+    '<div class="ft-brand"><img alt="Quatre Piliers" class="logo-ft" src="/logo-nav.webp" width="288" height="120" loading="lazy" decoding="async"/><p data-i18n="footer.tagline">'+tagline+'</p></div>'+
     '<div class="ft-col"><h4 data-i18n="footer.nav">'+navL+'</h4><ul>'+navHtml+'</ul></div>'+
     '<div class="ft-col"><h4 data-i18n="footer.areas">'+areasL+'</h4><ul>'+areasHtml+'</ul></div>'+
     '<div class="ft-col"><h4 data-i18n="footer.newsletter">'+nlL+'</h4>'+

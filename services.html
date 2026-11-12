@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,500;1,6..12,600&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,500;1,6..12,600&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,500;1,6..12,600&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400;1,6..12,500;1,6..12,600&display=swap"/></noscript></noscript>
 <link rel="stylesheet" href="/style.css"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Quatre Piliers – Gestion de copropriété"/>
@@ -40,6 +40,9 @@
 {"@type":"Question","name":"Combien de temps prend la transition vers Quatre Piliers ?","acceptedAnswer":{"@type":"Answer","text":"La période de transition typique est de 30 à 60 jours. Elle comprend la récupération des dossiers, la reprise comptable, la mise à jour du registre des copropriétaires, la communication aux résidents et la rencontre de cadrage avec votre conseil d'administration."}}
 ]}
 </script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Service", "name": "Gestion de copropriété", "serviceType": "Gestion de copropriété", "url": "https://quatrepiliers.ca/services", "provider": {"@type": "LocalBusiness", "@id": "https://quatrepiliers.ca/#entreprise", "name": "Gestion de Copropriété Quatre Piliers", "url": "https://quatrepiliers.ca", "telephone": "+15148392494"}, "areaServed": [{"@type": "City", "name": "Montréal"}, {"@type": "City", "name": "Laval"}, {"@type": "City", "name": "Longueuil"}, {"@type": "City", "name": "Brossard"}, {"@type": "City", "name": "Boucherville"}, {"@type": "City", "name": "Saint-Lambert"}, {"@type": "City", "name": "Terrebonne"}, {"@type": "City", "name": "Blainville"}, {"@type": "City", "name": "Saint-Jérôme"}, {"@type": "City", "name": "Saint-Eustache"}], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Les quatre piliers de la gestion", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gestion administrative"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gestion financière"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gestion technique et entretien"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Communication avec les copropriétaires"}}]}}
+</script>
 </head>
 <body>
 
@@ -54,7 +57,7 @@
 
 <!-- NAV (solid because dark page-head still uses gold logo) -->
 <nav id="mainNav">
-  <a class="logo-wrap" href="/"><img alt="Quatre Piliers" class="logo-img" src="/logo.png" width="300" height="135" fetchpriority="high" decoding="async"/></a>
+  <a class="logo-wrap" href="/"><img alt="Quatre Piliers" class="logo-img" src="/logo-nav.webp" width="288" height="120" fetchpriority="high" decoding="async"/></a>
   <ul class="nav-links">
     <li><a href="/" data-i18n="nav.home">Accueil</a></li>
     <li><a class="active" href="/services" data-i18n="nav.services">Services</a></li>
