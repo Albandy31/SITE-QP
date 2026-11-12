@@ -474,7 +474,7 @@ var LANG_URL_MAP_FR_TO_EN={
   '/blog/gestionnaire-copropriete-montreal':'/en/blog/condo-manager-montreal',
   '/blog/reclamations-assurance':'/en/blog/insurance-claims',
   '/blog/fonds-prevoyance-loi16':'/en/blog/contingency-fund-law16',
-  '/blog/communication-gouvernance':'/en/blog/communication-governance','/blog/declaration-de-copropriete':'/en/blog/declaration-of-co-ownership',
+  '/blog/communication-gouvernance':'/en/blog/communication-governance','/blog/declaration-de-copropriete':'/en/blog/declaration-of-co-ownership','/blog/carnet-entretien-copropriete':'/en/blog/condo-maintenance-log','/blog/etude-fonds-prevoyance-prix-delais':'/en/blog/contingency-fund-study-cost-timeline','/blog/loi-16-calendrier-obligations':'/en/blog/bill-16-timeline-obligations',
   '/blog/loi-16-ou-en-etes-vous':'/en/blog/bill-16-where-do-you-stand',
   '/blog/autogestion-couts-caches':'/en/blog/self-management-hidden-costs',
   '/gestion-copropriete-montreal':'/en/condo-management-montreal',
