@@ -269,4 +269,36 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/blog/communication-gouvernance"/>
   </url>
 
+  <url>
+    <loc>https://quatrepiliers.ca/urgences-copropriete-24-7</loc>
+    <lastmod>2026-11-11T10:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/urgences-copropriete-24-7"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-emergency-24-7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/urgences-copropriete-24-7"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/condo-emergency-24-7</loc>
+    <lastmod>2026-11-11T10:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/urgences-copropriete-24-7"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/condo-emergency-24-7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/urgences-copropriete-24-7"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/changer-gestionnaire-copropriete</loc>
+    <lastmod>2026-11-11T10:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/changer-gestionnaire-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/switch-condo-manager"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/changer-gestionnaire-copropriete"/>
+  </url>
+
+  <url>
+    <loc>https://quatrepiliers.ca/en/switch-condo-manager</loc>
+    <lastmod>2026-11-11T10:00:00-05:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quatrepiliers.ca/changer-gestionnaire-copropriete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quatrepiliers.ca/en/switch-condo-manager"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quatrepiliers.ca/changer-gestionnaire-copropriete"/>
+  </url>
+
 </urlset>

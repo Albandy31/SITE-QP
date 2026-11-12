@@ -479,7 +479,9 @@ var LANG_URL_MAP_FR_TO_EN={
   '/blog/autogestion-couts-caches':'/en/blog/self-management-hidden-costs',
   '/gestion-copropriete-montreal':'/en/condo-management-montreal',
   '/gestion-copropriete-longueuil':'/en/condo-management-longueuil',
-  '/gestion-copropriete-rive-nord':'/en/condo-management-north-shore'
+  '/gestion-copropriete-rive-nord':'/en/condo-management-north-shore',
+  '/urgences-copropriete-24-7':'/en/condo-emergency-24-7',
+  '/changer-gestionnaire-copropriete':'/en/switch-condo-manager'
 };
 function setLang(lang){
   var path=window.location.pathname.replace(/\/+$/,'')||'/';
@@ -554,8 +556,8 @@ function injectFooter(){
   var isEn=(window.location.pathname==='/en'||window.location.pathname.indexOf('/en/')===0);
   var p=isEn?'/en':'';
   var links=isEn
-    ? [['/en/','Home','nav.home'],['/en/services','Services','nav.services'],['/en/pricing','Pricing','nav.pricing'],['/en/bill-16','Bill 16','nav.law16'],['/en/blog','Blog','nav.blog'],['/en/contact','Contact','nav.contact']]
-    : [['/','Accueil','nav.home'],['/services','Services','nav.services'],['/tarification','Tarification','nav.pricing'],['/loi-16','Loi 16','nav.law16'],['/blog','Blog','nav.blog'],['/contact','Contact','nav.contact']];
+    ? [['/en/','Home','nav.home'],['/en/services','Services','nav.services'],['/en/pricing','Pricing','nav.pricing'],['/en/bill-16','Bill 16','nav.law16'],['/en/blog','Blog','nav.blog'],['/en/contact','Contact','nav.contact'],['/en/condo-emergency-24-7','24/7 Emergencies','ft.urg'],['/en/switch-condo-manager','Switch managers','ft.switch']]
+    : [['/','Accueil','nav.home'],['/services','Services','nav.services'],['/tarification','Tarification','nav.pricing'],['/loi-16','Loi 16','nav.law16'],['/blog','Blog','nav.blog'],['/contact','Contact','nav.contact'],['/urgences-copropriete-24-7','Urgences 24/7','ft.urg'],['/changer-gestionnaire-copropriete','Changer de gestionnaire','ft.switch']];
   var areas=isEn
     ? ['Island of Montreal','Laval','Longueuil','South Shore (Brossard, Saint-Lambert, Boucherville)','North Shore (Terrebonne, Blainville, Repentigny)']
     : ['Île de Montréal','Laval','Longueuil','Rive-Sud (Brossard, Saint-Lambert, Boucherville)','Rive-Nord (Terrebonne, Blainville, Repentigny)'];
