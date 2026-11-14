@@ -186,6 +186,34 @@ async function getTurnstileToken(){
   throw new Error("Délai de vérification dépassé");
 }
 
+/* Source de la visite jointe au diagnostic (voir qpGetAttribution dans consent.js). */
+function torontoISO(d){
+  try{
+    const p={};new Intl.DateTimeFormat("en-CA",{timeZone:"America/Toronto",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23",timeZoneName:"longOffset"})
+      .formatToParts(d).forEach(x=>{p[x.type]=x.value;});
+    const off=(p.timeZoneName||"").replace("GMT","")||"Z";
+    return `${p.year}-${p.month}-${p.day}T${p.hour}:${p.minute}:${p.second}${off}`;
+  }catch(e){return d.toISOString();}
+}
+function getAttribution(){
+  let a=null;
+  try{a=window.qpGetAttribution?window.qpGetAttribution():null;}catch(e){}
+  a=a||{};
+  a.submitted_at=torontoISO(new Date());
+  return a;
+}
+/* Conversion comptee une seule fois par visite, apres une reponse 200 du Worker. */
+let leadTracked=false;
+function trackDiagnosticLead(){
+  try{if(leadTracked||sessionStorage.getItem("qp_diag_lead"))return;}catch(e){if(leadTracked)return;}
+  leadTracked=true;
+  try{sessionStorage.setItem("qp_diag_lead","1");}catch(e){}
+  let src="";
+  try{src=(window.qpSource&&window.qpSource().source)||"";}catch(e){}
+  if(window.gtag) gtag("event","generate_lead",{form_name:"diagnostic_loi16",lead_source:src,value:1,currency:"CAD"});
+  if(window.qpConversion) qpConversion("diagnostic");
+}
+
 async function nextStep(){
   if(!validate()){render();return;}
   if(step<QS.length-1){step++;render();return;}
@@ -197,7 +225,7 @@ async function nextStep(){
     const res = await fetch(API_URL,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({ answers: ans, turnstile_token: "", website: honeypot })
+      body:JSON.stringify({ answers: ans, turnstile_token: "", website: honeypot, attribution: getAttribution() })
     });
     if(!res.ok){
       const e = await res.json().catch(()=>({}));
@@ -208,7 +236,7 @@ async function nextStep(){
     score = data.score;
     niveau = data.niveau;
     phase = "result";
-    if(window.qpConversion) qpConversion("diagnostic");
+    trackDiagnosticLead();
   }catch(e){
     apiErr = e.message || "Erreur inconnue";
     phase = "error";

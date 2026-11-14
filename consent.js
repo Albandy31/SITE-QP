@@ -45,28 +45,56 @@
   gtag('config',AW_ID);
   gtag('config','G-6VRTEHH4Q0'); // Google Analytics 4 (Quatre piliers inc.)
 
-  /* Source de la visite : notee a l'arrivee (sessionStorage), envoyee avec le formulaire. */
-  var SRC_KEY='qp_src';
+  /* Source de la visite : notee a l'arrivee, jointe uniquement aux demandes que
+     la personne envoie elle-meme (formulaires, diagnostic). Rien n'est envoye a un tiers.
+     - sessionStorage "qp_src"       : la visite en cours (remplacee seulement par un nouveau clic pub ou des UTM)
+     - localStorage   "qp_src_first" : le premier contact, garde 90 jours
+     Tests manuels (console) :
+       /?gclid=TEST123&utm_source=google&utm_medium=cpc&utm_campaign=test -> qpSource().source = "Google Ads (clic sur une pub)", campagne "test"
+       arrivee depuis bing.com                                            -> "Bing (recherche)"
+       adresse tapee, sans parametre                                      -> "Direct (adresse tapee, favori ou courriel)" */
+  var SRC_KEY='qp_src',FIRST_KEY='qp_src_first',FIRST_TTL=90*24*3600*1000;
+  function host(u){try{return u?new URL(u).hostname.replace(/^www\./,''):'';}catch(e){return '';}}
   try{
     var q=new URLSearchParams(location.search);
-    var click=q.get('gclid')||q.get('gbraid')||q.get('wbraid');
-    if(click||q.get('utm_source')||!sessionStorage.getItem(SRC_KEY)){
-      var ref='';try{ref=document.referrer?new URL(document.referrer).hostname:'';}catch(e){}
-      if(ref===location.hostname)ref='';
-      var src;
-      if(click)src='Google Ads (clic sur une pub)';
-      else if(q.get('utm_source'))src=q.get('utm_source')+(q.get('utm_medium')?' / '+q.get('utm_medium'):'');
+    var g=function(k){return (q.get(k)||'').slice(0,300);};
+    var clickId=g('gclid')||g('gbraid')||g('wbraid');
+    if(clickId||g('utm_source')||!sessionStorage.getItem(SRC_KEY)){
+      var ref=host(document.referrer);
+      if(ref===location.hostname.replace(/^www\./,''))ref='';
+      var med=g('utm_medium').toLowerCase(),us=g('utm_source').toLowerCase(),src;
+      if(clickId||med==='cpc'||med==='ppc'||med==='paid')src='Google Ads (clic sur une pub)';
+      else if(us)src=g('utm_source')+(med?' / '+g('utm_medium'):'');
       else if(/(^|\.)google\./.test(ref))src='Google (recherche, carte ou fiche)';
-      else if(ref)src=ref;
+      else if(/(^|\.)bing\.com$/.test(ref))src='Bing (recherche)';
+      else if(/(^|\.)(linkedin\.com|lnkd\.in)$/.test(ref))src='LinkedIn';
+      else if(/(^|\.)(facebook\.com|fb\.com|instagram\.com)$/.test(ref))src='Facebook / Instagram';
+      else if(ref)src='Autre site : '+ref;
       else src='Direct (adresse tapee, favori ou courriel)';
-      sessionStorage.setItem(SRC_KEY,JSON.stringify({
-        source:src,campagne:q.get('utm_campaign')||'',gclid:click||'',
-        referent:ref,arrivee:location.pathname
-      }));
+      var rec={
+        source:src,campagne:g('utm_campaign'),gclid:g('gclid'),gbraid:g('gbraid'),wbraid:g('wbraid'),
+        utm_source:g('utm_source'),utm_medium:g('utm_medium'),utm_term:g('utm_term'),utm_content:g('utm_content'),
+        referent:ref,referrer:ref?(document.referrer||'').slice(0,300):'',arrivee:location.pathname,date:new Date().toISOString()
+      };
+      sessionStorage.setItem(SRC_KEY,JSON.stringify(rec));
+      var first=null;try{first=JSON.parse(localStorage.getItem(FIRST_KEY));}catch(e){}
+      if(!first||!first.date||Date.now()-Date.parse(first.date)>FIRST_TTL){
+        try{localStorage.setItem(FIRST_KEY,JSON.stringify(rec));}catch(e){}
+      }
     }
   }catch(e){}
   window.qpSource=function(){
     try{return JSON.parse(sessionStorage.getItem(SRC_KEY))||{};}catch(e){return {};}
+  };
+  /* Source complete a joindre a un envoi : visite en cours + premier contact. */
+  window.qpGetAttribution=function(){
+    var s=window.qpSource(),f=null;
+    try{f=JSON.parse(localStorage.getItem(FIRST_KEY));}catch(e){}
+    if(f&&f.date&&Date.now()-Date.parse(f.date)>FIRST_TTL)f=null;
+    var out={};for(var k in s)out[k]=s[k];
+    out.source_resumee=s.source||'';
+    out.first_touch=f;
+    return out;
   };
 
   /* Conversion : appeler qpConversion('contact' | 'diagnostic') apres un succes. */
