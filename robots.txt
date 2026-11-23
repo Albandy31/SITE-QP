@@ -3,6 +3,6 @@ Allow: /
 
 Disallow: /diagnostic.html
 Disallow: /icon-preview.html
-Disallow: /diagnostic
+Disallow: /diagnostic$
 
 Sitemap: https://quatrepiliers.ca/sitemap.xml
