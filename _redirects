@@ -13,8 +13,3 @@
 
 # 404 fallback — serve 404.html if it exists, otherwise Cloudflare default
 # /404            /404.html   200
-
-# Fausses adresses devinees par Google dans le texte « $/unite/mois »
-/unit%C3%A9/mois  /tarification  301
-/unité/mois       /tarification  301
-/unit/month       /en/pricing    301
